@@ -18,6 +18,7 @@
 		247646001BF096C90092CECE /* QingTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247645FF1BF096C90092CECE /* QingTabbarController.m */; settings = {ASSET_TAGS = (); }; };
 		247646031BF09E440092CECE /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247646021BF09E440092CECE /* RootNavigationController.m */; settings = {ASSET_TAGS = (); }; };
 		247646061BF09E710092CECE /* QingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247646051BF09E710092CECE /* QingNavigationController.m */; settings = {ASSET_TAGS = (); }; };
+		247646081BF0A5B30092CECE /* QingIcon512.png in Resources */ = {isa = PBXBuildFile; fileRef = 247646071BF0A5B30092CECE /* QingIcon512.png */; settings = {ASSET_TAGS = (); }; };
 		AFD6DDEEC7CA403844DB5620 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 103584DA1413764F2B7360D7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		247646021BF09E440092CECE /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
 		247646041BF09E710092CECE /* QingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QingNavigationController.h; sourceTree = "<group>"; };
 		247646051BF09E710092CECE /* QingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QingNavigationController.m; sourceTree = "<group>"; };
+		247646071BF0A5B30092CECE /* QingIcon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QingIcon512.png; sourceTree = "<group>"; };
 		39C4B604C8D5D5C2F0E9E8AC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		43C2B6BF19590D74A8192D13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 		242992421BF08907003D96F8 /* Qing */ = {
 			isa = PBXGroup;
 			children = (
+				247646071BF0A5B30092CECE /* QingIcon512.png */,
 				242992461BF08907003D96F8 /* AppDelegate.h */,
 				242992471BF08907003D96F8 /* AppDelegate.m */,
 				247645FD1BF096980092CECE /* TabbarController */,
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				242992561BF08907003D96F8 /* LaunchScreen.storyboard in Resources */,
+				247646081BF0A5B30092CECE /* QingIcon512.png in Resources */,
 				242992531BF08907003D96F8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
