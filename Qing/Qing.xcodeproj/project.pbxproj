@@ -15,6 +15,9 @@
 		2429926C1BF08907003D96F8 /* QingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2429926B1BF08907003D96F8 /* QingUITests.m */; };
 		2429927D1BF08FDA003D96F8 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2429927C1BF08FDA003D96F8 /* RootTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		242992801BF08FE9003D96F8 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2429927F1BF08FE9003D96F8 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
+		247646001BF096C90092CECE /* QingTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247645FF1BF096C90092CECE /* QingTabbarController.m */; settings = {ASSET_TAGS = (); }; };
+		247646031BF09E440092CECE /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247646021BF09E440092CECE /* RootNavigationController.m */; settings = {ASSET_TAGS = (); }; };
+		247646061BF09E710092CECE /* QingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247646051BF09E710092CECE /* QingNavigationController.m */; settings = {ASSET_TAGS = (); }; };
 		AFD6DDEEC7CA403844DB5620 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 103584DA1413764F2B7360D7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,12 @@
 		2429927C1BF08FDA003D96F8 /* RootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
 		2429927E1BF08FE9003D96F8 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		2429927F1BF08FE9003D96F8 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		247645FE1BF096C90092CECE /* QingTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QingTabbarController.h; sourceTree = "<group>"; };
+		247645FF1BF096C90092CECE /* QingTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QingTabbarController.m; sourceTree = "<group>"; };
+		247646011BF09E440092CECE /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
+		247646021BF09E440092CECE /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		247646041BF09E710092CECE /* QingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QingNavigationController.h; sourceTree = "<group>"; };
+		247646051BF09E710092CECE /* QingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QingNavigationController.m; sourceTree = "<group>"; };
 		39C4B604C8D5D5C2F0E9E8AC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		43C2B6BF19590D74A8192D13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +120,7 @@
 			children = (
 				242992461BF08907003D96F8 /* AppDelegate.h */,
 				242992471BF08907003D96F8 /* AppDelegate.m */,
+				247645FD1BF096980092CECE /* TabbarController */,
 				2429927A1BF08FA8003D96F8 /* RootClass */,
 				242992791BF08F8F003D96F8 /* Home */,
 				242992521BF08907003D96F8 /* Assets.xcassets */,
@@ -159,10 +169,23 @@
 			children = (
 				2429927E1BF08FE9003D96F8 /* RootViewController.h */,
 				2429927F1BF08FE9003D96F8 /* RootViewController.m */,
+				247646011BF09E440092CECE /* RootNavigationController.h */,
+				247646021BF09E440092CECE /* RootNavigationController.m */,
 				2429927B1BF08FDA003D96F8 /* RootTableViewController.h */,
 				2429927C1BF08FDA003D96F8 /* RootTableViewController.m */,
 			);
 			path = RootClass;
+			sourceTree = "<group>";
+		};
+		247645FD1BF096980092CECE /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				247645FE1BF096C90092CECE /* QingTabbarController.h */,
+				247645FF1BF096C90092CECE /* QingTabbarController.m */,
+				247646041BF09E710092CECE /* QingNavigationController.h */,
+				247646051BF09E710092CECE /* QingNavigationController.m */,
+			);
+			path = TabbarController;
 			sourceTree = "<group>";
 		};
 		7DE64219782D8EF73239F2D2 /* Frameworks */ = {
@@ -346,6 +369,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				247646001BF096C90092CECE /* QingTabbarController.m in Sources */,
+				247646061BF09E710092CECE /* QingNavigationController.m in Sources */,
+				247646031BF09E440092CECE /* RootNavigationController.m in Sources */,
 				2429927D1BF08FDA003D96F8 /* RootTableViewController.m in Sources */,
 				242992481BF08907003D96F8 /* AppDelegate.m in Sources */,
 				242992801BF08FE9003D96F8 /* RootViewController.m in Sources */,

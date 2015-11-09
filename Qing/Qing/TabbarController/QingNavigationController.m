@@ -1,23 +1,22 @@
 //
-//  RootViewController.m
+//  QingNavigationController.m
 //  Qing
 //
 //  Created by Maka on 15/11/9.
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "QingNavigationController.h"
 
-@interface RootViewController ()
+@interface QingNavigationController ()
 
 @end
 
-@implementation RootViewController
+@implementation QingNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

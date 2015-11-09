@@ -1,23 +1,35 @@
 //
-//  RootViewController.m
+//  QingTabbarController.m
 //  Qing
 //
 //  Created by Maka on 15/11/9.
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "QingTabbarController.h"
+#import <Masonry.h>
+#import <ReactiveCocoa.h>
 
-@interface RootViewController ()
+@interface QingTabbarController ()
+
+@property (nonatomic,strong) UITabBar* tabbar;
 
 @end
 
-@implementation RootViewController
+@implementation QingTabbarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    
+    {
+        self.tabbar = [[UITabBar alloc]init];
+        [self.view addSubview:self.tabbar];
+        [self.tabbar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.bottom.right.mas_equalTo(0);
+            make.height.mas_equalTo(49);
+        }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
