@@ -19,6 +19,7 @@
 		247646031BF09E440092CECE /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247646021BF09E440092CECE /* RootNavigationController.m */; settings = {ASSET_TAGS = (); }; };
 		247646061BF09E710092CECE /* QingNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247646051BF09E710092CECE /* QingNavigationController.m */; settings = {ASSET_TAGS = (); }; };
 		247646081BF0A5B30092CECE /* QingIcon512.png in Resources */ = {isa = PBXBuildFile; fileRef = 247646071BF0A5B30092CECE /* QingIcon512.png */; settings = {ASSET_TAGS = (); }; };
+		2476460B1BF0A9170092CECE /* HomeIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2476460A1BF0A9170092CECE /* HomeIndexViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AFD6DDEEC7CA403844DB5620 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 103584DA1413764F2B7360D7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		247646041BF09E710092CECE /* QingNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QingNavigationController.h; sourceTree = "<group>"; };
 		247646051BF09E710092CECE /* QingNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QingNavigationController.m; sourceTree = "<group>"; };
 		247646071BF0A5B30092CECE /* QingIcon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QingIcon512.png; sourceTree = "<group>"; };
+		247646091BF0A9170092CECE /* HomeIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeIndexViewController.h; sourceTree = "<group>"; };
+		2476460A1BF0A9170092CECE /* HomeIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeIndexViewController.m; sourceTree = "<group>"; };
 		39C4B604C8D5D5C2F0E9E8AC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		43C2B6BF19590D74A8192D13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +166,8 @@
 		242992791BF08F8F003D96F8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				247646091BF0A9170092CECE /* HomeIndexViewController.h */,
+				2476460A1BF0A9170092CECE /* HomeIndexViewController.m */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				247646061BF09E710092CECE /* QingNavigationController.m in Sources */,
 				247646031BF09E440092CECE /* RootNavigationController.m in Sources */,
 				2429927D1BF08FDA003D96F8 /* RootTableViewController.m in Sources */,
+				2476460B1BF0A9170092CECE /* HomeIndexViewController.m in Sources */,
 				242992481BF08907003D96F8 /* AppDelegate.m in Sources */,
 				242992801BF08FE9003D96F8 /* RootViewController.m in Sources */,
 				242992451BF08907003D96F8 /* main.m in Sources */,
@@ -514,6 +520,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Qing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = maka.Qing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -526,6 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Qing/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = maka.Qing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
