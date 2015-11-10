@@ -23,6 +23,10 @@
     QingTabbarController* tabbar = [[QingTabbarController alloc]init];
     self.window.rootViewController = tabbar;
     
+    NSMutableDictionary* dic = [NSMutableDictionary dictionary];
+    
+    [dic setObject:[UIColor orangeColor] forKey:@""];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

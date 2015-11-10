@@ -22,6 +22,9 @@
 		24F43EDB1BF1943D00D964FE /* PlantShareManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F43EDA1BF1943D00D964FE /* PlantShareManager.m */; settings = {ASSET_TAGS = (); }; };
 		24F43EDD1BF198C600D964FE /* Plant.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24F43EDC1BF198C600D964FE /* Plant.xcassets */; settings = {ASSET_TAGS = (); }; };
 		24F43EDF1BF1B53500D964FE /* QingIcon512.png in Resources */ = {isa = PBXBuildFile; fileRef = 24F43EDE1BF1B53500D964FE /* QingIcon512.png */; settings = {ASSET_TAGS = (); }; };
+		24F43F061BF1EF3800D964FE /* PlantKeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F43F051BF1EF3800D964FE /* PlantKeyView.m */; settings = {ASSET_TAGS = (); }; };
+		24F43F091BF1F36900D964FE /* UserDefaultSetting.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24F43F081BF1F36900D964FE /* UserDefaultSetting.plist */; settings = {ASSET_TAGS = (); }; };
+		24F43F0D1BF1F64D00D964FE /* RootModuleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F43F0C1BF1F64D00D964FE /* RootModuleManager.m */; settings = {ASSET_TAGS = (); }; };
 		AFD6DDEEC7CA403844DB5620 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 103584DA1413764F2B7360D7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +76,12 @@
 		24F43EDA1BF1943D00D964FE /* PlantShareManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlantShareManager.m; sourceTree = "<group>"; };
 		24F43EDC1BF198C600D964FE /* Plant.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Plant.xcassets; sourceTree = "<group>"; };
 		24F43EDE1BF1B53500D964FE /* QingIcon512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = QingIcon512.png; sourceTree = "<group>"; };
+		24F43F041BF1EF3800D964FE /* PlantKeyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlantKeyView.h; sourceTree = "<group>"; };
+		24F43F051BF1EF3800D964FE /* PlantKeyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlantKeyView.m; sourceTree = "<group>"; };
+		24F43F081BF1F36900D964FE /* UserDefaultSetting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserDefaultSetting.plist; sourceTree = "<group>"; };
+		24F43F0A1BF1F3F500D964FE /* BaseConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseConfig.h; sourceTree = "<group>"; };
+		24F43F0B1BF1F64D00D964FE /* RootModuleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootModuleManager.h; sourceTree = "<group>"; };
+		24F43F0C1BF1F64D00D964FE /* RootModuleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootModuleManager.m; sourceTree = "<group>"; };
 		39C4B604C8D5D5C2F0E9E8AC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		43C2B6BF19590D74A8192D13 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +140,7 @@
 				24F43EDE1BF1B53500D964FE /* QingIcon512.png */,
 				242992461BF08907003D96F8 /* AppDelegate.h */,
 				242992471BF08907003D96F8 /* AppDelegate.m */,
+				24F43F071BF1F32E00D964FE /* Config */,
 				24F43ED51BF192CB00D964FE /* Plant */,
 				247645FD1BF096980092CECE /* TabbarController */,
 				2429927A1BF08FA8003D96F8 /* RootClass */,
@@ -187,6 +197,8 @@
 				247646021BF09E440092CECE /* RootNavigationController.m */,
 				2429927B1BF08FDA003D96F8 /* RootTableViewController.h */,
 				2429927C1BF08FDA003D96F8 /* RootTableViewController.m */,
+				24F43F0B1BF1F64D00D964FE /* RootModuleManager.h */,
+				24F43F0C1BF1F64D00D964FE /* RootModuleManager.m */,
 			);
 			path = RootClass;
 			sourceTree = "<group>";
@@ -207,9 +219,20 @@
 			children = (
 				24F43ED91BF1943D00D964FE /* PlantShareManager.h */,
 				24F43EDA1BF1943D00D964FE /* PlantShareManager.m */,
+				24F43F041BF1EF3800D964FE /* PlantKeyView.h */,
+				24F43F051BF1EF3800D964FE /* PlantKeyView.m */,
 				24F43EDC1BF198C600D964FE /* Plant.xcassets */,
 			);
 			path = Plant;
+			sourceTree = "<group>";
+		};
+		24F43F071BF1F32E00D964FE /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				24F43F0A1BF1F3F500D964FE /* BaseConfig.h */,
+				24F43F081BF1F36900D964FE /* UserDefaultSetting.plist */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		7DE64219782D8EF73239F2D2 /* Frameworks */ = {
@@ -338,6 +361,7 @@
 				24F43EDD1BF198C600D964FE /* Plant.xcassets in Resources */,
 				24F43EDF1BF1B53500D964FE /* QingIcon512.png in Resources */,
 				242992531BF08907003D96F8 /* Assets.xcassets in Resources */,
+				24F43F091BF1F36900D964FE /* UserDefaultSetting.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,10 +419,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24F43F061BF1EF3800D964FE /* PlantKeyView.m in Sources */,
 				247646001BF096C90092CECE /* QingTabbarController.m in Sources */,
 				247646061BF09E710092CECE /* QingNavigationController.m in Sources */,
 				247646031BF09E440092CECE /* RootNavigationController.m in Sources */,
 				2429927D1BF08FDA003D96F8 /* RootTableViewController.m in Sources */,
+				24F43F0D1BF1F64D00D964FE /* RootModuleManager.m in Sources */,
 				24F43EDB1BF1943D00D964FE /* PlantShareManager.m in Sources */,
 				2476460B1BF0A9170092CECE /* HomeIndexViewController.m in Sources */,
 				242992481BF08907003D96F8 /* AppDelegate.m in Sources */,
