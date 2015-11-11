@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-#import "QingTabbarController.h"
+#import "HomeIndexViewController.h"
+#import "RootTabBarController.h"
+#import "RootNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -20,12 +22,14 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    QingTabbarController* tabbar = [[QingTabbarController alloc]init];
+    RootTabBarController* tabbar = [[RootTabBarController alloc]init];
     self.window.rootViewController = tabbar;
     
-    NSMutableDictionary* dic = [NSMutableDictionary dictionary];
-    
-    [dic setObject:[UIColor orangeColor] forKey:@""];
+    {
+        HomeIndexViewController* homeIndex = [[HomeIndexViewController alloc]init];
+        RootNavigationController* navigation = [[RootNavigationController alloc]initWithRootViewController:homeIndex];
+        tabbar.viewControllers = [NSArray arrayWithObject:navigation];
+    }
     
     [self.window makeKeyAndVisible];
     return YES;

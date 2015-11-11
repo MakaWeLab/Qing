@@ -1,35 +1,22 @@
 //
-//  QingTabbarController.m
+//  RootTabBarController.m
 //  Qing
 //
-//  Created by Maka on 15/11/9.
+//  Created by chaowualex on 15/11/11.
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
-#import "QingTabbarController.h"
-#import <Masonry.h>
-#import <ReactiveCocoa.h>
+#import "RootTabBarController.h"
 
-@interface QingTabbarController ()
-
-@property (nonatomic,strong) UITabBar* tabbar;
+@interface RootTabBarController ()
 
 @end
 
-@implementation QingTabbarController
+@implementation RootTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    {
-        self.tabbar = [[UITabBar alloc]init];
-        [self.view addSubview:self.tabbar];
-        [self.tabbar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.bottom.right.mas_equalTo(0);
-            make.height.mas_equalTo(49);
-        }];
-    }
 }
 
 - (void)didReceiveMemoryWarning {

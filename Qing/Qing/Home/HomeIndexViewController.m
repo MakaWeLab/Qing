@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tabBarItem = [[UITabBarItem alloc]initWithTitle:NSLocalizedString(@"HOME_INDEX_TABBAR_ITEM",@"") image:[UIImage imageNamed:@"wateringCan"] selectedImage:[UIImage imageNamed:@"wateringCan"]];
 }
 
 
