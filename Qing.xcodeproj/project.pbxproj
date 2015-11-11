@@ -16,8 +16,11 @@
 		605D51C11BF3A53E0071BC75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605D51BF1BF3A53E0071BC75 /* LaunchScreen.storyboard */; };
 		605D51CC1BF3A53E0071BC75 /* QingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51CB1BF3A53E0071BC75 /* QingTests.m */; };
 		605D51D71BF3A53E0071BC75 /* QingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51D61BF3A53E0071BC75 /* QingUITests.m */; };
-		605D51E51BF3A5680071BC75 /* RootClass in Resources */ = {isa = PBXBuildFile; fileRef = 605D51E41BF3A5680071BC75 /* RootClass */; settings = {ASSET_TAGS = (); }; };
 		605D51E71BF3A5820071BC75 /* Plant.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605D51E61BF3A5820071BC75 /* Plant.xcassets */; settings = {ASSET_TAGS = (); }; };
+		605D51F11BF3A60D0071BC75 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51EA1BF3A60D0071BC75 /* RootNavigationController.m */; settings = {ASSET_TAGS = (); }; };
+		605D51F21BF3A60D0071BC75 /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51EC1BF3A60D0071BC75 /* RootTabBarController.m */; settings = {ASSET_TAGS = (); }; };
+		605D51F31BF3A60D0071BC75 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51EE1BF3A60D0071BC75 /* RootTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		605D51F41BF3A60D0071BC75 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51F01BF3A60D0071BC75 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +58,15 @@
 		605D51D21BF3A53E0071BC75 /* QingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		605D51D61BF3A53E0071BC75 /* QingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QingUITests.m; sourceTree = "<group>"; };
 		605D51D81BF3A53E0071BC75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		605D51E41BF3A5680071BC75 /* RootClass */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RootClass; sourceTree = "<group>"; };
 		605D51E61BF3A5820071BC75 /* Plant.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Plant.xcassets; sourceTree = "<group>"; };
+		605D51E91BF3A60D0071BC75 /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
+		605D51EA1BF3A60D0071BC75 /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		605D51EB1BF3A60D0071BC75 /* RootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarController.h; sourceTree = "<group>"; };
+		605D51EC1BF3A60D0071BC75 /* RootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarController.m; sourceTree = "<group>"; };
+		605D51ED1BF3A60D0071BC75 /* RootTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
+		605D51EE1BF3A60D0071BC75 /* RootTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
+		605D51EF1BF3A60D0071BC75 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		605D51F01BF3A60D0071BC75 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				605D51E61BF3A5820071BC75 /* Plant.xcassets */,
-				605D51E41BF3A5680071BC75 /* RootClass */,
+				605D51E81BF3A60D0071BC75 /* RootClass */,
 				605D51B11BF3A53E0071BC75 /* AppDelegate.h */,
 				605D51B21BF3A53E0071BC75 /* AppDelegate.m */,
 				605D51B41BF3A53E0071BC75 /* ViewController.h */,
@@ -147,6 +157,21 @@
 				605D51D81BF3A53E0071BC75 /* Info.plist */,
 			);
 			path = QingUITests;
+			sourceTree = "<group>";
+		};
+		605D51E81BF3A60D0071BC75 /* RootClass */ = {
+			isa = PBXGroup;
+			children = (
+				605D51E91BF3A60D0071BC75 /* RootNavigationController.h */,
+				605D51EA1BF3A60D0071BC75 /* RootNavigationController.m */,
+				605D51EB1BF3A60D0071BC75 /* RootTabBarController.h */,
+				605D51EC1BF3A60D0071BC75 /* RootTabBarController.m */,
+				605D51ED1BF3A60D0071BC75 /* RootTableViewController.h */,
+				605D51EE1BF3A60D0071BC75 /* RootTableViewController.m */,
+				605D51EF1BF3A60D0071BC75 /* RootViewController.h */,
+				605D51F01BF3A60D0071BC75 /* RootViewController.m */,
+			);
+			path = RootClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +281,6 @@
 				605D51E71BF3A5820071BC75 /* Plant.xcassets in Resources */,
 				605D51BE1BF3A53E0071BC75 /* Assets.xcassets in Resources */,
 				605D51B91BF3A53E0071BC75 /* Main.storyboard in Resources */,
-				605D51E51BF3A5680071BC75 /* RootClass in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +307,11 @@
 			files = (
 				605D51BC1BF3A53E0071BC75 /* Qing.xcdatamodeld in Sources */,
 				605D51B61BF3A53E0071BC75 /* ViewController.m in Sources */,
+				605D51F41BF3A60D0071BC75 /* RootViewController.m in Sources */,
 				605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */,
+				605D51F21BF3A60D0071BC75 /* RootTabBarController.m in Sources */,
+				605D51F11BF3A60D0071BC75 /* RootNavigationController.m in Sources */,
+				605D51F31BF3A60D0071BC75 /* RootTableViewController.m in Sources */,
 				605D51B01BF3A53E0071BC75 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +538,7 @@
 				605D51DD1BF3A53E0071BC75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		605D51DE1BF3A53E0071BC75 /* Build configuration list for PBXNativeTarget "QingTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +547,7 @@
 				605D51E01BF3A53E0071BC75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		605D51E11BF3A53E0071BC75 /* Build configuration list for PBXNativeTarget "QingUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +556,7 @@
 				605D51E31BF3A53E0071BC75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
