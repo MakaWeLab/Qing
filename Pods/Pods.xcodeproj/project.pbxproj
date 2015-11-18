@@ -1,0 +1,1677 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		004915A9CA99E819559C896DB0A4B84F /* ASDealloc2MainObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 10076B337DDBC0A14E7CDAC5CCEB1B85 /* ASDealloc2MainObject.h */; };
+		0055785C45CF9410AE4EE0C1C1C111AD /* ASPhotosFrameworkImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E559BC9475169500B2661CA715D281 /* ASPhotosFrameworkImageRequest.m */; };
+		020A407EE90BEBF61AAE47ECFFFE8F3B /* NSMutableAttributedString+TextKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C6338BC45C722EA1D3115BBE7670FB0E /* NSMutableAttributedString+TextKitAdditions.m */; };
+		036DCE56D1E44D39F7561FEA33957981 /* ASDataController+Subclasses.h in Headers */ = {isa = PBXBuildFile; fileRef = E36D3F06194D4A62E804F4DC37F28F0C /* ASDataController+Subclasses.h */; };
+		0418D7ABF079C066C82FAB4D74800B71 /* CGRect+ASConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 85ED63C054E69FB57501C4FD90330314 /* CGRect+ASConvenience.m */; };
+		069B72A547C48664B6E553E5617C508A /* ASRangeHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 96C19D5E486E5B4B2FDF3F0B10EB18C9 /* ASRangeHandler.h */; };
+		06F086D9BD286EEB1E0B16193C9B924A /* _ASAsyncTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 32015C6D009EF63F9EAB30FB6A65DEBB /* _ASAsyncTransaction.m */; };
+		073B963191A65911D600634D4ED39494 /* DDDispatchQueueLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = C22DC15E13B04EBDDB54EA1F34501551 /* DDDispatchQueueLogFormatter.h */; };
+		085D76AA3C38EB1B780464D72142C88F /* ASStackLayoutSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = B89D229311BB392C1FE4C94B1E94B869 /* ASStackLayoutSpec.h */; };
+		0B833897FF02EF253A627828CCDB1AEE /* iCarousel.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BFB228813A5DCE45AF30CD34443C35D /* iCarousel.h */; };
+		0C413362D98B037AFFE7FE1F15AAFA0D /* _ASDisplayLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D0F07C306C86E79CFB69A101FF920CF /* _ASDisplayLayer.h */; };
+		0CD0AF4544CFD588966905CC1DB2B4E0 /* ASStaticLayoutSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 27B365064ACA048257C3B896228E3B34 /* ASStaticLayoutSpec.mm */; };
+		0E4C4ECEAFE8717359F45DC5715B449C /* FBShimmeringLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = F8A9C51700BD43AD22E489CC05A18326 /* FBShimmeringLayer.h */; };
+		1043C464A9857891B16B758DE34E6E5E /* ASLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FE98C4903794043C69AD81572F2F69A /* ASLayout.mm */; };
+		104581A907CABF8FC4313441458866C4 /* ASCollectionNode.m in Sources */ = {isa = PBXBuildFile; fileRef = C54513CC9A0ECC3413167A4C06D32505 /* ASCollectionNode.m */; };
+		11F64F4FAA710D66AF45F7CBA6065A49 /* ASStackBaselinePositionedLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 8552506994F3869BD34CB1E2FD94D76E /* ASStackBaselinePositionedLayout.h */; };
+		13E7831E15875535D8B641117D97BBB8 /* ASEqualityHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = E099A660BC9669FDF478AD1FF46DB7A1 /* ASEqualityHelpers.h */; };
+		15D149D647D4ECBD55C1AC9287BAA4A0 /* CGRect+ASConvenience.h in Headers */ = {isa = PBXBuildFile; fileRef = 290D211EAC4143FA46285710ED12FB27 /* CGRect+ASConvenience.h */; };
+		162E7CBEA17DD4F17A4841E9138320C6 /* _ASHierarchyChangeSet.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FD7FA54122D31C29B2BE21448DAE89 /* _ASHierarchyChangeSet.m */; };
+		1681FE890A884126B4529272DBD7EC45 /* ASCenterLayoutSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 14B4EE601E4EA2346FD7772E8152ED65 /* ASCenterLayoutSpec.h */; };
+		16E96438FCBC3C84B8FFEBC75F8870C5 /* ASIndexPath.h in Headers */ = {isa = PBXBuildFile; fileRef = CF3E08B79B8D7DEDC6C58C353421E0B7 /* ASIndexPath.h */; };
+		1793CD0A2EF01905955FC007C8B2CA22 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E1E29B315DEAC8EEF6007DB0A9E909C /* Pods-dummy.m */; };
+		17B8D09602C6EED9CB67EEEE1A0F1CEB /* DDTTYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 8204E6986F08EFBDC121BB239694CC81 /* DDTTYLogger.h */; };
+		17BE1E395BD8B79C64432CA734EE25E9 /* _ASPendingState.h in Headers */ = {isa = PBXBuildFile; fileRef = 55CC561B4D1D4BE2017DAD72AECC2C65 /* _ASPendingState.h */; };
+		1823AC0F44EC82788FC9E51FE190DFAC /* ASControlNode.m in Sources */ = {isa = PBXBuildFile; fileRef = EB28106A9558A1C4AFA472273C356AA7 /* ASControlNode.m */; };
+		18472E76B37856EFD0C364674018721C /* ASRelativeSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 49181823985250D3FB3A77D7FBC1BFE4 /* ASRelativeSize.h */; };
+		185FED5130AB04283D9B9175954D3716 /* ASControlNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9964CF6C2CDB86758F0362D9FB4065 /* ASControlNode.h */; };
+		1AA2D28C68365F8F8C2FF7F460BA3B14 /* Shimmer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D6CDF5773E20726F02F2003AAAF449 /* Shimmer-dummy.m */; };
+		1AA4DCA281000C3295A8ACDFEF265323 /* ASLayoutablePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = BA7D169D6CC98E71CDACEEF3C043427C /* ASLayoutablePrivate.h */; };
+		1B859A1E28CF3634ABD34AB5BFBC26EF /* ASCollectionViewProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = EEEF21D9BB1E6B557CC4BA6C9B6E4E4E /* ASCollectionViewProtocols.h */; };
+		1BEAF90E61F64F509C26A36D6E47D3FB /* ASLayoutRangeType.h in Headers */ = {isa = PBXBuildFile; fileRef = A985C65F21E95F81E7D64C2C7524DD7B /* ASLayoutRangeType.h */; };
+		1C2B549D768313CD545560272B68E4FB /* ASScrollNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 048A559DBD51819CCF00EFC28DB31F23 /* ASScrollNode.m */; };
+		1C78695DC25A9CA37A66832B6A848258 /* ASSentinel.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AA3AE45B340EDE57563DCB027ECA63 /* ASSentinel.m */; };
+		1EAC47C65468C2E8547DF527BD6D94D3 /* _ASAsyncTransactionContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F807FC27F2C0A6463EF318322B7528A /* _ASAsyncTransactionContainer.m */; };
+		1F51563B591CF09A88F85AAB42B47B88 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6A1CC8D5644B0F18FF737A1323BC5B /* QuartzCore.framework */; };
+		23E374341FE18F767179DFD502BCAF7B /* ASMultidimensionalArrayUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = E6EF86F3F0143DE476E3F0801D79F8FC /* ASMultidimensionalArrayUtils.mm */; };
+		240E47C584CACCDB4A62852055CAF223 /* ASDisplayNodeInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 74B77EC42F7236D362EEDACC511A1302 /* ASDisplayNodeInternal.h */; };
+		294380D4E979C5AFB50D61B32692CDC5 /* ASRatioLayoutSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D13D1E6D5D5F41EFB8005739AAC0C /* ASRatioLayoutSpec.mm */; };
+		29F64FE681A649E42F76047CA780DB9E /* ASStackUnpositionedLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = FCE9693363C426850DD268027BE208FF /* ASStackUnpositionedLayout.mm */; };
+		2B1F0B435BEA88C1754B65B102118AD2 /* ASTextNodeRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = E41DD5847C832502DFC709DE39B3F7D3 /* ASTextNodeRenderer.mm */; };
+		2C2DDFCCB0EA3ED287EA570B6D3D5ED0 /* ASLayoutOptionsPrivate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1B801B683F25BDA1D65A856BA22D6EEE /* ASLayoutOptionsPrivate.mm */; };
+		2CC2EC7F979BAA5C7848B2351728112C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E7E1993672513C8703A562543BDE07 /* Foundation.framework */; };
+		2CDC8C75950EA195B984635CBEF6A36F /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 17DC9D3C4D9684F66B2D8CA97E8E14A8 /* iCarousel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		2DA6DDF29842476CD8C1AFAC609D4243 /* _ASDisplayView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 531745E17BA339A68527169C8012F3C3 /* _ASDisplayView.mm */; };
+		2E3E42B4E3C94E1FDA1EEF1EBB496219 /* ASLayoutOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 75135BF057F046F91D1E994682EB1EAC /* ASLayoutOptions.h */; };
+		2E3F42291DFA35F7749CC6AE61DF6C04 /* ASLayoutOptionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 089FF3EFFE148299F6C16BE173F082E9 /* ASLayoutOptionsPrivate.h */; };
+		2F226C8664A2F8CEBF867D4F0CE62F8B /* ASSentinel.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A123B038CD09BE4B0E7CB0105D53093 /* ASSentinel.h */; };
+		30D486A8F465E680857EBDB8D6E9AEE9 /* ASMutableAttributedStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 29103B29D940CA80200442ACAEC27176 /* ASMutableAttributedStringBuilder.m */; };
+		34103F6F43E910F2FA72FDEBD5414F8E /* ASDataController.h in Headers */ = {isa = PBXBuildFile; fileRef = 49C81A0823171A360574460546DDBE6E /* ASDataController.h */; };
+		346BC112E28EB989F74267DA9F410974 /* ASCollectionViewLayoutController.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7FE6C6D0DCA87A2A7298EA212824E7C /* ASCollectionViewLayoutController.mm */; };
+		3475C06680F72483F44DBD020855D753 /* ASStackBaselinePositionedLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = A7480EF9FD695D302EBA068C5A4D19ED /* ASStackBaselinePositionedLayout.mm */; };
+		348F2DEDB9FDC4A0E1D2BBE08DCC65C2 /* ASLayoutController.h in Headers */ = {isa = PBXBuildFile; fileRef = BF4224A8EF5C527D307413C496ECFD00 /* ASLayoutController.h */; };
+		35FAE02F441BABB1626D8C55651A0DA7 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = D75FE34DBE01B75B984B0239D2E34AC7 /* DDTTYLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		37A14B89CF9493AA25ACC1393FFBF7F3 /* ASStackLayoutSpecUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 79F12FB07A97A5EFC1B6CD96AC805AAB /* ASStackLayoutSpecUtilities.h */; };
+		393B708B309D1DF3CDCEB118469EFE1A /* _ASAsyncTransactionGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D89EF110928B86E1A8C2942D34D2958 /* _ASAsyncTransactionGroup.m */; };
+		3AB342F14D7B48AD6976E1BF83881C13 /* ASImageNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2684737587BD87C176DAEC4A7DC438F1 /* ASImageNode.mm */; };
+		4076A1A366889E905FA2B8A3FF02A88E /* ASDisplayNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 544643CBC6112993ECF2D895AAE4DE00 /* ASDisplayNode.mm */; };
+		408D081B020553F7612DBF19E3EBECE2 /* ASTextNodeWordKerner.m in Sources */ = {isa = PBXBuildFile; fileRef = 20278061748703C32C766228DAD2E4E5 /* ASTextNodeWordKerner.m */; };
+		4097AFBEE639002B7E3CC09FFBB07B28 /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D0AA44C0661E3CD97A391317B2F7075 /* DDASLLogCapture.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		439663C8E2A4B24078091D1AD3910424 /* ASBatchFetching.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3338C7AC60E03757106F802064479D /* ASBatchFetching.m */; };
+		43B08AC36F2465328E072BCE3742FF74 /* _ASDisplayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C6349AB0FB9D2BBAFD9F33869F64910 /* _ASDisplayView.h */; };
+		446E6C5CE6FD03B38AD5E534B906CB62 /* ASStackLayoutable.h in Headers */ = {isa = PBXBuildFile; fileRef = 960371E061B5188C3617148327336178 /* ASStackLayoutable.h */; };
+		44B3DDB845CF92DF97E3D3B36F260A7B /* ASTableView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7CA6C7A8176A3C45B740A5B23ED9210F /* ASTableView.mm */; };
+		450283EA92270EBAE033AA39A6D4A52C /* ASCollectionNode.h in Headers */ = {isa = PBXBuildFile; fileRef = F589A26BB30960AEC2EF9C1D97A3EC36 /* ASCollectionNode.h */; };
+		459A7962939446F7CAA08CF24ECB0869 /* ASInternalHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 536D12E6C543558D11B80F7FFDD3898E /* ASInternalHelpers.h */; };
+		45CEA77E7943CB175244FEA127742CC6 /* _ASCoreAnimationExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 50695C2970252626A6A9C96802A4C92C /* _ASCoreAnimationExtras.h */; };
+		4618F1DA20F930B173080813E46F4022 /* ASAsciiArtBoxCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8A90E6FB2006A01234094C470EF261 /* ASAsciiArtBoxCreator.m */; };
+		4900CE20A24A8741CBC25DC1EBF05C57 /* DDLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE7BFA772EEB1A5E49E4BAF84754FD7 /* DDLog.h */; };
+		4A5CA04526AB2F060A62847467FBBD31 /* ASCollectionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4042EA67355B37E999FC2248820D0CFA /* ASCollectionView.h */; };
+		4A7B2E3FED65F89705446DF3BAC9E36F /* ASStackLayoutSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = B12F0864AD67D2CF12CCE720CB523F45 /* ASStackLayoutSpec.mm */; };
+		4DAEFAE15AAC5527F817220E3DFDECBC /* ASViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B2A86D841A7692BBFE0CB153FA3810 /* ASViewController.m */; };
+		5046B07EAE81236B5492A98453D5B75D /* ASDisplayNodeExtras.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7E1E72108EFA70359DAF8FEE34648E39 /* ASDisplayNodeExtras.mm */; };
+		509F0E36CB35AED88AB6BC8DD4345677 /* DDLogMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = B58EF4FA65E9E68DD4FD2B343DCFD7F4 /* DDLogMacros.h */; };
+		5146741C364BB046E262CA3975B522CD /* ASCenterLayoutSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 327D6FFD8A9E2A3A918124A26BE9A462 /* ASCenterLayoutSpec.mm */; };
+		519DF5AFE99E18F4A860BFAD418AF4C8 /* DDContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4994CF28EFD5AB4CCEC8A949A5779A9C /* DDContextFilterLogFormatter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		53DC9EB3C7A006054C9FA8AE6CD3E646 /* ASLayoutSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CA7C93D9DBB9E1248F35118C72E6990 /* ASLayoutSpec.h */; };
+		5405BCAF07C767ABE1139634F906DD7E /* ASFlowLayoutController.h in Headers */ = {isa = PBXBuildFile; fileRef = A9B0FA463A5D848DDB207589752DC5C1 /* ASFlowLayoutController.h */; };
+		542A647E2970EA8CB362B3B1FB196BA7 /* ASTextNodeCoreTextAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B52D989E3EE2A7E0BBBCE0B7EA583281 /* ASTextNodeCoreTextAdditions.h */; };
+		5731A50A920F8F120075825B40B09315 /* _ASAsyncTransactionContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 99606F56438F5CAA194E0CFB88EBB508 /* _ASAsyncTransactionContainer.h */; };
+		57A056674A14BBA750980BAF486CB1AF /* FBShimmeringView.h in Headers */ = {isa = PBXBuildFile; fileRef = F9F3B6C6A84E9F7A69BFA02AA540E873 /* FBShimmeringView.h */; };
+		5A5F498E92449D0910C247BD20741095 /* ASScrollDirection.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F377875C6722F27181B6F7E5B5D74A /* ASScrollDirection.m */; };
+		5B18E8312AB8DD8AB8B7F8F789F05B78 /* ASAbstractLayoutController.h in Headers */ = {isa = PBXBuildFile; fileRef = 09C384C8D582688C3F4B368F09ABFA5D /* ASAbstractLayoutController.h */; };
+		5BFAA0A665C1439BEF3CCA1CA917A83C /* ASOverlayLayoutSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = DBDE50857F738C7D61681B4DC4199DD4 /* ASOverlayLayoutSpec.h */; };
+		6033709416FA503B29F820094F7D089B /* ASTextNodeTextKitHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = A615A125A16F17618123CF80CB3FD9B7 /* ASTextNodeTextKitHelpers.h */; };
+		61BDA6B83FF3F6CEB15181D4C3E3B133 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B2D49E72631C64290D63EE69022395 /* AssetsLibrary.framework */; };
+		63DA22738C1F4EF7AD9F8B3CE9F92BAD /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 49E77E219D11CCEF6F530ADB71D0027C /* DDFileLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		6449491AC49D2F4008BF64B3DFD93E6F /* ASTableNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 38FC3DC82E57E23044D2943FBD6DDB71 /* ASTableNode.h */; };
+		652B21F755054FC9C641E74BC71D844F /* ASInsetLayoutSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DFC4191539B6177F1E5117FD729A930 /* ASInsetLayoutSpec.h */; };
+		6596C7BAE9232B7612CAE80D89362957 /* _ASDisplayLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C48B65B622C64B3C553341C13C175E93 /* _ASDisplayLayer.mm */; };
+		65CFFE6252B400A3CDB08016D2A4C015 /* ASTextNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C7B7CFCCA198F02C02FD6A06ABADD40 /* ASTextNode.h */; };
+		670A2664CE0968EA30212C84815E0F25 /* ASCellNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 76753A4E49EA643829DC79805C0DF010 /* ASCellNode.m */; };
+		67129ECCA5A0708E228511AA384593F3 /* ASMutableAttributedStringBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6B77E3E2DD1FC6A6BAB2F994E688D3EC /* ASMutableAttributedStringBuilder.h */; };
+		68137CD06DFEBAAFA4190AE03DE02497 /* DDLog+LOGV.h in Headers */ = {isa = PBXBuildFile; fileRef = F9D0A29B301BE5651A3D3220B84092DD /* DDLog+LOGV.h */; };
+		6AB8491F78FDBEBBC3B3BD47C8CA93DD /* ASBasicImageDownloaderInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = B6336B2DDD9C8D7B6CAE57F0E5B5DB8C /* ASBasicImageDownloaderInternal.h */; };
+		6ABC67A8E4A1C1CDF69ACD720D43B065 /* ASOverlayLayoutSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B46B5FBD9E374D4054E34D9A852AF99 /* ASOverlayLayoutSpec.mm */; };
+		6BB626ADA4D10B067AEFAF963185504B /* ASLayoutSpecUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E314A2D623945211494889402D354C5 /* ASLayoutSpecUtilities.h */; };
+		6BF9CBBF536B13562F414AEDCB3A99B8 /* ASDisplayNode+DebugTiming.h in Headers */ = {isa = PBXBuildFile; fileRef = D434582B4B194E4FC7F43E98E584ED42 /* ASDisplayNode+DebugTiming.h */; };
+		6DD026CBDE4F0B172113A8DF9B58A378 /* ASInsetLayoutSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5E1661DD1974E83B6EBE97152958D137 /* ASInsetLayoutSpec.mm */; };
+		6FF0B5C8E2720A284FFF0D732B12A93E /* ASIndexPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 2775FB918B2580479137747D820752E4 /* ASIndexPath.m */; };
+		70F0EDE4FA8FEE3F0C175CE5BA97B772 /* ASHighlightOverlayLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = FF80EC957AED01F9E112E278DCAE390E /* ASHighlightOverlayLayer.h */; };
+		70F2824C0894813C84B5144D6AB4FD9A /* ASCollectionViewFlowLayoutInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AE103B2499C98945BF97ADC31559256 /* ASCollectionViewFlowLayoutInspector.m */; };
+		72AD28A1B989A02E904D5CEE852DB35C /* ASMultiplexImageNode.h in Headers */ = {isa = PBXBuildFile; fileRef = E4C59A0AE7B499E6EDEDE24C92D541F9 /* ASMultiplexImageNode.h */; };
+		76552C16319276BD733AEBCDD76B265E /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F46C534E0A1D58DF094BC375D2079EFC /* FBShimmeringLayer.m */; };
+		76677923FE18735A8E6CF34E61A7AB4E /* NSMutableAttributedString+TextKitAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = F0A05463AB88772EA6CB45D7688A17D9 /* NSMutableAttributedString+TextKitAdditions.h */; };
+		78F70C211319117763D45D0C0F14EF67 /* ASAsciiArtBoxCreator.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BB6B7424E0105A53C1ACD974554F62B /* ASAsciiArtBoxCreator.h */; };
+		79E68E7FB25E0CC710C6C2987A2C11F6 /* ASCollectionView.mm in Sources */ = {isa = PBXBuildFile; fileRef = C74DAE1EEB49E203D33B02AD0DAAE596 /* ASCollectionView.mm */; };
+		7BA57A99B92C69C207009EEC68D87FE2 /* ASTextNodeShadower.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DBBE38F894066B9ECB4AFBA4C1EDD24 /* ASTextNodeShadower.h */; };
+		7BF73982860400AB90A8B200556E1F31 /* DDAbstractDatabaseLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AC39BE5DE0F2E3F55D31D279913A436 /* DDAbstractDatabaseLogger.h */; };
+		7C36EF7E34EFA411CE4087DBC4A82C2A /* ASDisplayNode+UIViewBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3DD2938E87757D70D82A9B7029B203CA /* ASDisplayNode+UIViewBridge.mm */; };
+		7CC0A7D4F30BE39A9C31F7AE380D0224 /* ASChangeSetDataController.h in Headers */ = {isa = PBXBuildFile; fileRef = C907E8D01B01CA1364A0D94C25BD787E /* ASChangeSetDataController.h */; };
+		7EAAAA74D6EC5F736C969D6450A56BBA /* ASLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 53BA533FD25396C2384467CA22750B2D /* ASLayout.h */; };
+		7FBF96092503C551F81B7A27A7E7B064 /* ASPhotosFrameworkImageRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 86A07D2EEAB2381C2FE13D7CAE9167FA /* ASPhotosFrameworkImageRequest.h */; };
+		8040E05F3A1F02BE42F8739D7613C80B /* ASFlowLayoutController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B575B2B46FE4A450A6CAAA2000A3F4C6 /* ASFlowLayoutController.mm */; };
+		831B09DA9793E62E1E756EAA2573C5D4 /* ASChangeSetDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DEBC15FF53B059B3BBE9493369F170 /* ASChangeSetDataController.m */; };
+		83BBB72759ADADE2EB8F761CE31B03E5 /* ASRangeHandlerRender.mm in Sources */ = {isa = PBXBuildFile; fileRef = A8975E70B20FDD97BDB83E754BC3A941 /* ASRangeHandlerRender.mm */; };
+		84779BEA13570D862AA8B20652519345 /* ASRangeHandlerPreload.mm in Sources */ = {isa = PBXBuildFile; fileRef = A2D7E68DC53E38302259EEF733B326A1 /* ASRangeHandlerPreload.mm */; };
+		84F042540D4E9B28DD9BC770AE96B0D8 /* ASTextNodeShadower.m in Sources */ = {isa = PBXBuildFile; fileRef = 1196C4FDBA1AA86694A191F467596C75 /* ASTextNodeShadower.m */; };
+		84F533067278A2F2BB26A33C7F49CE81 /* ASBatchFetching.h in Headers */ = {isa = PBXBuildFile; fileRef = 4632BA53CD989E0DFC3DA4DF0001B857 /* ASBatchFetching.h */; };
+		85F68543B6F66577CAFA203960FA7613 /* ASTextNodeTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = A7A4183E062BC8D93DEB3863DF4BFF68 /* ASTextNodeTypes.h */; };
+		8629021D3256E12F2EA91737BE6FA0AA /* ASCollectionViewLayoutController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EF70ABECAF44DB561F2AA95186A916F /* ASCollectionViewLayoutController.h */; };
+		86CD7AFD5096844D6590A3C1D5BAE8F3 /* ASImageNode+CGExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26D6CD5923E5CFD47ADF781D1EB433 /* ASImageNode+CGExtras.m */; };
+		88BB328137A81A163685391A445BD501 /* DDLegacyMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 35EC81EB8D551A3E0912C1D46BE0837B /* DDLegacyMacros.h */; };
+		8A651C9A7FBFBB05F582664599E40766 /* _AS-objc-internal.h in Headers */ = {isa = PBXBuildFile; fileRef = C15C96D6E2BA56876CEF96C71ADEB027 /* _AS-objc-internal.h */; };
+		8AEABDBA210A108D875326F544D171BE /* ASBasicImageDownloader.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAB8BF3A02807F0A69DE1A5EBE411B36 /* ASBasicImageDownloader.mm */; };
+		8B5F1F5655E6DF50D126B134BF087F59 /* _ASAsyncTransactionContainer+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 977C39C6EA435260DBB97D66D5412ADE /* _ASAsyncTransactionContainer+Private.h */; };
+		8D29BB1CD1C4A0844EE74EE780E49A44 /* DDASLLogCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 70B1A4EE00ECC4C40B57349BCD0CD568 /* DDASLLogCapture.h */; };
+		8DED85F013F68CF8A632EDBBB1357410 /* ASBatchContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 27689C68A6A9B9C5060AEB68D4DB3F4A /* ASBatchContext.h */; };
+		8FCB1CB1F1285596B562402679580226 /* ASDisplayNodeExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 32525A8CFC9568D4D6D53F039F4E67E6 /* ASDisplayNodeExtras.h */; };
+		92C18016A5D34A6D6EC115C03ED6AB35 /* _ASAsyncTransactionGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D52F837B8D2362ED132E93EB408590B /* _ASAsyncTransactionGroup.h */; };
+		9669DC5A4B01F78A51FD9C58A3409101 /* ASEditableTextNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BD2FBDCCFDBE77274DADB29AE9B7309 /* ASEditableTextNode.h */; };
+		975A1BA31046D19ECA98383E38530F6D /* DDMultiFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A964CCA86F0C02E9F11ECEE166CF79F /* DDMultiFormatter.h */; };
+		97EEEC108ED85F775C1EC61ECDF0F3C1 /* UIView+ASConvenience.h in Headers */ = {isa = PBXBuildFile; fileRef = ACDEC1778F9DC1D1694CAF0389950FAB /* UIView+ASConvenience.h */; };
+		99021929BC015D5D89EF84C2A935D1CE /* ASViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 74F71490334EA6DF10614FBA682DC310 /* ASViewController.h */; };
+		9B022A736649BC4C4C1DFA482397EE65 /* ASImageNode.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD65B394F453AB6CCB1EE3527C51499 /* ASImageNode.h */; };
+		9BC8CB35E24E26981F4505518D2E05EF /* ASRangeHandlerRender.h in Headers */ = {isa = PBXBuildFile; fileRef = C0B346F4979721F80B73A2A7A9E50395 /* ASRangeHandlerRender.h */; };
+		9BE3A7B9F8522CE9A4CF2A400B29A330 /* ASDealloc2MainObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AEC9DBA53D4AC8458E8DC735547A09E /* ASDealloc2MainObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9CA35A67D9890B372662F7966A4FD87D /* ASDisplayNode+DebugTiming.mm in Sources */ = {isa = PBXBuildFile; fileRef = AB5C8469DAF2B4B400CF2FC21A196233 /* ASDisplayNode+DebugTiming.mm */; };
+		9CF84DC16FDA936102F44A8F95CEB67E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E7E1993672513C8703A562543BDE07 /* Foundation.framework */; };
+		9D1F2E402A5A02EE5E946302CE80E295 /* UICollectionViewLayout+ASConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8FD174530657D769A3B973B006FDA9 /* UICollectionViewLayout+ASConvenience.m */; };
+		9E552E96D364E3AB57225A403F999F9C /* ASEditableTextNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 851C21B68DB16474C47C4139E0968A5B /* ASEditableTextNode.mm */; };
+		A03DCD1B4D47D6C0562341C2090CAA2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E7E1993672513C8703A562543BDE07 /* Foundation.framework */; };
+		A0D8AD35ADCFC973A095B9E0936F260F /* ASBatchContext.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7381BBF57726B52BDC484457787A78BE /* ASBatchContext.mm */; };
+		A544E564A64D4E6C94EE04467D49BB3D /* DDAssertMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 5194D65E28D7B152F562ECB5C1B74A5C /* DDAssertMacros.h */; };
+		A55E334714FBFCF56B85B5A9660DD1A4 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BCC81E6E15753D5B7D9F00129B52BF2 /* DDASLLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A572D3F42B26FB81B79EF54E74CDDFE9 /* ASRelativeSize.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1FD16FEFA85D6E879428B3301E5F42B /* ASRelativeSize.mm */; };
+		A70B31D1988605B9A198F8E1B02C1E66 /* DDDispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 74488F4206DB3C51CACC954BF85B6DF6 /* DDDispatchQueueLogFormatter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		A79D47AD2FAA2CC8A201E8A7DDF61C78 /* ASStackUnpositionedLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0809C585779093C3CDDFB823968CB8D9 /* ASStackUnpositionedLayout.h */; };
+		A8E00935CFEDF3044F87946160FC6CE9 /* ASNetworkImageNode.h in Headers */ = {isa = PBXBuildFile; fileRef = B4798A7061FB93A19CA0F22528E03435 /* ASNetworkImageNode.h */; };
+		A905D175F2CFE12C170E88373C2E4767 /* UICollectionViewLayout+ASConvenience.h in Headers */ = {isa = PBXBuildFile; fileRef = 174892252ED94B1BC117E165BB8297AF /* UICollectionViewLayout+ASConvenience.h */; };
+		ABE1BD748635542D6102075FFAD99BFB /* ASDisplayNode.h in Headers */ = {isa = PBXBuildFile; fileRef = B25130139AAF20F97B7ECB555D38E47D /* ASDisplayNode.h */; };
+		AC5172512569C01A61C1590E231BD48F /* ASBasicImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7171B94E148BEEB4C89D62741689896E /* ASBasicImageDownloader.h */; };
+		AD8C9ADEAF220AF5E6C6369180670B13 /* CocoaLumberjack-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 503C9031AF41BC8A40A9CFA1F017F0BE /* CocoaLumberjack-dummy.m */; };
+		AE8F22A088772803BB39928E4A53741E /* ASDimension.mm in Sources */ = {isa = PBXBuildFile; fileRef = 26121B8F062E169D258E77E1915EC361 /* ASDimension.mm */; };
+		B08CE59EE3108482D26665DB074883FD /* ASDisplayNode+Subclasses.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A75E96F4068CCA55A3916C2130FDC69 /* ASDisplayNode+Subclasses.h */; };
+		B2B0B2A6ECD0E5AF5D10F8B419051F6F /* AsyncDisplayKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 54259929E7A23CECF1A4DCA80EB5837C /* AsyncDisplayKit-dummy.m */; };
+		B4DD5C22D757D47AA52F47FE4D20BBF2 /* ASCellNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C5896A6483CF939B3159982673CF3C4 /* ASCellNode.h */; };
+		B738B8C47AEDC8DD7F4288EFE5E07923 /* ASBackgroundLayoutSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 78BCCC5C018F41E17E4EBCA06525BCA8 /* ASBackgroundLayoutSpec.h */; };
+		B8973981ACAAB4CE0B6687DA1F8793C3 /* ASBackgroundLayoutSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = CFD5E6069B43B4B76D82D6C926DBA5E1 /* ASBackgroundLayoutSpec.mm */; };
+		B9716C67D51D50A833BF8011799FE048 /* ASScrollNode.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F6A83922C5822FD84F9C1E2AE1B115 /* ASScrollNode.h */; };
+		B993F29D88E6584AD439B4513399897C /* ASButtonNode.h in Headers */ = {isa = PBXBuildFile; fileRef = E7A1F40C654441E0919D9691154C4171 /* ASButtonNode.h */; };
+		B9B0D41685CB92D0885241A68C93F72F /* ASDataController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB22F417A813EFC5484ACCE1275023C5 /* ASDataController.mm */; };
+		BC0D3303C4D9AAA0674216B105C9D6B0 /* ASTextNodeRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = A44F1CCF4B2CDBE0716F2BA3C643ACC4 /* ASTextNodeRenderer.h */; };
+		BCF1B7D68F26060356D2E12C685DDE8C /* ASAbstractLayoutController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1543CCA97D89B035A8A142E8BD064CA2 /* ASAbstractLayoutController.mm */; };
+		BD838EA13D3F792AC346638D3BD7066D /* AsyncDisplayKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7350CA42611FC58E4ADEC6F602FF4E30 /* AsyncDisplayKit.h */; };
+		BE2B7C060DBDF22CE988B5981FB4CDF7 /* _ASAsyncTransaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CEF7BB3DCE49016F4511C9E2B6648ED /* _ASAsyncTransaction.h */; };
+		C269B1DF979E46FCB59EBF463B484CED /* DDMultiFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B5020B24DDDBBA5BFE2A9AB3549046 /* DDMultiFormatter.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		C298BFF7C2EE6ACF3D3E6D4D5FC81603 /* ASLayoutSpec.mm in Sources */ = {isa = PBXBuildFile; fileRef = DED21F3019D0CC3640ECD8FBC676ED86 /* ASLayoutSpec.mm */; };
+		C2C892DB3508BF61CE5C2E63F9CF1AD0 /* _ASPendingState.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1B736E05B62E6E1F1DAB4BAAD690 /* _ASPendingState.m */; };
+		C3998C6621774943E41C1FD00A4A2855 /* DDASLLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 6BF01659506AF497D5A005104B525CFF /* DDASLLogger.h */; };
+		C59145236C594A890E71C25F26A1483F /* ASTableNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 53075307EBDE999F57EC42933AE8AFD2 /* ASTableNode.m */; };
+		C6B7928E755301D590591566E72D3C3B /* _ASCoreAnimationExtras.mm in Sources */ = {isa = PBXBuildFile; fileRef = C94E516609346CDC999B6C2B1E7CE81F /* _ASCoreAnimationExtras.mm */; };
+		C9AF6CE94BECEB517C723DF4FD4D6635 /* ASButtonNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 90580B567530D88CDD7388D1F856E944 /* ASButtonNode.mm */; };
+		C9E7D88C73092629B72E99EF576CDA09 /* ASTableViewProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 74B6C7697CBF73A456F528BF2C77D7B7 /* ASTableViewProtocols.h */; };
+		CB2B056E55F09E9B19033D5A9D2833A3 /* _ASScopeTimer.h in Headers */ = {isa = PBXBuildFile; fileRef = 41B3FEC25B555A71261E9BEB8053D336 /* _ASScopeTimer.h */; };
+		CC32FC48334DCCF91B3467DBBF1691F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E7E1993672513C8703A562543BDE07 /* Foundation.framework */; };
+		CC41679D3EEE3EB5576AF81D5126AFE2 /* ASStaticLayoutSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DB0530C41EC6C5C6BA11ADFE30DCB35 /* ASStaticLayoutSpec.h */; };
+		CEB87455566D56516794B0ADB29C0AC7 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6700AC08391CA2EBE6EB3FB55E5FA621 /* DDLog.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		CF4C05627566E74827E3E25D8F7DEE40 /* ASTextNodeTextKitHelpers.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF1B91CE33BFE5BF28636F2C0828D5E9 /* ASTextNodeTextKitHelpers.mm */; };
+		D134B77932C9DD7CD9639E98919F8E41 /* ASDisplayNodeExtraIvars.h in Headers */ = {isa = PBXBuildFile; fileRef = 088885DE92ECE17DA54B5538677121A0 /* ASDisplayNodeExtraIvars.h */; };
+		D1DD9B11B8F38F59B789693F159CE449 /* ASBaseDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 225345B6F872708F3D7ECD871BFB5557 /* ASBaseDefines.h */; };
+		D42624275385C6933C56F3CAEF4BB98B /* ASRangeHandlerPreload.h in Headers */ = {isa = PBXBuildFile; fileRef = F232E0F9625642D51AD797BF1F54E056 /* ASRangeHandlerPreload.h */; };
+		D4D6CBCE489A79F5D2265FBC92961FD3 /* ASCollectionDataController.h in Headers */ = {isa = PBXBuildFile; fileRef = 143B299B3C915EB62671AC35FF35DFB0 /* ASCollectionDataController.h */; };
+		D555C968E4742FDA7F161B115BFC9832 /* ASAvailability.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D05EE7EBE4B8B34C76A78660D2AD407 /* ASAvailability.h */; };
+		D58BA934ADD0C8F918718215A9F0BFBA /* ASMultidimensionalArrayUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = B394F7AB4C0C62DFFB25D07C4483AC4C /* ASMultidimensionalArrayUtils.h */; };
+		D65636E990DD69E494BA1B1F390AF746 /* ASAssert.h in Headers */ = {isa = PBXBuildFile; fileRef = 11364E04C165B25281B3918CEF8DF164 /* ASAssert.h */; };
+		D6688821C6DEB32E39DA65D8DD8BBC1C /* ASImageProtocols.h in Headers */ = {isa = PBXBuildFile; fileRef = 54ECDCC1DF23A57484FC1C8277824A31 /* ASImageProtocols.h */; };
+		D917ED1ADEE0C566909F8AF18AD5EBBC /* ASTextNodeWordKerner.h in Headers */ = {isa = PBXBuildFile; fileRef = 38F6599E5E5E650F9E3B5D0C26D5640E /* ASTextNodeWordKerner.h */; };
+		DD3680A2DE7515E8A0D904A4FA9C2C66 /* ASDimension.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A2CE5BC65AB17C9A68BFC77F562C6CB /* ASDimension.h */; };
+		DE420BD490D5CBE8000D484B70E72385 /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FFFD0B780D39BE26525ECB9B6126DDF /* FBShimmeringView.m */; };
+		DE739FD0A17719E80E6176343AE0496C /* ASTextNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4E5E576237072F8F5BE02CC6957446E2 /* ASTextNode.mm */; };
+		E1BE6219B84D94B9C6370EF8E0CD2414 /* ASControlNode+Subclasses.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DD8ABB7472D89F53C626AD488EE3564 /* ASControlNode+Subclasses.h */; };
+		E200D63D01E02AD5EB73D4409BC2B44E /* ASCollectionViewFlowLayoutInspector.h in Headers */ = {isa = PBXBuildFile; fileRef = A66DBF7142DBA886D7DA8F5B0F789CE1 /* ASCollectionViewFlowLayoutInspector.h */; };
+		E2DCC0979D8884838E85AAAA32DA44BD /* ASThread.h in Headers */ = {isa = PBXBuildFile; fileRef = A9C2E17EF9F2B152E41791C840DDA012 /* ASThread.h */; };
+		E4983742C4A34ABFF47AC10F8298A9D7 /* ASDisplayNode+AsyncDisplay.mm in Sources */ = {isa = PBXBuildFile; fileRef = EDFD44562D5598572667D2AEA4833A9F /* ASDisplayNode+AsyncDisplay.mm */; };
+		E54D34AA8C7A43E9F414FE81F9A700EC /* DDFileLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 33F889CADB2318F8864A537B8FB26BFF /* DDFileLogger.h */; };
+		E6F2B0EB4959DDEC5EC118BE9B265D84 /* ASLayoutable.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D05A399161D03B3E3A8ACDB22A2CB4 /* ASLayoutable.h */; };
+		E7E374D1F5831016DB58D54285FB2DF2 /* ASTableView.h in Headers */ = {isa = PBXBuildFile; fileRef = D2106A810759D784747371C03A8CA46E /* ASTableView.h */; };
+		E9B8AC84AEFC52FC208183CDD019366C /* ASMultiplexImageNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5712E15DB878B4C658F25BE7056C3F4F /* ASMultiplexImageNode.mm */; };
+		EA188CA630D078AAB6FA31BBEB947B89 /* ASRangeController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 389700AED0DCE140CB79337962ED60C8 /* ASRangeController.mm */; };
+		EB5160F12DE8FE49421275299B632B10 /* ASStackPositionedLayout.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DC6A4EA603F70A6111A7E40F19B59B6 /* ASStackPositionedLayout.mm */; };
+		EBCD71CE75E0D78153415C22AB681508 /* ASHighlightOverlayLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 43439795D0BC8B0976FD8C0C503D5827 /* ASHighlightOverlayLayer.mm */; };
+		EBFD19EE0295308E4A6059B328049944 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E7E1993672513C8703A562543BDE07 /* Foundation.framework */; };
+		ECE52C2EC8E5585017A830C268E10C0F /* ASCollectionDataController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9659673C6AD2F615FDFC218E76563A6B /* ASCollectionDataController.mm */; };
+		ED008C2E559DFB7BE01997FDDC9276ED /* ASRangeController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F3D3E56E44008B1DF7EB9F216D05E2A /* ASRangeController.h */; };
+		EFD36ADB33714F7FB8A0A05C6EE1D853 /* ASImageNode+CGExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A67F53220536575F6C96A526530F287 /* ASImageNode+CGExtras.h */; };
+		F1AE35FD4F728CF4ACF32A1891920CB1 /* FBShimmering.h in Headers */ = {isa = PBXBuildFile; fileRef = 2734BB4FD79D47741F6D196FD0CB6464 /* FBShimmering.h */; };
+		F1C6652F0C955600E4AD9F1EC4A50CE0 /* ASStackPositionedLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = EA1DE4747B623D7B3E976587258FEDC7 /* ASStackPositionedLayout.h */; };
+		F224519BB1742A5DDDCAD5D2F65EC074 /* ASInternalHelpers.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4FCF294311BC62E66E516E9F75F65C3 /* ASInternalHelpers.mm */; };
+		F293A29F7BA3CBAA34634BB0FEC597E9 /* ASLayoutOptions.mm in Sources */ = {isa = PBXBuildFile; fileRef = 711ECB198CDC13265230EC80AE51E0D2 /* ASLayoutOptions.mm */; };
+		F4ED2C712A7593D6A9ED9133261A9E94 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 466B75C4CDF1C70FB772B03ECD131461 /* DDAbstractDatabaseLogger.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F5363FA9CAC87FB751CAF704BFC9BB26 /* ASTextNodeCoreTextAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E6B55E0CC6C72D4DC73C23596E72E7 /* ASTextNodeCoreTextAdditions.m */; };
+		F6DB9B4918E88C68750C3AEC150EC4D7 /* CocoaLumberjack.h in Headers */ = {isa = PBXBuildFile; fileRef = BAA1FFADAD4E031377765C46C85FBDC7 /* CocoaLumberjack.h */; };
+		F7B24BE1CAB8C4BB751E1394E3DE382C /* ASStaticLayoutable.h in Headers */ = {isa = PBXBuildFile; fileRef = 379C35E0121751774F852D0ED33FCEFD /* ASStaticLayoutable.h */; };
+		F7E664520AC9F0E0A933916177644101 /* ASTableViewInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AF9F98CB5E27E19E7EDC4D40D016C28 /* ASTableViewInternal.h */; };
+		F86CDC1F795A459E82E248829F51E5CE /* ASRatioLayoutSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 98B9A77305B847E5D0926528C8BA1D07 /* ASRatioLayoutSpec.h */; };
+		F9DB7DA1970160957C544EAC689A09C3 /* ASNetworkImageNode.mm in Sources */ = {isa = PBXBuildFile; fileRef = C80558E3A2BA4C62397AC378C7F876CA /* ASNetworkImageNode.mm */; };
+		F9F64688FC26DC38088A1391273D90F1 /* _ASHierarchyChangeSet.h in Headers */ = {isa = PBXBuildFile; fileRef = AE386AF962F5A550C255169853AE5682 /* _ASHierarchyChangeSet.h */; };
+		FB4C548DAD07BD48F9824261750CF2C5 /* DDContextFilterLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = 16DD4EE00F04734A6A18190C066F619C /* DDContextFilterLogFormatter.h */; };
+		FBA85CA27950C248D5C2FEC5074ACFA2 /* iCarousel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F28D4133205777F6DFB8E375D90085D3 /* iCarousel-dummy.m */; };
+		FE0D3581A621D0E2D7A2FE338199B2D3 /* ASScrollDirection.h in Headers */ = {isa = PBXBuildFile; fileRef = 8128AAF25DD9295C49B80397FE7E10BE /* ASScrollDirection.h */; };
+		FE736E46AE7A5916BAA6F6620792F3C2 /* ASLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 159850626872EF03C0E7C0CD5B2BDBEC /* ASLog.h */; };
+		FE91997BCE848C7884C42FB93A5E5E09 /* ASStackLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = EBF1FE4023672097B19BEF86066648DA /* ASStackLayoutDefines.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		17E596C246B674DFB927E8D2B46D876D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9494390523250106847516AB47E5F9FF;
+			remoteInfo = iCarousel;
+		};
+		1A61E26F0D480A452BAFA4205B36F52B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C66DF613C7835C7C877A86FD000BDD6;
+			remoteInfo = Shimmer;
+		};
+		3A089D24EAB88851CC7FEE42E13E08F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C04FBC21C2F2B7D044A9A1EE53D4A49;
+			remoteInfo = AsyncDisplayKit;
+		};
+		A127D9F752B47E38A3D4BF86225CE97D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 624D42FCE68D4C0E397DDFF832E6280F;
+			remoteInfo = CocoaLumberjack;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00B529D77E7734F648FDACD3AE1E7CF9 /* libShimmer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShimmer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		01AA3AE45B340EDE57563DCB027ECA63 /* ASSentinel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASSentinel.m; path = AsyncDisplayKit/Private/ASSentinel.m; sourceTree = "<group>"; };
+		048A559DBD51819CCF00EFC28DB31F23 /* ASScrollNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASScrollNode.m; path = AsyncDisplayKit/ASScrollNode.m; sourceTree = "<group>"; };
+		07D6CDF5773E20726F02F2003AAAF449 /* Shimmer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Shimmer-dummy.m"; sourceTree = "<group>"; };
+		0809C585779093C3CDDFB823968CB8D9 /* ASStackUnpositionedLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackUnpositionedLayout.h; path = AsyncDisplayKit/Private/ASStackUnpositionedLayout.h; sourceTree = "<group>"; };
+		088885DE92ECE17DA54B5538677121A0 /* ASDisplayNodeExtraIvars.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDisplayNodeExtraIvars.h; path = Base/ASDisplayNodeExtraIvars.h; sourceTree = "<group>"; };
+		089FF3EFFE148299F6C16BE173F082E9 /* ASLayoutOptionsPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutOptionsPrivate.h; path = AsyncDisplayKit/Private/ASLayoutOptionsPrivate.h; sourceTree = "<group>"; };
+		09C384C8D582688C3F4B368F09ABFA5D /* ASAbstractLayoutController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASAbstractLayoutController.h; path = AsyncDisplayKit/Details/ASAbstractLayoutController.h; sourceTree = "<group>"; };
+		0A75E96F4068CCA55A3916C2130FDC69 /* ASDisplayNode+Subclasses.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASDisplayNode+Subclasses.h"; path = "AsyncDisplayKit/ASDisplayNode+Subclasses.h"; sourceTree = "<group>"; };
+		0AE7BFA772EEB1A5E49E4BAF84754FD7 /* DDLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLog.h; path = Classes/DDLog.h; sourceTree = "<group>"; };
+		0B3338C7AC60E03757106F802064479D /* ASBatchFetching.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASBatchFetching.m; path = AsyncDisplayKit/Private/ASBatchFetching.m; sourceTree = "<group>"; };
+		0C6349AB0FB9D2BBAFD9F33869F64910 /* _ASDisplayView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASDisplayView.h; path = AsyncDisplayKit/Details/_ASDisplayView.h; sourceTree = "<group>"; };
+		0D0AA44C0661E3CD97A391317B2F7075 /* DDASLLogCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogCapture.m; path = Classes/DDASLLogCapture.m; sourceTree = "<group>"; };
+		10076B337DDBC0A14E7CDAC5CCEB1B85 /* ASDealloc2MainObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDealloc2MainObject.h; path = AsyncDisplayKit/Details/ASDealloc2MainObject.h; sourceTree = "<group>"; };
+		11364E04C165B25281B3918CEF8DF164 /* ASAssert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASAssert.h; path = Base/ASAssert.h; sourceTree = "<group>"; };
+		1196C4FDBA1AA86694A191F467596C75 /* ASTextNodeShadower.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASTextNodeShadower.m; path = AsyncDisplayKit/Details/ASTextNodeShadower.m; sourceTree = "<group>"; };
+		11F377875C6722F27181B6F7E5B5D74A /* ASScrollDirection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASScrollDirection.m; path = AsyncDisplayKit/Details/ASScrollDirection.m; sourceTree = "<group>"; };
+		143B299B3C915EB62671AC35FF35DFB0 /* ASCollectionDataController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionDataController.h; path = AsyncDisplayKit/Details/ASCollectionDataController.h; sourceTree = "<group>"; };
+		14B4EE601E4EA2346FD7772E8152ED65 /* ASCenterLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCenterLayoutSpec.h; path = AsyncDisplayKit/Layout/ASCenterLayoutSpec.h; sourceTree = "<group>"; };
+		1543CCA97D89B035A8A142E8BD064CA2 /* ASAbstractLayoutController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASAbstractLayoutController.mm; path = AsyncDisplayKit/Details/ASAbstractLayoutController.mm; sourceTree = "<group>"; };
+		159850626872EF03C0E7C0CD5B2BDBEC /* ASLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLog.h; path = Base/ASLog.h; sourceTree = "<group>"; };
+		15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		16DD4EE00F04734A6A18190C066F619C /* DDContextFilterLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDContextFilterLogFormatter.h; path = Classes/Extensions/DDContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		171C52862B1B0F69E56433C0047BD11F /* iCarousel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "iCarousel-Private.xcconfig"; sourceTree = "<group>"; };
+		174892252ED94B1BC117E165BB8297AF /* UICollectionViewLayout+ASConvenience.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UICollectionViewLayout+ASConvenience.h"; path = "AsyncDisplayKit/Details/UICollectionViewLayout+ASConvenience.h"; sourceTree = "<group>"; };
+		17DC9D3C4D9684F66B2D8CA97E8E14A8 /* iCarousel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = iCarousel.m; path = iCarousel/iCarousel.m; sourceTree = "<group>"; };
+		1A67F53220536575F6C96A526530F287 /* ASImageNode+CGExtras.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASImageNode+CGExtras.h"; path = "AsyncDisplayKit/Private/ASImageNode+CGExtras.h"; sourceTree = "<group>"; };
+		1B801B683F25BDA1D65A856BA22D6EEE /* ASLayoutOptionsPrivate.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASLayoutOptionsPrivate.mm; path = AsyncDisplayKit/Layout/ASLayoutOptionsPrivate.mm; sourceTree = "<group>"; };
+		1B9E20229CB730E9BEFBCDED783833C0 /* CocoaLumberjack-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CocoaLumberjack-Private.xcconfig"; sourceTree = "<group>"; };
+		1C8A90E6FB2006A01234094C470EF261 /* ASAsciiArtBoxCreator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASAsciiArtBoxCreator.m; path = AsyncDisplayKit/Layout/ASAsciiArtBoxCreator.m; sourceTree = "<group>"; };
+		1DC6A4EA603F70A6111A7E40F19B59B6 /* ASStackPositionedLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASStackPositionedLayout.mm; path = AsyncDisplayKit/Private/ASStackPositionedLayout.mm; sourceTree = "<group>"; };
+		1E314A2D623945211494889402D354C5 /* ASLayoutSpecUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutSpecUtilities.h; path = AsyncDisplayKit/Private/ASLayoutSpecUtilities.h; sourceTree = "<group>"; };
+		20278061748703C32C766228DAD2E4E5 /* ASTextNodeWordKerner.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASTextNodeWordKerner.m; path = AsyncDisplayKit/Details/ASTextNodeWordKerner.m; sourceTree = "<group>"; };
+		225345B6F872708F3D7ECD871BFB5557 /* ASBaseDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASBaseDefines.h; path = Base/ASBaseDefines.h; sourceTree = "<group>"; };
+		26121B8F062E169D258E77E1915EC361 /* ASDimension.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASDimension.mm; path = AsyncDisplayKit/Layout/ASDimension.mm; sourceTree = "<group>"; };
+		2684737587BD87C176DAEC4A7DC438F1 /* ASImageNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASImageNode.mm; path = AsyncDisplayKit/ASImageNode.mm; sourceTree = "<group>"; };
+		2734BB4FD79D47741F6D196FD0CB6464 /* FBShimmering.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBShimmering.h; path = FBShimmering/FBShimmering.h; sourceTree = "<group>"; };
+		27689C68A6A9B9C5060AEB68D4DB3F4A /* ASBatchContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASBatchContext.h; path = AsyncDisplayKit/Details/ASBatchContext.h; sourceTree = "<group>"; };
+		2775FB918B2580479137747D820752E4 /* ASIndexPath.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASIndexPath.m; path = AsyncDisplayKit/Details/ASIndexPath.m; sourceTree = "<group>"; };
+		27B365064ACA048257C3B896228E3B34 /* ASStaticLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASStaticLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASStaticLayoutSpec.mm; sourceTree = "<group>"; };
+		27E36B478A9C50B090C07F452CF93192 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		290D211EAC4143FA46285710ED12FB27 /* CGRect+ASConvenience.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CGRect+ASConvenience.h"; path = "AsyncDisplayKit/Details/CGRect+ASConvenience.h"; sourceTree = "<group>"; };
+		29103B29D940CA80200442ACAEC27176 /* ASMutableAttributedStringBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASMutableAttributedStringBuilder.m; path = AsyncDisplayKit/Details/ASMutableAttributedStringBuilder.m; sourceTree = "<group>"; };
+		2BFB228813A5DCE45AF30CD34443C35D /* iCarousel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iCarousel.h; path = iCarousel/iCarousel.h; sourceTree = "<group>"; };
+		2C7B7CFCCA198F02C02FD6A06ABADD40 /* ASTextNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextNode.h; path = AsyncDisplayKit/ASTextNode.h; sourceTree = "<group>"; };
+		2C8F6B466FF9A65D86623716423C11A0 /* libiCarousel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiCarousel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		32015C6D009EF63F9EAB30FB6A65DEBB /* _ASAsyncTransaction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _ASAsyncTransaction.m; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransaction.m; sourceTree = "<group>"; };
+		32525A8CFC9568D4D6D53F039F4E67E6 /* ASDisplayNodeExtras.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDisplayNodeExtras.h; path = AsyncDisplayKit/ASDisplayNodeExtras.h; sourceTree = "<group>"; };
+		327D6FFD8A9E2A3A918124A26BE9A462 /* ASCenterLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASCenterLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASCenterLayoutSpec.mm; sourceTree = "<group>"; };
+		33F889CADB2318F8864A537B8FB26BFF /* DDFileLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDFileLogger.h; path = Classes/DDFileLogger.h; sourceTree = "<group>"; };
+		35EC81EB8D551A3E0912C1D46BE0837B /* DDLegacyMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLegacyMacros.h; path = Classes/DDLegacyMacros.h; sourceTree = "<group>"; };
+		379C35E0121751774F852D0ED33FCEFD /* ASStaticLayoutable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStaticLayoutable.h; path = AsyncDisplayKit/Layout/ASStaticLayoutable.h; sourceTree = "<group>"; };
+		37D05A399161D03B3E3A8ACDB22A2CB4 /* ASLayoutable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutable.h; path = AsyncDisplayKit/Layout/ASLayoutable.h; sourceTree = "<group>"; };
+		389700AED0DCE140CB79337962ED60C8 /* ASRangeController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASRangeController.mm; path = AsyncDisplayKit/Details/ASRangeController.mm; sourceTree = "<group>"; };
+		38F6599E5E5E650F9E3B5D0C26D5640E /* ASTextNodeWordKerner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextNodeWordKerner.h; path = AsyncDisplayKit/Details/ASTextNodeWordKerner.h; sourceTree = "<group>"; };
+		38FC3DC82E57E23044D2943FBD6DDB71 /* ASTableNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTableNode.h; path = AsyncDisplayKit/ASTableNode.h; sourceTree = "<group>"; };
+		3B46B5FBD9E374D4054E34D9A852AF99 /* ASOverlayLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASOverlayLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASOverlayLayoutSpec.mm; sourceTree = "<group>"; };
+		3DD2938E87757D70D82A9B7029B203CA /* ASDisplayNode+UIViewBridge.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "ASDisplayNode+UIViewBridge.mm"; path = "AsyncDisplayKit/Private/ASDisplayNode+UIViewBridge.mm"; sourceTree = "<group>"; };
+		4042EA67355B37E999FC2248820D0CFA /* ASCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionView.h; path = AsyncDisplayKit/ASCollectionView.h; sourceTree = "<group>"; };
+		40C186D55388205DA670CCBA8FD439DF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		41B3FEC25B555A71261E9BEB8053D336 /* _ASScopeTimer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASScopeTimer.h; path = AsyncDisplayKit/Private/_ASScopeTimer.h; sourceTree = "<group>"; };
+		43439795D0BC8B0976FD8C0C503D5827 /* ASHighlightOverlayLayer.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASHighlightOverlayLayer.mm; path = AsyncDisplayKit/Details/ASHighlightOverlayLayer.mm; sourceTree = "<group>"; };
+		4632BA53CD989E0DFC3DA4DF0001B857 /* ASBatchFetching.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASBatchFetching.h; path = AsyncDisplayKit/Private/ASBatchFetching.h; sourceTree = "<group>"; };
+		466B75C4CDF1C70FB772B03ECD131461 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDAbstractDatabaseLogger.m; path = Classes/DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		49181823985250D3FB3A77D7FBC1BFE4 /* ASRelativeSize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASRelativeSize.h; path = AsyncDisplayKit/Layout/ASRelativeSize.h; sourceTree = "<group>"; };
+		4994CF28EFD5AB4CCEC8A949A5779A9C /* DDContextFilterLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDContextFilterLogFormatter.m; path = Classes/Extensions/DDContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		49C81A0823171A360574460546DDBE6E /* ASDataController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDataController.h; path = AsyncDisplayKit/Details/ASDataController.h; sourceTree = "<group>"; };
+		49E77E219D11CCEF6F530ADB71D0027C /* DDFileLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDFileLogger.m; path = Classes/DDFileLogger.m; sourceTree = "<group>"; };
+		4AC39BE5DE0F2E3F55D31D279913A436 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAbstractDatabaseLogger.h; path = Classes/DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		4AE103B2499C98945BF97ADC31559256 /* ASCollectionViewFlowLayoutInspector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASCollectionViewFlowLayoutInspector.m; path = AsyncDisplayKit/Details/ASCollectionViewFlowLayoutInspector.m; sourceTree = "<group>"; };
+		4BCC81E6E15753D5B7D9F00129B52BF2 /* DDASLLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDASLLogger.m; path = Classes/DDASLLogger.m; sourceTree = "<group>"; };
+		4E5E576237072F8F5BE02CC6957446E2 /* ASTextNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTextNode.mm; path = AsyncDisplayKit/ASTextNode.mm; sourceTree = "<group>"; };
+		4FE98C4903794043C69AD81572F2F69A /* ASLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASLayout.mm; path = AsyncDisplayKit/Layout/ASLayout.mm; sourceTree = "<group>"; };
+		503C9031AF41BC8A40A9CFA1F017F0BE /* CocoaLumberjack-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CocoaLumberjack-dummy.m"; sourceTree = "<group>"; };
+		50695C2970252626A6A9C96802A4C92C /* _ASCoreAnimationExtras.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASCoreAnimationExtras.h; path = AsyncDisplayKit/Private/_ASCoreAnimationExtras.h; sourceTree = "<group>"; };
+		5194D65E28D7B152F562ECB5C1B74A5C /* DDAssertMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDAssertMacros.h; path = Classes/DDAssertMacros.h; sourceTree = "<group>"; };
+		52E7C630D73DD7D7D4CB36B3DA88E467 /* CocoaLumberjack.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CocoaLumberjack.xcconfig; sourceTree = "<group>"; };
+		53075307EBDE999F57EC42933AE8AFD2 /* ASTableNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASTableNode.m; path = AsyncDisplayKit/ASTableNode.m; sourceTree = "<group>"; };
+		531745E17BA339A68527169C8012F3C3 /* _ASDisplayView.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = _ASDisplayView.mm; path = AsyncDisplayKit/Details/_ASDisplayView.mm; sourceTree = "<group>"; };
+		536D12E6C543558D11B80F7FFDD3898E /* ASInternalHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASInternalHelpers.h; path = AsyncDisplayKit/Private/ASInternalHelpers.h; sourceTree = "<group>"; };
+		53BA533FD25396C2384467CA22750B2D /* ASLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayout.h; path = AsyncDisplayKit/Layout/ASLayout.h; sourceTree = "<group>"; };
+		54259929E7A23CECF1A4DCA80EB5837C /* AsyncDisplayKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AsyncDisplayKit-dummy.m"; sourceTree = "<group>"; };
+		544643CBC6112993ECF2D895AAE4DE00 /* ASDisplayNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASDisplayNode.mm; path = AsyncDisplayKit/ASDisplayNode.mm; sourceTree = "<group>"; };
+		54ECDCC1DF23A57484FC1C8277824A31 /* ASImageProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASImageProtocols.h; path = AsyncDisplayKit/Details/ASImageProtocols.h; sourceTree = "<group>"; };
+		55CC561B4D1D4BE2017DAD72AECC2C65 /* _ASPendingState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASPendingState.h; path = AsyncDisplayKit/Private/_ASPendingState.h; sourceTree = "<group>"; };
+		5712E15DB878B4C658F25BE7056C3F4F /* ASMultiplexImageNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASMultiplexImageNode.mm; path = AsyncDisplayKit/ASMultiplexImageNode.mm; sourceTree = "<group>"; };
+		5A2CE5BC65AB17C9A68BFC77F562C6CB /* ASDimension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDimension.h; path = AsyncDisplayKit/Layout/ASDimension.h; sourceTree = "<group>"; };
+		5CEF7BB3DCE49016F4511C9E2B6648ED /* _ASAsyncTransaction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASAsyncTransaction.h; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransaction.h; sourceTree = "<group>"; };
+		5D89EF110928B86E1A8C2942D34D2958 /* _ASAsyncTransactionGroup.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _ASAsyncTransactionGroup.m; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransactionGroup.m; sourceTree = "<group>"; };
+		5D9964CF6C2CDB86758F0362D9FB4065 /* ASControlNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASControlNode.h; path = AsyncDisplayKit/ASControlNode.h; sourceTree = "<group>"; };
+		5DBBE38F894066B9ECB4AFBA4C1EDD24 /* ASTextNodeShadower.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextNodeShadower.h; path = AsyncDisplayKit/Details/ASTextNodeShadower.h; sourceTree = "<group>"; };
+		5E1661DD1974E83B6EBE97152958D137 /* ASInsetLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASInsetLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASInsetLayoutSpec.mm; sourceTree = "<group>"; };
+		60E8334F50852B94B2BEF3FE52AAC5CD /* AsyncDisplayKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AsyncDisplayKit.xcconfig; sourceTree = "<group>"; };
+		641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		6700AC08391CA2EBE6EB3FB55E5FA621 /* DDLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDLog.m; path = Classes/DDLog.m; sourceTree = "<group>"; };
+		6AF9F98CB5E27E19E7EDC4D40D016C28 /* ASTableViewInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTableViewInternal.h; path = AsyncDisplayKit/ASTableViewInternal.h; sourceTree = "<group>"; };
+		6B77E3E2DD1FC6A6BAB2F994E688D3EC /* ASMutableAttributedStringBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASMutableAttributedStringBuilder.h; path = AsyncDisplayKit/Details/ASMutableAttributedStringBuilder.h; sourceTree = "<group>"; };
+		6BF01659506AF497D5A005104B525CFF /* DDASLLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogger.h; path = Classes/DDASLLogger.h; sourceTree = "<group>"; };
+		6C5896A6483CF939B3159982673CF3C4 /* ASCellNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCellNode.h; path = AsyncDisplayKit/ASCellNode.h; sourceTree = "<group>"; };
+		6E1E29B315DEAC8EEF6007DB0A9E909C /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		6F807FC27F2C0A6463EF318322B7528A /* _ASAsyncTransactionContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _ASAsyncTransactionContainer.m; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransactionContainer.m; sourceTree = "<group>"; };
+		70B1A4EE00ECC4C40B57349BCD0CD568 /* DDASLLogCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDASLLogCapture.h; path = Classes/DDASLLogCapture.h; sourceTree = "<group>"; };
+		711ECB198CDC13265230EC80AE51E0D2 /* ASLayoutOptions.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASLayoutOptions.mm; path = AsyncDisplayKit/Layout/ASLayoutOptions.mm; sourceTree = "<group>"; };
+		7171B94E148BEEB4C89D62741689896E /* ASBasicImageDownloader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASBasicImageDownloader.h; path = AsyncDisplayKit/Details/ASBasicImageDownloader.h; sourceTree = "<group>"; };
+		7350CA42611FC58E4ADEC6F602FF4E30 /* AsyncDisplayKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AsyncDisplayKit.h; path = AsyncDisplayKit/AsyncDisplayKit.h; sourceTree = "<group>"; };
+		7381BBF57726B52BDC484457787A78BE /* ASBatchContext.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASBatchContext.mm; path = AsyncDisplayKit/Details/ASBatchContext.mm; sourceTree = "<group>"; };
+		74488F4206DB3C51CACC954BF85B6DF6 /* DDDispatchQueueLogFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDDispatchQueueLogFormatter.m; path = Classes/Extensions/DDDispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		74B6C7697CBF73A456F528BF2C77D7B7 /* ASTableViewProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTableViewProtocols.h; path = AsyncDisplayKit/ASTableViewProtocols.h; sourceTree = "<group>"; };
+		74B77EC42F7236D362EEDACC511A1302 /* ASDisplayNodeInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDisplayNodeInternal.h; path = AsyncDisplayKit/Private/ASDisplayNodeInternal.h; sourceTree = "<group>"; };
+		74F71490334EA6DF10614FBA682DC310 /* ASViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASViewController.h; path = AsyncDisplayKit/ASViewController.h; sourceTree = "<group>"; };
+		75135BF057F046F91D1E994682EB1EAC /* ASLayoutOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutOptions.h; path = AsyncDisplayKit/Layout/ASLayoutOptions.h; sourceTree = "<group>"; };
+		76753A4E49EA643829DC79805C0DF010 /* ASCellNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASCellNode.m; path = AsyncDisplayKit/ASCellNode.m; sourceTree = "<group>"; };
+		78BCCC5C018F41E17E4EBCA06525BCA8 /* ASBackgroundLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASBackgroundLayoutSpec.h; path = AsyncDisplayKit/Layout/ASBackgroundLayoutSpec.h; sourceTree = "<group>"; };
+		79F12FB07A97A5EFC1B6CD96AC805AAB /* ASStackLayoutSpecUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackLayoutSpecUtilities.h; path = AsyncDisplayKit/Private/ASStackLayoutSpecUtilities.h; sourceTree = "<group>"; };
+		7A123B038CD09BE4B0E7CB0105D53093 /* ASSentinel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASSentinel.h; path = AsyncDisplayKit/Private/ASSentinel.h; sourceTree = "<group>"; };
+		7AEC9DBA53D4AC8458E8DC735547A09E /* ASDealloc2MainObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASDealloc2MainObject.m; path = AsyncDisplayKit/Details/ASDealloc2MainObject.m; sourceTree = "<group>"; };
+		7BD2FBDCCFDBE77274DADB29AE9B7309 /* ASEditableTextNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASEditableTextNode.h; path = AsyncDisplayKit/ASEditableTextNode.h; sourceTree = "<group>"; };
+		7CA6C7A8176A3C45B740A5B23ED9210F /* ASTableView.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTableView.mm; path = AsyncDisplayKit/ASTableView.mm; sourceTree = "<group>"; };
+		7DB0530C41EC6C5C6BA11ADFE30DCB35 /* ASStaticLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStaticLayoutSpec.h; path = AsyncDisplayKit/Layout/ASStaticLayoutSpec.h; sourceTree = "<group>"; };
+		7E1E72108EFA70359DAF8FEE34648E39 /* ASDisplayNodeExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASDisplayNodeExtras.mm; path = AsyncDisplayKit/ASDisplayNodeExtras.mm; sourceTree = "<group>"; };
+		7F3D3E56E44008B1DF7EB9F216D05E2A /* ASRangeController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASRangeController.h; path = AsyncDisplayKit/Details/ASRangeController.h; sourceTree = "<group>"; };
+		7F4816EA183CDDE4236F09A78A945632 /* iCarousel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iCarousel.xcconfig; sourceTree = "<group>"; };
+		7FFFD0B780D39BE26525ECB9B6126DDF /* FBShimmeringView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringView.m; path = FBShimmering/FBShimmeringView.m; sourceTree = "<group>"; };
+		8128AAF25DD9295C49B80397FE7E10BE /* ASScrollDirection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASScrollDirection.h; path = AsyncDisplayKit/Details/ASScrollDirection.h; sourceTree = "<group>"; };
+		8204E6986F08EFBDC121BB239694CC81 /* DDTTYLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDTTYLogger.h; path = Classes/DDTTYLogger.h; sourceTree = "<group>"; };
+		8220E75E35AD18F352AE048EC5949533 /* Shimmer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Shimmer.xcconfig; sourceTree = "<group>"; };
+		83B2A86D841A7692BBFE0CB153FA3810 /* ASViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASViewController.m; path = AsyncDisplayKit/ASViewController.m; sourceTree = "<group>"; };
+		851C21B68DB16474C47C4139E0968A5B /* ASEditableTextNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASEditableTextNode.mm; path = AsyncDisplayKit/ASEditableTextNode.mm; sourceTree = "<group>"; };
+		8552506994F3869BD34CB1E2FD94D76E /* ASStackBaselinePositionedLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackBaselinePositionedLayout.h; path = AsyncDisplayKit/Private/ASStackBaselinePositionedLayout.h; sourceTree = "<group>"; };
+		85ED63C054E69FB57501C4FD90330314 /* CGRect+ASConvenience.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CGRect+ASConvenience.m"; path = "AsyncDisplayKit/Details/CGRect+ASConvenience.m"; sourceTree = "<group>"; };
+		86A07D2EEAB2381C2FE13D7CAE9167FA /* ASPhotosFrameworkImageRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASPhotosFrameworkImageRequest.h; path = AsyncDisplayKit/Details/ASPhotosFrameworkImageRequest.h; sourceTree = "<group>"; };
+		89DEBC15FF53B059B3BBE9493369F170 /* ASChangeSetDataController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASChangeSetDataController.m; path = AsyncDisplayKit/Details/ASChangeSetDataController.m; sourceTree = "<group>"; };
+		8BB6B7424E0105A53C1ACD974554F62B /* ASAsciiArtBoxCreator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASAsciiArtBoxCreator.h; path = AsyncDisplayKit/Layout/ASAsciiArtBoxCreator.h; sourceTree = "<group>"; };
+		8CA7C93D9DBB9E1248F35118C72E6990 /* ASLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutSpec.h; path = AsyncDisplayKit/Layout/ASLayoutSpec.h; sourceTree = "<group>"; };
+		8D05EE7EBE4B8B34C76A78660D2AD407 /* ASAvailability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASAvailability.h; path = Base/ASAvailability.h; sourceTree = "<group>"; };
+		8D0F07C306C86E79CFB69A101FF920CF /* _ASDisplayLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASDisplayLayer.h; path = AsyncDisplayKit/Details/_ASDisplayLayer.h; sourceTree = "<group>"; };
+		8D52F837B8D2362ED132E93EB408590B /* _ASAsyncTransactionGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASAsyncTransactionGroup.h; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransactionGroup.h; sourceTree = "<group>"; };
+		8D8D13D1E6D5D5F41EFB8005739AAC0C /* ASRatioLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASRatioLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASRatioLayoutSpec.mm; sourceTree = "<group>"; };
+		8E7460583A1A276B0B89A463E589F923 /* Shimmer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Shimmer-Private.xcconfig"; sourceTree = "<group>"; };
+		8F8FD174530657D769A3B973B006FDA9 /* UICollectionViewLayout+ASConvenience.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UICollectionViewLayout+ASConvenience.m"; path = "AsyncDisplayKit/Details/UICollectionViewLayout+ASConvenience.m"; sourceTree = "<group>"; };
+		90580B567530D88CDD7388D1F856E944 /* ASButtonNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASButtonNode.mm; path = AsyncDisplayKit/ASButtonNode.mm; sourceTree = "<group>"; };
+		93ED1B736E05B62E6E1F1DAB4BAAD690 /* _ASPendingState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _ASPendingState.m; path = AsyncDisplayKit/Private/_ASPendingState.m; sourceTree = "<group>"; };
+		960371E061B5188C3617148327336178 /* ASStackLayoutable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackLayoutable.h; path = AsyncDisplayKit/Layout/ASStackLayoutable.h; sourceTree = "<group>"; };
+		9659673C6AD2F615FDFC218E76563A6B /* ASCollectionDataController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASCollectionDataController.mm; path = AsyncDisplayKit/Details/ASCollectionDataController.mm; sourceTree = "<group>"; };
+		96C19D5E486E5B4B2FDF3F0B10EB18C9 /* ASRangeHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASRangeHandler.h; path = AsyncDisplayKit/Details/ASRangeHandler.h; sourceTree = "<group>"; };
+		977C39C6EA435260DBB97D66D5412ADE /* _ASAsyncTransactionContainer+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "_ASAsyncTransactionContainer+Private.h"; path = "AsyncDisplayKit/Details/Transactions/_ASAsyncTransactionContainer+Private.h"; sourceTree = "<group>"; };
+		97E559BC9475169500B2661CA715D281 /* ASPhotosFrameworkImageRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASPhotosFrameworkImageRequest.m; path = AsyncDisplayKit/Details/ASPhotosFrameworkImageRequest.m; sourceTree = "<group>"; };
+		98B9A77305B847E5D0926528C8BA1D07 /* ASRatioLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASRatioLayoutSpec.h; path = AsyncDisplayKit/Layout/ASRatioLayoutSpec.h; sourceTree = "<group>"; };
+		98E7E1993672513C8703A562543BDE07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		99606F56438F5CAA194E0CFB88EBB508 /* _ASAsyncTransactionContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASAsyncTransactionContainer.h; path = AsyncDisplayKit/Details/Transactions/_ASAsyncTransactionContainer.h; sourceTree = "<group>"; };
+		9A964CCA86F0C02E9F11ECEE166CF79F /* DDMultiFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDMultiFormatter.h; path = Classes/Extensions/DDMultiFormatter.h; sourceTree = "<group>"; };
+		9C26D6CD5923E5CFD47ADF781D1EB433 /* ASImageNode+CGExtras.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ASImageNode+CGExtras.m"; path = "AsyncDisplayKit/Private/ASImageNode+CGExtras.m"; sourceTree = "<group>"; };
+		9DD8ABB7472D89F53C626AD488EE3564 /* ASControlNode+Subclasses.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASControlNode+Subclasses.h"; path = "AsyncDisplayKit/ASControlNode+Subclasses.h"; sourceTree = "<group>"; };
+		9DFC4191539B6177F1E5117FD729A930 /* ASInsetLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASInsetLayoutSpec.h; path = AsyncDisplayKit/Layout/ASInsetLayoutSpec.h; sourceTree = "<group>"; };
+		9EF70ABECAF44DB561F2AA95186A916F /* ASCollectionViewLayoutController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionViewLayoutController.h; path = AsyncDisplayKit/Details/ASCollectionViewLayoutController.h; sourceTree = "<group>"; };
+		A2D7E68DC53E38302259EEF733B326A1 /* ASRangeHandlerPreload.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASRangeHandlerPreload.mm; path = AsyncDisplayKit/Details/ASRangeHandlerPreload.mm; sourceTree = "<group>"; };
+		A44F1CCF4B2CDBE0716F2BA3C643ACC4 /* ASTextNodeRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextNodeRenderer.h; path = AsyncDisplayKit/Details/ASTextNodeRenderer.h; sourceTree = "<group>"; };
+		A615A125A16F17618123CF80CB3FD9B7 /* ASTextNodeTextKitHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextNodeTextKitHelpers.h; path = AsyncDisplayKit/Details/ASTextNodeTextKitHelpers.h; sourceTree = "<group>"; };
+		A66DBF7142DBA886D7DA8F5B0F789CE1 /* ASCollectionViewFlowLayoutInspector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionViewFlowLayoutInspector.h; path = AsyncDisplayKit/Details/ASCollectionViewFlowLayoutInspector.h; sourceTree = "<group>"; };
+		A7480EF9FD695D302EBA068C5A4D19ED /* ASStackBaselinePositionedLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASStackBaselinePositionedLayout.mm; path = AsyncDisplayKit/Private/ASStackBaselinePositionedLayout.mm; sourceTree = "<group>"; };
+		A799F97E25CDA4AC4083E9A4D0DA63C6 /* Shimmer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Shimmer-prefix.pch"; sourceTree = "<group>"; };
+		A7A4183E062BC8D93DEB3863DF4BFF68 /* ASTextNodeTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextNodeTypes.h; path = AsyncDisplayKit/Details/ASTextNodeTypes.h; sourceTree = "<group>"; };
+		A7FE6C6D0DCA87A2A7298EA212824E7C /* ASCollectionViewLayoutController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASCollectionViewLayoutController.mm; path = AsyncDisplayKit/Details/ASCollectionViewLayoutController.mm; sourceTree = "<group>"; };
+		A8975E70B20FDD97BDB83E754BC3A941 /* ASRangeHandlerRender.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASRangeHandlerRender.mm; path = AsyncDisplayKit/Details/ASRangeHandlerRender.mm; sourceTree = "<group>"; };
+		A985C65F21E95F81E7D64C2C7524DD7B /* ASLayoutRangeType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutRangeType.h; path = AsyncDisplayKit/Details/ASLayoutRangeType.h; sourceTree = "<group>"; };
+		A9B0FA463A5D848DDB207589752DC5C1 /* ASFlowLayoutController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASFlowLayoutController.h; path = AsyncDisplayKit/Details/ASFlowLayoutController.h; sourceTree = "<group>"; };
+		A9C2E17EF9F2B152E41791C840DDA012 /* ASThread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASThread.h; path = AsyncDisplayKit/Details/ASThread.h; sourceTree = "<group>"; };
+		AB5C8469DAF2B4B400CF2FC21A196233 /* ASDisplayNode+DebugTiming.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "ASDisplayNode+DebugTiming.mm"; path = "AsyncDisplayKit/Private/ASDisplayNode+DebugTiming.mm"; sourceTree = "<group>"; };
+		ACDEC1778F9DC1D1694CAF0389950FAB /* UIView+ASConvenience.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ASConvenience.h"; path = "AsyncDisplayKit/Details/UIView+ASConvenience.h"; sourceTree = "<group>"; };
+		AE386AF962F5A550C255169853AE5682 /* _ASHierarchyChangeSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ASHierarchyChangeSet.h; path = AsyncDisplayKit/Private/_ASHierarchyChangeSet.h; sourceTree = "<group>"; };
+		AF5C3796714DC1B5A4FCE44A198AC2B8 /* CocoaLumberjack-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CocoaLumberjack-prefix.pch"; sourceTree = "<group>"; };
+		B12F0864AD67D2CF12CCE720CB523F45 /* ASStackLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASStackLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASStackLayoutSpec.mm; sourceTree = "<group>"; };
+		B25130139AAF20F97B7ECB555D38E47D /* ASDisplayNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASDisplayNode.h; path = AsyncDisplayKit/ASDisplayNode.h; sourceTree = "<group>"; };
+		B394F7AB4C0C62DFFB25D07C4483AC4C /* ASMultidimensionalArrayUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASMultidimensionalArrayUtils.h; path = AsyncDisplayKit/Private/ASMultidimensionalArrayUtils.h; sourceTree = "<group>"; };
+		B4798A7061FB93A19CA0F22528E03435 /* ASNetworkImageNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASNetworkImageNode.h; path = AsyncDisplayKit/ASNetworkImageNode.h; sourceTree = "<group>"; };
+		B52D989E3EE2A7E0BBBCE0B7EA583281 /* ASTextNodeCoreTextAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTextNodeCoreTextAdditions.h; path = AsyncDisplayKit/Details/ASTextNodeCoreTextAdditions.h; sourceTree = "<group>"; };
+		B575B2B46FE4A450A6CAAA2000A3F4C6 /* ASFlowLayoutController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASFlowLayoutController.mm; path = AsyncDisplayKit/Details/ASFlowLayoutController.mm; sourceTree = "<group>"; };
+		B58EF4FA65E9E68DD4FD2B343DCFD7F4 /* DDLogMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDLogMacros.h; path = Classes/DDLogMacros.h; sourceTree = "<group>"; };
+		B6336B2DDD9C8D7B6CAE57F0E5B5DB8C /* ASBasicImageDownloaderInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASBasicImageDownloaderInternal.h; path = AsyncDisplayKit/Private/ASBasicImageDownloaderInternal.h; sourceTree = "<group>"; };
+		B6E6B55E0CC6C72D4DC73C23596E72E7 /* ASTextNodeCoreTextAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASTextNodeCoreTextAdditions.m; path = AsyncDisplayKit/Details/ASTextNodeCoreTextAdditions.m; sourceTree = "<group>"; };
+		B7B052039AFF717D9BEB8C5D005FE376 /* AsyncDisplayKit-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "AsyncDisplayKit-Private.xcconfig"; sourceTree = "<group>"; };
+		B89D229311BB392C1FE4C94B1E94B869 /* ASStackLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackLayoutSpec.h; path = AsyncDisplayKit/Layout/ASStackLayoutSpec.h; sourceTree = "<group>"; };
+		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BA7D169D6CC98E71CDACEEF3C043427C /* ASLayoutablePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutablePrivate.h; path = AsyncDisplayKit/Layout/ASLayoutablePrivate.h; sourceTree = "<group>"; };
+		BAA1FFADAD4E031377765C46C85FBDC7 /* CocoaLumberjack.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CocoaLumberjack.h; path = Classes/CocoaLumberjack.h; sourceTree = "<group>"; };
+		BB22F417A813EFC5484ACCE1275023C5 /* ASDataController.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASDataController.mm; path = AsyncDisplayKit/Details/ASDataController.mm; sourceTree = "<group>"; };
+		BB6A1CC8D5644B0F18FF737A1323BC5B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		BF1B91CE33BFE5BF28636F2C0828D5E9 /* ASTextNodeTextKitHelpers.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTextNodeTextKitHelpers.mm; path = AsyncDisplayKit/Details/ASTextNodeTextKitHelpers.mm; sourceTree = "<group>"; };
+		BF4224A8EF5C527D307413C496ECFD00 /* ASLayoutController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASLayoutController.h; path = AsyncDisplayKit/Details/ASLayoutController.h; sourceTree = "<group>"; };
+		BF4273698E814A5D065203C9EA34EB18 /* AsyncDisplayKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AsyncDisplayKit-prefix.pch"; sourceTree = "<group>"; };
+		BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		C0B346F4979721F80B73A2A7A9E50395 /* ASRangeHandlerRender.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASRangeHandlerRender.h; path = AsyncDisplayKit/Details/ASRangeHandlerRender.h; sourceTree = "<group>"; };
+		C0B5020B24DDDBBA5BFE2A9AB3549046 /* DDMultiFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDMultiFormatter.m; path = Classes/Extensions/DDMultiFormatter.m; sourceTree = "<group>"; };
+		C0FD7FA54122D31C29B2BE21448DAE89 /* _ASHierarchyChangeSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _ASHierarchyChangeSet.m; path = AsyncDisplayKit/Private/_ASHierarchyChangeSet.m; sourceTree = "<group>"; };
+		C15C96D6E2BA56876CEF96C71ADEB027 /* _AS-objc-internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "_AS-objc-internal.h"; path = "AsyncDisplayKit/Private/_AS-objc-internal.h"; sourceTree = "<group>"; };
+		C22DC15E13B04EBDDB54EA1F34501551 /* DDDispatchQueueLogFormatter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DDDispatchQueueLogFormatter.h; path = Classes/Extensions/DDDispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		C48B65B622C64B3C553341C13C175E93 /* _ASDisplayLayer.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = _ASDisplayLayer.mm; path = AsyncDisplayKit/Details/_ASDisplayLayer.mm; sourceTree = "<group>"; };
+		C54513CC9A0ECC3413167A4C06D32505 /* ASCollectionNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASCollectionNode.m; path = AsyncDisplayKit/ASCollectionNode.m; sourceTree = "<group>"; };
+		C6338BC45C722EA1D3115BBE7670FB0E /* NSMutableAttributedString+TextKitAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableAttributedString+TextKitAdditions.m"; path = "AsyncDisplayKit/Details/NSMutableAttributedString+TextKitAdditions.m"; sourceTree = "<group>"; };
+		C6B2D49E72631C64290D63EE69022395 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		C6F494ABB21A2B5BCBF0A03CACA0AB68 /* libCocoaLumberjack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCocoaLumberjack.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C74DAE1EEB49E203D33B02AD0DAAE596 /* ASCollectionView.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASCollectionView.mm; path = AsyncDisplayKit/ASCollectionView.mm; sourceTree = "<group>"; };
+		C80558E3A2BA4C62397AC378C7F876CA /* ASNetworkImageNode.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASNetworkImageNode.mm; path = AsyncDisplayKit/ASNetworkImageNode.mm; sourceTree = "<group>"; };
+		C907E8D01B01CA1364A0D94C25BD787E /* ASChangeSetDataController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASChangeSetDataController.h; path = AsyncDisplayKit/Details/ASChangeSetDataController.h; sourceTree = "<group>"; };
+		C94E516609346CDC999B6C2B1E7CE81F /* _ASCoreAnimationExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = _ASCoreAnimationExtras.mm; path = AsyncDisplayKit/Private/_ASCoreAnimationExtras.mm; sourceTree = "<group>"; };
+		CA9ADEDC9089330EAA2CB62FD0D2D2DF /* iCarousel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iCarousel-prefix.pch"; sourceTree = "<group>"; };
+		CDD65B394F453AB6CCB1EE3527C51499 /* ASImageNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASImageNode.h; path = AsyncDisplayKit/ASImageNode.h; sourceTree = "<group>"; };
+		CF3E08B79B8D7DEDC6C58C353421E0B7 /* ASIndexPath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASIndexPath.h; path = AsyncDisplayKit/Details/ASIndexPath.h; sourceTree = "<group>"; };
+		CFD5E6069B43B4B76D82D6C926DBA5E1 /* ASBackgroundLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASBackgroundLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASBackgroundLayoutSpec.mm; sourceTree = "<group>"; };
+		D0F6A83922C5822FD84F9C1E2AE1B115 /* ASScrollNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASScrollNode.h; path = AsyncDisplayKit/ASScrollNode.h; sourceTree = "<group>"; };
+		D2106A810759D784747371C03A8CA46E /* ASTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASTableView.h; path = AsyncDisplayKit/ASTableView.h; sourceTree = "<group>"; };
+		D434582B4B194E4FC7F43E98E584ED42 /* ASDisplayNode+DebugTiming.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASDisplayNode+DebugTiming.h"; path = "AsyncDisplayKit/Private/ASDisplayNode+DebugTiming.h"; sourceTree = "<group>"; };
+		D75FE34DBE01B75B984B0239D2E34AC7 /* DDTTYLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DDTTYLogger.m; path = Classes/DDTTYLogger.m; sourceTree = "<group>"; };
+		DA5F5CC91EF5B589934C5417125873D6 /* libAsyncDisplayKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAsyncDisplayKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBDE50857F738C7D61681B4DC4199DD4 /* ASOverlayLayoutSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASOverlayLayoutSpec.h; path = AsyncDisplayKit/Layout/ASOverlayLayoutSpec.h; sourceTree = "<group>"; };
+		DED21F3019D0CC3640ECD8FBC676ED86 /* ASLayoutSpec.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASLayoutSpec.mm; path = AsyncDisplayKit/Layout/ASLayoutSpec.mm; sourceTree = "<group>"; };
+		E099A660BC9669FDF478AD1FF46DB7A1 /* ASEqualityHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASEqualityHelpers.h; path = Base/ASEqualityHelpers.h; sourceTree = "<group>"; };
+		E1FD16FEFA85D6E879428B3301E5F42B /* ASRelativeSize.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASRelativeSize.mm; path = AsyncDisplayKit/Layout/ASRelativeSize.mm; sourceTree = "<group>"; };
+		E36D3F06194D4A62E804F4DC37F28F0C /* ASDataController+Subclasses.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ASDataController+Subclasses.h"; path = "AsyncDisplayKit/Details/ASDataController+Subclasses.h"; sourceTree = "<group>"; };
+		E41DD5847C832502DFC709DE39B3F7D3 /* ASTextNodeRenderer.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASTextNodeRenderer.mm; path = AsyncDisplayKit/Details/ASTextNodeRenderer.mm; sourceTree = "<group>"; };
+		E4C59A0AE7B499E6EDEDE24C92D541F9 /* ASMultiplexImageNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASMultiplexImageNode.h; path = AsyncDisplayKit/ASMultiplexImageNode.h; sourceTree = "<group>"; };
+		E4FCF294311BC62E66E516E9F75F65C3 /* ASInternalHelpers.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASInternalHelpers.mm; path = AsyncDisplayKit/Private/ASInternalHelpers.mm; sourceTree = "<group>"; };
+		E6EF86F3F0143DE476E3F0801D79F8FC /* ASMultidimensionalArrayUtils.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASMultidimensionalArrayUtils.mm; path = AsyncDisplayKit/Private/ASMultidimensionalArrayUtils.mm; sourceTree = "<group>"; };
+		E7A1F40C654441E0919D9691154C4171 /* ASButtonNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASButtonNode.h; path = AsyncDisplayKit/ASButtonNode.h; sourceTree = "<group>"; };
+		EA1DE4747B623D7B3E976587258FEDC7 /* ASStackPositionedLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackPositionedLayout.h; path = AsyncDisplayKit/Private/ASStackPositionedLayout.h; sourceTree = "<group>"; };
+		EAB8BF3A02807F0A69DE1A5EBE411B36 /* ASBasicImageDownloader.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASBasicImageDownloader.mm; path = AsyncDisplayKit/Details/ASBasicImageDownloader.mm; sourceTree = "<group>"; };
+		EB28106A9558A1C4AFA472273C356AA7 /* ASControlNode.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ASControlNode.m; path = AsyncDisplayKit/ASControlNode.m; sourceTree = "<group>"; };
+		EBF1FE4023672097B19BEF86066648DA /* ASStackLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASStackLayoutDefines.h; path = AsyncDisplayKit/Layout/ASStackLayoutDefines.h; sourceTree = "<group>"; };
+		EDFD44562D5598572667D2AEA4833A9F /* ASDisplayNode+AsyncDisplay.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = "ASDisplayNode+AsyncDisplay.mm"; path = "AsyncDisplayKit/Private/ASDisplayNode+AsyncDisplay.mm"; sourceTree = "<group>"; };
+		EEEF21D9BB1E6B557CC4BA6C9B6E4E4E /* ASCollectionViewProtocols.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionViewProtocols.h; path = AsyncDisplayKit/ASCollectionViewProtocols.h; sourceTree = "<group>"; };
+		F0A05463AB88772EA6CB45D7688A17D9 /* NSMutableAttributedString+TextKitAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableAttributedString+TextKitAdditions.h"; path = "AsyncDisplayKit/Details/NSMutableAttributedString+TextKitAdditions.h"; sourceTree = "<group>"; };
+		F0C8338F9C2C161A3F74C592531AD8FA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F232E0F9625642D51AD797BF1F54E056 /* ASRangeHandlerPreload.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASRangeHandlerPreload.h; path = AsyncDisplayKit/Details/ASRangeHandlerPreload.h; sourceTree = "<group>"; };
+		F28D4133205777F6DFB8E375D90085D3 /* iCarousel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iCarousel-dummy.m"; sourceTree = "<group>"; };
+		F46C534E0A1D58DF094BC375D2079EFC /* FBShimmeringLayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBShimmeringLayer.m; path = FBShimmering/FBShimmeringLayer.m; sourceTree = "<group>"; };
+		F589A26BB30960AEC2EF9C1D97A3EC36 /* ASCollectionNode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASCollectionNode.h; path = AsyncDisplayKit/ASCollectionNode.h; sourceTree = "<group>"; };
+		F8A9C51700BD43AD22E489CC05A18326 /* FBShimmeringLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBShimmeringLayer.h; path = FBShimmering/FBShimmeringLayer.h; sourceTree = "<group>"; };
+		F9D0A29B301BE5651A3D3220B84092DD /* DDLog+LOGV.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DDLog+LOGV.h"; path = "Classes/DDLog+LOGV.h"; sourceTree = "<group>"; };
+		F9F3B6C6A84E9F7A69BFA02AA540E873 /* FBShimmeringView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBShimmeringView.h; path = FBShimmering/FBShimmeringView.h; sourceTree = "<group>"; };
+		FCE9693363C426850DD268027BE208FF /* ASStackUnpositionedLayout.mm */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.cpp.objcpp; name = ASStackUnpositionedLayout.mm; path = AsyncDisplayKit/Private/ASStackUnpositionedLayout.mm; sourceTree = "<group>"; };
+		FF80EC957AED01F9E112E278DCAE390E /* ASHighlightOverlayLayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ASHighlightOverlayLayer.h; path = AsyncDisplayKit/Details/ASHighlightOverlayLayer.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A91BD5D9F219640D4FCC273086A0AC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC32FC48334DCCF91B3467DBBF1691F0 /* Foundation.framework in Frameworks */,
+				1F51563B591CF09A88F85AAB42B47B88 /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59C06419AD72767FFDDDA17706167D65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A03DCD1B4D47D6C0562341C2090CAA2D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7B8047FAAF082C94D4F10A1C748F9000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				61BDA6B83FF3F6CEB15181D4C3E3B133 /* AssetsLibrary.framework in Frameworks */,
+				EBFD19EE0295308E4A6059B328049944 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77C4527E81233BB8846FB1C845DE1C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CF84DC16FDA936102F44A8F95CEB67E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF9B63D654265D61D01E1B81C49C7869 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CC2EC7F979BAA5C7848B2351728112C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0423461A7F712A554DA5E1D033E3E1D4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				60E8334F50852B94B2BEF3FE52AAC5CD /* AsyncDisplayKit.xcconfig */,
+				B7B052039AFF717D9BEB8C5D005FE376 /* AsyncDisplayKit-Private.xcconfig */,
+				54259929E7A23CECF1A4DCA80EB5837C /* AsyncDisplayKit-dummy.m */,
+				BF4273698E814A5D065203C9EA34EB18 /* AsyncDisplayKit-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/AsyncDisplayKit";
+			sourceTree = "<group>";
+		};
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5AE185DC63A775D5B90FB2401A3BDDC8 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		146E380B139C941A7121ED783B427A56 /* CocoaLumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				7DD9B1A184CC82949388235895E95B70 /* Core */,
+				FAC135C02308471F8445F9CBB0D05D25 /* Default */,
+				22881B05158D12CB085BA957D993B4C2 /* Extensions */,
+				4754F866F8F60A430CE1B3D357B17EC6 /* Support Files */,
+			);
+			path = CocoaLumberjack;
+			sourceTree = "<group>";
+		};
+		1AE9E28463309DE5BC1EE846B315A60D /* ASDealloc2MainObject */ = {
+			isa = PBXGroup;
+			children = (
+				10076B337DDBC0A14E7CDAC5CCEB1B85 /* ASDealloc2MainObject.h */,
+				7AEC9DBA53D4AC8458E8DC735547A09E /* ASDealloc2MainObject.m */,
+			);
+			name = ASDealloc2MainObject;
+			sourceTree = "<group>";
+		};
+		22881B05158D12CB085BA957D993B4C2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				16DD4EE00F04734A6A18190C066F619C /* DDContextFilterLogFormatter.h */,
+				4994CF28EFD5AB4CCEC8A949A5779A9C /* DDContextFilterLogFormatter.m */,
+				C22DC15E13B04EBDDB54EA1F34501551 /* DDDispatchQueueLogFormatter.h */,
+				74488F4206DB3C51CACC954BF85B6DF6 /* DDDispatchQueueLogFormatter.m */,
+				9A964CCA86F0C02E9F11ECEE166CF79F /* DDMultiFormatter.h */,
+				C0B5020B24DDDBBA5BFE2A9AB3549046 /* DDMultiFormatter.m */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		4754F866F8F60A430CE1B3D357B17EC6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				52E7C630D73DD7D7D4CB36B3DA88E467 /* CocoaLumberjack.xcconfig */,
+				1B9E20229CB730E9BEFBCDED783833C0 /* CocoaLumberjack-Private.xcconfig */,
+				503C9031AF41BC8A40A9CFA1F017F0BE /* CocoaLumberjack-dummy.m */,
+				AF5C3796714DC1B5A4FCE44A198AC2B8 /* CocoaLumberjack-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CocoaLumberjack";
+			sourceTree = "<group>";
+		};
+		542FBC565EB2115924E7503D8B7D92CA /* Shimmer */ = {
+			isa = PBXGroup;
+			children = (
+				2734BB4FD79D47741F6D196FD0CB6464 /* FBShimmering.h */,
+				F8A9C51700BD43AD22E489CC05A18326 /* FBShimmeringLayer.h */,
+				F46C534E0A1D58DF094BC375D2079EFC /* FBShimmeringLayer.m */,
+				F9F3B6C6A84E9F7A69BFA02AA540E873 /* FBShimmeringView.h */,
+				7FFFD0B780D39BE26525ECB9B6126DDF /* FBShimmeringView.m */,
+				65E18DB264E354DF131F727CAE894596 /* Support Files */,
+			);
+			path = Shimmer;
+			sourceTree = "<group>";
+		};
+		5AE185DC63A775D5B90FB2401A3BDDC8 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C6B2D49E72631C64290D63EE69022395 /* AssetsLibrary.framework */,
+				98E7E1993672513C8703A562543BDE07 /* Foundation.framework */,
+				BB6A1CC8D5644B0F18FF737A1323BC5B /* QuartzCore.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		65E18DB264E354DF131F727CAE894596 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8220E75E35AD18F352AE048EC5949533 /* Shimmer.xcconfig */,
+				8E7460583A1A276B0B89A463E589F923 /* Shimmer-Private.xcconfig */,
+				07D6CDF5773E20726F02F2003AAAF449 /* Shimmer-dummy.m */,
+				A799F97E25CDA4AC4083E9A4D0DA63C6 /* Shimmer-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Shimmer";
+			sourceTree = "<group>";
+		};
+		73E776BCF8A0F8866ADF098A5E398602 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F4816EA183CDDE4236F09A78A945632 /* iCarousel.xcconfig */,
+				171C52862B1B0F69E56433C0047BD11F /* iCarousel-Private.xcconfig */,
+				F28D4133205777F6DFB8E375D90085D3 /* iCarousel-dummy.m */,
+				CA9ADEDC9089330EAA2CB62FD0D2D2DF /* iCarousel-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/iCarousel";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				FADE4603B5A3304C60AD6CB302B06DD1 /* Pods */,
+				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7DD9B1A184CC82949388235895E95B70 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				70B1A4EE00ECC4C40B57349BCD0CD568 /* DDASLLogCapture.h */,
+				0D0AA44C0661E3CD97A391317B2F7075 /* DDASLLogCapture.m */,
+				6BF01659506AF497D5A005104B525CFF /* DDASLLogger.h */,
+				4BCC81E6E15753D5B7D9F00129B52BF2 /* DDASLLogger.m */,
+				4AC39BE5DE0F2E3F55D31D279913A436 /* DDAbstractDatabaseLogger.h */,
+				466B75C4CDF1C70FB772B03ECD131461 /* DDAbstractDatabaseLogger.m */,
+				5194D65E28D7B152F562ECB5C1B74A5C /* DDAssertMacros.h */,
+				33F889CADB2318F8864A537B8FB26BFF /* DDFileLogger.h */,
+				49E77E219D11CCEF6F530ADB71D0027C /* DDFileLogger.m */,
+				35EC81EB8D551A3E0912C1D46BE0837B /* DDLegacyMacros.h */,
+				0AE7BFA772EEB1A5E49E4BAF84754FD7 /* DDLog.h */,
+				6700AC08391CA2EBE6EB3FB55E5FA621 /* DDLog.m */,
+				F9D0A29B301BE5651A3D3220B84092DD /* DDLog+LOGV.h */,
+				B58EF4FA65E9E68DD4FD2B343DCFD7F4 /* DDLogMacros.h */,
+				8204E6986F08EFBDC121BB239694CC81 /* DDTTYLogger.h */,
+				D75FE34DBE01B75B984B0239D2E34AC7 /* DDTTYLogger.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		952EEBFAF8F7E620423C9F156F25A506 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15A529C27057E4A57D259CBC6E6CE49C /* Pods-acknowledgements.markdown */,
+				BF59BC15D23E1E1912C8F334E7236813 /* Pods-acknowledgements.plist */,
+				6E1E29B315DEAC8EEF6007DB0A9E909C /* Pods-dummy.m */,
+				641AE05DD55E5E6AC1590CD7B4A18F97 /* Pods-resources.sh */,
+				27E36B478A9C50B090C07F452CF93192 /* Pods.debug.xcconfig */,
+				40C186D55388205DA670CCBA8FD439DF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		C74AA15AF735E1AA6376CD4C40F6781A /* AsyncDisplayKit */ = {
+			isa = PBXGroup;
+			children = (
+				09C384C8D582688C3F4B368F09ABFA5D /* ASAbstractLayoutController.h */,
+				1543CCA97D89B035A8A142E8BD064CA2 /* ASAbstractLayoutController.mm */,
+				8BB6B7424E0105A53C1ACD974554F62B /* ASAsciiArtBoxCreator.h */,
+				1C8A90E6FB2006A01234094C470EF261 /* ASAsciiArtBoxCreator.m */,
+				11364E04C165B25281B3918CEF8DF164 /* ASAssert.h */,
+				8D05EE7EBE4B8B34C76A78660D2AD407 /* ASAvailability.h */,
+				78BCCC5C018F41E17E4EBCA06525BCA8 /* ASBackgroundLayoutSpec.h */,
+				CFD5E6069B43B4B76D82D6C926DBA5E1 /* ASBackgroundLayoutSpec.mm */,
+				225345B6F872708F3D7ECD871BFB5557 /* ASBaseDefines.h */,
+				7171B94E148BEEB4C89D62741689896E /* ASBasicImageDownloader.h */,
+				EAB8BF3A02807F0A69DE1A5EBE411B36 /* ASBasicImageDownloader.mm */,
+				B6336B2DDD9C8D7B6CAE57F0E5B5DB8C /* ASBasicImageDownloaderInternal.h */,
+				27689C68A6A9B9C5060AEB68D4DB3F4A /* ASBatchContext.h */,
+				7381BBF57726B52BDC484457787A78BE /* ASBatchContext.mm */,
+				4632BA53CD989E0DFC3DA4DF0001B857 /* ASBatchFetching.h */,
+				0B3338C7AC60E03757106F802064479D /* ASBatchFetching.m */,
+				E7A1F40C654441E0919D9691154C4171 /* ASButtonNode.h */,
+				90580B567530D88CDD7388D1F856E944 /* ASButtonNode.mm */,
+				6C5896A6483CF939B3159982673CF3C4 /* ASCellNode.h */,
+				76753A4E49EA643829DC79805C0DF010 /* ASCellNode.m */,
+				14B4EE601E4EA2346FD7772E8152ED65 /* ASCenterLayoutSpec.h */,
+				327D6FFD8A9E2A3A918124A26BE9A462 /* ASCenterLayoutSpec.mm */,
+				C907E8D01B01CA1364A0D94C25BD787E /* ASChangeSetDataController.h */,
+				89DEBC15FF53B059B3BBE9493369F170 /* ASChangeSetDataController.m */,
+				143B299B3C915EB62671AC35FF35DFB0 /* ASCollectionDataController.h */,
+				9659673C6AD2F615FDFC218E76563A6B /* ASCollectionDataController.mm */,
+				F589A26BB30960AEC2EF9C1D97A3EC36 /* ASCollectionNode.h */,
+				C54513CC9A0ECC3413167A4C06D32505 /* ASCollectionNode.m */,
+				4042EA67355B37E999FC2248820D0CFA /* ASCollectionView.h */,
+				C74DAE1EEB49E203D33B02AD0DAAE596 /* ASCollectionView.mm */,
+				A66DBF7142DBA886D7DA8F5B0F789CE1 /* ASCollectionViewFlowLayoutInspector.h */,
+				4AE103B2499C98945BF97ADC31559256 /* ASCollectionViewFlowLayoutInspector.m */,
+				9EF70ABECAF44DB561F2AA95186A916F /* ASCollectionViewLayoutController.h */,
+				A7FE6C6D0DCA87A2A7298EA212824E7C /* ASCollectionViewLayoutController.mm */,
+				EEEF21D9BB1E6B557CC4BA6C9B6E4E4E /* ASCollectionViewProtocols.h */,
+				5D9964CF6C2CDB86758F0362D9FB4065 /* ASControlNode.h */,
+				EB28106A9558A1C4AFA472273C356AA7 /* ASControlNode.m */,
+				9DD8ABB7472D89F53C626AD488EE3564 /* ASControlNode+Subclasses.h */,
+				49C81A0823171A360574460546DDBE6E /* ASDataController.h */,
+				BB22F417A813EFC5484ACCE1275023C5 /* ASDataController.mm */,
+				E36D3F06194D4A62E804F4DC37F28F0C /* ASDataController+Subclasses.h */,
+				5A2CE5BC65AB17C9A68BFC77F562C6CB /* ASDimension.h */,
+				26121B8F062E169D258E77E1915EC361 /* ASDimension.mm */,
+				B25130139AAF20F97B7ECB555D38E47D /* ASDisplayNode.h */,
+				544643CBC6112993ECF2D895AAE4DE00 /* ASDisplayNode.mm */,
+				EDFD44562D5598572667D2AEA4833A9F /* ASDisplayNode+AsyncDisplay.mm */,
+				D434582B4B194E4FC7F43E98E584ED42 /* ASDisplayNode+DebugTiming.h */,
+				AB5C8469DAF2B4B400CF2FC21A196233 /* ASDisplayNode+DebugTiming.mm */,
+				0A75E96F4068CCA55A3916C2130FDC69 /* ASDisplayNode+Subclasses.h */,
+				3DD2938E87757D70D82A9B7029B203CA /* ASDisplayNode+UIViewBridge.mm */,
+				088885DE92ECE17DA54B5538677121A0 /* ASDisplayNodeExtraIvars.h */,
+				32525A8CFC9568D4D6D53F039F4E67E6 /* ASDisplayNodeExtras.h */,
+				7E1E72108EFA70359DAF8FEE34648E39 /* ASDisplayNodeExtras.mm */,
+				74B77EC42F7236D362EEDACC511A1302 /* ASDisplayNodeInternal.h */,
+				7BD2FBDCCFDBE77274DADB29AE9B7309 /* ASEditableTextNode.h */,
+				851C21B68DB16474C47C4139E0968A5B /* ASEditableTextNode.mm */,
+				E099A660BC9669FDF478AD1FF46DB7A1 /* ASEqualityHelpers.h */,
+				A9B0FA463A5D848DDB207589752DC5C1 /* ASFlowLayoutController.h */,
+				B575B2B46FE4A450A6CAAA2000A3F4C6 /* ASFlowLayoutController.mm */,
+				FF80EC957AED01F9E112E278DCAE390E /* ASHighlightOverlayLayer.h */,
+				43439795D0BC8B0976FD8C0C503D5827 /* ASHighlightOverlayLayer.mm */,
+				CDD65B394F453AB6CCB1EE3527C51499 /* ASImageNode.h */,
+				2684737587BD87C176DAEC4A7DC438F1 /* ASImageNode.mm */,
+				1A67F53220536575F6C96A526530F287 /* ASImageNode+CGExtras.h */,
+				9C26D6CD5923E5CFD47ADF781D1EB433 /* ASImageNode+CGExtras.m */,
+				54ECDCC1DF23A57484FC1C8277824A31 /* ASImageProtocols.h */,
+				CF3E08B79B8D7DEDC6C58C353421E0B7 /* ASIndexPath.h */,
+				2775FB918B2580479137747D820752E4 /* ASIndexPath.m */,
+				9DFC4191539B6177F1E5117FD729A930 /* ASInsetLayoutSpec.h */,
+				5E1661DD1974E83B6EBE97152958D137 /* ASInsetLayoutSpec.mm */,
+				536D12E6C543558D11B80F7FFDD3898E /* ASInternalHelpers.h */,
+				E4FCF294311BC62E66E516E9F75F65C3 /* ASInternalHelpers.mm */,
+				53BA533FD25396C2384467CA22750B2D /* ASLayout.h */,
+				4FE98C4903794043C69AD81572F2F69A /* ASLayout.mm */,
+				BF4224A8EF5C527D307413C496ECFD00 /* ASLayoutController.h */,
+				75135BF057F046F91D1E994682EB1EAC /* ASLayoutOptions.h */,
+				711ECB198CDC13265230EC80AE51E0D2 /* ASLayoutOptions.mm */,
+				089FF3EFFE148299F6C16BE173F082E9 /* ASLayoutOptionsPrivate.h */,
+				1B801B683F25BDA1D65A856BA22D6EEE /* ASLayoutOptionsPrivate.mm */,
+				A985C65F21E95F81E7D64C2C7524DD7B /* ASLayoutRangeType.h */,
+				8CA7C93D9DBB9E1248F35118C72E6990 /* ASLayoutSpec.h */,
+				DED21F3019D0CC3640ECD8FBC676ED86 /* ASLayoutSpec.mm */,
+				1E314A2D623945211494889402D354C5 /* ASLayoutSpecUtilities.h */,
+				37D05A399161D03B3E3A8ACDB22A2CB4 /* ASLayoutable.h */,
+				BA7D169D6CC98E71CDACEEF3C043427C /* ASLayoutablePrivate.h */,
+				159850626872EF03C0E7C0CD5B2BDBEC /* ASLog.h */,
+				B394F7AB4C0C62DFFB25D07C4483AC4C /* ASMultidimensionalArrayUtils.h */,
+				E6EF86F3F0143DE476E3F0801D79F8FC /* ASMultidimensionalArrayUtils.mm */,
+				E4C59A0AE7B499E6EDEDE24C92D541F9 /* ASMultiplexImageNode.h */,
+				5712E15DB878B4C658F25BE7056C3F4F /* ASMultiplexImageNode.mm */,
+				6B77E3E2DD1FC6A6BAB2F994E688D3EC /* ASMutableAttributedStringBuilder.h */,
+				29103B29D940CA80200442ACAEC27176 /* ASMutableAttributedStringBuilder.m */,
+				B4798A7061FB93A19CA0F22528E03435 /* ASNetworkImageNode.h */,
+				C80558E3A2BA4C62397AC378C7F876CA /* ASNetworkImageNode.mm */,
+				DBDE50857F738C7D61681B4DC4199DD4 /* ASOverlayLayoutSpec.h */,
+				3B46B5FBD9E374D4054E34D9A852AF99 /* ASOverlayLayoutSpec.mm */,
+				86A07D2EEAB2381C2FE13D7CAE9167FA /* ASPhotosFrameworkImageRequest.h */,
+				97E559BC9475169500B2661CA715D281 /* ASPhotosFrameworkImageRequest.m */,
+				7F3D3E56E44008B1DF7EB9F216D05E2A /* ASRangeController.h */,
+				389700AED0DCE140CB79337962ED60C8 /* ASRangeController.mm */,
+				96C19D5E486E5B4B2FDF3F0B10EB18C9 /* ASRangeHandler.h */,
+				F232E0F9625642D51AD797BF1F54E056 /* ASRangeHandlerPreload.h */,
+				A2D7E68DC53E38302259EEF733B326A1 /* ASRangeHandlerPreload.mm */,
+				C0B346F4979721F80B73A2A7A9E50395 /* ASRangeHandlerRender.h */,
+				A8975E70B20FDD97BDB83E754BC3A941 /* ASRangeHandlerRender.mm */,
+				98B9A77305B847E5D0926528C8BA1D07 /* ASRatioLayoutSpec.h */,
+				8D8D13D1E6D5D5F41EFB8005739AAC0C /* ASRatioLayoutSpec.mm */,
+				49181823985250D3FB3A77D7FBC1BFE4 /* ASRelativeSize.h */,
+				E1FD16FEFA85D6E879428B3301E5F42B /* ASRelativeSize.mm */,
+				8128AAF25DD9295C49B80397FE7E10BE /* ASScrollDirection.h */,
+				11F377875C6722F27181B6F7E5B5D74A /* ASScrollDirection.m */,
+				D0F6A83922C5822FD84F9C1E2AE1B115 /* ASScrollNode.h */,
+				048A559DBD51819CCF00EFC28DB31F23 /* ASScrollNode.m */,
+				7A123B038CD09BE4B0E7CB0105D53093 /* ASSentinel.h */,
+				01AA3AE45B340EDE57563DCB027ECA63 /* ASSentinel.m */,
+				8552506994F3869BD34CB1E2FD94D76E /* ASStackBaselinePositionedLayout.h */,
+				A7480EF9FD695D302EBA068C5A4D19ED /* ASStackBaselinePositionedLayout.mm */,
+				EBF1FE4023672097B19BEF86066648DA /* ASStackLayoutDefines.h */,
+				B89D229311BB392C1FE4C94B1E94B869 /* ASStackLayoutSpec.h */,
+				B12F0864AD67D2CF12CCE720CB523F45 /* ASStackLayoutSpec.mm */,
+				79F12FB07A97A5EFC1B6CD96AC805AAB /* ASStackLayoutSpecUtilities.h */,
+				960371E061B5188C3617148327336178 /* ASStackLayoutable.h */,
+				EA1DE4747B623D7B3E976587258FEDC7 /* ASStackPositionedLayout.h */,
+				1DC6A4EA603F70A6111A7E40F19B59B6 /* ASStackPositionedLayout.mm */,
+				0809C585779093C3CDDFB823968CB8D9 /* ASStackUnpositionedLayout.h */,
+				FCE9693363C426850DD268027BE208FF /* ASStackUnpositionedLayout.mm */,
+				7DB0530C41EC6C5C6BA11ADFE30DCB35 /* ASStaticLayoutSpec.h */,
+				27B365064ACA048257C3B896228E3B34 /* ASStaticLayoutSpec.mm */,
+				379C35E0121751774F852D0ED33FCEFD /* ASStaticLayoutable.h */,
+				38FC3DC82E57E23044D2943FBD6DDB71 /* ASTableNode.h */,
+				53075307EBDE999F57EC42933AE8AFD2 /* ASTableNode.m */,
+				D2106A810759D784747371C03A8CA46E /* ASTableView.h */,
+				7CA6C7A8176A3C45B740A5B23ED9210F /* ASTableView.mm */,
+				6AF9F98CB5E27E19E7EDC4D40D016C28 /* ASTableViewInternal.h */,
+				74B6C7697CBF73A456F528BF2C77D7B7 /* ASTableViewProtocols.h */,
+				2C7B7CFCCA198F02C02FD6A06ABADD40 /* ASTextNode.h */,
+				4E5E576237072F8F5BE02CC6957446E2 /* ASTextNode.mm */,
+				B52D989E3EE2A7E0BBBCE0B7EA583281 /* ASTextNodeCoreTextAdditions.h */,
+				B6E6B55E0CC6C72D4DC73C23596E72E7 /* ASTextNodeCoreTextAdditions.m */,
+				A44F1CCF4B2CDBE0716F2BA3C643ACC4 /* ASTextNodeRenderer.h */,
+				E41DD5847C832502DFC709DE39B3F7D3 /* ASTextNodeRenderer.mm */,
+				5DBBE38F894066B9ECB4AFBA4C1EDD24 /* ASTextNodeShadower.h */,
+				1196C4FDBA1AA86694A191F467596C75 /* ASTextNodeShadower.m */,
+				A615A125A16F17618123CF80CB3FD9B7 /* ASTextNodeTextKitHelpers.h */,
+				BF1B91CE33BFE5BF28636F2C0828D5E9 /* ASTextNodeTextKitHelpers.mm */,
+				A7A4183E062BC8D93DEB3863DF4BFF68 /* ASTextNodeTypes.h */,
+				38F6599E5E5E650F9E3B5D0C26D5640E /* ASTextNodeWordKerner.h */,
+				20278061748703C32C766228DAD2E4E5 /* ASTextNodeWordKerner.m */,
+				A9C2E17EF9F2B152E41791C840DDA012 /* ASThread.h */,
+				74F71490334EA6DF10614FBA682DC310 /* ASViewController.h */,
+				83B2A86D841A7692BBFE0CB153FA3810 /* ASViewController.m */,
+				7350CA42611FC58E4ADEC6F602FF4E30 /* AsyncDisplayKit.h */,
+				290D211EAC4143FA46285710ED12FB27 /* CGRect+ASConvenience.h */,
+				85ED63C054E69FB57501C4FD90330314 /* CGRect+ASConvenience.m */,
+				F0A05463AB88772EA6CB45D7688A17D9 /* NSMutableAttributedString+TextKitAdditions.h */,
+				C6338BC45C722EA1D3115BBE7670FB0E /* NSMutableAttributedString+TextKitAdditions.m */,
+				174892252ED94B1BC117E165BB8297AF /* UICollectionViewLayout+ASConvenience.h */,
+				8F8FD174530657D769A3B973B006FDA9 /* UICollectionViewLayout+ASConvenience.m */,
+				ACDEC1778F9DC1D1694CAF0389950FAB /* UIView+ASConvenience.h */,
+				C15C96D6E2BA56876CEF96C71ADEB027 /* _AS-objc-internal.h */,
+				5CEF7BB3DCE49016F4511C9E2B6648ED /* _ASAsyncTransaction.h */,
+				32015C6D009EF63F9EAB30FB6A65DEBB /* _ASAsyncTransaction.m */,
+				99606F56438F5CAA194E0CFB88EBB508 /* _ASAsyncTransactionContainer.h */,
+				6F807FC27F2C0A6463EF318322B7528A /* _ASAsyncTransactionContainer.m */,
+				977C39C6EA435260DBB97D66D5412ADE /* _ASAsyncTransactionContainer+Private.h */,
+				8D52F837B8D2362ED132E93EB408590B /* _ASAsyncTransactionGroup.h */,
+				5D89EF110928B86E1A8C2942D34D2958 /* _ASAsyncTransactionGroup.m */,
+				50695C2970252626A6A9C96802A4C92C /* _ASCoreAnimationExtras.h */,
+				C94E516609346CDC999B6C2B1E7CE81F /* _ASCoreAnimationExtras.mm */,
+				8D0F07C306C86E79CFB69A101FF920CF /* _ASDisplayLayer.h */,
+				C48B65B622C64B3C553341C13C175E93 /* _ASDisplayLayer.mm */,
+				0C6349AB0FB9D2BBAFD9F33869F64910 /* _ASDisplayView.h */,
+				531745E17BA339A68527169C8012F3C3 /* _ASDisplayView.mm */,
+				AE386AF962F5A550C255169853AE5682 /* _ASHierarchyChangeSet.h */,
+				C0FD7FA54122D31C29B2BE21448DAE89 /* _ASHierarchyChangeSet.m */,
+				55CC561B4D1D4BE2017DAD72AECC2C65 /* _ASPendingState.h */,
+				93ED1B736E05B62E6E1F1DAB4BAAD690 /* _ASPendingState.m */,
+				41B3FEC25B555A71261E9BEB8053D336 /* _ASScopeTimer.h */,
+				1AE9E28463309DE5BC1EE846B315A60D /* ASDealloc2MainObject */,
+				0423461A7F712A554DA5E1D033E3E1D4 /* Support Files */,
+			);
+			path = AsyncDisplayKit;
+			sourceTree = "<group>";
+		};
+		CB1CF31968F2C924295E9840316425D7 /* iCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				2BFB228813A5DCE45AF30CD34443C35D /* iCarousel.h */,
+				17DC9D3C4D9684F66B2D8CA97E8E14A8 /* iCarousel.m */,
+				73E776BCF8A0F8866ADF098A5E398602 /* Support Files */,
+			);
+			path = iCarousel;
+			sourceTree = "<group>";
+		};
+		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA5F5CC91EF5B589934C5417125873D6 /* libAsyncDisplayKit.a */,
+				C6F494ABB21A2B5BCBF0A03CACA0AB68 /* libCocoaLumberjack.a */,
+				F0C8338F9C2C161A3F74C592531AD8FA /* libPods.a */,
+				00B529D77E7734F648FDACD3AE1E7CF9 /* libShimmer.a */,
+				2C8F6B466FF9A65D86623716423C11A0 /* libiCarousel.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2411A5FE7F7A004607BED49990C37F4 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				952EEBFAF8F7E620423C9F156F25A506 /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		FAC135C02308471F8445F9CBB0D05D25 /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				BAA1FFADAD4E031377765C46C85FBDC7 /* CocoaLumberjack.h */,
+			);
+			name = Default;
+			sourceTree = "<group>";
+		};
+		FADE4603B5A3304C60AD6CB302B06DD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C74AA15AF735E1AA6376CD4C40F6781A /* AsyncDisplayKit */,
+				146E380B139C941A7121ED783B427A56 /* CocoaLumberjack */,
+				542FBC565EB2115924E7503D8B7D92CA /* Shimmer */,
+				CB1CF31968F2C924295E9840316425D7 /* iCarousel */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		05253D2DB4AE880705C4D26E507E4DFA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B18E8312AB8DD8AB8B7F8F789F05B78 /* ASAbstractLayoutController.h in Headers */,
+				78F70C211319117763D45D0C0F14EF67 /* ASAsciiArtBoxCreator.h in Headers */,
+				D65636E990DD69E494BA1B1F390AF746 /* ASAssert.h in Headers */,
+				D555C968E4742FDA7F161B115BFC9832 /* ASAvailability.h in Headers */,
+				B738B8C47AEDC8DD7F4288EFE5E07923 /* ASBackgroundLayoutSpec.h in Headers */,
+				D1DD9B11B8F38F59B789693F159CE449 /* ASBaseDefines.h in Headers */,
+				AC5172512569C01A61C1590E231BD48F /* ASBasicImageDownloader.h in Headers */,
+				6AB8491F78FDBEBBC3B3BD47C8CA93DD /* ASBasicImageDownloaderInternal.h in Headers */,
+				8DED85F013F68CF8A632EDBBB1357410 /* ASBatchContext.h in Headers */,
+				84F533067278A2F2BB26A33C7F49CE81 /* ASBatchFetching.h in Headers */,
+				B993F29D88E6584AD439B4513399897C /* ASButtonNode.h in Headers */,
+				B4DD5C22D757D47AA52F47FE4D20BBF2 /* ASCellNode.h in Headers */,
+				1681FE890A884126B4529272DBD7EC45 /* ASCenterLayoutSpec.h in Headers */,
+				7CC0A7D4F30BE39A9C31F7AE380D0224 /* ASChangeSetDataController.h in Headers */,
+				D4D6CBCE489A79F5D2265FBC92961FD3 /* ASCollectionDataController.h in Headers */,
+				450283EA92270EBAE033AA39A6D4A52C /* ASCollectionNode.h in Headers */,
+				4A5CA04526AB2F060A62847467FBBD31 /* ASCollectionView.h in Headers */,
+				E200D63D01E02AD5EB73D4409BC2B44E /* ASCollectionViewFlowLayoutInspector.h in Headers */,
+				8629021D3256E12F2EA91737BE6FA0AA /* ASCollectionViewLayoutController.h in Headers */,
+				1B859A1E28CF3634ABD34AB5BFBC26EF /* ASCollectionViewProtocols.h in Headers */,
+				E1BE6219B84D94B9C6370EF8E0CD2414 /* ASControlNode+Subclasses.h in Headers */,
+				185FED5130AB04283D9B9175954D3716 /* ASControlNode.h in Headers */,
+				036DCE56D1E44D39F7561FEA33957981 /* ASDataController+Subclasses.h in Headers */,
+				34103F6F43E910F2FA72FDEBD5414F8E /* ASDataController.h in Headers */,
+				004915A9CA99E819559C896DB0A4B84F /* ASDealloc2MainObject.h in Headers */,
+				DD3680A2DE7515E8A0D904A4FA9C2C66 /* ASDimension.h in Headers */,
+				6BF9CBBF536B13562F414AEDCB3A99B8 /* ASDisplayNode+DebugTiming.h in Headers */,
+				B08CE59EE3108482D26665DB074883FD /* ASDisplayNode+Subclasses.h in Headers */,
+				ABE1BD748635542D6102075FFAD99BFB /* ASDisplayNode.h in Headers */,
+				D134B77932C9DD7CD9639E98919F8E41 /* ASDisplayNodeExtraIvars.h in Headers */,
+				8FCB1CB1F1285596B562402679580226 /* ASDisplayNodeExtras.h in Headers */,
+				240E47C584CACCDB4A62852055CAF223 /* ASDisplayNodeInternal.h in Headers */,
+				9669DC5A4B01F78A51FD9C58A3409101 /* ASEditableTextNode.h in Headers */,
+				13E7831E15875535D8B641117D97BBB8 /* ASEqualityHelpers.h in Headers */,
+				5405BCAF07C767ABE1139634F906DD7E /* ASFlowLayoutController.h in Headers */,
+				70F0EDE4FA8FEE3F0C175CE5BA97B772 /* ASHighlightOverlayLayer.h in Headers */,
+				EFD36ADB33714F7FB8A0A05C6EE1D853 /* ASImageNode+CGExtras.h in Headers */,
+				9B022A736649BC4C4C1DFA482397EE65 /* ASImageNode.h in Headers */,
+				D6688821C6DEB32E39DA65D8DD8BBC1C /* ASImageProtocols.h in Headers */,
+				16E96438FCBC3C84B8FFEBC75F8870C5 /* ASIndexPath.h in Headers */,
+				652B21F755054FC9C641E74BC71D844F /* ASInsetLayoutSpec.h in Headers */,
+				459A7962939446F7CAA08CF24ECB0869 /* ASInternalHelpers.h in Headers */,
+				7EAAAA74D6EC5F736C969D6450A56BBA /* ASLayout.h in Headers */,
+				348F2DEDB9FDC4A0E1D2BBE08DCC65C2 /* ASLayoutController.h in Headers */,
+				2E3E42B4E3C94E1FDA1EEF1EBB496219 /* ASLayoutOptions.h in Headers */,
+				2E3F42291DFA35F7749CC6AE61DF6C04 /* ASLayoutOptionsPrivate.h in Headers */,
+				1BEAF90E61F64F509C26A36D6E47D3FB /* ASLayoutRangeType.h in Headers */,
+				53DC9EB3C7A006054C9FA8AE6CD3E646 /* ASLayoutSpec.h in Headers */,
+				6BB626ADA4D10B067AEFAF963185504B /* ASLayoutSpecUtilities.h in Headers */,
+				E6F2B0EB4959DDEC5EC118BE9B265D84 /* ASLayoutable.h in Headers */,
+				1AA4DCA281000C3295A8ACDFEF265323 /* ASLayoutablePrivate.h in Headers */,
+				FE736E46AE7A5916BAA6F6620792F3C2 /* ASLog.h in Headers */,
+				D58BA934ADD0C8F918718215A9F0BFBA /* ASMultidimensionalArrayUtils.h in Headers */,
+				72AD28A1B989A02E904D5CEE852DB35C /* ASMultiplexImageNode.h in Headers */,
+				67129ECCA5A0708E228511AA384593F3 /* ASMutableAttributedStringBuilder.h in Headers */,
+				A8E00935CFEDF3044F87946160FC6CE9 /* ASNetworkImageNode.h in Headers */,
+				5BFAA0A665C1439BEF3CCA1CA917A83C /* ASOverlayLayoutSpec.h in Headers */,
+				7FBF96092503C551F81B7A27A7E7B064 /* ASPhotosFrameworkImageRequest.h in Headers */,
+				ED008C2E559DFB7BE01997FDDC9276ED /* ASRangeController.h in Headers */,
+				069B72A547C48664B6E553E5617C508A /* ASRangeHandler.h in Headers */,
+				D42624275385C6933C56F3CAEF4BB98B /* ASRangeHandlerPreload.h in Headers */,
+				9BC8CB35E24E26981F4505518D2E05EF /* ASRangeHandlerRender.h in Headers */,
+				F86CDC1F795A459E82E248829F51E5CE /* ASRatioLayoutSpec.h in Headers */,
+				18472E76B37856EFD0C364674018721C /* ASRelativeSize.h in Headers */,
+				FE0D3581A621D0E2D7A2FE338199B2D3 /* ASScrollDirection.h in Headers */,
+				B9716C67D51D50A833BF8011799FE048 /* ASScrollNode.h in Headers */,
+				2F226C8664A2F8CEBF867D4F0CE62F8B /* ASSentinel.h in Headers */,
+				11F64F4FAA710D66AF45F7CBA6065A49 /* ASStackBaselinePositionedLayout.h in Headers */,
+				FE91997BCE848C7884C42FB93A5E5E09 /* ASStackLayoutDefines.h in Headers */,
+				085D76AA3C38EB1B780464D72142C88F /* ASStackLayoutSpec.h in Headers */,
+				37A14B89CF9493AA25ACC1393FFBF7F3 /* ASStackLayoutSpecUtilities.h in Headers */,
+				446E6C5CE6FD03B38AD5E534B906CB62 /* ASStackLayoutable.h in Headers */,
+				F1C6652F0C955600E4AD9F1EC4A50CE0 /* ASStackPositionedLayout.h in Headers */,
+				A79D47AD2FAA2CC8A201E8A7DDF61C78 /* ASStackUnpositionedLayout.h in Headers */,
+				CC41679D3EEE3EB5576AF81D5126AFE2 /* ASStaticLayoutSpec.h in Headers */,
+				F7B24BE1CAB8C4BB751E1394E3DE382C /* ASStaticLayoutable.h in Headers */,
+				6449491AC49D2F4008BF64B3DFD93E6F /* ASTableNode.h in Headers */,
+				E7E374D1F5831016DB58D54285FB2DF2 /* ASTableView.h in Headers */,
+				F7E664520AC9F0E0A933916177644101 /* ASTableViewInternal.h in Headers */,
+				C9E7D88C73092629B72E99EF576CDA09 /* ASTableViewProtocols.h in Headers */,
+				65CFFE6252B400A3CDB08016D2A4C015 /* ASTextNode.h in Headers */,
+				542A647E2970EA8CB362B3B1FB196BA7 /* ASTextNodeCoreTextAdditions.h in Headers */,
+				BC0D3303C4D9AAA0674216B105C9D6B0 /* ASTextNodeRenderer.h in Headers */,
+				7BA57A99B92C69C207009EEC68D87FE2 /* ASTextNodeShadower.h in Headers */,
+				6033709416FA503B29F820094F7D089B /* ASTextNodeTextKitHelpers.h in Headers */,
+				85F68543B6F66577CAFA203960FA7613 /* ASTextNodeTypes.h in Headers */,
+				D917ED1ADEE0C566909F8AF18AD5EBBC /* ASTextNodeWordKerner.h in Headers */,
+				E2DCC0979D8884838E85AAAA32DA44BD /* ASThread.h in Headers */,
+				99021929BC015D5D89EF84C2A935D1CE /* ASViewController.h in Headers */,
+				BD838EA13D3F792AC346638D3BD7066D /* AsyncDisplayKit.h in Headers */,
+				15D149D647D4ECBD55C1AC9287BAA4A0 /* CGRect+ASConvenience.h in Headers */,
+				76677923FE18735A8E6CF34E61A7AB4E /* NSMutableAttributedString+TextKitAdditions.h in Headers */,
+				A905D175F2CFE12C170E88373C2E4767 /* UICollectionViewLayout+ASConvenience.h in Headers */,
+				97EEEC108ED85F775C1EC61ECDF0F3C1 /* UIView+ASConvenience.h in Headers */,
+				8A651C9A7FBFBB05F582664599E40766 /* _AS-objc-internal.h in Headers */,
+				BE2B7C060DBDF22CE988B5981FB4CDF7 /* _ASAsyncTransaction.h in Headers */,
+				8B5F1F5655E6DF50D126B134BF087F59 /* _ASAsyncTransactionContainer+Private.h in Headers */,
+				5731A50A920F8F120075825B40B09315 /* _ASAsyncTransactionContainer.h in Headers */,
+				92C18016A5D34A6D6EC115C03ED6AB35 /* _ASAsyncTransactionGroup.h in Headers */,
+				45CEA77E7943CB175244FEA127742CC6 /* _ASCoreAnimationExtras.h in Headers */,
+				0C413362D98B037AFFE7FE1F15AAFA0D /* _ASDisplayLayer.h in Headers */,
+				43B08AC36F2465328E072BCE3742FF74 /* _ASDisplayView.h in Headers */,
+				F9F64688FC26DC38088A1391273D90F1 /* _ASHierarchyChangeSet.h in Headers */,
+				17BE1E395BD8B79C64432CA734EE25E9 /* _ASPendingState.h in Headers */,
+				CB2B056E55F09E9B19033D5A9D2833A3 /* _ASScopeTimer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91FE4CEDD5CDF60764A37C7217526FF6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B833897FF02EF253A627828CCDB1AEE /* iCarousel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEC35775B9B1E97BCB0389966661064A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6DB9B4918E88C68750C3AEC150EC4D7 /* CocoaLumberjack.h in Headers */,
+				8D29BB1CD1C4A0844EE74EE780E49A44 /* DDASLLogCapture.h in Headers */,
+				C3998C6621774943E41C1FD00A4A2855 /* DDASLLogger.h in Headers */,
+				7BF73982860400AB90A8B200556E1F31 /* DDAbstractDatabaseLogger.h in Headers */,
+				A544E564A64D4E6C94EE04467D49BB3D /* DDAssertMacros.h in Headers */,
+				FB4C548DAD07BD48F9824261750CF2C5 /* DDContextFilterLogFormatter.h in Headers */,
+				073B963191A65911D600634D4ED39494 /* DDDispatchQueueLogFormatter.h in Headers */,
+				E54D34AA8C7A43E9F414FE81F9A700EC /* DDFileLogger.h in Headers */,
+				88BB328137A81A163685391A445BD501 /* DDLegacyMacros.h in Headers */,
+				68137CD06DFEBAAFA4190AE03DE02497 /* DDLog+LOGV.h in Headers */,
+				4900CE20A24A8741CBC25DC1EBF05C57 /* DDLog.h in Headers */,
+				509F0E36CB35AED88AB6BC8DD4345677 /* DDLogMacros.h in Headers */,
+				975A1BA31046D19ECA98383E38530F6D /* DDMultiFormatter.h in Headers */,
+				17B8D09602C6EED9CB67EEEE1A0F1CEB /* DDTTYLogger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBC092E6908CD9279926E9B5133C9510 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1AE35FD4F728CF4ACF32A1891920CB1 /* FBShimmering.h in Headers */,
+				0E4C4ECEAFE8717359F45DC5715B449C /* FBShimmeringLayer.h in Headers */,
+				57A056674A14BBA750980BAF486CB1AF /* FBShimmeringView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5C66DF613C7835C7C877A86FD000BDD6 /* Shimmer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FE755B1162BA311EAEDE64F291E921F /* Build configuration list for PBXNativeTarget "Shimmer" */;
+			buildPhases = (
+				E83B90C88AA5355FD8846AC79401AA7D /* Sources */,
+				D77C4527E81233BB8846FB1C845DE1C0 /* Frameworks */,
+				FBC092E6908CD9279926E9B5133C9510 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shimmer;
+			productName = Shimmer;
+			productReference = 00B529D77E7734F648FDACD3AE1E7CF9 /* libShimmer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		624D42FCE68D4C0E397DDFF832E6280F /* CocoaLumberjack */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 446E00F39EA17F428DE0D676E86BEFA2 /* Build configuration list for PBXNativeTarget "CocoaLumberjack" */;
+			buildPhases = (
+				D9583458B38293539AB79742F0417AFD /* Sources */,
+				59C06419AD72767FFDDDA17706167D65 /* Frameworks */,
+				EEC35775B9B1E97BCB0389966661064A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CocoaLumberjack;
+			productName = CocoaLumberjack;
+			productReference = C6F494ABB21A2B5BCBF0A03CACA0AB68 /* libCocoaLumberjack.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		66EFC12BB6BEE85236A7743A0B34B5F6 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEFC05C87AF1E0D497D4096F62038479 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				05BD17164B4A533737FF48E050924D36 /* Sources */,
+				FF9B63D654265D61D01E1B81C49C7869 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A6E8B93EA80BED3435B175AAE4AFB01 /* PBXTargetDependency */,
+				BF2769B384BCF78577BCDA28DAC53B8C /* PBXTargetDependency */,
+				BAE5D8E5B08EFC251BE09FB983AC2B33 /* PBXTargetDependency */,
+				411B0EDA05ECF2E6FFDD8F7F6D258E9F /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = F0C8338F9C2C161A3F74C592531AD8FA /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6C04FBC21C2F2B7D044A9A1EE53D4A49 /* AsyncDisplayKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A073D0C4EE7C88A6187E2D4E716F0990 /* Build configuration list for PBXNativeTarget "AsyncDisplayKit" */;
+			buildPhases = (
+				0946CD5904318C63F58919760EDA0AE6 /* Sources */,
+				7B8047FAAF082C94D4F10A1C748F9000 /* Frameworks */,
+				05253D2DB4AE880705C4D26E507E4DFA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AsyncDisplayKit;
+			productName = AsyncDisplayKit;
+			productReference = DA5F5CC91EF5B589934C5417125873D6 /* libAsyncDisplayKit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		9494390523250106847516AB47E5F9FF /* iCarousel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CBEFCEEE7162F9A8774D9BD334236CB /* Build configuration list for PBXNativeTarget "iCarousel" */;
+			buildPhases = (
+				CC84A3642910B2B5026370609C8953AA /* Sources */,
+				4A91BD5D9F219640D4FCC273086A0AC6 /* Frameworks */,
+				91FE4CEDD5CDF60764A37C7217526FF6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iCarousel;
+			productName = iCarousel;
+			productReference = 2C8F6B466FF9A65D86623716423C11A0 /* libiCarousel.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C04FBC21C2F2B7D044A9A1EE53D4A49 /* AsyncDisplayKit */,
+				624D42FCE68D4C0E397DDFF832E6280F /* CocoaLumberjack */,
+				66EFC12BB6BEE85236A7743A0B34B5F6 /* Pods */,
+				5C66DF613C7835C7C877A86FD000BDD6 /* Shimmer */,
+				9494390523250106847516AB47E5F9FF /* iCarousel */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05BD17164B4A533737FF48E050924D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1793CD0A2EF01905955FC007C8B2CA22 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0946CD5904318C63F58919760EDA0AE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF1B7D68F26060356D2E12C685DDE8C /* ASAbstractLayoutController.mm in Sources */,
+				4618F1DA20F930B173080813E46F4022 /* ASAsciiArtBoxCreator.m in Sources */,
+				B8973981ACAAB4CE0B6687DA1F8793C3 /* ASBackgroundLayoutSpec.mm in Sources */,
+				8AEABDBA210A108D875326F544D171BE /* ASBasicImageDownloader.mm in Sources */,
+				A0D8AD35ADCFC973A095B9E0936F260F /* ASBatchContext.mm in Sources */,
+				439663C8E2A4B24078091D1AD3910424 /* ASBatchFetching.m in Sources */,
+				C9AF6CE94BECEB517C723DF4FD4D6635 /* ASButtonNode.mm in Sources */,
+				670A2664CE0968EA30212C84815E0F25 /* ASCellNode.m in Sources */,
+				5146741C364BB046E262CA3975B522CD /* ASCenterLayoutSpec.mm in Sources */,
+				831B09DA9793E62E1E756EAA2573C5D4 /* ASChangeSetDataController.m in Sources */,
+				ECE52C2EC8E5585017A830C268E10C0F /* ASCollectionDataController.mm in Sources */,
+				104581A907CABF8FC4313441458866C4 /* ASCollectionNode.m in Sources */,
+				79E68E7FB25E0CC710C6C2987A2C11F6 /* ASCollectionView.mm in Sources */,
+				70F2824C0894813C84B5144D6AB4FD9A /* ASCollectionViewFlowLayoutInspector.m in Sources */,
+				346BC112E28EB989F74267DA9F410974 /* ASCollectionViewLayoutController.mm in Sources */,
+				1823AC0F44EC82788FC9E51FE190DFAC /* ASControlNode.m in Sources */,
+				B9B0D41685CB92D0885241A68C93F72F /* ASDataController.mm in Sources */,
+				9BE3A7B9F8522CE9A4CF2A400B29A330 /* ASDealloc2MainObject.m in Sources */,
+				AE8F22A088772803BB39928E4A53741E /* ASDimension.mm in Sources */,
+				E4983742C4A34ABFF47AC10F8298A9D7 /* ASDisplayNode+AsyncDisplay.mm in Sources */,
+				9CA35A67D9890B372662F7966A4FD87D /* ASDisplayNode+DebugTiming.mm in Sources */,
+				7C36EF7E34EFA411CE4087DBC4A82C2A /* ASDisplayNode+UIViewBridge.mm in Sources */,
+				4076A1A366889E905FA2B8A3FF02A88E /* ASDisplayNode.mm in Sources */,
+				5046B07EAE81236B5492A98453D5B75D /* ASDisplayNodeExtras.mm in Sources */,
+				9E552E96D364E3AB57225A403F999F9C /* ASEditableTextNode.mm in Sources */,
+				8040E05F3A1F02BE42F8739D7613C80B /* ASFlowLayoutController.mm in Sources */,
+				EBCD71CE75E0D78153415C22AB681508 /* ASHighlightOverlayLayer.mm in Sources */,
+				86CD7AFD5096844D6590A3C1D5BAE8F3 /* ASImageNode+CGExtras.m in Sources */,
+				3AB342F14D7B48AD6976E1BF83881C13 /* ASImageNode.mm in Sources */,
+				6FF0B5C8E2720A284FFF0D732B12A93E /* ASIndexPath.m in Sources */,
+				6DD026CBDE4F0B172113A8DF9B58A378 /* ASInsetLayoutSpec.mm in Sources */,
+				F224519BB1742A5DDDCAD5D2F65EC074 /* ASInternalHelpers.mm in Sources */,
+				1043C464A9857891B16B758DE34E6E5E /* ASLayout.mm in Sources */,
+				F293A29F7BA3CBAA34634BB0FEC597E9 /* ASLayoutOptions.mm in Sources */,
+				2C2DDFCCB0EA3ED287EA570B6D3D5ED0 /* ASLayoutOptionsPrivate.mm in Sources */,
+				C298BFF7C2EE6ACF3D3E6D4D5FC81603 /* ASLayoutSpec.mm in Sources */,
+				23E374341FE18F767179DFD502BCAF7B /* ASMultidimensionalArrayUtils.mm in Sources */,
+				E9B8AC84AEFC52FC208183CDD019366C /* ASMultiplexImageNode.mm in Sources */,
+				30D486A8F465E680857EBDB8D6E9AEE9 /* ASMutableAttributedStringBuilder.m in Sources */,
+				F9DB7DA1970160957C544EAC689A09C3 /* ASNetworkImageNode.mm in Sources */,
+				6ABC67A8E4A1C1CDF69ACD720D43B065 /* ASOverlayLayoutSpec.mm in Sources */,
+				0055785C45CF9410AE4EE0C1C1C111AD /* ASPhotosFrameworkImageRequest.m in Sources */,
+				EA188CA630D078AAB6FA31BBEB947B89 /* ASRangeController.mm in Sources */,
+				84779BEA13570D862AA8B20652519345 /* ASRangeHandlerPreload.mm in Sources */,
+				83BBB72759ADADE2EB8F761CE31B03E5 /* ASRangeHandlerRender.mm in Sources */,
+				294380D4E979C5AFB50D61B32692CDC5 /* ASRatioLayoutSpec.mm in Sources */,
+				A572D3F42B26FB81B79EF54E74CDDFE9 /* ASRelativeSize.mm in Sources */,
+				5A5F498E92449D0910C247BD20741095 /* ASScrollDirection.m in Sources */,
+				1C2B549D768313CD545560272B68E4FB /* ASScrollNode.m in Sources */,
+				1C78695DC25A9CA37A66832B6A848258 /* ASSentinel.m in Sources */,
+				3475C06680F72483F44DBD020855D753 /* ASStackBaselinePositionedLayout.mm in Sources */,
+				4A7B2E3FED65F89705446DF3BAC9E36F /* ASStackLayoutSpec.mm in Sources */,
+				EB5160F12DE8FE49421275299B632B10 /* ASStackPositionedLayout.mm in Sources */,
+				29F64FE681A649E42F76047CA780DB9E /* ASStackUnpositionedLayout.mm in Sources */,
+				0CD0AF4544CFD588966905CC1DB2B4E0 /* ASStaticLayoutSpec.mm in Sources */,
+				C59145236C594A890E71C25F26A1483F /* ASTableNode.m in Sources */,
+				44B3DDB845CF92DF97E3D3B36F260A7B /* ASTableView.mm in Sources */,
+				DE739FD0A17719E80E6176343AE0496C /* ASTextNode.mm in Sources */,
+				F5363FA9CAC87FB751CAF704BFC9BB26 /* ASTextNodeCoreTextAdditions.m in Sources */,
+				2B1F0B435BEA88C1754B65B102118AD2 /* ASTextNodeRenderer.mm in Sources */,
+				84F042540D4E9B28DD9BC770AE96B0D8 /* ASTextNodeShadower.m in Sources */,
+				CF4C05627566E74827E3E25D8F7DEE40 /* ASTextNodeTextKitHelpers.mm in Sources */,
+				408D081B020553F7612DBF19E3EBECE2 /* ASTextNodeWordKerner.m in Sources */,
+				4DAEFAE15AAC5527F817220E3DFDECBC /* ASViewController.m in Sources */,
+				B2B0B2A6ECD0E5AF5D10F8B419051F6F /* AsyncDisplayKit-dummy.m in Sources */,
+				0418D7ABF079C066C82FAB4D74800B71 /* CGRect+ASConvenience.m in Sources */,
+				020A407EE90BEBF61AAE47ECFFFE8F3B /* NSMutableAttributedString+TextKitAdditions.m in Sources */,
+				9D1F2E402A5A02EE5E946302CE80E295 /* UICollectionViewLayout+ASConvenience.m in Sources */,
+				06F086D9BD286EEB1E0B16193C9B924A /* _ASAsyncTransaction.m in Sources */,
+				1EAC47C65468C2E8547DF527BD6D94D3 /* _ASAsyncTransactionContainer.m in Sources */,
+				393B708B309D1DF3CDCEB118469EFE1A /* _ASAsyncTransactionGroup.m in Sources */,
+				C6B7928E755301D590591566E72D3C3B /* _ASCoreAnimationExtras.mm in Sources */,
+				6596C7BAE9232B7612CAE80D89362957 /* _ASDisplayLayer.mm in Sources */,
+				2DA6DDF29842476CD8C1AFAC609D4243 /* _ASDisplayView.mm in Sources */,
+				162E7CBEA17DD4F17A4841E9138320C6 /* _ASHierarchyChangeSet.m in Sources */,
+				C2C892DB3508BF61CE5C2E63F9CF1AD0 /* _ASPendingState.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC84A3642910B2B5026370609C8953AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBA85CA27950C248D5C2FEC5074ACFA2 /* iCarousel-dummy.m in Sources */,
+				2CDC8C75950EA195B984635CBEF6A36F /* iCarousel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9583458B38293539AB79742F0417AFD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD8C9ADEAF220AF5E6C6369180670B13 /* CocoaLumberjack-dummy.m in Sources */,
+				4097AFBEE639002B7E3CC09FFBB07B28 /* DDASLLogCapture.m in Sources */,
+				A55E334714FBFCF56B85B5A9660DD1A4 /* DDASLLogger.m in Sources */,
+				F4ED2C712A7593D6A9ED9133261A9E94 /* DDAbstractDatabaseLogger.m in Sources */,
+				519DF5AFE99E18F4A860BFAD418AF4C8 /* DDContextFilterLogFormatter.m in Sources */,
+				A70B31D1988605B9A198F8E1B02C1E66 /* DDDispatchQueueLogFormatter.m in Sources */,
+				63DA22738C1F4EF7AD9F8B3CE9F92BAD /* DDFileLogger.m in Sources */,
+				CEB87455566D56516794B0ADB29C0AC7 /* DDLog.m in Sources */,
+				C269B1DF979E46FCB59EBF463B484CED /* DDMultiFormatter.m in Sources */,
+				35FAE02F441BABB1626D8C55651A0DA7 /* DDTTYLogger.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E83B90C88AA5355FD8846AC79401AA7D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76552C16319276BD733AEBCDD76B265E /* FBShimmeringLayer.m in Sources */,
+				DE420BD490D5CBE8000D484B70E72385 /* FBShimmeringView.m in Sources */,
+				1AA2D28C68365F8F8C2FF7F460BA3B14 /* Shimmer-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A6E8B93EA80BED3435B175AAE4AFB01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AsyncDisplayKit;
+			target = 6C04FBC21C2F2B7D044A9A1EE53D4A49 /* AsyncDisplayKit */;
+			targetProxy = 3A089D24EAB88851CC7FEE42E13E08F6 /* PBXContainerItemProxy */;
+		};
+		411B0EDA05ECF2E6FFDD8F7F6D258E9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iCarousel;
+			target = 9494390523250106847516AB47E5F9FF /* iCarousel */;
+			targetProxy = 17E596C246B674DFB927E8D2B46D876D /* PBXContainerItemProxy */;
+		};
+		BAE5D8E5B08EFC251BE09FB983AC2B33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Shimmer;
+			target = 5C66DF613C7835C7C877A86FD000BDD6 /* Shimmer */;
+			targetProxy = 1A61E26F0D480A452BAFA4205B36F52B /* PBXContainerItemProxy */;
+		};
+		BF2769B384BCF78577BCDA28DAC53B8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaLumberjack;
+			target = 624D42FCE68D4C0E397DDFF832E6280F /* CocoaLumberjack */;
+			targetProxy = A127D9F752B47E38A3D4BF86225CE97D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		04C7D22781121C1A403B20FBB87995CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E7460583A1A276B0B89A463E589F923 /* Shimmer-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Shimmer/Shimmer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		052A17875CB827423D627183396CEB60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B919BEE6B2280A32D1CB4BF48348262 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E7460583A1A276B0B89A463E589F923 /* Shimmer-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Shimmer/Shimmer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		417A0E22DB3C76420F41C3F2F9C96F49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27E36B478A9C50B090C07F452CF93192 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4C9D427BE955A782B22BB7C2C6D7E2F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7B052039AFF717D9BEB8C5D005FE376 /* AsyncDisplayKit-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AsyncDisplayKit/AsyncDisplayKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6281CA80C8BEB0842AE3557ABEDDDC73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B9E20229CB730E9BEFBCDED783833C0 /* CocoaLumberjack-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaLumberjack/CocoaLumberjack-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6BAA92E8A218758583058F5CB659D8C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7B052039AFF717D9BEB8C5D005FE376 /* AsyncDisplayKit-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AsyncDisplayKit/AsyncDisplayKit-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		979D10774D83B75B9097919F4B2F3F1B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40C186D55388205DA670CCBA8FD439DF /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9923892F76032F17D2CBCB5451934EE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 171C52862B1B0F69E56433C0047BD11F /* iCarousel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/iCarousel/iCarousel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9F0DAAAD08C982FDB7BAB08DC62D89E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B9E20229CB730E9BEFBCDED783833C0 /* CocoaLumberjack-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/CocoaLumberjack/CocoaLumberjack-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		D07C47BFB9E6CEEE29930ED139C65971 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 171C52862B1B0F69E56433C0047BD11F /* iCarousel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/iCarousel/iCarousel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B37F0F91F85060E28F1DAAB522DC7EC1 /* Debug */,
+				052A17875CB827423D627183396CEB60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FE755B1162BA311EAEDE64F291E921F /* Build configuration list for PBXNativeTarget "Shimmer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B919BEE6B2280A32D1CB4BF48348262 /* Debug */,
+				04C7D22781121C1A403B20FBB87995CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		446E00F39EA17F428DE0D676E86BEFA2 /* Build configuration list for PBXNativeTarget "CocoaLumberjack" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F0DAAAD08C982FDB7BAB08DC62D89E7 /* Debug */,
+				6281CA80C8BEB0842AE3557ABEDDDC73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CBEFCEEE7162F9A8774D9BD334236CB /* Build configuration list for PBXNativeTarget "iCarousel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D07C47BFB9E6CEEE29930ED139C65971 /* Debug */,
+				9923892F76032F17D2CBCB5451934EE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A073D0C4EE7C88A6187E2D4E716F0990 /* Build configuration list for PBXNativeTarget "AsyncDisplayKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C9D427BE955A782B22BB7C2C6D7E2F9 /* Debug */,
+				6BAA92E8A218758583058F5CB659D8C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEFC05C87AF1E0D497D4096F62038479 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				417A0E22DB3C76420F41C3F2F9C96F49 /* Debug */,
+				979D10774D83B75B9097919F4B2F3F1B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
