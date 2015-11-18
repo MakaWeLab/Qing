@@ -13,6 +13,9 @@
 		2403DDB31BFC7770002E7B0E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2403DDB21BFC7770002E7B0E /* libxml2.tbd */; };
 		247CDA2D1BFC7D7600F9DB2A /* CrawlersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */; settings = {ASSET_TAGS = (); }; };
 		247CDA311BFC810A00F9DB2A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA301BFC810A00F9DB2A /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
+		247CDA381BFC85C400F9DB2A /* CrawlersCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA361BFC85C400F9DB2A /* CrawlersCollectionCell.m */; settings = {ASSET_TAGS = (); }; };
+		247CDA391BFC85C400F9DB2A /* CrawlersCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247CDA371BFC85C400F9DB2A /* CrawlersCollectionCell.xib */; settings = {ASSET_TAGS = (); }; };
+		247CDA3C1BFC86CD00F9DB2A /* RootCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA3B1BFC86CD00F9DB2A /* RootCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		605D51B01BF3A53E0071BC75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51AF1BF3A53E0071BC75 /* main.m */; };
 		605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51B21BF3A53E0071BC75 /* AppDelegate.m */; };
 		605D51B61BF3A53E0071BC75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51B51BF3A53E0071BC75 /* ViewController.m */; };
@@ -62,6 +65,11 @@
 		247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrawlersViewController.m; sourceTree = "<group>"; };
 		247CDA2F1BFC810A00F9DB2A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		247CDA301BFC810A00F9DB2A /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		247CDA351BFC85C400F9DB2A /* CrawlersCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrawlersCollectionCell.h; sourceTree = "<group>"; };
+		247CDA361BFC85C400F9DB2A /* CrawlersCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrawlersCollectionCell.m; sourceTree = "<group>"; };
+		247CDA371BFC85C400F9DB2A /* CrawlersCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CrawlersCollectionCell.xib; sourceTree = "<group>"; };
+		247CDA3A1BFC86CD00F9DB2A /* RootCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCollectionViewCell.h; sourceTree = "<group>"; };
+		247CDA3B1BFC86CD00F9DB2A /* RootCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootCollectionViewCell.m; sourceTree = "<group>"; };
 		5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E9F85BB6C993515AC12ACF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		605D51AB1BF3A53E0071BC75 /* Qing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +152,9 @@
 			children = (
 				247CDA2B1BFC7D7600F9DB2A /* CrawlersViewController.h */,
 				247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */,
+				247CDA351BFC85C400F9DB2A /* CrawlersCollectionCell.h */,
+				247CDA361BFC85C400F9DB2A /* CrawlersCollectionCell.m */,
+				247CDA371BFC85C400F9DB2A /* CrawlersCollectionCell.xib */,
 				2403DDA61BFC769A002E7B0E /* TFhpple */,
 			);
 			path = Crawlers;
@@ -263,6 +274,8 @@
 				605D51EE1BF3A60D0071BC75 /* RootTableViewController.m */,
 				605D51EF1BF3A60D0071BC75 /* RootViewController.h */,
 				605D51F01BF3A60D0071BC75 /* RootViewController.m */,
+				247CDA3A1BFC86CD00F9DB2A /* RootCollectionViewCell.h */,
+				247CDA3B1BFC86CD00F9DB2A /* RootCollectionViewCell.m */,
 			);
 			path = RootClass;
 			sourceTree = "<group>";
@@ -386,6 +399,7 @@
 				605D51FE1BF3A77D0071BC75 /* Localizable.strings in Resources */,
 				605D51E71BF3A5820071BC75 /* Plant.xcassets in Resources */,
 				605D51BE1BF3A53E0071BC75 /* Assets.xcassets in Resources */,
+				247CDA391BFC85C400F9DB2A /* CrawlersCollectionCell.xib in Resources */,
 				605D51FB1BF3A7750071BC75 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,12 +464,14 @@
 				605D51F41BF3A60D0071BC75 /* RootViewController.m in Sources */,
 				605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */,
 				2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */,
+				247CDA381BFC85C400F9DB2A /* CrawlersCollectionCell.m in Sources */,
 				2403DDAE1BFC769A002E7B0E /* TFHppleElement.m in Sources */,
 				2403DDAD1BFC769A002E7B0E /* TFHpple.m in Sources */,
 				605D51F21BF3A60D0071BC75 /* RootTabBarController.m in Sources */,
 				247CDA311BFC810A00F9DB2A /* ProfileViewController.m in Sources */,
 				605D51F11BF3A60D0071BC75 /* RootNavigationController.m in Sources */,
 				605D51F31BF3A60D0071BC75 /* RootTableViewController.m in Sources */,
+				247CDA3C1BFC86CD00F9DB2A /* RootCollectionViewCell.m in Sources */,
 				605D51B01BF3A53E0071BC75 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

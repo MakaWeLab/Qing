@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ProfileViewController.h"
 #import "CrawlersViewController.h"
+#import "RootNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +28,11 @@
     
     ProfileViewController* profile = [[ProfileViewController alloc]init];
     
-    RESideMenu* menu = [[RESideMenu alloc]initWithContentViewController:crawlers leftMenuViewController:profile rightMenuViewController:nil];
+    RootNavigationController* crawlersNavigation = [[RootNavigationController alloc]initWithRootViewController:crawlers];
+    
+    RESideMenu* menu = [[RESideMenu alloc]initWithContentViewController:crawlersNavigation leftMenuViewController:profile rightMenuViewController:nil];
+    
+    menu.scaleContentView = NO;
     
     self.window.rootViewController = menu;
     
