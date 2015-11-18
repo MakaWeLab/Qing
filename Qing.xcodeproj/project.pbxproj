@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2403DDAD1BFC769A002E7B0E /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDA81BFC769A002E7B0E /* TFHpple.m */; settings = {ASSET_TAGS = (); }; };
+		2403DDAE1BFC769A002E7B0E /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDAA1BFC769A002E7B0E /* TFHppleElement.m */; settings = {ASSET_TAGS = (); }; };
+		2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDAC1BFC769A002E7B0E /* XPathQuery.m */; settings = {ASSET_TAGS = (); }; };
+		2403DDB31BFC7770002E7B0E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2403DDB21BFC7770002E7B0E /* libxml2.tbd */; };
 		605D51B01BF3A53E0071BC75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51AF1BF3A53E0071BC75 /* main.m */; };
 		605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51B21BF3A53E0071BC75 /* AppDelegate.m */; };
 		605D51B61BF3A53E0071BC75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51B51BF3A53E0071BC75 /* ViewController.m */; };
@@ -44,6 +48,14 @@
 
 /* Begin PBXFileReference section */
 		193E36F75E576152E59DAE78 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2403DDA71BFC769A002E7B0E /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		2403DDA81BFC769A002E7B0E /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		2403DDA91BFC769A002E7B0E /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		2403DDAA1BFC769A002E7B0E /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		2403DDAB1BFC769A002E7B0E /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		2403DDAC1BFC769A002E7B0E /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		2403DDB01BFC76DB002E7B0E /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		2403DDB21BFC7770002E7B0E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E9F85BB6C993515AC12ACF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		605D51AB1BF3A53E0071BC75 /* Qing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2403DDB31BFC7770002E7B0E /* libxml2.tbd in Frameworks */,
 				6BB96244A8C755AA29F1A347 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +119,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2403DDA31BFC70D0002E7B0E /* Gamble */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Gamble;
+			sourceTree = "<group>";
+		};
+		2403DDA41BFC7143002E7B0E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2403DDA51BFC75EA002E7B0E /* Crawlers */ = {
+			isa = PBXGroup;
+			children = (
+				2403DDA61BFC769A002E7B0E /* TFhpple */,
+			);
+			path = Crawlers;
+			sourceTree = "<group>";
+		};
+		2403DDA61BFC769A002E7B0E /* TFhpple */ = {
+			isa = PBXGroup;
+			children = (
+				2403DDA71BFC769A002E7B0E /* TFHpple.h */,
+				2403DDA81BFC769A002E7B0E /* TFHpple.m */,
+				2403DDA91BFC769A002E7B0E /* TFHppleElement.h */,
+				2403DDAA1BFC769A002E7B0E /* TFHppleElement.m */,
+				2403DDAB1BFC769A002E7B0E /* XPathQuery.h */,
+				2403DDAC1BFC769A002E7B0E /* XPathQuery.m */,
+			);
+			path = TFhpple;
+			sourceTree = "<group>";
+		};
 		59E793A65ECC442D50403E76 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +189,10 @@
 			isa = PBXGroup;
 			children = (
 				605D51E61BF3A5820071BC75 /* Plant.xcassets */,
+				2403DDA51BFC75EA002E7B0E /* Crawlers */,
+				2403DDA31BFC70D0002E7B0E /* Gamble */,
 				605D51E81BF3A60D0071BC75 /* RootClass */,
+				2403DDA41BFC7143002E7B0E /* Modules */,
 				605D51B11BF3A53E0071BC75 /* AppDelegate.h */,
 				605D51B21BF3A53E0071BC75 /* AppDelegate.m */,
 				605D51B41BF3A53E0071BC75 /* ViewController.h */,
@@ -201,6 +252,8 @@
 		B795E80B2ABA3272B32EF99C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2403DDB21BFC7770002E7B0E /* libxml2.tbd */,
+				2403DDB01BFC76DB002E7B0E /* libxml2.2.tbd */,
 				193E36F75E576152E59DAE78 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -377,6 +430,9 @@
 				605D51B61BF3A53E0071BC75 /* ViewController.m in Sources */,
 				605D51F41BF3A60D0071BC75 /* RootViewController.m in Sources */,
 				605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */,
+				2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */,
+				2403DDAE1BFC769A002E7B0E /* TFHppleElement.m in Sources */,
+				2403DDAD1BFC769A002E7B0E /* TFHpple.m in Sources */,
 				605D51F21BF3A60D0071BC75 /* RootTabBarController.m in Sources */,
 				605D51F11BF3A60D0071BC75 /* RootNavigationController.m in Sources */,
 				605D51F31BF3A60D0071BC75 /* RootTableViewController.m in Sources */,
@@ -535,6 +591,15 @@
 			baseConfigurationReference = 5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AsyncDisplayKit\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Shimmer\"",
+					"\"${PODS_ROOT}/Headers/Public/iCarousel\"",
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = Qing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = maka.Qing;
@@ -547,6 +612,24 @@
 			baseConfigurationReference = 5E9F85BB6C993515AC12ACF5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AsyncDisplayKit\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Shimmer\"",
+					"\"${PODS_ROOT}/Headers/Public/iCarousel\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AsyncDisplayKit\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Shimmer\"",
+					"\"${PODS_ROOT}/Headers/Public/iCarousel\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = Qing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = maka.Qing;

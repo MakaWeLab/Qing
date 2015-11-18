@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>RESideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Shimmer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -31,6 +36,37 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>2965E38DCEBC6E89D5362BA6561D3FBD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57DBF1495ED2C18B5307170AF2C03EA3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5C66DF613C7835C7C877A86FD000BDD6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9494390523250106847516AB47E5F9FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF667DF254B9988E6476703BA89565C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CDED475580AF32D58F9E62EA4E1FE495</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

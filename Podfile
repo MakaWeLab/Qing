@@ -5,7 +5,7 @@ platform :ios, ‘7.0’
 #pod 'ProtocolBuffers'
 #pod 'pop'
 #pod 'Mantle'
-#pod 'RESideMenu'
+pod 'RESideMenu'
 #pod 'SDWebImage'
 #pod 'MBProgressHUD'
 #pod 'FlatUIKit'
