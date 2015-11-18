@@ -4,12 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AsyncDisplayKit.xcscheme</key>
+		<key>CocoaLumberjack.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>CocoaLumberjack.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Masonry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,12 +29,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Shimmer.xcscheme</key>
+		<key>ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>iCarousel.xcscheme</key>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>pop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>084A3FBBB9B9B2BA24E32E817A4079F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C51FCF31E144EB53956FD6D1FFF9930</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2965E38DCEBC6E89D5362BA6561D3FBD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57DBF1495ED2C18B5307170AF2C03EA3</key>
+		<key>47C800E42623009B7192B025B3DD25A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5C66DF613C7835C7C877A86FD000BDD6</key>
+		<key>5352D432641F0656C90741034E32F31E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9494390523250106847516AB47E5F9FF</key>
+		<key>6951DA9871DA259A9AAA6EFC68AEF8EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF667DF254B9988E6476703BA89565C9</key>
+		<key>7FE8E50D34656F5BE2E142ECC69D01AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CDED475580AF32D58F9E62EA4E1FE495</key>
+		<key>8917A30405C3E87AA22EB160745CE8B9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B281DA29A9C3EDFB45BA53651F6BA611</key>
 		<dict>
 			<key>primary</key>
 			<true/>

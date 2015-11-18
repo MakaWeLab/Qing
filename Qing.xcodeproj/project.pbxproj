@@ -11,6 +11,7 @@
 		2403DDAE1BFC769A002E7B0E /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDAA1BFC769A002E7B0E /* TFHppleElement.m */; settings = {ASSET_TAGS = (); }; };
 		2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDAC1BFC769A002E7B0E /* XPathQuery.m */; settings = {ASSET_TAGS = (); }; };
 		2403DDB31BFC7770002E7B0E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2403DDB21BFC7770002E7B0E /* libxml2.tbd */; };
+		247CDA2D1BFC7D7600F9DB2A /* CrawlersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */; settings = {ASSET_TAGS = (); }; };
 		605D51B01BF3A53E0071BC75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51AF1BF3A53E0071BC75 /* main.m */; };
 		605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51B21BF3A53E0071BC75 /* AppDelegate.m */; };
 		605D51B61BF3A53E0071BC75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51B51BF3A53E0071BC75 /* ViewController.m */; };
@@ -56,6 +57,8 @@
 		2403DDAC1BFC769A002E7B0E /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		2403DDB01BFC76DB002E7B0E /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		2403DDB21BFC7770002E7B0E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		247CDA2B1BFC7D7600F9DB2A /* CrawlersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrawlersViewController.h; sourceTree = "<group>"; };
+		247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrawlersViewController.m; sourceTree = "<group>"; };
 		5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E9F85BB6C993515AC12ACF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		605D51AB1BF3A53E0071BC75 /* Qing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qing.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +139,8 @@
 		2403DDA51BFC75EA002E7B0E /* Crawlers */ = {
 			isa = PBXGroup;
 			children = (
+				247CDA2B1BFC7D7600F9DB2A /* CrawlersViewController.h */,
+				247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */,
 				2403DDA61BFC769A002E7B0E /* TFhpple */,
 			);
 			path = Crawlers;
@@ -427,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				605D51BC1BF3A53E0071BC75 /* Qing.xcdatamodeld in Sources */,
+				247CDA2D1BFC7D7600F9DB2A /* CrawlersViewController.m in Sources */,
 				605D51B61BF3A53E0071BC75 /* ViewController.m in Sources */,
 				605D51F41BF3A60D0071BC75 /* RootViewController.m in Sources */,
 				605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */,
