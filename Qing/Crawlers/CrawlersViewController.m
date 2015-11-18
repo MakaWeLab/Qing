@@ -9,17 +9,47 @@
 #import "CrawlersViewController.h"
 #import "CrawlersCollectionCell.h"
 #import <Masonry.h>
+#import "TFHpple.h"
+#import <UIImageView+WebCache.h>
 
 @interface CrawlersViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UICollectionView* collectionView;
 
+@property (nonatomic,strong) NSMutableArray* dataSource;
+
+@property (nonatomic,strong) NSString* url;
+
 @end
 
 @implementation CrawlersViewController
 
+-(instancetype)initWithUrl:(NSString *)url
+{
+    if (self = [super init]) {
+        self.dataSource = [NSMutableArray array];
+        self.url = url;
+    }
+    return self;
+}
+
+-(void)setUrl:(NSString *)url
+{
+    if ([_url isEqualToString:url]) {
+        return;
+    }
+    _url = url;
+    [self.dataSource removeAllObjects];
+    NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
+    TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
+    NSArray *array = [xpathparser searchWithXPathQuery:@"//li[@class='t2']"];
+    [self.dataSource addObjectsFromArray:array];
+    [self.collectionView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     
     UICollectionViewFlowLayout* flow = [[UICollectionViewFlowLayout alloc]init];
     flow.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -51,13 +81,18 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 100;
+    return self.dataSource.count;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    TFHppleElement* element = self.dataSource[indexPath.row];
+    TFHppleElement* a = [element firstChildWithClassName:@"tupian"];
+    NSString* imgSrc = [[[a firstChild] attributes] objectForKey:@"src"];
     CrawlersCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CrawlersCollectionCell" forIndexPath:indexPath];
+    [cell.cImageView sd_setImageWithURL:[NSURL URLWithString:imgSrc]];
+    cell.cLabel.text = @"";
     cell.backgroundColor = [UIColor orangeColor];
     return cell;
 }

@@ -10,4 +10,6 @@
 
 @interface CrawlersViewController : RootViewController
 
+-(instancetype)initWithUrl:(NSString*)url;
+
 @end
