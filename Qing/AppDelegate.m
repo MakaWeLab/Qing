@@ -6,7 +6,10 @@
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
+#import <RESideMenu.h>
 #import "AppDelegate.h"
+#import "ProfileViewController.h"
+#import "CrawlersViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    CrawlersViewController* crawlers = [[CrawlersViewController alloc]init];
+    
+    ProfileViewController* profile = [[ProfileViewController alloc]init];
+    
+    RESideMenu* menu = [[RESideMenu alloc]initWithContentViewController:crawlers leftMenuViewController:profile rightMenuViewController:nil];
+    
+    self.window.rootViewController = menu;
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
