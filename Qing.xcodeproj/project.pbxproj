@@ -31,6 +31,9 @@
 		605D51F41BF3A60D0071BC75 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51F01BF3A60D0071BC75 /* RootViewController.m */; settings = {ASSET_TAGS = (); }; };
 		605D51FB1BF3A7750071BC75 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 605D51FD1BF3A7750071BC75 /* InfoPlist.strings */; };
 		605D51FE1BF3A77D0071BC75 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 605D52001BF3A77D0071BC75 /* Localizable.strings */; };
+		605D52081BFCBFE10071BC75 /* PopShowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D52071BFCBFE10071BC75 /* PopShowImageView.m */; settings = {ASSET_TAGS = (); }; };
+		605D520A1BFCC0A20071BC75 /* PopShowImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 605D52091BFCC0A20071BC75 /* PopShowImageView.xib */; settings = {ASSET_TAGS = (); }; };
+		605D520E1BFCCB960071BC75 /* CustomWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D520C1BFCCB960071BC75 /* CustomWebViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6BB96244A8C755AA29F1A347 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 193E36F75E576152E59DAE78 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +107,11 @@
 		605D52021BF3A7810071BC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		605D52031BF3A7850071BC75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		605D52041BF3A7850071BC75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		605D52061BFCBFE10071BC75 /* PopShowImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopShowImageView.h; sourceTree = "<group>"; };
+		605D52071BFCBFE10071BC75 /* PopShowImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopShowImageView.m; sourceTree = "<group>"; };
+		605D52091BFCC0A20071BC75 /* PopShowImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopShowImageView.xib; sourceTree = "<group>"; };
+		605D520B1BFCCB960071BC75 /* CustomWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWebViewController.h; sourceTree = "<group>"; };
+		605D520C1BFCCB960071BC75 /* CustomWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				605D51E61BF3A5820071BC75 /* Plant.xcassets */,
+				605D52051BFCBFCB0071BC75 /* CustomView */,
 				247CDA2E1BFC80FE00F9DB2A /* Profile */,
 				2403DDA51BFC75EA002E7B0E /* Crawlers */,
 				2403DDA31BFC70D0002E7B0E /* Gamble */,
@@ -278,6 +287,18 @@
 				247CDA3B1BFC86CD00F9DB2A /* RootCollectionViewCell.m */,
 			);
 			path = RootClass;
+			sourceTree = "<group>";
+		};
+		605D52051BFCBFCB0071BC75 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				605D52061BFCBFE10071BC75 /* PopShowImageView.h */,
+				605D52071BFCBFE10071BC75 /* PopShowImageView.m */,
+				605D52091BFCC0A20071BC75 /* PopShowImageView.xib */,
+				605D520B1BFCCB960071BC75 /* CustomWebViewController.h */,
+				605D520C1BFCCB960071BC75 /* CustomWebViewController.m */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		B795E80B2ABA3272B32EF99C /* Frameworks */ = {
@@ -360,6 +381,7 @@
 				TargetAttributes = {
 					605D51AA1BF3A53E0071BC75 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 4995ZXHHYP;
 					};
 					605D51C61BF3A53E0071BC75 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -398,6 +420,7 @@
 			files = (
 				605D51C11BF3A53E0071BC75 /* LaunchScreen.storyboard in Resources */,
 				605D51FE1BF3A77D0071BC75 /* Localizable.strings in Resources */,
+				605D520A1BFCC0A20071BC75 /* PopShowImageView.xib in Resources */,
 				605D51E71BF3A5820071BC75 /* Plant.xcassets in Resources */,
 				605D51BE1BF3A53E0071BC75 /* Assets.xcassets in Resources */,
 				247CDA391BFC85C400F9DB2A /* CrawlersCollectionCell.xib in Resources */,
@@ -482,9 +505,11 @@
 				2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */,
 				247CDA381BFC85C400F9DB2A /* CrawlersCollectionCell.m in Sources */,
 				2403DDAE1BFC769A002E7B0E /* TFHppleElement.m in Sources */,
+				605D520E1BFCCB960071BC75 /* CustomWebViewController.m in Sources */,
 				2403DDAD1BFC769A002E7B0E /* TFHpple.m in Sources */,
 				605D51F21BF3A60D0071BC75 /* RootTabBarController.m in Sources */,
 				247CDA311BFC810A00F9DB2A /* ProfileViewController.m in Sources */,
+				605D52081BFCBFE10071BC75 /* PopShowImageView.m in Sources */,
 				605D51F11BF3A60D0071BC75 /* RootNavigationController.m in Sources */,
 				605D51F31BF3A60D0071BC75 /* RootTableViewController.m in Sources */,
 				247CDA3C1BFC86CD00F9DB2A /* RootCollectionViewCell.m in Sources */,
@@ -643,6 +668,8 @@
 			baseConfigurationReference = 5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -658,6 +685,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = maka.Qing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -666,6 +694,8 @@
 			baseConfigurationReference = 5E9F85BB6C993515AC12ACF5 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -690,6 +720,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = maka.Qing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

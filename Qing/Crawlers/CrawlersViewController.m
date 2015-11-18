@@ -13,6 +13,8 @@
 #import <UIImageView+WebCache.h>
 #import <MJRefresh.h>
 #import <ReactiveCocoa.h>
+#import "PopShowImageView.h"
+#import "CustomWebViewController.h"
 
 @interface CrawlersViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -91,6 +93,15 @@
         @strongify(self);
         [self appendData];
     }];
+    
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(loadWebview)];
+}
+
+-(void)loadWebview
+{
+    CustomWebViewController* webView = [[CustomWebViewController alloc]init];
+    [self.navigationController pushViewController:webView animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -123,11 +134,27 @@
     return cell;
 }
 
+#pragma mark - UICollectionViewDelegate
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    TFHppleElement* element = self.dataSource[indexPath.row];
+    TFHppleElement* a = [element firstChildWithClassName:@"tupian"];
+    NSString* imgSrc = [[[a firstChild] attributes] objectForKey:@"src"];
+    UIImage* image = [[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:imgSrc];
+    if (image) {
+        [PopShowImageView showPopShowImageViewWithImage:image];
+    }
+}
+
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat width = ([UIScreen mainScreen].bounds.size.width - 20)/3;
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width < [UIScreen mainScreen].bounds.size.height ? [UIScreen mainScreen].bounds.size.width : [UIScreen mainScreen].bounds.size.height;
+    
+    CGFloat width = (screenWidth - 20)/3;
     CGFloat height = width*1.2;
     return CGSizeMake(width, height);
 }
