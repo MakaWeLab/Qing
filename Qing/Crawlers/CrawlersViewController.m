@@ -11,6 +11,8 @@
 #import <Masonry.h>
 #import "TFHpple.h"
 #import <UIImageView+WebCache.h>
+#import <MJRefresh.h>
+#import <ReactiveCocoa.h>
 
 @interface CrawlersViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -18,38 +20,56 @@
 
 @property (nonatomic,strong) NSMutableArray* dataSource;
 
-@property (nonatomic,strong) NSString* url;
+@property (nonatomic,strong) NSString* startString;
+
+@property (nonatomic,strong) NSString* endString;
+
+@property (nonatomic,assign) NSInteger page;
 
 @end
 
 @implementation CrawlersViewController
 
--(instancetype)initWithUrl:(NSString *)url
+-(instancetype)initWithUrlStartString:(NSString *)startString endString:(NSString *)endString
 {
     if (self = [super init]) {
+        self.startString = startString;
+        self.endString = endString;
         self.dataSource = [NSMutableArray array];
-        self.url = url;
+        self.page = 1;
     }
     return self;
 }
 
--(void)setUrl:(NSString *)url
+-(void)refreshDataWithUrl:(NSString*)url
 {
-    if ([_url isEqualToString:url]) {
-        return;
-    }
-    _url = url;
     [self.dataSource removeAllObjects];
     NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
     TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
     NSArray *array = [xpathparser searchWithXPathQuery:@"//li[@class='t2']"];
     [self.dataSource addObjectsFromArray:array];
+}
+
+-(void)appendData
+{
+    self.page+=1;
+    NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.startString,(long)self.page,self.endString];
+    NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
+    TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
+    NSArray *array = [xpathparser searchWithXPathQuery:@"//li[@class='t2']"];
+    if (array.count == 0) {
+        self.page -= 1;
+        return;
+    }
+    [self.dataSource addObjectsFromArray:array];
+    [self.collectionView.mj_footer endRefreshing];
     [self.collectionView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.startString,(long)self.page,self.endString];
+    [self refreshDataWithUrl:url];
     
     UICollectionViewFlowLayout* flow = [[UICollectionViewFlowLayout alloc]init];
     flow.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -65,6 +85,12 @@
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
     [self.collectionView registerNib:[UINib nibWithNibName:@"CrawlersCollectionCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"CrawlersCollectionCell"];
+    
+    @weakify(self);
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        @strongify(self);
+        [self appendData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,8 +127,8 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat width = 100;
-    CGFloat height = 100;
+    CGFloat width = ([UIScreen mainScreen].bounds.size.width - 20)/3;
+    CGFloat height = width*1.2;
     return CGSizeMake(width, height);
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
