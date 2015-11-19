@@ -10,6 +10,7 @@
 #import <UIImageView+WebCache.h>
 #import <POP.h>
 #import <Masonry.h>
+#import <FLAnimatedImage.h>
 
 @interface PopShowImageView ()
 
@@ -17,7 +18,7 @@
 
 @property (nonatomic,strong) UIView* backView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet FLAnimatedImageView *imageView;
 
 @end
 
@@ -64,22 +65,10 @@
 {
     [UIView animateWithDuration:.25 animations:^{
         self.backView.alpha = 0;
-    } completion:^(BOOL finished) {
+        self.transform = CGAffineTransformMakeScale(.1, .1);
+    } completion:^(BOOL finished) {;
         [self.container removeFromSuperview];
     }];
-    
-    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    // 动画选项设定
-    animation.duration = .25; // 动画持续时间
-    animation.repeatCount = 1; // 重复次数
-    animation.autoreverses = NO; // 动画结束时执行逆动画
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-    // 缩放倍数
-    animation.fromValue = [NSNumber numberWithFloat:1]; // 开始时的倍率
-    animation.toValue = [NSNumber numberWithFloat:.1]; // 结束时的倍率
-    // 添加动画
-    [self.layer addAnimation:animation forKey:@"scale-layer"];
-    
 }
 
 -(void)dealloc

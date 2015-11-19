@@ -7,6 +7,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
+  - FLAnimatedImage (1.0.8)
   - Masonry (0.6.3)
   - MBProgressHUD (0.9.1)
   - MJRefresh (3.0.4)
@@ -26,6 +27,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaLumberjack
+  - FLAnimatedImage
   - Masonry
   - MBProgressHUD
   - MJRefresh
@@ -37,6 +39,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
+  FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: c95f0d541606ef584dab3fbeda28f4f32b4aca6e
@@ -46,4 +49,4 @@ SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
-COCOAPODS: 0.39.0
+COCOAPODS: 0.38.2

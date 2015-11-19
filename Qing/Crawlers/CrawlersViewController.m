@@ -15,6 +15,8 @@
 #import <ReactiveCocoa.h>
 #import "PopShowImageView.h"
 #import "CustomWebViewController.h"
+#import <FLAnimatedImage.h>
+#import "MCDownloadOperation.h"
 
 @interface CrawlersViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -28,6 +30,8 @@
 
 @property (nonatomic,assign) NSInteger page;
 
+@property (nonatomic,strong) NSOperationQueue* operationQueue;
+
 @end
 
 @implementation CrawlersViewController
@@ -39,6 +43,7 @@
         self.endString = endString;
         self.dataSource = [NSMutableArray array];
         self.page = 1;
+        self.operationQueue = [[NSOperationQueue alloc]init];
     }
     return self;
 }
@@ -55,7 +60,7 @@
 -(void)appendData
 {
     self.page+=1;
-    NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.startString,(long)self.page,self.endString];
+    NSString* url = [NSString stringWithFormat:@"%@%ld%@?id=%d",self.startString,(long)self.page,self.endString,arc4random()%1000000];
     NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
     TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
     NSArray *array = [xpathparser searchWithXPathQuery:@"//li[@class='t2']"];
@@ -70,7 +75,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.startString,(long)self.page,self.endString];
+    NSString* url = [NSString stringWithFormat:@"%@%ld%@?id=%d",self.startString,(long)self.page,self.endString,arc4random()%1000000];
     [self refreshDataWithUrl:url];
     
     UICollectionViewFlowLayout* flow = [[UICollectionViewFlowLayout alloc]init];

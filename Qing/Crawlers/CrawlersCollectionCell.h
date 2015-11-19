@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FLAnimatedImage.h>
 #import "RootCollectionViewCell.h"
 
 @interface CrawlersCollectionCell : RootCollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *cImageView;
+@property (weak, nonatomic) IBOutlet FLAnimatedImageView *cImageView;
 
 @property (weak, nonatomic) IBOutlet UILabel *cLabel;
 
