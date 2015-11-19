@@ -24,7 +24,8 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    CrawlersViewController* crawlers = [[CrawlersViewController alloc]initWithUrlStartString:@"http://m.xiaohua.com/index_15_" endString:@".html"];
+    
+    CrawlersViewController* crawlers = [[CrawlersViewController alloc]initWithUrlStartString:@"http://www.qiushibaike.com/pic/page/" endString:@"?s=4826422"];
     
     ProfileViewController* profile = [[ProfileViewController alloc]init];
     

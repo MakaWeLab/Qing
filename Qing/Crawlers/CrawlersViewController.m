@@ -53,7 +53,7 @@
     [self.dataSource removeAllObjects];
     NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
     TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
-    NSArray *array = [xpathparser searchWithXPathQuery:@"//li[@class='t2']"];
+    NSArray *array = [xpathparser searchWithXPathQuery:@"//div[@class='thumb']"];
     [self.dataSource addObjectsFromArray:array];
 }
 
@@ -63,7 +63,7 @@
     NSString* url = [NSString stringWithFormat:@"%@%ld%@?id=%d",self.startString,(long)self.page,self.endString,arc4random()%1000000];
     NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
     TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
-    NSArray *array = [xpathparser searchWithXPathQuery:@"//li[@class='t2']"];
+    NSArray *array = [xpathparser searchWithXPathQuery:@"//div[@class='thumb']"];
     if (array.count == 0) {
         self.page -= 1;
         return;
@@ -130,8 +130,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TFHppleElement* element = self.dataSource[indexPath.row];
-    TFHppleElement* a = [element firstChildWithClassName:@"tupian"];
-    NSString* imgSrc = [[[a firstChild] attributes] objectForKey:@"src"];
+    TFHppleElement* a = [[element children][1] children][1];
+    NSString* imgSrc = [[a attributes] objectForKey:@"src"];
     CrawlersCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CrawlersCollectionCell" forIndexPath:indexPath];
     [cell.cImageView sd_setImageWithURL:[NSURL URLWithString:imgSrc]];
     cell.cLabel.text = @"";
@@ -145,8 +145,8 @@
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     TFHppleElement* element = self.dataSource[indexPath.row];
-    TFHppleElement* a = [element firstChildWithClassName:@"tupian"];
-    NSString* imgSrc = [[[a firstChild] attributes] objectForKey:@"src"];
+    TFHppleElement* a = [[element children][1] children][1];
+    NSString* imgSrc = [[a attributes] objectForKey:@"src"];
     UIImage* image = [[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:imgSrc];
     if (image) {
         [PopShowImageView showPopShowImageViewWithImage:image];
