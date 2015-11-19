@@ -42,7 +42,7 @@
         self.startString = startString;
         self.endString = endString;
         self.dataSource = [NSMutableArray array];
-        self.page = 1;
+        self.page = 5000;
         self.operationQueue = [[NSOperationQueue alloc]init];
     }
     return self;
@@ -53,7 +53,7 @@
     [self.dataSource removeAllObjects];
     NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
     TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
-    NSArray *array = [xpathparser searchWithXPathQuery:@"//div[@class='thumb']"];
+    NSArray *array = [xpathparser searchWithXPathQuery:@"//div[@id='picture']//img"];
     [self.dataSource addObjectsFromArray:array];
 }
 
@@ -63,9 +63,9 @@
     NSString* url = [NSString stringWithFormat:@"%@%ld%@?id=%d",self.startString,(long)self.page,self.endString,arc4random()%1000000];
     NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
     TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
-    NSArray *array = [xpathparser searchWithXPathQuery:@"//div[@class='thumb']"];
+    NSArray *array = [xpathparser searchWithXPathQuery:@"//div[@id='picture']//img"];
     if (array.count == 0) {
-        self.page -= 1;
+        [self appendData];
         return;
     }
     [self.dataSource addObjectsFromArray:array];
@@ -109,6 +109,14 @@
     [self.navigationController pushViewController:webView animated:YES];
 }
 
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    if (self.collectionView.contentOffset.y + [UIScreen mainScreen].bounds.size.height > self.collectionView.contentSize.height + 50) {
+        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.dataSource.count-1 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -130,8 +138,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TFHppleElement* element = self.dataSource[indexPath.row];
-    TFHppleElement* a = [[element children][1] children][1];
-    NSString* imgSrc = [[a attributes] objectForKey:@"src"];
+    NSString* imgSrc = [[element attributes] objectForKey:@"src"];
     CrawlersCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CrawlersCollectionCell" forIndexPath:indexPath];
     [cell.cImageView sd_setImageWithURL:[NSURL URLWithString:imgSrc]];
     cell.cLabel.text = @"";
@@ -145,8 +152,7 @@
 {
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     TFHppleElement* element = self.dataSource[indexPath.row];
-    TFHppleElement* a = [[element children][1] children][1];
-    NSString* imgSrc = [[a attributes] objectForKey:@"src"];
+    NSString* imgSrc = [[element attributes] objectForKey:@"src"];
     UIImage* image = [[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:imgSrc];
     if (image) {
         [PopShowImageView showPopShowImageViewWithImage:image];
