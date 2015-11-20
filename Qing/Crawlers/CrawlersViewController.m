@@ -28,6 +28,8 @@
 
 @property (nonatomic,strong) NSString* endString;
 
+@property (nonatomic,strong) NSString* XPathString;
+
 @property (nonatomic,assign) NSInteger page;
 
 @property (nonatomic,strong) NSOperationQueue* operationQueue;
@@ -36,13 +38,14 @@
 
 @implementation CrawlersViewController
 
--(instancetype)initWithUrlStartString:(NSString *)startString endString:(NSString *)endString
+-(instancetype)initWithUrlStartString:(NSString *)startString endString:(NSString *)endString XPathString:(NSString *)XPathString
 {
     if (self = [super init]) {
         self.startString = startString;
         self.endString = endString;
+        self.XPathString = XPathString;
         self.dataSource = [NSMutableArray array];
-        self.page = 5000;
+        self.page = 1;
         self.operationQueue = [[NSOperationQueue alloc]init];
     }
     return self;
@@ -53,24 +56,28 @@
     [self.dataSource removeAllObjects];
     NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
     TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
-    NSArray *array = [xpathparser searchWithXPathQuery:@"//div[@id='picture']//img"];
+    NSArray *array = [xpathparser searchWithXPathQuery:self.XPathString];
     [self.dataSource addObjectsFromArray:array];
 }
 
 -(void)appendData
 {
-    self.page+=1;
-    NSString* url = [NSString stringWithFormat:@"%@%ld%@?id=%d",self.startString,(long)self.page,self.endString,arc4random()%1000000];
-    NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
-    TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
-    NSArray *array = [xpathparser searchWithXPathQuery:@"//div[@id='picture']//img"];
-    if (array.count == 0) {
-        [self appendData];
-        return;
-    }
-    [self.dataSource addObjectsFromArray:array];
-    [self.collectionView.mj_footer endRefreshing];
-    [self.collectionView reloadData];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        self.page+=1;
+        NSString* url = [NSString stringWithFormat:@"%@%ld%@?id=%d",self.startString,(long)self.page,self.endString,arc4random()%1000000];
+        NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
+        TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
+        NSArray *array = [xpathparser searchWithXPathQuery:self.XPathString];
+        if (array.count == 0) {
+            [self appendData];
+            return;
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.dataSource addObjectsFromArray:array];
+            [self.collectionView.mj_footer endRefreshing];
+            [self.collectionView reloadData];
+        });
+    });
 }
 
 - (void)viewDidLoad {
@@ -112,8 +119,10 @@
 -(void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
-    if (self.collectionView.contentOffset.y + [UIScreen mainScreen].bounds.size.height > self.collectionView.contentSize.height + 50) {
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.dataSource.count-1 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+    if (self.dataSource.count > 0) {
+        if (self.collectionView.contentOffset.y + [UIScreen mainScreen].bounds.size.height > self.collectionView.contentSize.height + 50) {
+            [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForRow:self.dataSource.count-1 inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:YES];
+        }
     }
 }
 

@@ -4,12 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CocoaAsyncSocket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>CocoaLumberjack.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>FLAnimatedImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FastImageCache.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,7 +34,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MMXXMPPFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Masonry.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PSCollectionView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -40,6 +60,66 @@
 			<false/>
 		</dict>
 		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMAddressBar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMBadgeView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMCategories.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMCircleProgressView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMGradientView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMHUDView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMLabel.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMLoadingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMRateLimit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMTextField.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMTextView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SAMWebView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,7 +142,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0F7BAEA9A072E2BE555F4CA2F74D8B35</key>
+		<key>0D5CD639C647385CE9B7B32D612C8827</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>101B9FCBCA8D7E63191E588AF46C756A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1620C5CBAA4F5FA1EE730726EE93DFAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -72,12 +162,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47C800E42623009B7192B025B3DD25A1</key>
+		<key>2EAC3BC714EE270580847C4F92D43DD0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>50F61D205BCEF63747B4AC91DBF86E98</key>
+		<key>459F4F5E9AEBF2B8212B06568BCA0D25</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>47C800E42623009B7192B025B3DD25A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,12 +182,57 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5A76D9572F5EE7BE2CD6124B13737611</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5AA7F51130344CCBD8BC995DEBEDCA00</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D2215F3052C5B75E6E9A697A53ED76D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>622FC110DC87DC2FCAB4A03C6D3BF341</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6951DA9871DA259A9AAA6EFC68AEF8EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8096D2EFC09DD5230F38164A70406459</key>
+		<key>723D97D96DA4B428EFA2D55006379B39</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>76930FF59527CC8A7F2C7EDC14EB729F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>942A7584774871E6310E500E448E91FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9A1F2CE9AAE0E1C560A57FE7A23CC998</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A21861BC7648DAD3B8837759D13A1C75</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A4205FFF02ABE737E259F8A74C0DB69E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +242,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B5A671203A4B2F7C75B0816C66E4E83C</key>
+		<key>B943ECC01FAF914F40A5F531A1C44AE1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C18DA28E862CEF6FAF367F15AC1521EB</key>
+		<key>B9602E892C8961F8A61C2E0CF6CEB893</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EA3AE03498590153162E5730F25E1DC6</key>
+		<key>BFC29B22A4316256FC4DFDCF770E8D67</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C412F0BE14BEE2EAD0A4414EB45E2C3D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C925DB930031BC48D0E4549429820FC7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CFAB54926F39808ACF42DFA20FCE1B68</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EC5AA9BC827092602EF61F1BF2E4AC60</key>
 		<dict>
 			<key>primary</key>
 			<true/>

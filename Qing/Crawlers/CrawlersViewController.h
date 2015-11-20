@@ -10,6 +10,6 @@
 
 @interface CrawlersViewController : RootViewController
 
--(instancetype)initWithUrlStartString:(NSString*)startString endString:(NSString*)endString;
+-(instancetype)initWithUrlStartString:(NSString*)startString endString:(NSString*)endString XPathString:(NSString*)XPathString;
 
 @end
