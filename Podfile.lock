@@ -1,5 +1,5 @@
 PODS:
-  - CocoaAsyncSocket (7.4.2)
+  - Bugly (1.4.3)
   - CocoaLumberjack (2.2.0):
     - CocoaLumberjack/Default (= 2.2.0)
     - CocoaLumberjack/Extensions (= 2.2.0)
@@ -8,40 +8,10 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
-  - FastImageCache (1.3)
   - FLAnimatedImage (1.0.8)
   - Masonry (0.6.3)
   - MBProgressHUD (0.9.1)
   - MJRefresh (3.0.4)
-  - MMXXMPPFramework (3.6.13):
-    - MMXXMPPFramework/Core (= 3.6.13)
-    - MMXXMPPFramework/CoreDataStorage (= 3.6.13)
-    - MMXXMPPFramework/Reconnect (= 3.6.13)
-    - MMXXMPPFramework/Roster (= 3.6.13)
-    - MMXXMPPFramework/XEP-0060 (= 3.6.13)
-    - MMXXMPPFramework/XEP-0082 (= 3.6.13)
-    - MMXXMPPFramework/XEP-0106 (= 3.6.13)
-    - MMXXMPPFramework/XEP-0203 (= 3.6.13)
-  - MMXXMPPFramework/Core (3.6.13):
-    - CocoaAsyncSocket (~> 7.4.1)
-    - CocoaLumberjack (~> 2.2)
-  - MMXXMPPFramework/CoreDataStorage (3.6.13):
-    - MMXXMPPFramework/Core
-  - MMXXMPPFramework/Reconnect (3.6.13):
-    - MMXXMPPFramework/Core
-  - MMXXMPPFramework/Roster (3.6.13):
-    - MMXXMPPFramework/Core
-    - MMXXMPPFramework/CoreDataStorage
-    - MMXXMPPFramework/XEP-0203
-  - MMXXMPPFramework/XEP-0060 (3.6.13):
-    - MMXXMPPFramework/Core
-  - MMXXMPPFramework/XEP-0082 (3.6.13):
-    - MMXXMPPFramework/Core
-  - MMXXMPPFramework/XEP-0106 (3.6.13):
-    - MMXXMPPFramework/Core
-  - MMXXMPPFramework/XEP-0203 (3.6.13):
-    - MMXXMPPFramework/Core
-    - MMXXMPPFramework/XEP-0082
   - pop (1.0.8)
   - PSCollectionView (0.0.1)
   - ReactiveCocoa (2.5):
@@ -52,79 +22,37 @@ PODS:
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
   - RESideMenu (4.0.7)
-  - SAMAddressBar (0.1.0)
-  - SAMBadgeView (0.1.1)
-  - SAMCategories (0.5.2)
-  - SAMCircleProgressView (0.1.1)
-  - SAMGradientView (0.2.1)
-  - SAMHUDView (0.1.3)
-  - SAMLabel (0.1.0)
-  - SAMLoadingView (0.1.0)
-  - SAMRateLimit (0.2.1)
-  - SAMTextField (0.1.2)
-  - SAMTextView (0.2.2)
-  - SAMWebView (0.2.1)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - SSToolkit (2.0.0):
-    - SAMAddressBar
-    - SAMBadgeView
-    - SAMCategories
-    - SAMCircleProgressView
-    - SAMGradientView
-    - SAMHUDView
-    - SAMLabel
-    - SAMLoadingView
-    - SAMRateLimit
-    - SAMTextField
-    - SAMTextView
-    - SAMWebView
   - SVProgressHUD (1.1.3)
 
 DEPENDENCIES:
+  - Bugly
   - CocoaLumberjack
-  - FastImageCache (~> 1.3)
   - FLAnimatedImage
   - Masonry
   - MBProgressHUD
   - MJRefresh
-  - MMXXMPPFramework (~> 3.6.13)
   - pop
   - PSCollectionView (~> 0.0.1)
   - ReactiveCocoa
   - RESideMenu
   - SDWebImage
-  - SSToolkit (~> 2.0.0)
   - SVProgressHUD
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: f5783bdedd232d91b89769bc4b5a1580aed518ad
+  Bugly: b8d350be5047a468adf037cb016ab22762bc287c
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
-  FastImageCache: 25f214fd46405daca3d1995d783fb83b9036c62e
   FLAnimatedImage: f9422f796135aff80d8c00b2afc48015bb746e24
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: c95f0d541606ef584dab3fbeda28f4f32b4aca6e
-  MMXXMPPFramework: fd2c0a9450082cc25270bf9f8b1aec7b67e7a21e
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   PSCollectionView: 34b33818bfb5c00a2f7afdae6252baa99b46f814
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   RESideMenu: f24c508404b49c667344c54aba7e590883533958
-  SAMAddressBar: ca4278987cca36a65fd8d29fae3fc5f3fa732469
-  SAMBadgeView: f27d499b7f233e29277325f318a9dcdd2a8fc9e9
-  SAMCategories: bf8287f7961a0b343168d1fee16338dc1626ea39
-  SAMCircleProgressView: 8bfac68a15d1dd1e3d0c1ec411895898efed9dda
-  SAMGradientView: dd5edfe971cea0f1f3369b49f5fb255c0ff3921a
-  SAMHUDView: 374d9b53c2d52bf2e7b49e943ae66ee7ed5538b2
-  SAMLabel: 3792d68d0a04da5600420843d44ec50631695c15
-  SAMLoadingView: 7ffc4f0efe85f9717d6e367b6b93e32befe4407c
-  SAMRateLimit: 5514d7c95a4b98ff9616f965c132252fbff0c5b7
-  SAMTextField: a0f4eb5b48b45aef56453c265262b45154bc3e2a
-  SAMTextView: 979c43bb1fa5859ddfbfeb35e9c296a2b0ec55fd
-  SAMWebView: d141ed60d23f82a0cbfeeb952e93a690f55bc89f
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  SSToolkit: 6aa7a0966ee45788d0ec3748be7d753a2fef9629
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
 COCOAPODS: 0.38.2

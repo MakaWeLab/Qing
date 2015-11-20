@@ -1,1 +1,0 @@
-SAMWEBVIEW_OTHER_LDFLAGS = -framework "MessageUI" -framework "UIKit"

@@ -8,6 +8,7 @@
 
 #import <RESideMenu.h>
 #import "AppDelegate.h"
+#import <Bugly/CrashReporter.h>
 #import "ProfileViewController.h"
 #import "CrawlersViewController.h"
 #import "RootNavigationController.h"
@@ -37,6 +38,12 @@
     self.window.rootViewController = menu;
     
     [self.window makeKeyAndVisible];
+    
+    {
+        [[CrashReporter sharedInstance] enableLog:YES];
+        [[CrashReporter sharedInstance] installWithAppId:@"900012531"];
+    }
+    
     return YES;
 }
 
