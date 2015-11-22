@@ -40,7 +40,7 @@
     [self.window makeKeyAndVisible];
     
     {
-        [[CrashReporter sharedInstance] enableLog:YES];
+        [[CrashReporter sharedInstance] enableLog:NO];
         [[CrashReporter sharedInstance] installWithAppId:@"900012531"];
     }
     

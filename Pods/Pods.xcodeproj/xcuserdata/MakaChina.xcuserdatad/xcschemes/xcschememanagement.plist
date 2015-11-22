@@ -37,6 +37,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>PSCollectionView.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>12</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,7 +102,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>1A3CEBE0B14F73C2C7C4617EB56462A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2965E38DCEBC6E89D5362BA6561D3FBD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>43DE30BF93E4C7A8644450EFB86E6C22</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -118,6 +133,11 @@
 			<true/>
 		</dict>
 		<key>5352D432641F0656C90741034E32F31E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5D155D31D33D3A8407F97C3BFF01BAFF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,7 +172,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>B44A33A83187EE09B390B0CE59BF9CBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B5A671203A4B2F7C75B0816C66E4E83C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF95E4F828ADBEE60A07F794FF2F0224</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,12 +202,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>DB0651351DBBD85FBC9F6C8FD42C4AB0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>E6011459B25822333F488BA4FB5296BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>EA3AE03498590153162E5730F25E1DC6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F3E05BCE7E6D3ED1A5B13BC4695DD2DD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
