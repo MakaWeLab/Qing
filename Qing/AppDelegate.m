@@ -25,7 +25,9 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    CrawlersViewController* crawlers = [[CrawlersViewController alloc]initWithUrlStartString:@"http://www.xiaohua.com/index_" endString:@".html" XPathString:@"//li[@class='t2']//img"];
+    //http://www.qiushibaike.com/pic/page/2?s=4827538
+    
+    CrawlersViewController* crawlers = [[CrawlersViewController alloc]initWithUrlStartString:@"http://www.qiushibaike.com/pic/page/" endString:@"?s=4827538" XPathString:@"//div[@class='thumb']//img"];
     
     ProfileViewController* profile = [[ProfileViewController alloc]init];
     
@@ -40,8 +42,8 @@
     [self.window makeKeyAndVisible];
     
     {
-        [[CrashReporter sharedInstance] enableLog:NO];
-        [[CrashReporter sharedInstance] installWithAppId:@"900012531"];
+//        [[CrashReporter sharedInstance] enableLog:NO];
+//        [[CrashReporter sharedInstance] installWithAppId:@"900012531"];
     }
     
     return YES;

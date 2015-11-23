@@ -10,13 +10,13 @@
 #import "CrawlersCollectionCell.h"
 #import <Masonry.h>
 #import "TFHpple.h"
-#import <UIImageView+WebCache.h>
 #import <MJRefresh.h>
 #import <ReactiveCocoa.h>
 #import "PopShowImageView.h"
 #import "CustomWebViewController.h"
 #import <FLAnimatedImage.h>
 #import "MCDownloadOperation.h"
+#import "UIImageView+MCDownload.h"
 
 @interface CrawlersViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -150,17 +150,18 @@
     NSString* imgSrc = [[element attributes] objectForKey:@"src"];
     CrawlersCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CrawlersCollectionCell" forIndexPath:indexPath];
 //    [cell.cImageView sd_setImageWithURL:[NSURL URLWithString:imgSrc]];
-    MCDownloadOperation* operation = [[MCDownloadOperation alloc]initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imgSrc]] progress:^(NSData *receivedData, CGFloat progress) {
-        
-    } completed:^(NSData *data) {
-        FLAnimatedImage* animatedImage = [[FLAnimatedImage alloc]initWithAnimatedGIFData:data];
-        if (data) {
-            cell.cImageView.animatedImage = animatedImage;
-        }else {
-            cell.cImageView.image = [[UIImage alloc]initWithData:data];
-        }
-    }];
-    [operation start];
+//    MCDownloadOperation* operation = [[MCDownloadOperation alloc]initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:imgSrc]] progress:^(NSData *receivedData, CGFloat progress) {
+//        
+//    } completed:^(NSData *data) {
+//        FLAnimatedImage* animatedImage = [[FLAnimatedImage alloc]initWithAnimatedGIFData:data];
+//        if (data) {
+//            cell.cImageView.animatedImage = animatedImage;
+//        }else {
+//            cell.cImageView.image = [[UIImage alloc]initWithData:data];
+//        }
+//    }];
+//    [operation start];
+    [cell.cImageView downloadImageWithURL:imgSrc placeHolderImage:nil showProgressHUD:YES];
     cell.cLabel.text = @"";
     cell.backgroundColor = [UIColor orangeColor];
     return cell;
@@ -173,7 +174,8 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     TFHppleElement* element = self.dataSource[indexPath.row];
     NSString* imgSrc = [[element attributes] objectForKey:@"src"];
-    UIImage* image = [[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:imgSrc];
+//    UIImage* image = [[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:imgSrc];
+    UIImage* image = nil;
     if (image) {
         [PopShowImageView showPopShowImageViewWithImage:image];
     }

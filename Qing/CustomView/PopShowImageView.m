@@ -7,7 +7,6 @@
 //
 
 #import "PopShowImageView.h"
-#import <UIImageView+WebCache.h>
 #import <POP.h>
 #import <Masonry.h>
 #import <FLAnimatedImage.h>

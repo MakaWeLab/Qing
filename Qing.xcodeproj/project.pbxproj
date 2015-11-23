@@ -16,6 +16,10 @@
 		247CDA381BFC85C400F9DB2A /* CrawlersCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA361BFC85C400F9DB2A /* CrawlersCollectionCell.m */; };
 		247CDA391BFC85C400F9DB2A /* CrawlersCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247CDA371BFC85C400F9DB2A /* CrawlersCollectionCell.xib */; };
 		247CDA3C1BFC86CD00F9DB2A /* RootCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA3B1BFC86CD00F9DB2A /* RootCollectionViewCell.m */; };
+		24AB7D9C1C02B72F006D0881 /* NSOject+MCDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB7D9B1C02B72F006D0881 /* NSOject+MCDownload.m */; };
+		24AB7D9F1C02BF7E006D0881 /* UIImageView+MCDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB7D9E1C02BF7E006D0881 /* UIImageView+MCDownload.m */; };
+		24AB7DA21C02FEAF006D0881 /* MCDownloadThreadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB7DA11C02FEAF006D0881 /* MCDownloadThreadManager.m */; };
+		24AB7DA51C0304B3006D0881 /* MCDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB7DA41C0304B3006D0881 /* MCDownloadCache.m */; };
 		24ED32DC1BFDC02A0098758F /* MCDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED32DB1BFDC02A0098758F /* MCDownloadOperation.m */; };
 		6031EED81C01F79B00CF1F36 /* MCDownloadUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6031EED71C01F79B00CF1F36 /* MCDownloadUtil.m */; };
 		605D51B01BF3A53E0071BC75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51AF1BF3A53E0071BC75 /* main.m */; };
@@ -75,6 +79,14 @@
 		247CDA371BFC85C400F9DB2A /* CrawlersCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CrawlersCollectionCell.xib; sourceTree = "<group>"; };
 		247CDA3A1BFC86CD00F9DB2A /* RootCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootCollectionViewCell.h; sourceTree = "<group>"; };
 		247CDA3B1BFC86CD00F9DB2A /* RootCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootCollectionViewCell.m; sourceTree = "<group>"; };
+		24AB7D9A1C02B72F006D0881 /* NSOject+MCDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOject+MCDownload.h"; sourceTree = "<group>"; };
+		24AB7D9B1C02B72F006D0881 /* NSOject+MCDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOject+MCDownload.m"; sourceTree = "<group>"; };
+		24AB7D9D1C02BF7E006D0881 /* UIImageView+MCDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MCDownload.h"; sourceTree = "<group>"; };
+		24AB7D9E1C02BF7E006D0881 /* UIImageView+MCDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MCDownload.m"; sourceTree = "<group>"; };
+		24AB7DA01C02FEAF006D0881 /* MCDownloadThreadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDownloadThreadManager.h; sourceTree = "<group>"; };
+		24AB7DA11C02FEAF006D0881 /* MCDownloadThreadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDownloadThreadManager.m; sourceTree = "<group>"; };
+		24AB7DA31C0304B3006D0881 /* MCDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDownloadCache.h; sourceTree = "<group>"; };
+		24AB7DA41C0304B3006D0881 /* MCDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDownloadCache.m; sourceTree = "<group>"; };
 		24ED32DA1BFDC02A0098758F /* MCDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDownloadOperation.h; sourceTree = "<group>"; };
 		24ED32DB1BFDC02A0098758F /* MCDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDownloadOperation.m; sourceTree = "<group>"; };
 		5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -203,6 +215,14 @@
 				24ED32DB1BFDC02A0098758F /* MCDownloadOperation.m */,
 				6031EED61C01F79B00CF1F36 /* MCDownloadUtil.h */,
 				6031EED71C01F79B00CF1F36 /* MCDownloadUtil.m */,
+				24AB7D9A1C02B72F006D0881 /* NSOject+MCDownload.h */,
+				24AB7D9B1C02B72F006D0881 /* NSOject+MCDownload.m */,
+				24AB7D9D1C02BF7E006D0881 /* UIImageView+MCDownload.h */,
+				24AB7D9E1C02BF7E006D0881 /* UIImageView+MCDownload.m */,
+				24AB7DA01C02FEAF006D0881 /* MCDownloadThreadManager.h */,
+				24AB7DA11C02FEAF006D0881 /* MCDownloadThreadManager.m */,
+				24AB7DA31C0304B3006D0881 /* MCDownloadCache.h */,
+				24AB7DA41C0304B3006D0881 /* MCDownloadCache.m */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -507,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AB7D9C1C02B72F006D0881 /* NSOject+MCDownload.m in Sources */,
 				605D51BC1BF3A53E0071BC75 /* Qing.xcdatamodeld in Sources */,
 				6031EED81C01F79B00CF1F36 /* MCDownloadUtil.m in Sources */,
 				247CDA2D1BFC7D7600F9DB2A /* CrawlersViewController.m in Sources */,
@@ -515,6 +536,7 @@
 				605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */,
 				2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */,
 				247CDA381BFC85C400F9DB2A /* CrawlersCollectionCell.m in Sources */,
+				24AB7D9F1C02BF7E006D0881 /* UIImageView+MCDownload.m in Sources */,
 				2403DDAE1BFC769A002E7B0E /* TFHppleElement.m in Sources */,
 				605D520E1BFCCB960071BC75 /* CustomWebViewController.m in Sources */,
 				2403DDAD1BFC769A002E7B0E /* TFHpple.m in Sources */,
@@ -522,8 +544,10 @@
 				247CDA311BFC810A00F9DB2A /* ProfileViewController.m in Sources */,
 				605D52081BFCBFE10071BC75 /* PopShowImageView.m in Sources */,
 				24ED32DC1BFDC02A0098758F /* MCDownloadOperation.m in Sources */,
+				24AB7DA51C0304B3006D0881 /* MCDownloadCache.m in Sources */,
 				605D51F11BF3A60D0071BC75 /* RootNavigationController.m in Sources */,
 				605D51F31BF3A60D0071BC75 /* RootTableViewController.m in Sources */,
+				24AB7DA21C02FEAF006D0881 /* MCDownloadThreadManager.m in Sources */,
 				247CDA3C1BFC86CD00F9DB2A /* RootCollectionViewCell.m in Sources */,
 				605D51B01BF3A53E0071BC75 /* main.m in Sources */,
 			);
