@@ -16,12 +16,12 @@ typedef void(^MCDownloadProgressBlock)(NSData* receivedData , CGFloat progress);
 
 @interface MCDownloadOperation : NSOperation
 
+@property (nonatomic,strong) NSString* url;
+
 @property (nonatomic,assign) BOOL shouldContinueWhenAppEntersBackground;
 
 @property (strong, nonatomic) NSURLResponse *response;
 
-- (id)initWithRequest:(NSURLRequest *)request
-             progress:(MCDownloadProgressBlock)progressBlock
-            completed:(MCDownloadCompleteBlock)completedBlock;
+- (id)initWithRequestURL:(NSString *)url;
 
 @end

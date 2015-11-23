@@ -7,23 +7,25 @@
 //
 
 #import "MCDownloadOperation.h"
+#import "MCDownloadCache.h"
+#import "MCDownloadThreadManager.h"
 
 @interface MCDownloadOperation ()
 
-@property (copy, nonatomic) MCDownloadProgressBlock progressBlock;
-@property (copy, nonatomic) MCDownloadCompleteBlock completedBlock;
-
 @property (assign, nonatomic) NSInteger expectedSize;
-
-@property (nonatomic,strong) NSURLRequest* request;
 
 @property (nonatomic,assign,readwrite) BOOL finished;
 
 @property (nonatomic,assign,readwrite) BOOL executing;
 
+@property (nonatomic,strong) NSURLRequest* request;
+
 @property (strong, nonatomic) NSMutableData *mData;
+
 @property (strong, nonatomic) NSURLConnection *connection;
+
 @property (strong, atomic) NSThread *thread;
+
 @property (assign, nonatomic) UIBackgroundTaskIdentifier backgroundTaskId;
 
 @end
@@ -33,12 +35,11 @@
 }
 @synthesize finished,executing;
 
--(id)initWithRequest:(NSURLRequest *)request progress:(MCDownloadProgressBlock)progressBlock completed:(MCDownloadCompleteBlock)completedBlock
+-(id)initWithRequestURL:(NSString *)url
 {
     if ((self = [super init])) {
-        _request = request;
-        _progressBlock = [progressBlock copy];
-        _completedBlock = [completedBlock copy];
+        _url = url;
+        _request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         _expectedSize = 0;
         _shouldContinueWhenAppEntersBackground = YES;
         responseFromCached = YES;
@@ -79,11 +80,6 @@
         if (!self.isFinished) {
             [self.connection cancel];
             [self connection:self.connection didFailWithError:[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorTimedOut userInfo:@{NSURLErrorFailingURLErrorKey : self.request.URL}]];
-        }
-    }
-    else {
-        if (self.completedBlock) {
-            self.completedBlock(nil);
         }
     }
     
@@ -131,8 +127,6 @@
 }
 
 - (void)reset {
-    self.completedBlock = nil;
-    self.progressBlock = nil;
     self.connection = nil;
     self.mData = nil;
     self.thread = nil;
@@ -145,8 +139,9 @@
     if (![response respondsToSelector:@selector(statusCode)] || ([((NSHTTPURLResponse *)response) statusCode] < 400 && [((NSHTTPURLResponse *)response) statusCode] != 304)) {
         NSInteger expected = response.expectedContentLength > 0 ? (NSInteger)response.expectedContentLength : 0;
         self.expectedSize = expected;
-        if (self.progressBlock) {
-            self.progressBlock(0, expected);
+        MCDownloadProgressBlock progressBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kProgressBlockKey];
+        if (progressBlock) {
+            progressBlock(0, expected);
         }
         
         self.mData = [[NSMutableData alloc] initWithCapacity:expected];
@@ -161,8 +156,9 @@
         } else {
             [self.connection cancel];
         }
-        if (self.completedBlock) {
-            self.completedBlock(nil);
+        MCDownloadCompleteBlock completedBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kCompleteBlockKey];
+        if (completedBlock) {
+            completedBlock(nil);
         }
         CFRunLoopStop(CFRunLoopGetCurrent());
         [self done];
@@ -171,13 +167,14 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     [self.mData appendData:data];
-    if (self.progressBlock) {
-        self.progressBlock(self.mData, ((CGFloat)self.mData.length)/self.expectedSize);
+    MCDownloadProgressBlock progressBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kProgressBlockKey];
+    if (progressBlock) {
+        progressBlock(self.mData, ((CGFloat)self.mData.length)/self.expectedSize);
     }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)aConnection {
-    MCDownloadCompleteBlock completionBlock = self.completedBlock;
+    MCDownloadCompleteBlock completionBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kCompleteBlockKey];
     @synchronized(self) {
         CFRunLoopStop(CFRunLoopGetCurrent());
         self.thread = nil;
@@ -188,8 +185,10 @@
         responseFromCached = NO;
     }
     
+    [[MCDownloadCache shareCache] storeData:[self.mData copy] forKey:self.url];
+    
     if (completionBlock) {
-        self.completedBlock(self.mData);
+        completionBlock(self.mData);
     }
     self.completionBlock = nil;
     [self done];
@@ -202,9 +201,11 @@
         self.connection = nil;
     }
     
-    if (self.completedBlock) {
-        self.completedBlock(nil);
+    MCDownloadCompleteBlock completedBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kCompleteBlockKey];
+    if (completedBlock) {
+        completedBlock(nil);
     }
+    
     self.completionBlock = nil;
     [self done];
 }

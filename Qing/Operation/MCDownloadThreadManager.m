@@ -25,18 +25,22 @@
 {
     if (self = [super init]) {
         self.runningOperations = [NSMutableArray array];
+        self.callbacksDictionary = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
--(MCDownloadOperation*)createOperationForURL:(NSString *)url progress:(MCDownloadProgressBlock)progressBlock completed:(MCDownloadCompleteBlock)completedBlock
+-(MCDownloadOperation*)createOperationForURL:(NSString *)url
 {
     NSData* data = [[MCDownloadCache shareCache] dataForKey:url];
     if ( data ) {
-        completedBlock(data);
+        MCDownloadCompleteBlock completionBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:url] objectForKey:kCompleteBlockKey];
+        if (completionBlock) {
+            completionBlock(data);
+        }
         return nil;
     }
-    __block MCDownloadOperation* operation = [[MCDownloadOperation alloc]initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]] progress:progressBlock completed:completedBlock];
+    __block MCDownloadOperation* operation = [[MCDownloadOperation alloc]initWithRequestURL:url];
     MCDownloadThreadManager* shareManager = [MCDownloadThreadManager shareManager];
     @synchronized(shareManager.runningOperations) {
         [shareManager.runningOperations addObject:operation];
