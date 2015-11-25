@@ -41,17 +41,4 @@ static const void* kNSObjectMCDownloadOperation = &kNSObjectMCDownloadOperation;
     objc_setAssociatedObject(self, kNSObjectMCDownloadOperation, downloadOperation, OBJC_ASSOCIATION_RETAIN);
 }
 
-
-#pragma mark - OperationHandle
-
--(void)attachToNewOperation:(NSOperation*)operation
-{
-    
-}
-
--(void)cancelOldOperation
-{
-    
-}
-
 @end

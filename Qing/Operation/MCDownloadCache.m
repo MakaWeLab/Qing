@@ -11,6 +11,8 @@
 #import "MCDownloadCache.h"
 
 static const NSInteger kDefaultCacheMaxCacheAge = 60 * 60 * 24 * 7; // 1 week
+static const NSInteger kDefaultCacheMaxCacheSize = 1024 * 1024;
+static const NSInteger kDefaultCacheMaxCacheCount = 1024;
 
 @interface AutoPurgeCache : NSCache
 @end
@@ -38,8 +40,6 @@ static const NSInteger kDefaultCacheMaxCacheAge = 60 * 60 * 24 * 7; // 1 week
 
 @property (nonatomic,strong) AutoPurgeCache* memoryCache;
 
-@property (nonatomic,strong) NSMutableArray* finishURLs;
-
 @end
 
 @implementation MCDownloadCache
@@ -58,7 +58,8 @@ static const NSInteger kDefaultCacheMaxCacheAge = 60 * 60 * 24 * 7; // 1 week
 {
     if (self = [super init]) {
         self.memoryCache = [AutoPurgeCache new];
-        self.finishURLs = [NSMutableArray array];
+        self.memoryCache.totalCostLimit = kDefaultCacheMaxCacheSize;
+        self.memoryCache.countLimit = kDefaultCacheMaxCacheCount;
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(clearMemory)
                                                      name:UIApplicationDidReceiveMemoryWarningNotification
@@ -82,17 +83,10 @@ static const NSInteger kDefaultCacheMaxCacheAge = 60 * 60 * 24 * 7; // 1 week
     if (!data) {
         return;
     }
-//    for (NSString* str in self.finishURLs) {
-//        if ([str isEqualToString:key]) {
-//            return;
-//        }
-//    }
-    
     NSUInteger cost = data.length;
     [self.memoryCache setObject:data forKey:key cost:cost];
     NSString* path = [self cacheFilePathForKey:key];
-//    [data writeToFile:path atomically:YES];
-    [self.finishURLs addObject:key];
+    [data writeToFile:path atomically:YES];
 }
 
 -(NSData*)dataForKey:(NSString *)key
@@ -103,32 +97,22 @@ static const NSInteger kDefaultCacheMaxCacheAge = 60 * 60 * 24 * 7; // 1 week
     }
     NSString* path = [self cacheFilePathForKey:key];
     data = [NSData dataWithContentsOfFile:path];
+    if (data) {
+        [self.memoryCache setObject:data forKey:key];
+    }
     return data;
 }
 
-#pragma mark - property
-
-- (void)setMaxMemoryCost:(NSUInteger)maxMemoryCost {
-    self.memoryCache.totalCostLimit = maxMemoryCost;
-}
-
-- (NSUInteger)maxMemoryCost {
-    return self.memoryCache.totalCostLimit;
-}
-
-- (NSUInteger)maxMemoryCountLimit {
-    return self.memoryCache.countLimit;
-}
-
-- (void)setMaxMemoryCountLimit:(NSUInteger)maxCountLimit {
-    self.memoryCache.countLimit = maxCountLimit;
-}
 
 #pragma mark - FileOperation
 -(NSString*)cachedFileFolderPath
 {
     NSArray * paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    return [[paths objectAtIndex:0] stringByAppendingFormat:@"/Caches/MCDownloadFileCache/"];
+    NSString* folder = [[paths objectAtIndex:0] stringByAppendingFormat:@"/Caches/MCDownloadFileCache/"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:folder]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:folder withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    return folder;
 }
 
 -(NSString*)cacheFilePathForKey:(NSString*)key

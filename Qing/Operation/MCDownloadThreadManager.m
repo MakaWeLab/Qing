@@ -24,13 +24,15 @@
 -(instancetype)init
 {
     if (self = [super init]) {
-        self.runningOperations = [NSMutableArray array];
         self.callbacksDictionary = [NSMutableDictionary dictionary];
+        self.downloadQueue = [[NSOperationQueue alloc]init];
+        self.downloadQueue.maxConcurrentOperationCount = 5;
+        self.serialQueue = dispatch_queue_create("MCDownloadThreadManagerSerialQueue", DISPATCH_QUEUE_SERIAL);
     }
     return self;
 }
 
--(MCDownloadOperation*)createOperationForURL:(NSString *)url
+-(MCDownloadOperation*)appendDownloadOperationForURL:(NSString *)url
 {
     NSData* data = [[MCDownloadCache shareCache] dataForKey:url];
     if ( data ) {
@@ -41,11 +43,9 @@
         return nil;
     }
     __block MCDownloadOperation* operation = [[MCDownloadOperation alloc]initWithRequestURL:url];
-    MCDownloadThreadManager* shareManager = [MCDownloadThreadManager shareManager];
-    @synchronized(shareManager.runningOperations) {
-        [shareManager.runningOperations addObject:operation];
-    }
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//    [self.downloadQueue addOperation:operation];
+    
+    dispatch_async(self.serialQueue, ^{
         [operation start];
     });
     return operation;

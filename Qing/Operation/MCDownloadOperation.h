@@ -18,8 +18,6 @@ typedef void(^MCDownloadProgressBlock)(NSData* receivedData , CGFloat progress);
 
 @property (nonatomic,strong) NSString* url;
 
-@property (nonatomic,assign) BOOL shouldContinueWhenAppEntersBackground;
-
 @property (strong, nonatomic) NSURLResponse *response;
 
 - (id)initWithRequestURL:(NSString *)url;

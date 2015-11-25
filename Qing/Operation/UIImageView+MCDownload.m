@@ -34,31 +34,15 @@
         });
         self.downloadOperation = nil;
         return;
+    }else {
+        self.image = nil;
+        [self setNeedsLayout];
     }
-    //如果没有下载完 判断对应的请求是不是存在
+    //取消之前的请求
     MCDownloadThreadManager* shareManager = [MCDownloadThreadManager shareManager];
-    for (MCDownloadOperation* o in shareManager.runningOperations) {
-        if ([o.url isEqualToString:url]) {
-            //如果对应的请求正在运行之中 那么置换请求对应的回调函数
-            __weak __typeof(self)wself = self;
-            NSMutableDictionary* mDic = [NSMutableDictionary dictionary];
-            if (isShow) {
-                MCDownloadProgressBlock progressBlock = ^(NSData* receivedData , CGFloat progress){
-                    
-                };
-                [mDic setObject:progressBlock forKey:kProgressBlockKey];
-            }
-            MCDownloadCompleteBlock completeBlock = ^(NSData* data){
-                wself.image = [[UIImage alloc]initWithData:data];
-                [wself setNeedsLayout];
-            };
-            [mDic setObject:completeBlock forKey:kCompleteBlockKey];
-            
-            [shareManager.callbacksDictionary setObject:mDic forKey:url];
-            
-            self.downloadOperation = o;
-            return;
-        }
+    
+    if (self.downloadOperation) {
+        [self.downloadOperation cancel];
     }
 
     if (placeHolder) {
@@ -90,7 +74,7 @@
         
         [shareManager.callbacksDictionary setObject:mDic forKey:url];
         
-        MCDownloadOperation* operation = [[MCDownloadThreadManager shareManager] createOperationForURL:url];
+        MCDownloadOperation* operation = [[MCDownloadThreadManager shareManager] appendDownloadOperationForURL:url];
         
         self.downloadOperation = operation;
     }

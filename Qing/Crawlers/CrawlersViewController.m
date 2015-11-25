@@ -15,6 +15,7 @@
 #import "PopShowImageView.h"
 #import "CustomWebViewController.h"
 #import <FLAnimatedImage.h>
+#import "MCDownloadCache.h"
 #import "MCDownloadOperation.h"
 #import "UIImageView+MCDownload.h"
 
@@ -162,12 +163,14 @@
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     TFHppleElement* element = self.dataSource[indexPath.row];
     NSString* imgSrc = [[element attributes] objectForKey:@"src"];
-//    UIImage* image = [[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:imgSrc];
-    UIImage* image = nil;
+    UIImage* image = [[UIImage alloc]initWithData:[[MCDownloadCache shareCache] dataForKey:imgSrc]];
     if (image) {
         [PopShowImageView showPopShowImageViewWithImage:image];
     }
 }
+
+#define NumberPerLine 8
+#define CollectionCellInset 2
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
@@ -175,21 +178,21 @@
 {
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width < [UIScreen mainScreen].bounds.size.height ? [UIScreen mainScreen].bounds.size.width : [UIScreen mainScreen].bounds.size.height;
     
-    CGFloat width = (screenWidth - 20)/3;
+    CGFloat width = (screenWidth - (NumberPerLine +1)*CollectionCellInset)/NumberPerLine;
     CGFloat height = width*1.2;
     return CGSizeMake(width, height);
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(5, 5, 5, 5);
+    return UIEdgeInsetsMake(CollectionCellInset, CollectionCellInset, CollectionCellInset, CollectionCellInset);
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 5;
+    return 0;
 }
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 5;
+    return 0;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {

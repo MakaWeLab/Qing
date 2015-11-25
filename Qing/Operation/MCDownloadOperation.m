@@ -14,59 +14,58 @@
 
 @property (assign, nonatomic) NSInteger expectedSize;
 
-@property (nonatomic,assign,readwrite) BOOL finished;
-
-@property (nonatomic,assign,readwrite) BOOL executing;
-
 @property (nonatomic,strong) NSURLRequest* request;
 
 @property (strong, nonatomic) NSMutableData *mData;
 
 @property (strong, nonatomic) NSURLConnection *connection;
 
-@property (strong, atomic) NSThread *thread;
+@property (assign,nonatomic) BOOL complete;
 
-@property (assign, nonatomic) UIBackgroundTaskIdentifier backgroundTaskId;
+@property (assign,nonatomic) BOOL downloading;
+
+@property (strong, atomic) NSThread *thread;
 
 @end
 
-@implementation MCDownloadOperation{
-    BOOL responseFromCached;
-}
-@synthesize finished,executing;
+@implementation MCDownloadOperation
 
 -(id)initWithRequestURL:(NSString *)url
 {
     if ((self = [super init])) {
         _url = url;
+        _response = nil;
         _request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];
         _expectedSize = 0;
-        _shouldContinueWhenAppEntersBackground = YES;
-        responseFromCached = YES;
+        _mData = nil;
+        _thread = nil;
     }
     return self;
 }
 
-- (void)start {
+-(MCDownloadProgressBlock)getProgressBlock
+{
+    return [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kProgressBlockKey];
+}
+
+-(MCDownloadCompleteBlock)getCompleteBlock
+{
+    return [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kCompleteBlockKey];
+}
+
+-(void)main
+{
     @synchronized (self) {
         if (self.isCancelled) {
-            self.finished = YES;
+            self.complete = YES;
             [self reset];
             return;
         }
-        if (self.shouldContinueWhenAppEntersBackground) {
-            __weak __typeof__ (self) wself = self;
-            UIApplication * app = [UIApplication sharedApplication];
-            self.backgroundTaskId = [app beginBackgroundTaskWithExpirationHandler:^{
-                __strong __typeof (wself) sself = wself;
-                if (sself) {
-                    [sself cancel];
-                    [app endBackgroundTask:sself.backgroundTaskId];
-                    sself.backgroundTaskId = UIBackgroundTaskInvalid;
-                }
-            }];
+        if (self.connection) {
+            [self.connection cancel];
         }
-        self.executing = YES;
+        
+        self.downloading = YES;
         self.connection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self startImmediately:NO];
         self.thread = [NSThread currentThread];
     }
@@ -77,20 +76,26 @@
         
         CFRunLoopRun();
         
-        if (!self.isFinished) {
+        if (!self.complete) {
             [self.connection cancel];
             [self connection:self.connection didFailWithError:[NSError errorWithDomain:NSURLErrorDomain code:NSURLErrorTimedOut userInfo:@{NSURLErrorFailingURLErrorKey : self.request.URL}]];
         }
-    }
-    
-    if (self.backgroundTaskId != UIBackgroundTaskInvalid) {
-        UIApplication * app = [UIApplication sharedApplication];
-        [app endBackgroundTask:self.backgroundTaskId];
-        self.backgroundTaskId = UIBackgroundTaskInvalid;
+    }else {
+        MCDownloadCompleteBlock completeBlock = [self getCompleteBlock];
+        completeBlock(nil);
     }
 }
 
-- (void)cancel {
+-(void)reset
+{
+    _connection = nil;
+    _mData = nil;
+    _thread = nil;
+}
+
+-(void)cancel
+{
+    if (self.complete) return;
     @synchronized (self) {
         if (self.thread) {
             [self performSelector:@selector(cancelInternalAndStop) onThread:self.thread withObject:nil waitUntilDone:NO];
@@ -102,34 +107,26 @@
 }
 
 - (void)cancelInternalAndStop {
-    if (self.isFinished) return;
     [self cancelInternal];
-    //    CFRunLoopStop(CFRunLoopGetCurrent());
+    CFRunLoopStop(CFRunLoopGetCurrent());
 }
 
 - (void)cancelInternal {
-    if (self.isFinished) return;
     [super cancel];
-    
     if (self.connection) {
         [self.connection cancel];
-        if (self.isExecuting) self.executing = NO;
-        if (!self.isFinished) self.finished = YES;
+        // maintain
+        if (self.downloading) self.downloading = NO;
+        if (!self.complete) self.complete = YES;
     }
     
     [self reset];
 }
 
 - (void)done {
-    self.finished = YES;
-    self.executing = NO;
+    self.complete = YES;
+    self.downloading = NO;
     [self reset];
-}
-
-- (void)reset {
-    self.connection = nil;
-    self.mData = nil;
-    self.thread = nil;
 }
 
 #pragma mark NSURLConnection (delegate)
@@ -139,27 +136,11 @@
     if (![response respondsToSelector:@selector(statusCode)] || ([((NSHTTPURLResponse *)response) statusCode] < 400 && [((NSHTTPURLResponse *)response) statusCode] != 304)) {
         NSInteger expected = response.expectedContentLength > 0 ? (NSInteger)response.expectedContentLength : 0;
         self.expectedSize = expected;
-        MCDownloadProgressBlock progressBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kProgressBlockKey];
-        if (progressBlock) {
-            progressBlock(0, expected);
-        }
-        
         self.mData = [[NSMutableData alloc] initWithCapacity:expected];
         self.response = response;
     }
     else {
-        NSUInteger code = [((NSHTTPURLResponse *)response) statusCode];
-        //This is the case when server returns '304 Not Modified'. It means that remote image is not changed.
-        //In case of 304 we need just cancel the operation and return cached image from the cache.
-        if (code == 304) {
-            [self cancelInternal];
-        } else {
-            [self.connection cancel];
-        }
-        MCDownloadCompleteBlock completedBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kCompleteBlockKey];
-        if (completedBlock) {
-            completedBlock(nil);
-        }
+        [self cancel];
         CFRunLoopStop(CFRunLoopGetCurrent());
         [self done];
     }
@@ -167,22 +148,19 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     [self.mData appendData:data];
-    MCDownloadProgressBlock progressBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kProgressBlockKey];
+    MCDownloadProgressBlock progressBlock = [self getProgressBlock];
     if (progressBlock) {
         progressBlock(self.mData, ((CGFloat)self.mData.length)/self.expectedSize);
     }
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)aConnection {
-    MCDownloadCompleteBlock completionBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kCompleteBlockKey];
+    MCDownloadCompleteBlock completionBlock = [self getCompleteBlock];
+    
     @synchronized(self) {
         CFRunLoopStop(CFRunLoopGetCurrent());
         self.thread = nil;
         self.connection = nil;
-    }
-    
-    if (![[NSURLCache sharedURLCache] cachedResponseForRequest:_request]) {
-        responseFromCached = NO;
     }
     
     [[MCDownloadCache shareCache] storeData:[self.mData copy] forKey:self.url];
@@ -190,7 +168,6 @@
     if (completionBlock) {
         completionBlock(self.mData);
     }
-    self.completionBlock = nil;
     [self done];
 }
 
@@ -200,20 +177,12 @@
         self.thread = nil;
         self.connection = nil;
     }
-    
-    MCDownloadCompleteBlock completedBlock = [[[MCDownloadThreadManager shareManager].callbacksDictionary objectForKey:self.url] objectForKey:kCompleteBlockKey];
-    if (completedBlock) {
-        completedBlock(nil);
-    }
-    
-    self.completionBlock = nil;
     [self done];
 }
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse {
-    responseFromCached = NO; // If this method is called, it means the response wasn't read from cache
+    
     if (self.request.cachePolicy == NSURLRequestReloadIgnoringLocalCacheData) {
-        // Prevents caching of responses
         return nil;
     }
     else {
