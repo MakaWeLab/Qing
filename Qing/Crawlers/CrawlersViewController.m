@@ -150,6 +150,7 @@
     TFHppleElement* element = self.dataSource[indexPath.row];
     NSString* imgSrc = [[element attributes] objectForKey:@"src"];
     CrawlersCollectionCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CrawlersCollectionCell" forIndexPath:indexPath];
+    cell.cImageView.image = nil;
     [cell.cImageView downloadImageWithURL:imgSrc placeHolderImage:nil showProgressHUD:YES];
     cell.cLabel.text = @"";
     cell.backgroundColor = [UIColor orangeColor];

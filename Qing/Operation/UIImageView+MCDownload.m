@@ -12,6 +12,8 @@
 #import "NSOject+MCDownload.h"
 #import "MCDownloadThreadManager.h"
 #import "MCDownloadCache.h"
+#import <Masonry.h>
+
 
 @implementation UIImageView(MCDownload)
 
@@ -38,6 +40,20 @@
         self.image = nil;
         [self setNeedsLayout];
     }
+    
+    if (isShow) {
+        UIView<downloadHUDViewProtocol>* view= [self viewWithTag:10086];
+        if (!view) {
+            view = [MCDownloadUtil downloadHUDViewForUIView:self];
+            view.tag = 10086;
+            [self addSubview:view];
+            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+            }];
+        }
+    }
+    
+    
     //取消之前的请求
     MCDownloadThreadManager* shareManager = [MCDownloadThreadManager shareManager];
     
@@ -58,7 +74,11 @@
         MCDownloadProgressBlock progressBlock = nil;
         if (isShow) {
             progressBlock = ^(NSData* receivedData , CGFloat progress){
-                
+                UIView<downloadHUDViewProtocol>* view= [wself viewWithTag:10086];
+                dispatch_main_async_safe(^{
+                    [view setProgress:.5];
+                    [view setNeedsDisplay];
+                });
             };
             [mDic setObject:progressBlock forKey:kProgressBlockKey];
         }
