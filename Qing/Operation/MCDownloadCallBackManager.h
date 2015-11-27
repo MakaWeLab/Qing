@@ -26,9 +26,6 @@
 
 @property (nonatomic,strong) NSMutableDictionary* callbackDic;
 
-//移除某个url下载任务的所有callback
--(void)removeCallbacksForUrl:(NSString*)url;
-
 //移除标记有指定tag对象的callback
 -(void)removeCallbackForUrl:(NSString *)url withTag:(id)tag;
 

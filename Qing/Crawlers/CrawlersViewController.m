@@ -74,9 +74,16 @@
             return;
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.dataSource addObjectsFromArray:array];
+            
             [self.collectionView.mj_footer endRefreshing];
-            [self.collectionView reloadData];
+            
+            NSMutableArray* indexPaths = [NSMutableArray array];
+            for (NSInteger i = self.dataSource.count ; i < array.count + self.dataSource.count ; i++) {
+                NSIndexPath* indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+                [indexPaths addObject:indexPath];
+            }
+            [self.dataSource addObjectsFromArray:array];
+            [self.collectionView insertItemsAtIndexPaths:indexPaths];
         });
     });
 }
