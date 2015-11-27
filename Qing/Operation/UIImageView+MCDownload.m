@@ -9,22 +9,31 @@
 #import "UIImageView+MCDownload.h"
 #import "MCDownloadUtil.h"
 #import "MCDownloadOperation.h"
-#import "NSOject+MCDownload.h"
-#import "MCDownloadThreadManager.h"
 #import "MCDownloadCache.h"
+#import "MCDownloadOperationManager.h"
+#import "MCDownloadCallBackManager.h"
 #import <Masonry.h>
-
+#import <objc/runtime.h>
 
 @implementation UIImageView(MCDownload)
+
+static void* kUIImageViewUrlKey = &kUIImageViewUrlKey;
+
+-(NSString*)imageUrl
+{
+    return objc_getAssociatedObject(self, kUIImageViewUrlKey);
+}
+
+-(void)setImageUrl:(NSString *)imageUrl
+{
+    objc_setAssociatedObject(self, kUIImageViewUrlKey, imageUrl, OBJC_ASSOCIATION_COPY);
+}
 
 -(void)downloadImageWithURL:(NSString *)url placeHolderImage:(UIImage *)placeHolder showProgressHUD:(BOOL)isShow
 {
     if (!url) {
         return;
     }
-    
-    self.downloadURL = url;
-    
     //判断对应的图片是不是已经下完，下载完成直接读取。
     NSData* data = [[MCDownloadCache shareCache] dataForKey:url];
     if (data) {
@@ -34,7 +43,6 @@
             wself.image = image;
             [wself setNeedsLayout];
         });
-        self.downloadOperation = nil;
         return;
     }else {
         self.image = nil;
@@ -42,24 +50,26 @@
     }
     
     if (isShow) {
-        UIView<downloadHUDViewProtocol>* view= [self viewWithTag:10086];
-        if (!view) {
-            view = [MCDownloadUtil downloadHUDViewForUIView:self];
-            view.tag = 10086;
-            [self addSubview:view];
-            [view mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
-            }];
-        }
+//        UIView<downloadHUDViewProtocol>* view= [self viewWithTag:10086];
+//        if (!view) {
+//            view = [MCDownloadUtil progressHUDForUIView:self];
+//            view.tag = 10086;
+//            [self addSubview:view];
+//            [view mas_makeConstraints:^(MASConstraintMaker *make) {
+//                make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+//            }];
+//        }
     }
     
     
     //取消之前的请求
-    MCDownloadThreadManager* shareManager = [MCDownloadThreadManager shareManager];
-    
-    if (self.downloadOperation) {
-        [self.downloadOperation cancel];
+    if (self.imageUrl) {
+        [[MCDownloadOperationManager shareInstance] cancelDownloadOperationForUrl:self.imageUrl];
+        [[MCDownloadCallBackManager shareInstance] removeCallbackForUrl:self.imageUrl withTag:self];
     }
+    
+
+    self.imageUrl = url;
 
     if (placeHolder) {
         __weak __typeof(self)wself = self;
@@ -70,19 +80,17 @@
     
     if (url) {
         __weak __typeof(self)wself = self;
-        NSMutableDictionary* mDic = [NSMutableDictionary dictionary];
-        MCDownloadProgressBlock progressBlock = nil;
+        __strong MCDownloadProgressBlock progressBlock = nil;
         if (isShow) {
             progressBlock = ^(NSData* receivedData , CGFloat progress){
                 UIView<downloadHUDViewProtocol>* view= [wself viewWithTag:10086];
                 dispatch_main_async_safe(^{
-                    [view setProgress:.5];
+                    [view setProgress:progress];
                     [view setNeedsDisplay];
                 });
             };
-            [mDic setObject:progressBlock forKey:kProgressBlockKey];
         }
-        MCDownloadCompleteBlock completeBlock = ^(NSData* data){
+        __strong MCDownloadCompleteBlock completeBlock = ^(BOOL isSuccess , NSData* data){
             if (!wself) return;
             __weak __typeof(self)wself = self;
             dispatch_main_async_safe(^{
@@ -90,13 +98,18 @@
                 [wself setNeedsLayout];
             });
         };
-        [mDic setObject:completeBlock forKey:kCompleteBlockKey];
         
-        [shareManager.callbacksDictionary setObject:mDic forKey:url];
         
-        MCDownloadOperation* operation = [[MCDownloadThreadManager shareManager] appendDownloadOperationForURL:url];
+        MCDownloadOperation* operation = [[MCDownloadOperation alloc] initWithUrl:url];
         
-        self.downloadOperation = operation;
+        operation.tag = self;
+        
+        [[MCDownloadCallBackManager shareInstance] addCallbackWithProgressBlock:[progressBlock copy] completeBlock:[completeBlock copy] forUrl:url withTag:self];
+        [[MCDownloadOperationManager shareInstance] startDownloadOperation:operation forUrl:url];
+        
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [operation start];
+        });
     }
 }
 

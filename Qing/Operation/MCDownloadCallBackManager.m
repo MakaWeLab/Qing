@@ -52,6 +52,20 @@
     }
 }
 
+-(NSDictionary*)getCallbackForUrl:(NSString *)url withTag:(id)tag
+{
+    NSMutableArray* mArray = [self.callbackDic objectForKey:url];
+    if (mArray) {
+        for (NSDictionary* dic in mArray) {
+            id t = [dic objectForKey:kMCDownloadDictionaryTagKey];
+            if (t == tag) {
+                return dic;
+            }
+        }
+    }
+    return nil;
+}
+
 //添加一个callBack对象 针对指定的url
 
 -(void)addCallbackWithProgressBlock:(MCDownloadProgressBlock)progressBlock completeBlock:(MCDownloadCompleteBlock)completeBlock forUrl:(NSString*)url withTag:(id)tag{

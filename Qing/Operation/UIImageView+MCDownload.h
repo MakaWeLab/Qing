@@ -10,6 +10,8 @@
 
 @interface UIImageView(MCDownload)
 
+@property (nonatomic,strong) NSString* imageUrl;
+
 -(void)downloadImageWithURL:(NSString*)url placeHolderImage:(UIImage*)placeHolder showProgressHUD:(BOOL)isShow;
 
 @end

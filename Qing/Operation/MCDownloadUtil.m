@@ -52,7 +52,7 @@
 
 @implementation MCDownloadUtil
 
-+(UIView<downloadHUDViewProtocol>*)downloadHUDViewForUIView:(UIView *)view
++(UIView<downloadHUDViewProtocol>*)progressHUDForUIView:(UIView *)view
 {
     MCDownloadPieProgressView* progressView = [[MCDownloadPieProgressView alloc]initWithFrame:view.bounds];
     return progressView;

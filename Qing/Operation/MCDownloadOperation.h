@@ -16,6 +16,8 @@ typedef void(^MCDownloadProgressBlock)(NSData* receivedData , CGFloat progress);
 
 @interface MCDownloadOperation : NSOperation
 
+@property (nonatomic,weak) id tag;
+
 @property (nonatomic,strong) NSString* url;
 
 - (id)initWithUrl:(NSString *)url;

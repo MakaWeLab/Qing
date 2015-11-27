@@ -32,6 +32,8 @@
 //移除标记有指定tag对象的callback
 -(void)removeCallbackForUrl:(NSString *)url withTag:(id)tag;
 
+-(NSDictionary*)getCallbackForUrl:(NSString*)url withTag:(id)tag;
+
 //添加一个callBack对象 针对指定的url
 -(void)addCallbackWithProgressBlock:(MCDownloadProgressBlock)progressBlock completeBlock:(MCDownloadCompleteBlock)completeBlock forUrl:(NSString*)url withTag:(id)tag;
 

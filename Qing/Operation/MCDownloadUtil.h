@@ -32,8 +32,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 
 @interface MCDownloadUtil : NSObject
 
-+(UIView<downloadHUDViewProtocol>*)downloadHUDViewForUIView:(UIView*)view;
-
++(UIView<downloadHUDViewProtocol>*)progressHUDForUIView:(UIView*)view;
 
 //MD5
 + (NSString *)cachedFileNameForKey:(NSString *)key;

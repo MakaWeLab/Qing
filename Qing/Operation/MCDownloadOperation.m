@@ -33,12 +33,12 @@
 
 -(MCDownloadProgressBlock)progressBlock
 {
-    return nil;
+    return [[[MCDownloadCallBackManager shareInstance] getCallbackForUrl:self.url withTag:self.tag] objectForKey:kMCDownloadCallBackProgressKey];
 }
 
 -(MCDownloadCompleteBlock)completeBlock
 {
-    return nil;
+    return [[[MCDownloadCallBackManager shareInstance] getCallbackForUrl:self.url withTag:self.tag] objectForKey:kMCDownloadCallBackCompleteKey];
 }
 
 -(void)main
