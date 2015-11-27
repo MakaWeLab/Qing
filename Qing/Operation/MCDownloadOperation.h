@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef void(^MCDownloadCompleteBlock)(NSData* data);
+typedef void(^MCDownloadCompleteBlock)(BOOL isSuccess , NSData* data);
 
 typedef void(^MCDownloadProgressBlock)(NSData* receivedData , CGFloat progress);
 
@@ -18,8 +18,6 @@ typedef void(^MCDownloadProgressBlock)(NSData* receivedData , CGFloat progress);
 
 @property (nonatomic,strong) NSString* url;
 
-@property (strong, nonatomic) NSURLResponse *response;
-
-- (id)initWithRequestURL:(NSString *)url;
+- (id)initWithUrl:(NSString *)url;
 
 @end
