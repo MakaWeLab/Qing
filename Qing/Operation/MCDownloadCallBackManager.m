@@ -32,17 +32,13 @@
 //移除标记有指定tag对象的callback
 -(void)removeCallbackForUrl:(NSString *)url withTag:(id)tag
 {
-    @synchronized(self) {
-        NSLog(@"%@,%@,%s",self,[NSThread currentThread],__func__);
-        NSMutableArray* mArray = [self.callbackDic objectForKey:url];
-        if (mArray) {
-            for (NSDictionary* dic in mArray) {
-                id t = [dic objectForKey:kMCDownloadDictionaryTagKey];
-                if (t == tag) {
-                    [mArray removeObject:dic];
-                    NSLog(@"%@,%@,%s_finish",self,[NSThread currentThread],__func__);
-                    return;
-                }
+    NSMutableArray* mArray = [self.callbackDic objectForKey:url];
+    if (mArray) {
+        for (NSDictionary* dic in mArray) {
+            id t = [dic objectForKey:kMCDownloadDictionaryTagKey];
+            if (t == tag) {
+                [mArray removeObject:dic];
+                return;
             }
         }
     }
@@ -80,8 +76,12 @@
         if (tag) {
             [mDic setObject:tag forKey:kMCDownloadDictionaryTagKey];
         }
-        [mDic setObject:[progressBlock copy] forKey:kMCDownloadCallBackProgressKey];
-        [mDic setObject:[completeBlock copy] forKey:kMCDownloadCallBackCompleteKey];
+        if (progressBlock) {
+            [mDic setObject:[progressBlock copy] forKey:kMCDownloadCallBackProgressKey];
+        }
+        if (completeBlock) {
+            [mDic setObject:[completeBlock copy] forKey:kMCDownloadCallBackCompleteKey];
+        }
         [mArray addObject:mDic];
         NSLog(@"%@,%@,%s_finish",self,[NSThread currentThread],__func__);
     }

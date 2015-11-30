@@ -13,11 +13,11 @@
 #import <MJRefresh.h>
 #import <ReactiveCocoa.h>
 #import "PopShowImageView.h"
-#import "CustomWebViewController.h"
 #import <FLAnimatedImage.h>
 #import "MCDownloadCache.h"
 #import "MCDownloadOperation.h"
 #import "UIImageView+MCDownload.h"
+#import "MCLoginController.h"
 
 @interface CrawlersViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -120,7 +120,7 @@
 
 -(void)loadWebview
 {
-    CustomWebViewController* webView = [[CustomWebViewController alloc]init];
+    MCLoginController* webView = [[MCLoginController alloc]init];
     [self.navigationController pushViewController:webView animated:YES];
 }
 

@@ -30,13 +30,13 @@
 
 -(void)startDownloadOperation:(MCDownloadOperation*)operation forUrl:(NSString*)url
 {
-    NSLog(@"%@,%s",[NSThread currentThread],__func__);
+    NSLog(@"%@ %@,%s",self,[NSThread currentThread],__func__);
     [self.operationDictionary setObject:operation forKey:url];
 }
 
 -(void)cancelDownloadOperationForUrl:(NSString*)url
 {
-    NSLog(@"%@,%s",[NSThread currentThread],__func__);
+    NSLog(@"%@ %@,%s",self,[NSThread currentThread],__func__);
     [self.operationDictionary removeObjectForKey:url];
 }
 
