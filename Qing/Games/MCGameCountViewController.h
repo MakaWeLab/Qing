@@ -6,8 +6,8 @@
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "RootTableViewController.h"
 
-@interface MCGameCountViewController : RootViewController
+@interface MCGameCountViewController : RootTableViewController
 
 @end

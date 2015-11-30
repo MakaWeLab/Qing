@@ -22,11 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationItem.title = NSLocalizedString(@"登录", nil);
     self.loginView = [MCCommonLoginView instanceFromNib];
-    [self.view addSubview:self.loginView];
-    [self.loginView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
-    }];
+    self.loginView.bounds = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 300);
+    self.tableView.tableHeaderView = self.loginView;
+    self.tableView.tableFooterView = [UIView new];
     
     UITapGestureRecognizer* tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
     [self.loginView.verifyImageView addGestureRecognizer:tap];

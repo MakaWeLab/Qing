@@ -6,8 +6,8 @@
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
-#import "RootViewController.h"
+#import "RootTableViewController.h"
 
-@interface MCLoginController : RootViewController
+@interface MCLoginController : RootTableViewController
 
 @end
