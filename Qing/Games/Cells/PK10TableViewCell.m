@@ -1,0 +1,98 @@
+//
+//  PK10TableViewCell.m
+//  Qing
+//
+//  Created by Maka on 1/12/15.
+//  Copyright © 2015年 maka. All rights reserved.
+//
+
+#import "PK10TableViewCell.h"
+#import "UIImageView+MCDownload.h"
+
+@interface PK10TableViewCell()
+
+@property (nonatomic,strong) NSMutableArray* imageViewArray;
+@property (weak, nonatomic) IBOutlet UILabel *flagLabel;
+
+@end
+
+@implementation PK10TableViewCell
+
+- (void)awakeFromNib {
+    // Initialization code
+    
+}
+
+-(void)setFlag:(NSInteger)flag
+{
+    if (_flag == flag) {
+        return;
+    }
+    _flag = flag;
+    self.flagLabel.text = [NSString stringWithFormat:@"%ld",(long)self.flag];
+    self.diffIndex = self.flag%10 == 0 ? 9 : self.flag%10 -1 ;
+}
+
+-(void)setNumbers:(NSArray *)numbers
+{
+    if ([numbers isKindOfClass:[NSString class]]) {
+        numbers = [(NSString*)numbers componentsSeparatedByString:@","];
+    }
+    
+    if (_numbers == numbers) {
+        return;
+    }
+    _numbers = numbers;
+    
+    if (!self.imageViewArray) {
+        self.imageViewArray = [NSMutableArray array];
+    }
+    
+    NSInteger index = 0;
+    for (NSNumber* number in numbers) {
+        NSInteger i = [number integerValue];
+        
+        if (self.imageViewArray.count <= index) {
+            UIImageView* imageView = [[UIImageView alloc]init];
+            imageView.backgroundColor = [UIColor clearColor];
+            imageView.contentMode = UIViewContentModeScaleAspectFit;
+            [self.containerView addSubview:imageView];
+            [self.imageViewArray addObject:imageView];
+        }
+        
+        UIImageView* imageView= self.imageViewArray[index];
+        
+        CGFloat leftPadding = 5;
+        
+        CGFloat perWidth = ([UIScreen mainScreen].bounds.size.width - 60 - leftPadding*2) / numbers.count;
+        
+        CGFloat perHeight = 30;
+        
+        imageView.bounds = CGRectInset(CGRectMake(0, 0, perWidth, perHeight), 2, 2);
+        imageView.center = CGPointMake(leftPadding + perWidth*index + perWidth/2, perHeight/2);
+        
+        NSString* imageName = [self imageNameFromInteger:i isDiff:index == self.diffIndex ? YES : NO];
+        
+        imageView.image = [UIImage imageNamed:imageName];
+        
+        index++;
+    }
+    
+}
+
+-(NSString*)imageNameFromInteger:(NSInteger)number isDiff:(BOOL)isdiff
+{
+    if (isdiff) {
+        return [NSString stringWithFormat:@"number_%d",(int)number];
+    }
+    return [NSString stringWithFormat:@"third_%d",(int)number];
+}
+
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+@end
