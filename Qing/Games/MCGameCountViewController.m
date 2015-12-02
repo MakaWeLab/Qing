@@ -11,6 +11,7 @@
 #import "TFHpple.h"
 #import <MJRefresh.h>
 #import <ReactiveCocoa.h>
+#import "WebViewController.h"
 
 @interface MCGameCountViewController ()
 
@@ -23,8 +24,6 @@
 @property (nonatomic,strong) NSString* beginString;
 
 @property (nonatomic,strong) NSString* endString;
-
-@property (nonatomic,assign) NSInteger startCount;
 
 @end
 
@@ -43,6 +42,8 @@
         [self appendData];
     }];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(webView)];
+    
     self.dataSource = [NSMutableArray array];
     
     NSString* url = @"";
@@ -50,11 +51,18 @@
     self.page = 1;
     self.beginString = @"http://www.bwlc.net/bulletin/trax.html?page=";
     self.endString = @"";
-    self.startCount = 50;
     url = [NSString stringWithFormat:@"%@%ld%@",self.beginString,(long)self.page,self.endString];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         [self firstLoadDataWithUrl:url];
     });
+}
+
+-(void)webView
+{
+    WebViewController* web = [[WebViewController alloc]init];
+    web.hidesBottomBarWhenPushed = YES;
+    web.url = @"http://i.api.1396.me/mobile/pk10/";
+    [self.navigationController pushViewController:web animated:YES];
 }
 
 -(void)firstLoadDataWithUrl:(NSString*)url
@@ -67,13 +75,9 @@
     [mArray removeObjectAtIndex:0];
     array = mArray;
     [self.dataSource addObjectsFromArray:array];
-    if (self.page > self.startCount) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    }else {
-        [self appendData];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
 
 -(void)refreshLastData
@@ -83,7 +87,6 @@
 
 -(void)appendData
 {
-    @weakify (self);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         self.page+=1;
         NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.beginString,(long)self.page,self.endString];
@@ -99,17 +102,6 @@
         [mArray removeObjectAtIndex:0];
         array = mArray;
         
-        if(self.page < self.startCount)
-        {
-            [self.dataSource addObjectsFromArray:mArray];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.navigationItem.title = [NSString stringWithFormat:@"%ld/%ld(%lu)",(long)self.page ,(long)self.startCount,(unsigned long)self.dataSource.count];
-            });
-            @strongify(self);
-            [self appendData];
-            return;
-        }
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             [self.tableView.mj_footer endRefreshing];
@@ -120,11 +112,7 @@
                 [indexPaths addObject:indexPath];
             }
             [self.dataSource addObjectsFromArray:array];
-            if (self.page == self.startCount) {
-                [self.tableView reloadData];
-            }else {
-                [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-            }
+            [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
             
         });
     });
@@ -143,7 +131,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 30;
+    return 55;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -159,6 +147,7 @@
     TFHppleElement* second = [[tds objectAtIndex:1] firstChild];
     TFHppleElement* last = [[tds lastObject] firstChild];
     
+    cell.time = [last content];
     cell.flag = [[first content] integerValue];
     cell.numbers = (id)[second content];
     

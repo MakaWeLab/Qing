@@ -12,7 +12,9 @@
 @interface PK10TableViewCell()
 
 @property (nonatomic,strong) NSMutableArray* imageViewArray;
+
 @property (weak, nonatomic) IBOutlet UILabel *flagLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @end
 
@@ -21,6 +23,15 @@
 - (void)awakeFromNib {
     // Initialization code
     
+}
+
+-(void)setTime:(NSString *)time
+{
+    if (_time == time) {
+        return;
+    }
+    _time = time;
+    self.timeLabel.text = time;
 }
 
 -(void)setFlag:(NSInteger)flag
@@ -64,7 +75,7 @@
         
         CGFloat leftPadding = 5;
         
-        CGFloat perWidth = ([UIScreen mainScreen].bounds.size.width - 60 - leftPadding*2) / numbers.count;
+        CGFloat perWidth = ([UIScreen mainScreen].bounds.size.width - 30 - leftPadding*2) / numbers.count;
         
         CGFloat perHeight = 30;
         
@@ -83,9 +94,9 @@
 -(NSString*)imageNameFromInteger:(NSInteger)number isDiff:(BOOL)isdiff
 {
     if (isdiff) {
-        return [NSString stringWithFormat:@"number_%d",(int)number];
+        return [NSString stringWithFormat:@"gray_%d",(int)number];
     }
-    return [NSString stringWithFormat:@"third_%d",(int)number];
+    return [NSString stringWithFormat:@"red_%d",(int)number];
 }
 
 

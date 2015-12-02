@@ -16,6 +16,8 @@
 
 @property (nonatomic,assign) NSInteger flag;
 
+@property (nonatomic,strong) NSString* time;
+
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end
