@@ -48,14 +48,14 @@ typedef void(^getLaterestCallback)(NSArray* array);
 -(instancetype)init
 {
     if (self = [super init]) {
-        self.dataList = [[NSMutableArray alloc]initWithContentsOfFile:[[self class] saveFilePath]];
+        self.dataList = [NSKeyedUnarchiver unarchiveObjectWithFile:[[self class] saveFilePath]];
         if (!self.dataList) {
             self.dataList = [NSMutableArray array];
-            self.XPathString = @"//table[@class='tb']//tr";
-            self.page = 1;
-            self.beginString = @"http://www.bwlc.net/bulletin/trax.html?page=";
-            self.endString = @"";
         }
+        self.XPathString = @"//table[@class='tb']//tr";
+        self.page = 1;
+        self.beginString = @"http://www.bwlc.net/bulletin/trax.html?page=";
+        self.endString = @"";
     }
     return self;
 }
@@ -94,7 +94,9 @@ typedef void(^getLaterestCallback)(NSArray* array);
 -(void)appendData
 {
     if (self.needDownloadCount == 0) {
-        [self.tableView reloadData];
+        if (self.complete) {
+            self.complete(YES);
+        }
         return;
     }
     @weakify(self);
@@ -119,11 +121,18 @@ typedef void(^getLaterestCallback)(NSArray* array);
         [self insertArray:arr];
         
         self.needDownloadCount -= 1;
+        if (self.progress) {
+            self.progress(self.needDownloadCount);
+        }
         
         if (self.needDownloadCount > 0) {
             [self appendData];
         }else {
-            [self.tableView reloadData];
+            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.dataList];
+            [data writeToFile:[[self class] saveFilePath] atomically:YES];
+            if (self.complete) {
+                self.complete(YES);
+            }
         }
         
     });
@@ -178,7 +187,7 @@ typedef void(^getLaterestCallback)(NSArray* array);
 -(void)getLaterestDataWithCallback:(getLaterestCallback)callback
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.beginString,self.page,self.endString];
+        NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.beginString,(long)1,self.endString];
         NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
         TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
         NSArray *array = [xpathparser searchWithXPathQuery:self.XPathString];

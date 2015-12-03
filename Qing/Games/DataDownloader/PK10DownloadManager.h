@@ -9,16 +9,20 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
+typedef void(^PK10DownloadManagerProgress)(NSInteger progress);
+
+typedef void(^PK10DownloadManagerComplete)(BOOL isSuccess);
+
 @interface PK10DownloadManager : NSObject
 
 @property (nonatomic,strong) NSMutableArray* dataList;
 
-@property (nonatomic,strong) UITableView* tableView;
+@property (nonatomic,copy) PK10DownloadManagerProgress progress;
+
+@property (nonatomic,copy) PK10DownloadManagerComplete complete;
 
 +(instancetype)shareInstance;
 
 -(void)refreshLaterestDatabase;
-
-//-(void)checkAndDownloadNewData;
 
 @end
