@@ -6,16 +6,19 @@
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
 @interface PK10DownloadManager : NSObject
 
 @property (nonatomic,strong) NSMutableArray* dataList;
 
+@property (nonatomic,strong) UITableView* tableView;
+
 +(instancetype)shareInstance;
 
--(void)refreshLaterestDataListWithCount:(NSInteger)count;
+-(void)refreshLaterestDatabase;
 
--(void)checkAndDownloadNewData;
+//-(void)checkAndDownloadNewData;
 
 @end

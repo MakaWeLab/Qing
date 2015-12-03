@@ -13,12 +13,14 @@
 #import <ReactiveCocoa.h>
 #import "WebViewController.h"
 #import <Masonry.h>
+#import "PK10DataModel.h"
+#import "PK10DownloadManager.h"
 
 @interface MCGameCountViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) UITableView* tableView;
 
-@property (nonatomic,strong) NSMutableArray* dataSource;
+//@property (nonatomic,strong) NSMutableArray* dataSource;
 
 @property (nonatomic,strong) NSString* XPathString;
 
@@ -40,6 +42,8 @@
 
 @property (nonatomic,assign) BOOL isPersonDriver;
 
+@property (nonatomic,strong) PK10DownloadManager* shareManager;
+
 @end
 
 @implementation MCGameCountViewController
@@ -56,17 +60,18 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"PK10TableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"PK10TableViewCell"];
-    
     self.navigationItem.title = @"PK10";
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidResign) name:UIApplicationDidBecomeActiveNotification object:nil];
+    
+    self.shareManager = [PK10DownloadManager shareInstance];
+    self.shareManager.tableView = self.tableView;
+    [self.shareManager refreshLaterestDatabase];
     
     @weakify(self);
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         @strongify(self);
-        [self appendData];
+//        [self appendData];
     }];
     
     self.loadingWebView = [[UIWebView alloc]init];
@@ -78,26 +83,26 @@
     
     [self switchRightItemPlay:YES];
     
-    self.dataSource = [NSMutableArray array];
+//    self.dataSource = [NSMutableArray array];
     
     self.dateFormatter = [[NSDateFormatter alloc]init];
     [self.dateFormatter setDateFormat:@"mm:ss"];
     
-    NSString* url = @"";
-    self.XPathString = @"//table[@class='tb']//tr";
-    self.page = 1;
-    self.beginString = @"http://www.bwlc.net/bulletin/trax.html?page=";
-    self.endString = @"";
-    url = [NSString stringWithFormat:@"%@%ld%@",self.beginString,(long)self.page,self.endString];
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        @strongify(self);
-        [self firstLoadDataWithUrl:url];
-    });
-    
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        @strongify(self);
-        [self firstLoadDataWithUrl:url];
-    }];
+//    NSString* url = @"";
+//    self.XPathString = @"//table[@class='tb']//tr";
+//    self.page = 1;
+//    self.beginString = @"http://www.bwlc.net/bulletin/trax.html?page=";
+//    self.endString = @"";
+//    url = [NSString stringWithFormat:@"%@%ld%@",self.beginString,(long)self.page,self.endString];
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        @strongify(self);
+//        [self firstLoadDataWithUrl:url];
+//    });
+//    
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        @strongify(self);
+//        [self firstLoadDataWithUrl:url];
+//    }];
 }
 
 -(void)dealloc
@@ -142,21 +147,21 @@
     self.navigationItem.rightBarButtonItem = rightItem;
 }
 
--(void)firstLoadDataWithUrl:(NSString*)url
-{
-    [self.dataSource removeAllObjects];
-    NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
-    TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
-    NSArray *array = [xpathparser searchWithXPathQuery:self.XPathString];
-    NSMutableArray* mArray = [array mutableCopy];
-    [mArray removeObjectAtIndex:0];
-    array = mArray;
-    [self.dataSource addObjectsFromArray:array];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView.mj_header endRefreshing];
-        [self.tableView reloadData];
-    });
-}
+//-(void)firstLoadDataWithUrl:(NSString*)url
+//{
+//    [self.dataSource removeAllObjects];
+//    NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
+//    TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
+//    NSArray *array = [xpathparser searchWithXPathQuery:self.XPathString];
+//    NSMutableArray* mArray = [array mutableCopy];
+//    [mArray removeObjectAtIndex:0];
+//    array = mArray;
+//    [self.dataSource addObjectsFromArray:array];
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self.tableView.mj_header endRefreshing];
+//        [self.tableView reloadData];
+//    });
+//}
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -305,38 +310,38 @@
     return time;
 }
 
--(void)appendData
-{
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        self.page+=1;
-        NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.beginString,(long)self.page,self.endString];
-        NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
-        TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
-        NSArray *array = [xpathparser searchWithXPathQuery:self.XPathString];
-        if (array.count == 0) {
-            [self appendData];
-            return;
-        }
-        
-        NSMutableArray* mArray = [array mutableCopy];
-        [mArray removeObjectAtIndex:0];
-        array = mArray;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [self.tableView.mj_footer endRefreshing];
-            
-            NSMutableArray* indexPaths = [NSMutableArray array];
-            for (NSInteger i = self.dataSource.count ; i < array.count + self.dataSource.count ; i++) {
-                NSIndexPath* indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-                [indexPaths addObject:indexPath];
-            }
-            [self.dataSource addObjectsFromArray:array];
-            [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
-            
-        });
-    });
-}
+//-(void)appendData
+//{
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        self.page+=1;
+//        NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.beginString,(long)self.page,self.endString];
+//        NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
+//        TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
+//        NSArray *array = [xpathparser searchWithXPathQuery:self.XPathString];
+//        if (array.count == 0) {
+//            [self appendData];
+//            return;
+//        }
+//        
+//        NSMutableArray* mArray = [array mutableCopy];
+//        [mArray removeObjectAtIndex:0];
+//        array = mArray;
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            
+//            [self.tableView.mj_footer endRefreshing];
+//            
+//            NSMutableArray* indexPaths = [NSMutableArray array];
+//            for (NSInteger i = self.dataSource.count ; i < array.count + self.dataSource.count ; i++) {
+//                NSIndexPath* indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+//                [indexPaths addObject:indexPath];
+//            }
+//            [self.dataSource addObjectsFromArray:array];
+//            [self.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationAutomatic];
+//            
+//        });
+//    });
+//}
 
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -346,7 +351,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.dataSource.count;
+    return self.shareManager.dataList.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -358,18 +363,11 @@
 {
     PK10TableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"PK10TableViewCell" forIndexPath:indexPath];
     
-    TFHppleElement* element = self.dataSource[indexPath.row];
+    PK10DataModel* model = self.shareManager.dataList[indexPath.row];
     
-    
-    NSArray* tds = [element childrenWithTagName:@"td"];
-    
-    TFHppleElement* first = [[tds firstObject] firstChild];
-    TFHppleElement* second = [[tds objectAtIndex:1] firstChild];
-    TFHppleElement* last = [[tds lastObject] firstChild];
-    
-    cell.time = [last content];
-    cell.flag = [[first content] integerValue];
-    cell.numbers = (id)[second content];
+    cell.time = model.time;
+    cell.flag = model.flag;
+    cell.numbers = model.numbers;
     
     return cell;
 }

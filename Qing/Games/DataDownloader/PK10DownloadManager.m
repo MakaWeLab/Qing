@@ -60,25 +60,27 @@ typedef void(^getLaterestCallback)(NSArray* array);
     return self;
 }
 
--(void)refreshLaterestDataListWithCount:(NSInteger)count
+-(void)refreshLaterestDatabase
 {
-    NSInteger laterestFlag = 0;
+    NSInteger topFlag = 0;
     if (self.dataList.count > 0) {
         PK10DataModel* model = self.dataList.firstObject;
-        laterestFlag = model.flag;
+        topFlag = model.flag;
     }
     @weakify(self);
     [self getLaterestDataWithCallback:^(NSArray *array) {
         @strongify(self);
         if (array.count > 0) {
             NSArray* arr = [self parseSourceArray:array];
-            PK10DataModel* first = arr.firstObject;
-            [self downloadWithSourceFlag:first.flag TargetFlag:laterestFlag];
             [self insertArray:arr];
+            PK10DataModel* first = arr.firstObject;
+            [self downloadWithSourceFlag:first.flag TargetFlag:topFlag];
         }
     }];
 }
 
+//targetFlag现在存储的最上的flag
+//sourceFlag下载到的数组里面最新的flag
 -(void)downloadWithSourceFlag:(NSInteger)sourceFlag TargetFlag:(NSInteger)targetFlag
 {
     NSInteger count = sourceFlag - targetFlag;
@@ -92,6 +94,7 @@ typedef void(^getLaterestCallback)(NSArray* array);
 -(void)appendData
 {
     if (self.needDownloadCount == 0) {
+        [self.tableView reloadData];
         return;
     }
     @weakify(self);
@@ -120,7 +123,7 @@ typedef void(^getLaterestCallback)(NSArray* array);
         if (self.needDownloadCount > 0) {
             [self appendData];
         }else {
-            
+            [self.tableView reloadData];
         }
         
     });
@@ -135,14 +138,18 @@ typedef void(^getLaterestCallback)(NSArray* array);
         beginFlag = model.flag;
         model = self.dataList.lastObject;
         endFlag = model.flag;
-    }
-    
-    for (PK10DataModel* model in array) {
-        if (model.flag > beginFlag) {
-            [self.dataList insertObject:model atIndex:0];
-        }else if (model.flag < endFlag) {
-            [self.dataList addObject:model];
+        
+        for (NSInteger i = array.count-1; i>=0; i--) {
+            PK10DataModel* model = array[i];
+            if (model.flag > beginFlag) {
+                [self.dataList insertObject:model atIndex:0];
+            }else if (model.flag < endFlag) {
+                model = array[array.count - i - 1];
+                [self.dataList addObject:model];
+            }
         }
+    }else {
+        [self.dataList addObjectsFromArray:array];
     }
 }
 
