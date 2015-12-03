@@ -49,10 +49,6 @@
     if ([numbers isKindOfClass:[NSString class]]) {
         numbers = [(NSString*)numbers componentsSeparatedByString:@","];
     }
-    
-    if (_numbers == numbers) {
-        return;
-    }
     _numbers = numbers;
     
     if (!self.imageViewArray) {
@@ -82,7 +78,7 @@
         imageView.bounds = CGRectInset(CGRectMake(0, 0, perWidth, perHeight), 2, 2);
         imageView.center = CGPointMake(leftPadding + perWidth*index + perWidth/2, perHeight/2);
         
-        NSString* imageName = [self imageNameFromInteger:i isDiff:index == self.diffIndex ? YES : NO];
+        NSString* imageName = [self imageNameFromInteger:i isDiff:[self isDiffForIndex:index]];
         
         imageView.image = [UIImage imageNamed:imageName];
         
@@ -91,8 +87,46 @@
     
 }
 
+-(BOOL)isDiffForIndex:(NSInteger)index
+{
+    switch (self.type) {
+        case PK10RuleViewTypePK10:
+        {
+            return index == self.diffIndex ? YES : NO;
+            break;
+        }
+        case PK10RuleViewTypePK10_1:
+        {
+            if (index == 0) {
+                return YES;
+            }
+            return NO;
+            break;
+        }
+        case PK10RuleViewTypePK10_12:
+        {
+            if (index <2) {
+                return YES;
+            }
+            return NO;
+            break;
+        }
+        case PK10RuleViewTypePK10_123:
+        {
+            if (index <3) {
+                return YES;
+            }
+            return NO;
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 -(NSString*)imageNameFromInteger:(NSInteger)number isDiff:(BOOL)isdiff
 {
+    
     if (isdiff) {
         return [NSString stringWithFormat:@"gray_%d",(int)number];
     }

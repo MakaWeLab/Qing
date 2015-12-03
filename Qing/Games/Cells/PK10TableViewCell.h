@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PK10RuleView.h"
 
 @interface PK10TableViewCell : UITableViewCell
 
@@ -15,6 +16,8 @@
 @property (nonatomic,strong) NSArray* numbers;
 
 @property (nonatomic,assign) NSInteger flag;
+
+@property (nonatomic,assign) PK10RuleViewType type;
 
 @property (nonatomic,strong) NSString* time;
 

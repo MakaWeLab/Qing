@@ -69,6 +69,8 @@
 		605D51FE1BF3A77D0071BC75 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 605D52001BF3A77D0071BC75 /* Localizable.strings */; };
 		605D52081BFCBFE10071BC75 /* PopShowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D52071BFCBFE10071BC75 /* PopShowImageView.m */; };
 		605D520A1BFCC0A20071BC75 /* PopShowImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 605D52091BFCC0A20071BC75 /* PopShowImageView.xib */; };
+		6089FEA91C10778D004CF4CF /* PK10RuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6089FEA81C10778D004CF4CF /* PK10RuleView.m */; };
+		6089FEAB1C107798004CF4CF /* PK10RuleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6089FEAA1C107798004CF4CF /* PK10RuleView.xib */; };
 		6BB96244A8C755AA29F1A347 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 193E36F75E576152E59DAE78 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -195,6 +197,9 @@
 		605D52061BFCBFE10071BC75 /* PopShowImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopShowImageView.h; sourceTree = "<group>"; };
 		605D52071BFCBFE10071BC75 /* PopShowImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopShowImageView.m; sourceTree = "<group>"; };
 		605D52091BFCC0A20071BC75 /* PopShowImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopShowImageView.xib; sourceTree = "<group>"; };
+		6089FEA71C10778D004CF4CF /* PK10RuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10RuleView.h; sourceTree = "<group>"; };
+		6089FEA81C10778D004CF4CF /* PK10RuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10RuleView.m; sourceTree = "<group>"; };
+		6089FEAA1C107798004CF4CF /* PK10RuleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PK10RuleView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +298,9 @@
 				24BD7FA31C0D656400EDF9DF /* PK10TableViewCell.xib */,
 				249C90F01C0EEE8A006218AE /* PK10ToolBar.h */,
 				249C90F11C0EEE8A006218AE /* PK10ToolBar.m */,
+				6089FEA71C10778D004CF4CF /* PK10RuleView.h */,
+				6089FEA81C10778D004CF4CF /* PK10RuleView.m */,
+				6089FEAA1C107798004CF4CF /* PK10RuleView.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -606,6 +614,7 @@
 				249C90EF1C0EE987006218AE /* red_9.png in Resources */,
 				249C90E61C0EE987006218AE /* red_8.png in Resources */,
 				249C90E11C0EE987006218AE /* red_4.png in Resources */,
+				6089FEAB1C107798004CF4CF /* PK10RuleView.xib in Resources */,
 				249C90DF1C0EE987006218AE /* gray_10.png in Resources */,
 				605D51FE1BF3A77D0071BC75 /* Localizable.strings in Resources */,
 				605D520A1BFCC0A20071BC75 /* PopShowImageView.xib in Resources */,
@@ -703,6 +712,7 @@
 				247CDA311BFC810A00F9DB2A /* ProfileViewController.m in Sources */,
 				605D52081BFCBFE10071BC75 /* PopShowImageView.m in Sources */,
 				24ED32DC1BFDC02A0098758F /* MCDownloadOperation.m in Sources */,
+				6089FEA91C10778D004CF4CF /* PK10RuleView.m in Sources */,
 				24AB7DA51C0304B3006D0881 /* MCDownloadCache.m in Sources */,
 				605D51F11BF3A60D0071BC75 /* RootNavigationController.m in Sources */,
 				241288811C0FEBBD000CFD1F /* PK10DataModel.m in Sources */,

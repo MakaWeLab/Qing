@@ -14,7 +14,9 @@
 #import "WebViewController.h"
 #import <Masonry.h>
 #import "PK10DataModel.h"
+#import "PK10ToolBar.h"
 #import "PK10DownloadManager.h"
+#import "PK10RuleView.h"
 
 @interface MCGameCountViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -41,6 +43,8 @@
 @property (nonatomic,assign) BOOL isPersonDriver;
 
 @property (nonatomic,strong) PK10DownloadManager* shareManager;
+
+@property (nonatomic,strong) PK10ToolBar* toolbar;
 
 @end
 
@@ -87,10 +91,24 @@
         @strongify(self);
         [self.shareManager refreshLaterestDatabase];
     }];
+    
+    self.toolbar = [[PK10ToolBar alloc]init];
+    self.toolbar.frame = CGRectMake(0, self.view.bounds.size.height - 50, self.view.bounds.size.width, 50);
+    [self.view addSubview:self.toolbar];
+    
+    [self.toolbar.ruleView addObserver:self forKeyPath:@"type" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"type"]) {
+        [self.tableView reloadData];
+    }
 }
 
 -(void)dealloc
 {
+    [self.toolbar.ruleView removeObserver:self forKeyPath:@"type"];
     [self.loadingWebView stopLoading];
     if (_timer) {
         dispatch_source_cancel(_timer);
@@ -300,6 +318,7 @@
     
     PK10DataModel* model = self.shareManager.dataList[indexPath.row];
     
+    cell.type = self.toolbar.ruleView.type;
     cell.time = model.time;
     cell.flag = model.flag;
     cell.numbers = model.numbers;
