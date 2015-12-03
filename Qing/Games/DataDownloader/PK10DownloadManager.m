@@ -62,21 +62,23 @@ typedef void(^getLaterestCallback)(NSArray* array);
 
 -(void)refreshLaterestDatabase
 {
-    NSInteger topFlag = 0;
-    if (self.dataList.count > 0) {
-        PK10DataModel* model = self.dataList.firstObject;
-        topFlag = model.flag;
-    }
-    @weakify(self);
-    [self getLaterestDataWithCallback:^(NSArray *array) {
-        @strongify(self);
-        if (array.count > 0) {
-            NSArray* arr = [self parseSourceArray:array];
-            [self insertArray:arr];
-            PK10DataModel* first = arr.firstObject;
-            [self downloadWithSourceFlag:first.flag TargetFlag:topFlag];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSInteger topFlag = 0;
+        if (self.dataList.count > 0) {
+            PK10DataModel* model = self.dataList.firstObject;
+            topFlag = model.flag;
         }
-    }];
+        @weakify(self);
+        [self getLaterestDataWithCallback:^(NSArray *array) {
+            @strongify(self);
+            if (array.count > 0) {
+                NSArray* arr = [self parseSourceArray:array];
+                [self insertArray:arr];
+                PK10DataModel* first = arr.firstObject;
+                [self downloadWithSourceFlag:first.flag TargetFlag:topFlag];
+            }
+        }];
+    });
 }
 
 //targetFlag现在存储的最上的flag
