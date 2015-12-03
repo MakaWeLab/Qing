@@ -62,6 +62,12 @@ typedef void(^getLaterestCallback)(NSArray* array);
 
 -(void)refreshLaterestDatabase
 {
+    if (self.needDownloadCount > 0) {
+        if (self.complete) {
+            self.complete(YES);
+        }
+        return;
+    }
     NSInteger topFlag = 0;
     if (self.dataList.count > 0) {
         PK10DataModel* model = self.dataList.firstObject;
