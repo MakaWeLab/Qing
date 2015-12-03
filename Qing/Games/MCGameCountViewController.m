@@ -78,8 +78,10 @@
     @weakify(self);
     self.shareManager.complete = ^(BOOL isSuccess){
         @strongify(self);
-        [self.tableView reloadData];
-        [self.tableView.mj_header endRefreshing];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+            [self.tableView.mj_header endRefreshing];
+        });
     };
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self);
