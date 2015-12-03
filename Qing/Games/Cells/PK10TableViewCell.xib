@@ -42,6 +42,7 @@
                     <constraint firstItem="dbt-0U-Uej" firstAttribute="leading" secondItem="9r9-UF-uBf" secondAttribute="trailing" constant="20" id="obP-MZ-fks"/>
                 </constraints>
             </tableViewCellContentView>
+            <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
             <connections>
                 <outlet property="containerView" destination="ybr-Jg-0g1" id="UMa-JR-DVD"/>
                 <outlet property="flagLabel" destination="9r9-UF-uBf" id="FEr-cz-Nsu"/>

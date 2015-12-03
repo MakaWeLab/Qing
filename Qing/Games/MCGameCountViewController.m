@@ -12,8 +12,11 @@
 #import <MJRefresh.h>
 #import <ReactiveCocoa.h>
 #import "WebViewController.h"
+#import <Masonry.h>
 
-@interface MCGameCountViewController ()
+@interface MCGameCountViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,strong) UITableView* tableView;
 
 @property (nonatomic,strong) NSMutableArray* dataSource;
 
@@ -31,6 +34,12 @@
 
 @property (nonatomic,strong) dispatch_source_t timer;
 
+@property (nonatomic,strong) dispatch_queue_t queue;
+
+@property (nonatomic,assign) BOOL isPlaying;
+
+@property (nonatomic,assign) BOOL isPersonDriver;
+
 @end
 
 @implementation MCGameCountViewController
@@ -38,6 +47,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.view addSubview:self.tableView];
+    self.view.clipsToBounds = YES;
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"PK10TableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"PK10TableViewCell"];
     
     self.navigationItem.title = @"PK10";
@@ -54,10 +73,10 @@
     self.loadingWebView.scalesPageToFit = YES;
     CGFloat width = [UIScreen mainScreen].bounds.size.width*.8;
     CGFloat height = width*.6;
-    self.loadingWebView.frame = CGRectMake(0,0-height - 100, width, height);
+    self.loadingWebView.frame = CGRectMake(0-width-50,74, width, height);
     [self.view addSubview:self.loadingWebView];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(webView)];
+    [self switchRightItemPlay:YES];
     
     self.dataSource = [NSMutableArray array];
     
@@ -83,6 +102,10 @@
 
 -(void)dealloc
 {
+    [self.loadingWebView stopLoading];
+    if (_timer) {
+        dispatch_source_cancel(_timer);
+    }
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
@@ -98,10 +121,25 @@
 
 -(void)webView
 {
-    WebViewController* web = [[WebViewController alloc]init];
-    web.hidesBottomBarWhenPushed = YES;
-    web.url = @"http://i.api.1396.me/mobile/pk10/";
-    [self.navigationController pushViewController:web animated:YES];
+    if (self.isPlaying) {
+        [self endPlay];
+    }else {
+        self.isPersonDriver = YES;
+        [self beginPlay];
+    }
+}
+
+-(void)switchRightItemPlay:(BOOL)play
+{
+    UIBarButtonItem* rightItem = nil;
+    self.isPlaying = !play;
+    if (play) {
+        rightItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(webView)];
+    }else {
+        rightItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(webView)];
+    }
+    
+    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 -(void)firstLoadDataWithUrl:(NSString*)url
@@ -120,6 +158,11 @@
     });
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 -(void)refreshLastData
 {
     [self.tableView.mj_header beginRefreshing];
@@ -134,21 +177,22 @@
 -(void)openTimeropenTimerWithTimeOut:(NSTimeInterval)time{
     @weakify(self);
     __block int timeout=0; //倒计时时间
-    if (time > 0) {
-        timeout = time;
-    }
+    timeout = time;
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    self.queue = queue;
     self.timer= dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
     dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1*NSEC_PER_SEC, 0); //每秒执行
     dispatch_source_set_event_handler(_timer, ^{
         if(timeout==0){ //倒计时结束，关闭
-            timeout = 60*4;
+            @strongify(self);
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示 根据自己需求设置
                 @strongify(self);
                 self.navigationItem.title = @"开奖中...";
-                dispatch_suspend(self.timer);
+                dispatch_suspend(self.queue);
+                self.isPersonDriver = NO;
                 [self beginPlay];
+                timeout = [self nextFireTimeIntervalWithDate:[NSDate date]];
             });
         }else{
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -165,25 +209,41 @@
 
 -(void)beginPlay
 {
+    if (self.isPlaying) {
+        [self.loadingWebView reload];
+        return;
+    }
+    
+    [self switchRightItemPlay:NO];
     [self.loadingWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://i.api.1396.me/mobile/pk10/"]]];
     [UIView animateWithDuration:.25 animations:^{
-        self.loadingWebView.frame = CGRectMake(0, 0, self.loadingWebView.bounds.size.width, self.loadingWebView.bounds.size.height);
+        self.loadingWebView.frame = CGRectMake(10, 74, self.loadingWebView.bounds.size.width, self.loadingWebView.bounds.size.height);
     }];
     @weakify(self);
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        @strongify(self);
-        [self endPlay];
-    });
+    if (!self.isPersonDriver) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            @strongify(self);
+            if (!self.isPersonDriver) {
+                [self endPlay];
+            }
+        });
+    }
 }
 
 -(void)endPlay
 {
+    if (!self.isPlaying) {
+        return;
+    }
+    
+    [self switchRightItemPlay:YES];
     [UIView animateWithDuration:.25 animations:^{
-        self.loadingWebView.frame = CGRectMake(0, 0-self.loadingWebView.bounds.size.height-100, self.loadingWebView.bounds.size.width, self.loadingWebView.bounds.size.height);
+        self.loadingWebView.frame = CGRectMake(0-self.loadingWebView.bounds.size.width-50, 74 , self.loadingWebView.bounds.size.width, self.loadingWebView.bounds.size.height);
     }];
     [self.loadingWebView stopLoading];
     [self.tableView.mj_header beginRefreshing];
-    dispatch_resume(self.timer);
+    
+    dispatch_resume(self.queue);
 }
 
 -(NSInteger)timeNumberForDateString:(NSString*)dateString
@@ -222,7 +282,11 @@
     }else if (minite <2){
         m = 1 - minite;
     }else if (minite == 2 || minite == 7){
-        m = .5;
+        if (self.isPlaying) {
+            m = 4;
+        }else {
+            return 5;
+        }
     }else {
         m = 6 - minite;
     }

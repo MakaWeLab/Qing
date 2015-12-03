@@ -11,6 +11,8 @@
 		2403DDAE1BFC769A002E7B0E /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDAA1BFC769A002E7B0E /* TFHppleElement.m */; };
 		2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDAC1BFC769A002E7B0E /* XPathQuery.m */; };
 		2403DDB31BFC7770002E7B0E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2403DDB21BFC7770002E7B0E /* libxml2.tbd */; };
+		2412887E1C0FEBA5000CFD1F /* PK10DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2412887D1C0FEBA5000CFD1F /* PK10DownloadManager.m */; };
+		241288811C0FEBBD000CFD1F /* PK10DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 241288801C0FEBBD000CFD1F /* PK10DataModel.m */; };
 		247CDA2D1BFC7D7600F9DB2A /* CrawlersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */; };
 		247CDA311BFC810A00F9DB2A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA301BFC810A00F9DB2A /* ProfileViewController.m */; };
 		247CDA381BFC85C400F9DB2A /* CrawlersCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA361BFC85C400F9DB2A /* CrawlersCollectionCell.m */; };
@@ -97,6 +99,10 @@
 		2403DDAC1BFC769A002E7B0E /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		2403DDB01BFC76DB002E7B0E /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		2403DDB21BFC7770002E7B0E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		2412887C1C0FEBA5000CFD1F /* PK10DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10DownloadManager.h; sourceTree = "<group>"; };
+		2412887D1C0FEBA5000CFD1F /* PK10DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10DownloadManager.m; sourceTree = "<group>"; };
+		2412887F1C0FEBBD000CFD1F /* PK10DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10DataModel.h; sourceTree = "<group>"; };
+		241288801C0FEBBD000CFD1F /* PK10DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10DataModel.m; sourceTree = "<group>"; };
 		247CDA2B1BFC7D7600F9DB2A /* CrawlersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrawlersViewController.h; sourceTree = "<group>"; };
 		247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrawlersViewController.m; sourceTree = "<group>"; };
 		247CDA2F1BFC810A00F9DB2A /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -258,6 +264,17 @@
 			path = TFhpple;
 			sourceTree = "<group>";
 		};
+		2412887B1C0FEB59000CFD1F /* DataDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				2412887C1C0FEBA5000CFD1F /* PK10DownloadManager.h */,
+				2412887D1C0FEBA5000CFD1F /* PK10DownloadManager.m */,
+				2412887F1C0FEBBD000CFD1F /* PK10DataModel.h */,
+				241288801C0FEBBD000CFD1F /* PK10DataModel.m */,
+			);
+			path = DataDownloader;
+			sourceTree = "<group>";
+		};
 		247CDA2E1BFC80FE00F9DB2A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +334,7 @@
 				24C2DBFD1C0C1CD500C160E9 /* MCCommonLoginView.xib */,
 				24C2DBFF1C0C39F500C160E9 /* MCGameCountViewController.h */,
 				24C2DC001C0C39F500C160E9 /* MCGameCountViewController.m */,
+				2412887B1C0FEB59000CFD1F /* DataDownloader */,
 				24BD7F951C0D414A00EDF9DF /* Cells */,
 				249C90F51C0EF1EF006218AE /* WebViewController.h */,
 				249C90F61C0EF1EF006218AE /* WebViewController.m */,
@@ -672,6 +690,7 @@
 				605D51F41BF3A60D0071BC75 /* RootViewController.m in Sources */,
 				605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */,
 				2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */,
+				2412887E1C0FEBA5000CFD1F /* PK10DownloadManager.m in Sources */,
 				247CDA381BFC85C400F9DB2A /* CrawlersCollectionCell.m in Sources */,
 				24AB7D9F1C02BF7E006D0881 /* UIImageView+MCDownload.m in Sources */,
 				2403DDAE1BFC769A002E7B0E /* TFHppleElement.m in Sources */,
@@ -686,6 +705,7 @@
 				24ED32DC1BFDC02A0098758F /* MCDownloadOperation.m in Sources */,
 				24AB7DA51C0304B3006D0881 /* MCDownloadCache.m in Sources */,
 				605D51F11BF3A60D0071BC75 /* RootNavigationController.m in Sources */,
+				241288811C0FEBBD000CFD1F /* PK10DataModel.m in Sources */,
 				24C2DC011C0C39F500C160E9 /* MCGameCountViewController.m in Sources */,
 				605D51F31BF3A60D0071BC75 /* RootTableViewController.m in Sources */,
 				24C2DBF71C0C1B8500C160E9 /* MCLoginController.m in Sources */,
