@@ -134,7 +134,6 @@
 		24D937D71C119081006AA21E /* red_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 249C90CF1C0EE987006218AE /* red_1.png */; };
 		24D937D81C119081006AA21E /* road4.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D9377B1C1163D6006AA21E /* road4.png */; };
 		24D937D91C119081006AA21E /* Plant.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605D51E61BF3A5820071BC75 /* Plant.xcassets */; };
-		24D937DA1C119081006AA21E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605D51BD1BF3A53E0071BC75 /* Assets.xcassets */; };
 		24D937DB1C119081006AA21E /* CrawlersCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247CDA371BFC85C400F9DB2A /* CrawlersCollectionCell.xib */; };
 		24D937DC1C119081006AA21E /* road1.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D937781C1163D6006AA21E /* road1.png */; };
 		24D937DD1C119081006AA21E /* PK10TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BD7FA31C0D656400EDF9DF /* PK10TableViewCell.xib */; };
@@ -841,7 +840,6 @@
 				24D937D71C119081006AA21E /* red_1.png in Resources */,
 				24D937D81C119081006AA21E /* road4.png in Resources */,
 				24D937D91C119081006AA21E /* Plant.xcassets in Resources */,
-				24D937DA1C119081006AA21E /* Assets.xcassets in Resources */,
 				24D937DB1C119081006AA21E /* CrawlersCollectionCell.xib in Resources */,
 				24D937DC1C119081006AA21E /* road1.png in Resources */,
 				24D937DD1C119081006AA21E /* PK10TableViewCell.xib in Resources */,
