@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "24BD7FD71C0D9FB200EDF9DF"
-               BuildableName = "DDD.app"
-               BlueprintName = "DDD"
-               ReferencedContainer = "container:DDD.xcodeproj">
+               BlueprintIdentifier = "24D9378E1C119081006AA21E"
+               BuildableName = "PK10.app"
+               BlueprintName = "PK10"
+               ReferencedContainer = "container:Qing.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "24BD7FD71C0D9FB200EDF9DF"
-            BuildableName = "DDD.app"
-            BlueprintName = "DDD"
-            ReferencedContainer = "container:DDD.xcodeproj">
+            BlueprintIdentifier = "24D9378E1C119081006AA21E"
+            BuildableName = "PK10.app"
+            BlueprintName = "PK10"
+            ReferencedContainer = "container:Qing.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "24BD7FD71C0D9FB200EDF9DF"
-            BuildableName = "DDD.app"
-            BlueprintName = "DDD"
-            ReferencedContainer = "container:DDD.xcodeproj">
+            BlueprintIdentifier = "24D9378E1C119081006AA21E"
+            BuildableName = "PK10.app"
+            BlueprintName = "PK10"
+            ReferencedContainer = "container:Qing.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "24BD7FD71C0D9FB200EDF9DF"
-            BuildableName = "DDD.app"
-            BlueprintName = "DDD"
-            ReferencedContainer = "container:DDD.xcodeproj">
+            BlueprintIdentifier = "24D9378E1C119081006AA21E"
+            BuildableName = "PK10.app"
+            BlueprintName = "PK10"
+            ReferencedContainer = "container:Qing.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -1,12 +1,17 @@
 //
 //  AppDelegate.m
-//  DDD
+//  Qing
 //
-//  Created by Maka on 1/12/15.
+//  Created by chaowualex on 15/11/12.
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
+#import <RESideMenu.h>
 #import "AppDelegate.h"
+#import <Bugly/CrashReporter.h>
+#import "ProfileViewController.h"
+#import "MCGameCountViewController.h"
+#import "RootNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +22,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    MCGameCountViewController* gameCount = [[MCGameCountViewController alloc]init];
+    
+    ProfileViewController* profile = [[ProfileViewController alloc]init];
+    
+    RootNavigationController* crawlersNavigation = [[RootNavigationController alloc]initWithRootViewController:gameCount];
+    
+    RESideMenu* menu = [[RESideMenu alloc]initWithContentViewController:crawlersNavigation leftMenuViewController:profile rightMenuViewController:nil];
+    
+    menu.scaleContentView = NO;
+    
+    self.window.rootViewController = menu;
+    
+    [self.window makeKeyAndVisible];
+    
+    {
+//        [[CrashReporter sharedInstance] enableLog:NO];
+//        [[CrashReporter sharedInstance] installWithAppId:@"900012531"];
+    }
+    
     return YES;
 }
 
@@ -51,7 +78,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "maka.DDD" in the application's documents directory.
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "maka.Qing" in the application's documents directory.
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
@@ -60,7 +87,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"DDD" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Qing" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -74,7 +101,7 @@
     // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"DDD.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Qing.sqlite"];
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
     if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]) {

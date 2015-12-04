@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  DDD
+//  Qing
 //
-//  Created by Maka on 1/12/15.
+//  Created by chaowualex on 15/11/12.
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
