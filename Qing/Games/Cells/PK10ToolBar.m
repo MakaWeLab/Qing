@@ -27,8 +27,12 @@
         }];
         
         self.lineView = [[UIView alloc]init];
-        self.lineView.backgroundColor = [UIColor whiteColor];
-        
+        self.lineView.backgroundColor = [UIColor lightGrayColor];
+        [self addSubview:self.lineView];
+        [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.mas_equalTo(1./[UIScreen mainScreen].scale);
+            make.left.top.right.mas_equalTo(0);
+        }];
     }
     return self;
 }

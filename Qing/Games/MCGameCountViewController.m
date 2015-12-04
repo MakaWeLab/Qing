@@ -17,22 +17,26 @@
 #import "PK10ToolBar.h"
 #import "PK10DownloadManager.h"
 #import "PK10RuleView.h"
+#import <MBProgressHUD.h>
+#import "PK10GamePlayer.h"
 
 @interface MCGameCountViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic,strong) UITableView* tableView;
-
-@property (nonatomic,strong) NSString* XPathString;
-
-@property (nonatomic,assign) NSInteger page;
-
-@property (nonatomic,strong) NSString* beginString;
-
-@property (nonatomic,strong) NSString* endString;
-
 @property (nonatomic,strong) NSDateFormatter* dateFormatter;
 
-@property (nonatomic,strong) UIWebView* loadingWebView;
+@property (nonatomic,strong) PK10GamePlayer* gamePlayer;
+
+@property (nonatomic,strong) PK10DownloadManager* shareManager;
+
+
+
+@property (nonatomic,strong) UITableView* tableView;
+
+@property (nonatomic,strong) PK10ToolBar* toolbar;
+
+@property (nonatomic,strong) MBProgressHUD* hud;
+
+
 
 @property (nonatomic,strong) dispatch_source_t timer;
 
@@ -42,61 +46,85 @@
 
 @property (nonatomic,assign) BOOL isPersonDriver;
 
-@property (nonatomic,strong) PK10DownloadManager* shareManager;
-
-@property (nonatomic,strong) PK10ToolBar* toolbar;
-
 @end
 
 @implementation MCGameCountViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.shareManager = [PK10DownloadManager shareInstance];
-    
-    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    [self.view addSubview:self.tableView];
-    self.view.clipsToBounds = YES;
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
-    }];
-    [self.tableView registerNib:[UINib nibWithNibName:@"PK10TableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"PK10TableViewCell"];
-    self.navigationItem.title = @"PK10";
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidResign) name:UIApplicationDidBecomeActiveNotification object:nil];
-    
-    
-    self.loadingWebView = [[UIWebView alloc]init];
-    self.loadingWebView.scalesPageToFit = YES;
-    CGFloat width = [UIScreen mainScreen].bounds.size.width*.8;
-    CGFloat height = width*.6;
-    self.loadingWebView.frame = CGRectMake(0-width-50,74, width, height);
-    [self.view addSubview:self.loadingWebView];
-    
     [self switchRightItemPlay:YES];
-    self.dateFormatter = [[NSDateFormatter alloc]init];
-    [self.dateFormatter setDateFormat:@"mm:ss"];
+    self.view.clipsToBounds = YES;
+    self.navigationItem.title = @"PK10";
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidResign) name:UIApplicationDidBecomeActiveNotification object:nil];
     @weakify(self);
-    self.shareManager.complete = ^(BOOL isSuccess){
-        @strongify(self);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-            [self.tableView.mj_header endRefreshing];
-        });
-    };
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        @strongify(self);
-        [self.shareManager refreshLaterestDatabase];
-    }];
     
-    self.toolbar = [[PK10ToolBar alloc]init];
-    self.toolbar.frame = CGRectMake(0, self.view.bounds.size.height - 50, self.view.bounds.size.width, 50);
-    [self.view addSubview:self.toolbar];
+    {
+        self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
+        self.tableView.dataSource = self;
+        self.tableView.delegate = self;
+        self.tableView.clipsToBounds = YES;
+        [self.view addSubview:self.tableView];
+        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+        self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+            @strongify(self);
+            [self.shareManager refreshLaterestDatabase];
+        }];
+        [self.tableView registerNib:[UINib nibWithNibName:@"PK10TableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"PK10TableViewCell"];
+        
+        
+        self.toolbar = [[PK10ToolBar alloc]init];
+        self.toolbar.clipsToBounds = YES;
+        [self.view addSubview:self.toolbar];
+        [self.toolbar.ruleView addObserver:self forKeyPath:@"type" options:NSKeyValueObservingOptionNew context:nil];
+        [self.toolbar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.left.right.mas_equalTo(0);
+            make.height.mas_equalTo(49);
+        }];
+        
+        
+        self.hud = [[MBProgressHUD alloc] initWithView:self.view];
+        self.hud.removeFromSuperViewOnHide = YES;
+        self.hud.dimBackground = YES;
+        self.hud.mode = MBProgressHUDModeDeterminate;
+        [self.view addSubview:self.hud];
+    }
     
-    [self.toolbar.ruleView addObserver:self forKeyPath:@"type" options:NSKeyValueObservingOptionNew context:nil];
+    
+    {
+        self.shareManager = [PK10DownloadManager shareInstance];
+        self.shareManager.complete = ^(BOOL isSuccess){
+            @strongify(self);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.hud hide:YES];
+                [self.tableView reloadData];
+                [self.tableView.mj_header endRefreshing];
+            });
+        };
+        
+        self.shareManager.progress = ^(NSInteger progress){
+            @strongify(self);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.hud.labelText = [NSString stringWithFormat:@"数据初始化中 剩余%ld项",(long)progress];
+                self.hud.progress = progress/100.;
+                [self.hud show:YES];
+                [self.view bringSubviewToFront:self.hud];
+            });
+        };
+        
+        self.dateFormatter = [[NSDateFormatter alloc]init];
+        [self.dateFormatter setDateFormat:@"mm:ss"];
+        
+        self.gamePlayer = [[PK10GamePlayer alloc]initWithLine:10];
+        [self.view addSubview:self.gamePlayer];
+        CGRect rect = self.gamePlayer.bounds;
+        rect.origin.x = -10- rect.size.width;
+        rect.origin.y = 74;
+        self.gamePlayer.frame = rect;
+    }
+    
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
@@ -109,7 +137,6 @@
 -(void)dealloc
 {
     [self.toolbar.ruleView removeObserver:self forKeyPath:@"type"];
-    [self.loadingWebView stopLoading];
     if (_timer) {
         dispatch_source_cancel(_timer);
     }
@@ -201,7 +228,6 @@
 -(void)beginPlay
 {
     if (self.isPlaying) {
-        [self.loadingWebView reload];
         @weakify(self);
         if (!self.isPersonDriver) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -215,10 +241,11 @@
     }
     
     [self switchRightItemPlay:NO];
-    [self.loadingWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://i.api.1396.me/mobile/pk10/"]]];
     [UIView animateWithDuration:.25 animations:^{
-        self.loadingWebView.frame = CGRectMake(10, 74, self.loadingWebView.bounds.size.width, self.loadingWebView.bounds.size.height);
+        self.gamePlayer.frame = CGRectMake(10, 74, self.gamePlayer.bounds.size.width, self.gamePlayer.bounds.size.height);
     }];
+    self.gamePlayer.leftTime = 200;
+    [self.gamePlayer begin];
     @weakify(self);
     if (!self.isPersonDriver) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -236,12 +263,13 @@
         return;
     }
     
+    [self.gamePlayer stopPlayWithResult:[self.shareManager.dataList.firstObject numbers]];
+    
     [self switchRightItemPlay:YES];
-    [UIView animateWithDuration:.25 animations:^{
-        self.loadingWebView.frame = CGRectMake(0-self.loadingWebView.bounds.size.width-50, 74 , self.loadingWebView.bounds.size.width, self.loadingWebView.bounds.size.height);
-    }];
-    [self.loadingWebView stopLoading];
-    [self.tableView.mj_header beginRefreshing];
+//    [UIView animateWithDuration:.25 animations:^{
+//        self.gamePlayer.frame = CGRectMake(0-self.gamePlayer.bounds.size.width-10, 74 , self.gamePlayer.bounds.size.width, self.gamePlayer.bounds.size.height);
+//    }];
+//    [self.tableView.mj_header beginRefreshing];
     
     dispatch_resume(self.queue);
 }

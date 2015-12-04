@@ -50,6 +50,22 @@
 		24C2DBFC1C0C1CC600C160E9 /* MCCommonLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C2DBFB1C0C1CC600C160E9 /* MCCommonLoginView.m */; };
 		24C2DBFE1C0C1CD500C160E9 /* MCCommonLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24C2DBFD1C0C1CD500C160E9 /* MCCommonLoginView.xib */; };
 		24C2DC011C0C39F500C160E9 /* MCGameCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24C2DC001C0C39F500C160E9 /* MCGameCountViewController.m */; };
+		24D937641C11489D006AA21E /* PK10GamePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D937631C11489D006AA21E /* PK10GamePlayer.m */; };
+		24D937671C11556D006AA21E /* PK10GamePlayerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D937661C11556D006AA21E /* PK10GamePlayerItem.m */; };
+		24D937691C11557A006AA21E /* PK10GamePlayerItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24D937681C11557A006AA21E /* PK10GamePlayerItem.xib */; };
+		24D9376C1C1158AC006AA21E /* PK10GamePlayerScence1.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D9376B1C1158AC006AA21E /* PK10GamePlayerScence1.m */; };
+		24D937711C115C1C006AA21E /* PK10GamePlayerRoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D937701C115C1C006AA21E /* PK10GamePlayerRoad.m */; };
+		24D937731C115C26006AA21E /* PK10GamePlayerRoad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24D937721C115C25006AA21E /* PK10GamePlayerRoad.xib */; };
+		24D9377E1C1163D6006AA21E /* road3.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D937771C1163D6006AA21E /* road3.png */; };
+		24D9377F1C1163D6006AA21E /* road1.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D937781C1163D6006AA21E /* road1.png */; };
+		24D937801C1163D6006AA21E /* road2.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D937791C1163D6006AA21E /* road2.png */; };
+		24D937811C1163D6006AA21E /* road6.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D9377A1C1163D6006AA21E /* road6.png */; };
+		24D937821C1163D6006AA21E /* road4.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D9377B1C1163D6006AA21E /* road4.png */; };
+		24D937831C1163D6006AA21E /* road7.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D9377C1C1163D6006AA21E /* road7.png */; };
+		24D937851C116404006AA21E /* road5.png in Resources */ = {isa = PBXBuildFile; fileRef = 24D937841C116404006AA21E /* road5.png */; };
+		24D937881C1187EE006AA21E /* GamePredictionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D937871C1187EE006AA21E /* GamePredictionViewController.m */; };
+		24D9378C1C118EB6006AA21E /* GamePredictionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D9378A1C118EB6006AA21E /* GamePredictionCell.m */; };
+		24D9378D1C118EB6006AA21E /* GamePredictionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24D9378B1C118EB6006AA21E /* GamePredictionCell.xib */; };
 		24ED32DC1BFDC02A0098758F /* MCDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED32DB1BFDC02A0098758F /* MCDownloadOperation.m */; };
 		6031EED81C01F79B00CF1F36 /* MCDownloadUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6031EED71C01F79B00CF1F36 /* MCDownloadUtil.m */; };
 		605D51B01BF3A53E0071BC75 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51AF1BF3A53E0071BC75 /* main.m */; };
@@ -156,6 +172,28 @@
 		24C2DBFD1C0C1CD500C160E9 /* MCCommonLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCCommonLoginView.xib; sourceTree = "<group>"; };
 		24C2DBFF1C0C39F500C160E9 /* MCGameCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameCountViewController.h; sourceTree = "<group>"; };
 		24C2DC001C0C39F500C160E9 /* MCGameCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameCountViewController.m; sourceTree = "<group>"; };
+		24D937621C11489D006AA21E /* PK10GamePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10GamePlayer.h; sourceTree = "<group>"; };
+		24D937631C11489D006AA21E /* PK10GamePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10GamePlayer.m; sourceTree = "<group>"; };
+		24D937651C11556D006AA21E /* PK10GamePlayerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10GamePlayerItem.h; sourceTree = "<group>"; };
+		24D937661C11556D006AA21E /* PK10GamePlayerItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10GamePlayerItem.m; sourceTree = "<group>"; };
+		24D937681C11557A006AA21E /* PK10GamePlayerItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PK10GamePlayerItem.xib; sourceTree = "<group>"; };
+		24D9376A1C1158AC006AA21E /* PK10GamePlayerScence1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10GamePlayerScence1.h; sourceTree = "<group>"; };
+		24D9376B1C1158AC006AA21E /* PK10GamePlayerScence1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10GamePlayerScence1.m; sourceTree = "<group>"; };
+		24D9376F1C115C1C006AA21E /* PK10GamePlayerRoad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10GamePlayerRoad.h; sourceTree = "<group>"; };
+		24D937701C115C1C006AA21E /* PK10GamePlayerRoad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10GamePlayerRoad.m; sourceTree = "<group>"; };
+		24D937721C115C25006AA21E /* PK10GamePlayerRoad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PK10GamePlayerRoad.xib; sourceTree = "<group>"; };
+		24D937771C1163D6006AA21E /* road3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road3.png; sourceTree = "<group>"; };
+		24D937781C1163D6006AA21E /* road1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road1.png; sourceTree = "<group>"; };
+		24D937791C1163D6006AA21E /* road2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road2.png; sourceTree = "<group>"; };
+		24D9377A1C1163D6006AA21E /* road6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road6.png; sourceTree = "<group>"; };
+		24D9377B1C1163D6006AA21E /* road4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road4.png; sourceTree = "<group>"; };
+		24D9377C1C1163D6006AA21E /* road7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road7.png; sourceTree = "<group>"; };
+		24D937841C116404006AA21E /* road5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road5.png; sourceTree = "<group>"; };
+		24D937861C1187EE006AA21E /* GamePredictionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePredictionViewController.h; sourceTree = "<group>"; };
+		24D937871C1187EE006AA21E /* GamePredictionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePredictionViewController.m; sourceTree = "<group>"; };
+		24D937891C118EB6006AA21E /* GamePredictionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePredictionCell.h; sourceTree = "<group>"; };
+		24D9378A1C118EB6006AA21E /* GamePredictionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePredictionCell.m; sourceTree = "<group>"; };
+		24D9378B1C118EB6006AA21E /* GamePredictionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GamePredictionCell.xib; sourceTree = "<group>"; };
 		24ED32DA1BFDC02A0098758F /* MCDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDownloadOperation.h; sourceTree = "<group>"; };
 		24ED32DB1BFDC02A0098758F /* MCDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDownloadOperation.m; sourceTree = "<group>"; };
 		5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -292,6 +330,9 @@
 		24BD7F951C0D414A00EDF9DF /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				24D937891C118EB6006AA21E /* GamePredictionCell.h */,
+				24D9378A1C118EB6006AA21E /* GamePredictionCell.m */,
+				24D9378B1C118EB6006AA21E /* GamePredictionCell.xib */,
 				24BD7FA61C0D6DE600EDF9DF /* images */,
 				24BD7FA11C0D656400EDF9DF /* PK10TableViewCell.h */,
 				24BD7FA21C0D656400EDF9DF /* PK10TableViewCell.m */,
@@ -332,6 +373,30 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		24D937611C114654006AA21E /* GamePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				24D937841C116404006AA21E /* road5.png */,
+				24D937771C1163D6006AA21E /* road3.png */,
+				24D937781C1163D6006AA21E /* road1.png */,
+				24D937791C1163D6006AA21E /* road2.png */,
+				24D9377A1C1163D6006AA21E /* road6.png */,
+				24D9377B1C1163D6006AA21E /* road4.png */,
+				24D9377C1C1163D6006AA21E /* road7.png */,
+				24D937621C11489D006AA21E /* PK10GamePlayer.h */,
+				24D937631C11489D006AA21E /* PK10GamePlayer.m */,
+				24D9376A1C1158AC006AA21E /* PK10GamePlayerScence1.h */,
+				24D9376B1C1158AC006AA21E /* PK10GamePlayerScence1.m */,
+				24D9376F1C115C1C006AA21E /* PK10GamePlayerRoad.h */,
+				24D937701C115C1C006AA21E /* PK10GamePlayerRoad.m */,
+				24D937721C115C25006AA21E /* PK10GamePlayerRoad.xib */,
+				24D937651C11556D006AA21E /* PK10GamePlayerItem.h */,
+				24D937661C11556D006AA21E /* PK10GamePlayerItem.m */,
+				24D937681C11557A006AA21E /* PK10GamePlayerItem.xib */,
+			);
+			path = GamePlayer;
+			sourceTree = "<group>";
+		};
 		24D9C9BF1C0C135400364BD6 /* Games */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +407,9 @@
 				24C2DBFD1C0C1CD500C160E9 /* MCCommonLoginView.xib */,
 				24C2DBFF1C0C39F500C160E9 /* MCGameCountViewController.h */,
 				24C2DC001C0C39F500C160E9 /* MCGameCountViewController.m */,
+				24D937861C1187EE006AA21E /* GamePredictionViewController.h */,
+				24D937871C1187EE006AA21E /* GamePredictionViewController.m */,
+				24D937611C114654006AA21E /* GamePlayer */,
 				2412887B1C0FEB59000CFD1F /* DataDownloader */,
 				24BD7F951C0D414A00EDF9DF /* Cells */,
 				249C90F51C0EF1EF006218AE /* WebViewController.h */,
@@ -606,12 +674,20 @@
 			files = (
 				249C90E41C0EE987006218AE /* gray_5.png in Resources */,
 				249C90E01C0EE987006218AE /* red_6.png in Resources */,
+				24D9378D1C118EB6006AA21E /* GamePredictionCell.xib in Resources */,
+				24D937731C115C26006AA21E /* PK10GamePlayerRoad.xib in Resources */,
 				249C90DC1C0EE987006218AE /* gray_7.png in Resources */,
 				249C90DE1C0EE987006218AE /* red_3.png in Resources */,
 				605D51C11BF3A53E0071BC75 /* LaunchScreen.storyboard in Resources */,
+				24D937831C1163D6006AA21E /* road7.png in Resources */,
 				249C90EB1C0EE987006218AE /* gray_6.png in Resources */,
 				249C90E51C0EE987006218AE /* gray_3.png in Resources */,
+				24D937851C116404006AA21E /* road5.png in Resources */,
 				249C90EF1C0EE987006218AE /* red_9.png in Resources */,
+				24D937691C11557A006AA21E /* PK10GamePlayerItem.xib in Resources */,
+				24D9377E1C1163D6006AA21E /* road3.png in Resources */,
+				24D937811C1163D6006AA21E /* road6.png in Resources */,
+				24D937801C1163D6006AA21E /* road2.png in Resources */,
 				249C90E61C0EE987006218AE /* red_8.png in Resources */,
 				249C90E11C0EE987006218AE /* red_4.png in Resources */,
 				6089FEAB1C107798004CF4CF /* PK10RuleView.xib in Resources */,
@@ -626,9 +702,11 @@
 				24C2DBFE1C0C1CD500C160E9 /* MCCommonLoginView.xib in Resources */,
 				249C90EA1C0EE987006218AE /* gray_1.png in Resources */,
 				249C90E31C0EE987006218AE /* red_1.png in Resources */,
+				24D937821C1163D6006AA21E /* road4.png in Resources */,
 				605D51E71BF3A5820071BC75 /* Plant.xcassets in Resources */,
 				605D51BE1BF3A53E0071BC75 /* Assets.xcassets in Resources */,
 				247CDA391BFC85C400F9DB2A /* CrawlersCollectionCell.xib in Resources */,
+				24D9377F1C1163D6006AA21E /* road1.png in Resources */,
 				24BD7FA51C0D656400EDF9DF /* PK10TableViewCell.xib in Resources */,
 				605D51FB1BF3A7750071BC75 /* InfoPlist.strings in Resources */,
 				249C90EE1C0EE987006218AE /* red_7.png in Resources */,
@@ -698,6 +776,7 @@
 				605D51B61BF3A53E0071BC75 /* ViewController.m in Sources */,
 				605D51F41BF3A60D0071BC75 /* RootViewController.m in Sources */,
 				605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */,
+				24D937881C1187EE006AA21E /* GamePredictionViewController.m in Sources */,
 				2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */,
 				2412887E1C0FEBA5000CFD1F /* PK10DownloadManager.m in Sources */,
 				247CDA381BFC85C400F9DB2A /* CrawlersCollectionCell.m in Sources */,
@@ -705,14 +784,19 @@
 				2403DDAE1BFC769A002E7B0E /* TFHppleElement.m in Sources */,
 				24BD7FA41C0D656400EDF9DF /* PK10TableViewCell.m in Sources */,
 				24C2DBFC1C0C1CC600C160E9 /* MCCommonLoginView.m in Sources */,
+				24D937641C11489D006AA21E /* PK10GamePlayer.m in Sources */,
 				2403DDAD1BFC769A002E7B0E /* TFHpple.m in Sources */,
+				24D9378C1C118EB6006AA21E /* GamePredictionCell.m in Sources */,
 				605D51F21BF3A60D0071BC75 /* RootTabBarController.m in Sources */,
 				249C90F71C0EF1EF006218AE /* WebViewController.m in Sources */,
 				249C90F21C0EEE8A006218AE /* PK10ToolBar.m in Sources */,
+				24D9376C1C1158AC006AA21E /* PK10GamePlayerScence1.m in Sources */,
 				247CDA311BFC810A00F9DB2A /* ProfileViewController.m in Sources */,
 				605D52081BFCBFE10071BC75 /* PopShowImageView.m in Sources */,
+				24D937671C11556D006AA21E /* PK10GamePlayerItem.m in Sources */,
 				24ED32DC1BFDC02A0098758F /* MCDownloadOperation.m in Sources */,
 				6089FEA91C10778D004CF4CF /* PK10RuleView.m in Sources */,
+				24D937711C115C1C006AA21E /* PK10GamePlayerRoad.m in Sources */,
 				24AB7DA51C0304B3006D0881 /* MCDownloadCache.m in Sources */,
 				605D51F11BF3A60D0071BC75 /* RootNavigationController.m in Sources */,
 				241288811C0FEBBD000CFD1F /* PK10DataModel.m in Sources */,

@@ -69,7 +69,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WtX-Bs-dL7">
                             <rect key="frame" x="105" y="0.0" width="105" height="77"/>
                             <subviews>
-                                <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUQ-MQ-WHo">
+                                <button opaque="NO" tag="1002" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUQ-MQ-WHo">
                                     <rect key="frame" x="20" y="24" width="65" height="30"/>
                                     <state key="normal" title="PK10冠军"/>
                                     <connections>
