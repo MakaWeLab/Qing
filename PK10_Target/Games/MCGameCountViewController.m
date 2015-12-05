@@ -24,10 +24,7 @@
 
 @property (nonatomic,strong) NSDateFormatter* dateFormatter;
 
-//@property (nonatomic,strong) PK10GamePlayer* gamePlayer;
-
 @property (nonatomic,strong) PK10DownloadManager* shareManager;
-
 
 
 @property (nonatomic,strong) UITableView* tableView;
@@ -37,14 +34,9 @@
 @property (nonatomic,strong) MBProgressHUD* hud;
 
 
-
 @property (nonatomic,strong) dispatch_source_t timer;
 
 @property (nonatomic,strong) dispatch_queue_t queue;
-
-@property (nonatomic,assign) BOOL isPlaying;
-
-@property (nonatomic,assign) BOOL isPersonDriver;
 
 @end
 
@@ -52,7 +44,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self switchRightItemPlay:YES];
     self.view.clipsToBounds = YES;
     self.navigationItem.title = @"PK10";
     
@@ -100,17 +91,21 @@
         self.shareManager.complete = ^(BOOL isSuccess){
             @strongify(self);
             dispatch_async(dispatch_get_main_queue(), ^{
+                if (!self.timer) {
+                    [self applicationDidResign];
+                }
+                
                 [self.hud hide:YES];
                 [self.tableView reloadData];
                 [self.tableView.mj_header endRefreshing];
             });
         };
         
-        self.shareManager.progress = ^(NSInteger progress){
+        self.shareManager.progress = ^(CGFloat progress){
             @strongify(self);
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.hud.labelText = [NSString stringWithFormat:@"数据初始化中 剩余%ld项",(long)progress];
-                self.hud.progress = progress/100.;
+                self.hud.labelText = [NSString stringWithFormat:@"加载历史记录..."];
+                self.hud.progress = progress;
                 [self.hud show:YES];
                 [self.view bringSubviewToFront:self.hud];
             });
@@ -119,12 +114,6 @@
         self.dateFormatter = [[NSDateFormatter alloc]init];
         [self.dateFormatter setDateFormat:@"mm:ss"];
         
-//        self.gamePlayer = [[PK10GamePlayer alloc]initWithLine:10];
-//        [self.view addSubview:self.gamePlayer];
-//        CGRect rect = self.gamePlayer.bounds;
-//        rect.origin.x = -10- rect.size.width;
-//        rect.origin.y = 74;
-//        self.gamePlayer.frame = rect;
     }
     
 }
@@ -155,41 +144,13 @@
         }
         NSDate* date = [NSDate date];
         NSTimeInterval nextFireTime = [self nextFireTimeIntervalWithDate:date];
-        [self openTimeropenTimerWithTimeOut:nextFireTime];
+        [self openTimerWithTimeOut:nextFireTime];
     }
-}
-
--(void)webView
-{
-    if (self.isPlaying) {
-        [self endPlay];
-    }else {
-        self.isPersonDriver = YES;
-        [self beginPlay];
-    }
-}
-
--(void)switchRightItemPlay:(BOOL)play
-{
-    UIBarButtonItem* rightItem = nil;
-    self.isPlaying = !play;
-    if (play) {
-        rightItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(webView)];
-    }else {
-        rightItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemStop target:self action:@selector(webView)];
-    }
-    
-    self.navigationItem.rightBarButtonItem = rightItem;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
--(void)refreshLastData
-{
-    [self.tableView.mj_header beginRefreshing];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -198,7 +159,7 @@
     [self applicationDidResign];
 }
 
--(void)openTimeropenTimerWithTimeOut:(NSTimeInterval)time{
+-(void)openTimerWithTimeOut:(NSTimeInterval)time{
     @weakify(self);
     __block int timeout=0; //倒计时时间
     timeout = time;
@@ -212,10 +173,7 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 //设置界面的按钮显示 根据自己需求设置
                 @strongify(self);
-                self.navigationItem.title = @"开奖中...";
-                dispatch_suspend(self.queue);
-                self.isPersonDriver = NO;
-                [self beginPlay];
+                [self.tableView.mj_header beginRefreshing];
                 timeout = [self nextFireTimeIntervalWithDate:[NSDate date]];
             });
         }else{
@@ -229,55 +187,6 @@
     });
     dispatch_resume(_timer);
     
-}
-
--(void)beginPlay
-{
-    if (self.isPlaying) {
-        @weakify(self);
-        if (!self.isPersonDriver) {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                @strongify(self);
-                if (!self.isPersonDriver) {
-                    [self endPlay];
-                }
-            });
-        }
-        return;
-    }
-    
-    [self switchRightItemPlay:NO];
-//    [UIView animateWithDuration:.25 animations:^{
-//        self.gamePlayer.frame = CGRectMake(10, 74, self.gamePlayer.bounds.size.width, self.gamePlayer.bounds.size.height);
-//    }];
-//    self.gamePlayer.leftTime = 200;
-//    [self.gamePlayer begin];
-    @weakify(self);
-    if (!self.isPersonDriver) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            @strongify(self);
-            if (!self.isPersonDriver) {
-                [self endPlay];
-            }
-        });
-    }
-}
-
--(void)endPlay
-{
-    if (!self.isPlaying) {
-        return;
-    }
-    
-//    [self.gamePlayer stopPlayWithResult:[self.shareManager.dataList.firstObject numbers]];
-    
-    [self switchRightItemPlay:YES];
-//    [UIView animateWithDuration:.25 animations:^{
-//        self.gamePlayer.frame = CGRectMake(0-self.gamePlayer.bounds.size.width-10, 74 , self.gamePlayer.bounds.size.width, self.gamePlayer.bounds.size.height);
-//    }];
-//    [self.tableView.mj_header beginRefreshing];
-    
-    dispatch_resume(self.queue);
 }
 
 -(NSInteger)timeNumberForDateString:(NSString*)dateString
@@ -311,18 +220,20 @@
     
     NSInteger m = 0;
     
-    if (minite>7) {
-        m = 11 - minite;
-    }else if (minite <2){
-        m = 1 - minite;
-    }else if (minite == 2 || minite == 7){
-        if (self.isPlaying) {
-            m = 4;
-        }else {
-            return 5;
-        }
+    static BOOL lock = YES;
+    
+    if (minite>8) {
+        m = 12 - minite;
+        lock = YES;
+    }else if (minite <3){
+        m = 2 - minite;
+        lock = YES;
+    }else if ((minite == 3 || minite == 8) && lock){
+        lock = NO;
+        return 5;
     }else {
-        m = 6 - minite;
+        m = 7 - minite;
+        lock = YES;
     }
     
     time = m*60 + 60 - [self secondForDateString:dateString];;
@@ -330,6 +241,7 @@
     return time;
 }
 
+#pragma mark - UITableViewDataSource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
