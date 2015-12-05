@@ -32,7 +32,8 @@
     RootNavigationController* crawlersNavigation = [[RootNavigationController alloc]initWithRootViewController:gameCount];
     
     RESideMenu* menu = [[RESideMenu alloc]initWithContentViewController:crawlersNavigation leftMenuViewController:profile rightMenuViewController:nil];
-    
+    menu.scaleMenuView = NO;
+    menu.bouncesHorizontally = NO;
     menu.scaleContentView = NO;
     
     self.window.rootViewController = menu;

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ProfilePersonView">
+            <rect key="frame" x="0.0" y="0.0" width="309" height="138"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_default" translatesAutoresizingMaskIntoConstraints="NO" id="Cfu-m3-XIy">
+                    <rect key="frame" x="20" y="39" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="I0R-1S-ERp"/>
+                        <constraint firstAttribute="height" constant="60" id="U1A-DU-x7B"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="司马相如" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QA-4P-K0N">
+                    <rect key="frame" x="88" y="49" width="72" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="见习赌神" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAD-pE-VuY">
+                    <rect key="frame" x="88" y="74" width="48" height="15"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yAD-pE-VuY" firstAttribute="bottom" secondItem="Cfu-m3-XIy" secondAttribute="bottom" constant="-10" id="JJu-av-iBV"/>
+                <constraint firstItem="Cfu-m3-XIy" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Lzc-kv-jdS"/>
+                <constraint firstItem="Cfu-m3-XIy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="V2o-W6-sCs"/>
+                <constraint firstItem="yAD-pE-VuY" firstAttribute="leading" secondItem="Cfu-m3-XIy" secondAttribute="trailing" constant="8" id="dyz-Od-nZt"/>
+                <constraint firstItem="4QA-4P-K0N" firstAttribute="leading" secondItem="Cfu-m3-XIy" secondAttribute="trailing" constant="8" id="pJJ-sM-pKZ"/>
+                <constraint firstItem="4QA-4P-K0N" firstAttribute="top" secondItem="Cfu-m3-XIy" secondAttribute="top" constant="10" id="yjO-Yk-sF8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="headImageView" destination="Cfu-m3-XIy" id="JR1-y6-utf"/>
+                <outlet property="levelLabel" destination="yAD-pE-VuY" id="E9u-tW-gWe"/>
+                <outlet property="nameLabel" destination="4QA-4P-K0N" id="LaV-E7-WUC"/>
+            </connections>
+            <point key="canvasLocation" x="319.5" y="196"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_default" width="96" height="96"/>
+    </resources>
+</document>

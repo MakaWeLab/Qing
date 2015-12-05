@@ -17,7 +17,6 @@
 #import "MCDownloadCache.h"
 #import "MCDownloadOperation.h"
 #import "UIImageView+MCDownload.h"
-#import "MCGameCountViewController.h"
 
 @interface CrawlersViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
@@ -120,8 +119,7 @@
 
 -(void)loadWebview
 {
-    MCGameCountViewController* game = [[MCGameCountViewController alloc]init];
-    [self.navigationController pushViewController:game animated:YES];
+
 }
 
 -(void)viewDidLayoutSubviews
