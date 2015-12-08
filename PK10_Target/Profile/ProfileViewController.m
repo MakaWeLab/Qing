@@ -59,9 +59,9 @@
     {
         self.dataSource = [[NSMutableArray alloc]init];
         [self.dataSource addObject:@"实时数据"];
-        [self.dataSource addObject:@"实时开奖"];
-        [self.dataSource addObject:@"历史统计"];
-        [self.dataSource addObject:@"杀号预测"];
+//        [self.dataSource addObject:@"实时开奖"];
+//        [self.dataSource addObject:@"历史统计"];
+//        [self.dataSource addObject:@"杀号预测"];
         [self.dataSource addObject:@"博弈文学"];
     }
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
