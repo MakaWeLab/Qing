@@ -10,5 +10,6 @@
 
 @interface MCGameCountViewController : RootViewController
 
++(instancetype)shareInstance;
 
 @end

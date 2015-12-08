@@ -27,6 +27,16 @@
     [self queryDataListFromRemote];
 }
 
++(instancetype)shareInstance
+{
+    static LearnListViewController* shareController;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shareController = [[self alloc]init];
+    });
+    return shareController;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

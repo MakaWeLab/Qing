@@ -67,6 +67,11 @@
 			<key>orderHint</key>
 			<integer>9</integer>
 		</dict>
+		<key>ReactiveViewModel.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>14</integer>
+		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -99,12 +104,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>12E2BC28C62976C425F4B71C2723F0B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1A79BA86DB198181905CBBFC1F1E6701</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2965E38DCEBC6E89D5362BA6561D3FBD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>340EF9AB73A32379ACE7DA56E994F5F4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>46419CEDCB8EB741456B7DD983F44705</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>47C800E42623009B7192B025B3DD25A1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -115,6 +145,26 @@
 			<true/>
 		</dict>
 		<key>6951DA9871DA259A9AAA6EFC68AEF8EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6F503537C008BE9EC12796AE5BFBF114</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>854F6DF8E91DFD959013669D38737589</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8F74D9EA91F4C43190670066BAC37D44</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B2B74D38DC8BBAE13DA7BC9954A7C2A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -140,6 +190,21 @@
 			<true/>
 		</dict>
 		<key>C53146E0C93356190C8DC0ECA13D9D99</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBAFD998880DF324847194D699F977B3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3C513DC8C5F8C7BF4DD98445DABB545</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE2F1D7B9D9FCEA148517E4657B243F4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -25,7 +25,7 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    MCGameCountViewController* gameCount = [[MCGameCountViewController alloc]init];
+    MCGameCountViewController* gameCount = [MCGameCountViewController shareInstance];
     
     ProfileViewController* profile = [[ProfileViewController alloc]init];
     

@@ -12,6 +12,7 @@
 #import <Masonry.h>
 #import <RESideMenu.h>
 #import "LearnListViewController.h"
+#import "MCGameCountViewController.h"
 #import <UIViewController+RESideMenu.h>
 
 @interface ProfileViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -114,9 +115,12 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSString* string = self.dataSource[indexPath.row];
     if ([string isEqualToString:@"博弈文学"]) {
-        self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[[LearnListViewController alloc]init]];
-        [self.sideMenuViewController hideMenuViewController];
+        self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[LearnListViewController shareInstance]];
+        
+    }else if ([string isEqualToString:@"实时数据"]) {
+        self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[MCGameCountViewController shareInstance]];
     }
+    [self.sideMenuViewController hideMenuViewController];
 }
 
 /*

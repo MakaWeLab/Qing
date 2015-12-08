@@ -10,4 +10,6 @@
 
 @interface LearnListViewController : RootTableViewController
 
++(instancetype)shareInstance;
+
 @end
