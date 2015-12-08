@@ -42,6 +42,7 @@
     }];
     
     self.personView = [ProfilePersonView instanceFromNib];
+    self.personView.alpha = 0;
     [self.view addSubview:self.personView];
     [self.personView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(40);
@@ -71,6 +72,7 @@
     }];
     
     self.settingView = [ProfilePersonSettingView instanceFromNib];
+    self.settingView.alpha = 0;
     [self.view addSubview:self.settingView];
     [self.settingView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_equalTo(0);
