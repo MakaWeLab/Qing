@@ -7,7 +7,7 @@
 //
 
 #import "MCGameIndexViewController.h"
-#import "PK10TableViewCell.h"
+#import "GameIndex/GameTableViewCell.h"
 #import "TFHpple.h"
 #import <MJRefresh.h>
 #import <ReactiveCocoa.h>
@@ -68,7 +68,7 @@
         self.tableView.delegate = self;
         self.tableView.clipsToBounds = YES;
         [self.view addSubview:self.tableView];
-        [self.tableView registerNib:[UINib nibWithNibName:@"PK10TableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"PK10TableViewCell"];
+        [self.tableView registerClass:[GameTableViewCell class] forCellReuseIdentifier:@"GameTableViewCell"];
         [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view);
         }];
@@ -218,8 +218,6 @@
     
     NSInteger minite = [self miniteForDateString:dateString];
     
-    NSInteger second = [self secondForDateString:dateString];
-    
     minite = minite%10;
     
     CGFloat m = 0;
@@ -229,18 +227,12 @@
     }else if (minite <3){
         m = 2 - minite;
     }else if (minite == 3 || minite == 8){
-        if (minite == 3 && second <5) {
-            return 5;
-        }else if (minite == 8 && second <5) {
-            return 5;
-        }else {
-            m=4;
-        }
+        m = 4;
     }else {
         m = 7 - minite;
     }
     
-    time = m*60 + 60 - [self secondForDateString:dateString] - 15;
+    time = m*60 + 60 - [self secondForDateString:dateString];
     
     return time;
 }
@@ -259,19 +251,18 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 55;
+    return NUMBER_HEIGHT;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    PK10TableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"PK10TableViewCell" forIndexPath:indexPath];
+    GameTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"GameTableViewCell" forIndexPath:indexPath];
     
     PK10DataModel* model = self.shareManager.dataList[indexPath.row];
+    cell.diffIndexs = @[@0,@1,@2,@3];
     
-    cell.type = self.toolbar.ruleView.type;
-    cell.time = model.time;
-    cell.flag = model.flag;
-    cell.numbers = model.numbers;
+    cell.numbers = [model.numbers subarrayWithRange:NSMakeRange(0, 8)];
+    
     
     return cell;
 }

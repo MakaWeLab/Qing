@@ -8,6 +8,7 @@
 
 #import "PK10TableViewCell.h"
 #import "UIImageView+MCDownload.h"
+#import "MDScratchImageView.h"
 
 @interface PK10TableViewCell()
 
@@ -22,7 +23,6 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    
 }
 
 -(void)setTime:(NSString *)time

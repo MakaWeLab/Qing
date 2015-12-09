@@ -21,6 +21,7 @@
 
 @property (nonatomic,strong) NSString* time;
 
+
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 
 @end
