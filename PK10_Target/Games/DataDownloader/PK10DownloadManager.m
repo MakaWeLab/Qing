@@ -23,7 +23,9 @@ typedef void(^getLaterestCallback)(NSArray* array);
 
 @property (nonatomic,strong) NSString* endString;
 
-@property (nonatomic,assign) NSInteger needDownloadCount;
+@property (nonatomic,assign) NSInteger total;
+
+@property (nonatomic,assign) NSInteger current;
 
 @end
 
@@ -62,7 +64,7 @@ typedef void(^getLaterestCallback)(NSArray* array);
 
 -(void)refreshLaterestDatabase
 {
-    if (self.needDownloadCount > 0) {
+    if (self.current < self.total) {
         if (self.complete) {
             self.complete(YES);
         }
@@ -94,12 +96,12 @@ typedef void(^getLaterestCallback)(NSArray* array);
     if (number > 100) {
         number = 100;
     }
-    self.needDownloadCount = number - 1;
+    self.total = number - 1;
     [self appendData];
 }
 -(void)appendData
 {
-    if (self.needDownloadCount == 0) {
+    if (self.total == 0) {
         if (self.complete) {
             self.complete(YES);
         }
@@ -126,12 +128,12 @@ typedef void(^getLaterestCallback)(NSArray* array);
         NSArray* arr = [self parseSourceArray:array];
         [self insertArray:arr];
         
-        self.needDownloadCount -= 1;
+        self.current += 1;
         if (self.progress) {
-            self.progress(self.needDownloadCount);
+            self.progress(self.current/(CGFloat)self.total);
         }
         
-        if (self.needDownloadCount > 0) {
+        if (self.current < self.total) {
             [self appendData];
         }else {
             NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.dataList];

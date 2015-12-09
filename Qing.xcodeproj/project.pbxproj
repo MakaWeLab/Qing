@@ -70,11 +70,7 @@
 		600361FB1C11BF420029D644 /* PK10GamePlayerRoad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600361C51C11BF420029D644 /* PK10GamePlayerRoad.xib */; };
 		600361FC1C11BF420029D644 /* PK10GamePlayerScence1.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361C71C11BF420029D644 /* PK10GamePlayerScence1.m */; };
 		600362041C11BF420029D644 /* GamePredictionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361D01C11BF420029D644 /* GamePredictionViewController.m */; };
-		600362051C11BF420029D644 /* MCCommonLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361D21C11BF420029D644 /* MCCommonLoginView.m */; };
-		600362061C11BF420029D644 /* MCCommonLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600361D31C11BF420029D644 /* MCCommonLoginView.xib */; };
 		600362071C11BF420029D644 /* MCGameCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361D51C11BF420029D644 /* MCGameCountViewController.m */; };
-		600362081C11BF420029D644 /* MCLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361D71C11BF420029D644 /* MCLoginController.m */; };
-		600362091C11BF420029D644 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361D91C11BF420029D644 /* WebViewController.m */; };
 		6003620D1C11BFE40029D644 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003620C1C11BFE40029D644 /* ProfileViewController.m */; };
 		600362101C11C0440029D644 /* ProfilePersonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003620F1C11C0440029D644 /* ProfilePersonView.m */; };
 		600362121C11C0520029D644 /* ProfilePersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600362111C11C0520029D644 /* ProfilePersonView.xib */; };
@@ -98,6 +94,8 @@
 		605D51FE1BF3A77D0071BC75 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 605D52001BF3A77D0071BC75 /* Localizable.strings */; };
 		605D52081BFCBFE10071BC75 /* PopShowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D52071BFCBFE10071BC75 /* PopShowImageView.m */; };
 		605D520A1BFCC0A20071BC75 /* PopShowImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 605D52091BFCC0A20071BC75 /* PopShowImageView.xib */; };
+		608FA2E01C13520700D95933 /* MCGamePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 608FA2DF1C13520700D95933 /* MCGamePlayerViewController.m */; };
+		608FA2E31C13597100D95933 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 608FA2E21C13597100D95933 /* WebViewController.m */; };
 		6BB96244A8C755AA29F1A347 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 193E36F75E576152E59DAE78 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -185,15 +183,8 @@
 		600361C71C11BF420029D644 /* PK10GamePlayerScence1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10GamePlayerScence1.m; sourceTree = "<group>"; };
 		600361CF1C11BF420029D644 /* GamePredictionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePredictionViewController.h; sourceTree = "<group>"; };
 		600361D01C11BF420029D644 /* GamePredictionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePredictionViewController.m; sourceTree = "<group>"; };
-		600361D11C11BF420029D644 /* MCCommonLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCCommonLoginView.h; sourceTree = "<group>"; };
-		600361D21C11BF420029D644 /* MCCommonLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCCommonLoginView.m; sourceTree = "<group>"; };
-		600361D31C11BF420029D644 /* MCCommonLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCCommonLoginView.xib; sourceTree = "<group>"; };
 		600361D41C11BF420029D644 /* MCGameCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameCountViewController.h; sourceTree = "<group>"; };
 		600361D51C11BF420029D644 /* MCGameCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameCountViewController.m; sourceTree = "<group>"; };
-		600361D61C11BF420029D644 /* MCLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCLoginController.h; sourceTree = "<group>"; };
-		600361D71C11BF420029D644 /* MCLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCLoginController.m; sourceTree = "<group>"; };
-		600361D81C11BF420029D644 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		600361D91C11BF420029D644 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		6003620B1C11BFE40029D644 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		6003620C1C11BFE40029D644 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		6003620E1C11C0440029D644 /* ProfilePersonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePersonView.h; sourceTree = "<group>"; };
@@ -241,6 +232,10 @@
 		605D52061BFCBFE10071BC75 /* PopShowImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopShowImageView.h; sourceTree = "<group>"; };
 		605D52071BFCBFE10071BC75 /* PopShowImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopShowImageView.m; sourceTree = "<group>"; };
 		605D52091BFCC0A20071BC75 /* PopShowImageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopShowImageView.xib; sourceTree = "<group>"; };
+		608FA2DE1C13520700D95933 /* MCGamePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGamePlayerViewController.h; sourceTree = "<group>"; };
+		608FA2DF1C13520700D95933 /* MCGamePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGamePlayerViewController.m; sourceTree = "<group>"; };
+		608FA2E11C13597100D95933 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		608FA2E21C13597100D95933 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,15 +371,10 @@
 				600361BD1C11BF420029D644 /* GamePlayer */,
 				600361CF1C11BF420029D644 /* GamePredictionViewController.h */,
 				600361D01C11BF420029D644 /* GamePredictionViewController.m */,
-				600361D11C11BF420029D644 /* MCCommonLoginView.h */,
-				600361D21C11BF420029D644 /* MCCommonLoginView.m */,
-				600361D31C11BF420029D644 /* MCCommonLoginView.xib */,
 				600361D41C11BF420029D644 /* MCGameCountViewController.h */,
 				600361D51C11BF420029D644 /* MCGameCountViewController.m */,
-				600361D61C11BF420029D644 /* MCLoginController.h */,
-				600361D71C11BF420029D644 /* MCLoginController.m */,
-				600361D81C11BF420029D644 /* WebViewController.h */,
-				600361D91C11BF420029D644 /* WebViewController.m */,
+				608FA2DE1C13520700D95933 /* MCGamePlayerViewController.h */,
+				608FA2DF1C13520700D95933 /* MCGamePlayerViewController.m */,
 			);
 			path = Games;
 			sourceTree = "<group>";
@@ -453,6 +443,8 @@
 		600362181C12A2B60029D644 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
+				608FA2E11C13597100D95933 /* WebViewController.h */,
+				608FA2E21C13597100D95933 /* WebViewController.m */,
 				600362191C12A2D10029D644 /* LearnListViewController.h */,
 				6003621A1C12A2D10029D644 /* LearnListViewController.m */,
 			);
@@ -733,7 +725,6 @@
 				600361F31C11BF420029D644 /* PK10TableViewCell.xib in Resources */,
 				24D937D91C119081006AA21E /* Plant.xcassets in Resources */,
 				24D937DB1C119081006AA21E /* CrawlersCollectionCell.xib in Resources */,
-				600362061C11BF420029D644 /* MCCommonLoginView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -851,7 +842,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				24D937F21C119203006AA21E /* AppDelegate.m in Sources */,
-				600362091C11BF420029D644 /* WebViewController.m in Sources */,
 				600361F41C11BF420029D644 /* PK10ToolBar.m in Sources */,
 				24D937911C119081006AA21E /* Qing.xcdatamodeld in Sources */,
 				24D937921C119081006AA21E /* MCDownloadUtil.m in Sources */,
@@ -870,6 +860,7 @@
 				6003621B1C12A2D10029D644 /* LearnListViewController.m in Sources */,
 				24D937A11C119081006AA21E /* TFHpple.m in Sources */,
 				600361F51C11BF420029D644 /* PK10DataModel.m in Sources */,
+				608FA2E31C13597100D95933 /* WebViewController.m in Sources */,
 				600361F61C11BF420029D644 /* PK10DownloadManager.m in Sources */,
 				600361F21C11BF420029D644 /* PK10TableViewCell.m in Sources */,
 				24D937A31C119081006AA21E /* RootTabBarController.m in Sources */,
@@ -885,11 +876,10 @@
 				24D937AE1C119081006AA21E /* RootNavigationController.m in Sources */,
 				600362041C11BF420029D644 /* GamePredictionViewController.m in Sources */,
 				24D937B11C119081006AA21E /* RootTableViewController.m in Sources */,
-				600362081C11BF420029D644 /* MCLoginController.m in Sources */,
 				24D937B31C119081006AA21E /* RootCollectionViewCell.m in Sources */,
 				24D937B41C119081006AA21E /* MCDownloadCallBackManager.m in Sources */,
+				608FA2E01C13520700D95933 /* MCGamePlayerViewController.m in Sources */,
 				24D937B51C119081006AA21E /* main.m in Sources */,
-				600362051C11BF420029D644 /* MCCommonLoginView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-typedef void(^PK10DownloadManagerProgress)(NSInteger progress);
+typedef void(^PK10DownloadManagerProgress)(CGFloat progress);
 
 typedef void(^PK10DownloadManagerComplete)(BOOL isSuccess);
 

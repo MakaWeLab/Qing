@@ -27,13 +27,11 @@
 @property (nonatomic,strong) PK10DownloadManager* shareManager;
 
 
-
 @property (nonatomic,strong) UITableView* tableView;
 
 @property (nonatomic,strong) PK10ToolBar* toolbar;
 
 @property (nonatomic,strong) MBProgressHUD* hud;
-
 
 
 @property (nonatomic,strong) dispatch_source_t timer;
@@ -103,17 +101,21 @@
         self.shareManager.complete = ^(BOOL isSuccess){
             @strongify(self);
             dispatch_async(dispatch_get_main_queue(), ^{
+                if (!self.timer) {
+                    [self applicationDidResign];
+                }
+                
                 [self.hud hide:YES];
                 [self.tableView reloadData];
                 [self.tableView.mj_header endRefreshing];
             });
         };
         
-        self.shareManager.progress = ^(NSInteger progress){
+        self.shareManager.progress = ^(CGFloat progress){
             @strongify(self);
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.hud.labelText = [NSString stringWithFormat:@"数据初始化中 剩余%ld项",(long)progress];
-                self.hud.progress = progress/100.;
+                self.hud.labelText = [NSString stringWithFormat:@"加载历史记录..."];
+                self.hud.progress = progress;
                 [self.hud show:YES];
                 [self.view bringSubviewToFront:self.hud];
             });
@@ -151,10 +153,9 @@
         }
         NSDate* date = [NSDate date];
         NSTimeInterval nextFireTime = [self nextFireTimeIntervalWithDate:date];
-        [self openTimeropenTimerWithTimeOut:nextFireTime];
+        [self openTimerWithTimeOut:nextFireTime];
     }
 }
-
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -167,7 +168,7 @@
     [self applicationDidResign];
 }
 
--(void)openTimeropenTimerWithTimeOut:(NSTimeInterval)time{
+-(void)openTimerWithTimeOut:(NSTimeInterval)time{
     @weakify(self);
     __block int timeout=0; //倒计时时间
     timeout = time;
