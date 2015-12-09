@@ -12,7 +12,7 @@
 #import <Masonry.h>
 #import <RESideMenu.h>
 #import "LearnListViewController.h"
-#import "MCGameCountViewController.h"
+#import "MCGameIndexViewController.h"
 #import <UIViewController+RESideMenu.h>
 
 @interface ProfileViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -120,7 +120,7 @@
         self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[LearnListViewController shareInstance]];
         
     }else if ([string isEqualToString:@"实时数据"]) {
-        self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[MCGameCountViewController shareInstance]];
+        self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[MCGameIndexViewController shareInstance]];
     }
     [self.sideMenuViewController hideMenuViewController];
 }

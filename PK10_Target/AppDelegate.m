@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import <Bugly/CrashReporter.h>
 #import "ProfileViewController.h"
-#import "MCGameCountViewController.h"
+#import "MCGameIndexViewController.h"
 #import "RootNavigationController.h"
 
 @interface AppDelegate ()
@@ -25,7 +25,7 @@
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
-    MCGameCountViewController* gameCount = [MCGameCountViewController shareInstance];
+    MCGameIndexViewController* gameCount = [MCGameIndexViewController shareInstance];
     
     ProfileViewController* profile = [[ProfileViewController alloc]init];
     

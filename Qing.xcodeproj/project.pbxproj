@@ -19,6 +19,7 @@
 		247CDA3C1BFC86CD00F9DB2A /* RootCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA3B1BFC86CD00F9DB2A /* RootCollectionViewCell.m */; };
 		247E60531C08453600117E1F /* MCDownloadCallBackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E60521C08453600117E1F /* MCDownloadCallBackManager.m */; };
 		247E60561C08543B00117E1F /* MCDownloadOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E60551C08543B00117E1F /* MCDownloadOperationManager.m */; };
+		249FEEFB1C17D1EA005431EF /* MCGameCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 249FEEFA1C17D1EA005431EF /* MCGameCountViewController.m */; };
 		24AB7D9F1C02BF7E006D0881 /* UIImageView+MCDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB7D9E1C02BF7E006D0881 /* UIImageView+MCDownload.m */; };
 		24AB7DA51C0304B3006D0881 /* MCDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB7DA41C0304B3006D0881 /* MCDownloadCache.m */; };
 		24D937911C119081006AA21E /* Qing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 605D51BA1BF3A53E0071BC75 /* Qing.xcdatamodeld */; };
@@ -70,7 +71,7 @@
 		600361FB1C11BF420029D644 /* PK10GamePlayerRoad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600361C51C11BF420029D644 /* PK10GamePlayerRoad.xib */; };
 		600361FC1C11BF420029D644 /* PK10GamePlayerScence1.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361C71C11BF420029D644 /* PK10GamePlayerScence1.m */; };
 		600362041C11BF420029D644 /* GamePredictionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361D01C11BF420029D644 /* GamePredictionViewController.m */; };
-		600362071C11BF420029D644 /* MCGameCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361D51C11BF420029D644 /* MCGameCountViewController.m */; };
+		600362071C11BF420029D644 /* MCGameIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361D51C11BF420029D644 /* MCGameIndexViewController.m */; };
 		6003620D1C11BFE40029D644 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003620C1C11BFE40029D644 /* ProfileViewController.m */; };
 		600362101C11C0440029D644 /* ProfilePersonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003620F1C11C0440029D644 /* ProfilePersonView.m */; };
 		600362121C11C0520029D644 /* ProfilePersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600362111C11C0520029D644 /* ProfilePersonView.xib */; };
@@ -140,6 +141,8 @@
 		247E60521C08453600117E1F /* MCDownloadCallBackManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDownloadCallBackManager.m; sourceTree = "<group>"; };
 		247E60541C08543B00117E1F /* MCDownloadOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDownloadOperationManager.h; sourceTree = "<group>"; };
 		247E60551C08543B00117E1F /* MCDownloadOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDownloadOperationManager.m; sourceTree = "<group>"; };
+		249FEEF91C17D1EA005431EF /* MCGameCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameCountViewController.h; sourceTree = "<group>"; };
+		249FEEFA1C17D1EA005431EF /* MCGameCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameCountViewController.m; sourceTree = "<group>"; };
 		24AB7D9D1C02BF7E006D0881 /* UIImageView+MCDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MCDownload.h"; sourceTree = "<group>"; };
 		24AB7D9E1C02BF7E006D0881 /* UIImageView+MCDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MCDownload.m"; sourceTree = "<group>"; };
 		24AB7DA31C0304B3006D0881 /* MCDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDownloadCache.h; sourceTree = "<group>"; };
@@ -183,8 +186,8 @@
 		600361C71C11BF420029D644 /* PK10GamePlayerScence1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10GamePlayerScence1.m; sourceTree = "<group>"; };
 		600361CF1C11BF420029D644 /* GamePredictionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePredictionViewController.h; sourceTree = "<group>"; };
 		600361D01C11BF420029D644 /* GamePredictionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePredictionViewController.m; sourceTree = "<group>"; };
-		600361D41C11BF420029D644 /* MCGameCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameCountViewController.h; sourceTree = "<group>"; };
-		600361D51C11BF420029D644 /* MCGameCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameCountViewController.m; sourceTree = "<group>"; };
+		600361D41C11BF420029D644 /* MCGameIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCGameIndexViewController.h; sourceTree = "<group>"; };
+		600361D51C11BF420029D644 /* MCGameIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCGameIndexViewController.m; sourceTree = "<group>"; };
 		6003620B1C11BFE40029D644 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		6003620C1C11BFE40029D644 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		6003620E1C11C0440029D644 /* ProfilePersonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePersonView.h; sourceTree = "<group>"; };
@@ -371,8 +374,10 @@
 				600361BD1C11BF420029D644 /* GamePlayer */,
 				600361CF1C11BF420029D644 /* GamePredictionViewController.h */,
 				600361D01C11BF420029D644 /* GamePredictionViewController.m */,
-				600361D41C11BF420029D644 /* MCGameCountViewController.h */,
-				600361D51C11BF420029D644 /* MCGameCountViewController.m */,
+				600361D41C11BF420029D644 /* MCGameIndexViewController.h */,
+				600361D51C11BF420029D644 /* MCGameIndexViewController.m */,
+				249FEEF91C17D1EA005431EF /* MCGameCountViewController.h */,
+				249FEEFA1C17D1EA005431EF /* MCGameCountViewController.m */,
 				608FA2DE1C13520700D95933 /* MCGamePlayerViewController.h */,
 				608FA2DF1C13520700D95933 /* MCGamePlayerViewController.m */,
 			);
@@ -845,7 +850,7 @@
 				600361F41C11BF420029D644 /* PK10ToolBar.m in Sources */,
 				24D937911C119081006AA21E /* Qing.xcdatamodeld in Sources */,
 				24D937921C119081006AA21E /* MCDownloadUtil.m in Sources */,
-				600362071C11BF420029D644 /* MCGameCountViewController.m in Sources */,
+				600362071C11BF420029D644 /* MCGameIndexViewController.m in Sources */,
 				24D937931C119081006AA21E /* MCDownloadOperationManager.m in Sources */,
 				24D937941C119081006AA21E /* CrawlersViewController.m in Sources */,
 				24D937951C119081006AA21E /* ViewController.m in Sources */,
@@ -892,6 +897,7 @@
 				247E60561C08543B00117E1F /* MCDownloadOperationManager.m in Sources */,
 				247CDA2D1BFC7D7600F9DB2A /* CrawlersViewController.m in Sources */,
 				605D51B61BF3A53E0071BC75 /* ViewController.m in Sources */,
+				249FEEFB1C17D1EA005431EF /* MCGameCountViewController.m in Sources */,
 				605D51F41BF3A60D0071BC75 /* RootViewController.m in Sources */,
 				605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */,
 				2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */,
