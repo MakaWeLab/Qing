@@ -13,12 +13,7 @@
 #import <ReactiveCocoa.h>
 #import "WebViewController.h"
 #import <Masonry.h>
-#import "PK10DataModel.h"
-#import "PK10ToolBar.h"
-#import "PK10DownloadManager.h"
-#import "PK10RuleView.h"
 #import <MBProgressHUD.h>
-#import "PK10GamePlayer.h"
 
 @interface MCGameIndexViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -29,7 +24,6 @@
 
 @property (nonatomic,strong) UITableView* tableView;
 
-@property (nonatomic,strong) PK10ToolBar* toolbar;
 
 @property (nonatomic,strong) MBProgressHUD* hud;
 
@@ -76,17 +70,6 @@
             @strongify(self);
             [self.shareManager refreshLaterestDatabase];
         }];
-        
-        self.toolbar = [[PK10ToolBar alloc]init];
-        self.toolbar.backgroundColor = [UIColor clearColor];
-        self.toolbar.clipsToBounds = YES;
-        [self.view addSubview:self.toolbar];
-        [self.toolbar.ruleView addObserver:self forKeyPath:@"type" options:NSKeyValueObservingOptionNew context:nil];
-        [self.toolbar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.left.right.mas_equalTo(0);
-            make.height.mas_equalTo(49);
-        }];
-        
         
         self.hud = [[MBProgressHUD alloc] initWithView:self.view];
         self.hud.removeFromSuperViewOnHide = YES;
@@ -136,7 +119,6 @@
 
 -(void)dealloc
 {
-    [self.toolbar.ruleView removeObserver:self forKeyPath:@"type"];
     if (_timer) {
         dispatch_source_cancel(_timer);
     }

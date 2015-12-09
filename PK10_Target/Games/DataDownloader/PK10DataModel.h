@@ -6,14 +6,9 @@
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
+#import "GameProtocol.h"
 #import <Foundation/Foundation.h>
 
-@interface PK10DataModel : NSObject<NSCoding>
-
-@property (nonatomic,assign) NSInteger flag;
-
-@property (nonatomic,strong) NSString* time;
-
-@property (nonatomic,strong) NSArray* numbers;
+@interface PK10DataModel : NSObject<GameDataModelProtocol>
 
 @end

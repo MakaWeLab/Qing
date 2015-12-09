@@ -6,43 +6,28 @@
 //  Copyright © 2015年 maka. All rights reserved.
 //
 
-#import "PK10DownloadManager.h"
-#import "PK10DataModel.h"
+#import "GameDownloadManager.h"
 #import "TFHpple.h"
 #import <ReactiveCocoa.h>
 
 typedef void(^getLaterestCallback)(NSArray* array);
 
-@interface PK10DownloadManager ()
+@implementation GameDownloadManager
 
-@property (nonatomic,strong) NSString* XPathString;
+@synthesize dataList,progress,complete;
 
-@property (nonatomic,assign) NSInteger page;
-
-@property (nonatomic,strong) NSString* beginString;
-
-@property (nonatomic,strong) NSString* endString;
-
-@property (nonatomic,assign) NSInteger total;
-
-@property (nonatomic,assign) NSInteger current;
-
-@end
-
-@implementation PK10DownloadManager
-
-+(NSString*)saveFilePath
+-(NSString*)saveFilePath
 {
     NSString* string = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) firstObject];
-    return [string stringByAppendingString:@"PK10"];
+    return [string stringByAppendingString:self.cacheFileName];
 }
 
 +(instancetype)shareInstance
 {
-    static PK10DownloadManager* manager;
+    static GameDownloadManager* manager;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [[PK10DownloadManager alloc]init];
+        manager = [[GameDownloadManager alloc]init];
     });
     return manager;
 }
@@ -54,51 +39,58 @@ typedef void(^getLaterestCallback)(NSArray* array);
         if (!self.dataList) {
             self.dataList = [NSMutableArray array];
         }
-        self.XPathString = @"//table[@class='tb']//tr";
-        self.page = 1;
-        self.beginString = @"http://www.bwlc.net/bulletin/trax.html?page=";
-        self.endString = @"";
     }
     return self;
 }
 
+-(void)setCacheFileName:(NSString *)cacheFileName
+{
+    _cacheFileName = cacheFileName;
+    if (!self.serialQueue) {
+        self.serialQueue = dispatch_queue_create([cacheFileName cStringUsingEncoding:NSUTF8StringEncoding], DISPATCH_QUEUE_SERIAL);
+    }
+}
+
 -(void)refreshLaterestDatabase
 {
-    if (self.current < self.total) {
-        if (self.complete) {
-            self.complete(YES);
-        }
+    if (self.isDownloading) {
         return;
     }
-    NSInteger topFlag = 0;
-    if (self.dataList.count > 0) {
-        PK10DataModel* model = self.dataList.firstObject;
-        topFlag = model.flag;
+    self.isDownloading = YES;
+    if (self.dataList.count == 0) {
+        [self firstDownloadDataFromNetWork];
+    }else {
+        [self downloadLaterestData];
     }
+}
+
+-(void)firstDownloadDataFromNetWork
+{
+    self.total = 100;
+}
+
+-(void)downloadLaterestData
+{
     @weakify(self);
+    NSInteger TargetFlag = [[self.dataList.firstObject title] integerValue];
     [self getLaterestDataWithCallback:^(NSArray *array) {
         @strongify(self);
-        if (array.count > 0) {
-            NSArray* arr = [self parseSourceArray:array];
-            [self insertArray:arr];
-            PK10DataModel* first = arr.firstObject;
-            [self downloadWithSourceFlag:first.flag TargetFlag:topFlag];
-        }
+        NSInteger sourceFlag = [[array.firstObject title] integerValue];
+        self.total = [self getDownloadCountForSourceFlag:sourceFlag TargetFlag:TargetFlag];
+        
     }];
 }
 
-//targetFlag现在存储的最上的flag
-//sourceFlag下载到的数组里面最新的flag
--(void)downloadWithSourceFlag:(NSInteger)sourceFlag TargetFlag:(NSInteger)targetFlag
+-(NSInteger)getDownloadCountForSourceFlag:(NSInteger)sourceFlag TargetFlag:(NSInteger)targetFlag
 {
     NSInteger count = sourceFlag - targetFlag;
     NSInteger number = count/30 + 1;
     if (number > 100) {
         number = 100;
     }
-    self.total = number - 1;
-    [self appendData];
+    return number-1;
 }
+
 -(void)appendData
 {
     if (self.total == 0) {
@@ -126,7 +118,7 @@ typedef void(^getLaterestCallback)(NSArray* array);
         @strongify(self);
         
         NSArray* arr = [self parseSourceArray:array];
-        [self insertArray:arr];
+        
         
         self.current += 1;
         if (self.progress) {
@@ -144,30 +136,6 @@ typedef void(^getLaterestCallback)(NSArray* array);
         }
         
     });
-}
-
--(void)insertArray:(NSArray*)array
-{
-    NSInteger beginFlag = 0;
-    NSInteger endFlag = 0;
-    if (self.dataList.count > 0) {
-        PK10DataModel* model = self.dataList.firstObject;
-        beginFlag = model.flag;
-        model = self.dataList.lastObject;
-        endFlag = model.flag;
-        
-        for (NSInteger i = array.count-1; i>=0; i--) {
-            PK10DataModel* model = array[i];
-            if (model.flag > beginFlag) {
-                [self.dataList insertObject:model atIndex:0];
-            }else if (model.flag < endFlag) {
-                model = array[array.count - i - 1];
-                [self.dataList addObject:model];
-            }
-        }
-    }else {
-        [self.dataList addObjectsFromArray:array];
-    }
 }
 
 -(NSArray*)parseSourceArray:(NSArray*)sourceArray
@@ -195,7 +163,7 @@ typedef void(^getLaterestCallback)(NSArray* array);
 -(void)getLaterestDataWithCallback:(getLaterestCallback)callback
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.beginString,(long)1,self.endString];
+        NSString* url = [NSString stringWithFormat:@"%@%ld%@",self.beginString,(long)self.page,self.endString];
         NSData *htmlData = [[NSData alloc]initWithContentsOfURL:[NSURL URLWithString:url]];
         TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
         NSArray *array = [xpathparser searchWithXPathQuery:self.XPathString];

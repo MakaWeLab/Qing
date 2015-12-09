@@ -10,4 +10,6 @@
 
 @interface MCGameCountViewController : UITableViewController
 
++(instancetype)shareInstance;
+
 @end

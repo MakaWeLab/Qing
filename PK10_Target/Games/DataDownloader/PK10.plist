@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DownloadObject</key>
+	<string>GameDownloadManager</string>
+	<key>DataModel</key>
+	<string>PK10DataModel</string>
+	<key>XPathString</key>
+	<string>//table[@class=&apos;tb&apos;]//tr</string>
+	<key>beginString</key>
+	<string>http://www.bwlc.net/bulletin/trax.html?page=</string>
+	<key>endString</key>
+	<string></string>
+	<key>page</key>
+	<integer>1</integer>
+</dict>
+</plist>

@@ -25,6 +25,7 @@
 		249FEF071C17DF88005431EF /* GameNumberItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 249FEF061C17DF88005431EF /* GameNumberItem.m */; };
 		249FEF091C17DF95005431EF /* GameNumberItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 249FEF081C17DF95005431EF /* GameNumberItem.xib */; };
 		249FEF0C1C17E17F005431EF /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 249FEF0B1C17E17F005431EF /* GameTableViewCell.m */; };
+		249FEF0F1C181848005431EF /* PK10.plist in Resources */ = {isa = PBXBuildFile; fileRef = 249FEF0E1C181848005431EF /* PK10.plist */; };
 		24AB7D9F1C02BF7E006D0881 /* UIImageView+MCDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB7D9E1C02BF7E006D0881 /* UIImageView+MCDownload.m */; };
 		24AB7DA51C0304B3006D0881 /* MCDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB7DA41C0304B3006D0881 /* MCDownloadCache.m */; };
 		24D937911C119081006AA21E /* Qing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 605D51BA1BF3A53E0071BC75 /* Qing.xcdatamodeld */; };
@@ -60,15 +61,8 @@
 		24D937F91C119490006AA21E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605D51BF1BF3A53E0071BC75 /* LaunchScreen.storyboard */; };
 		24D937FB1C119573006AA21E /* GameAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D937FA1C119573006AA21E /* GameAssets.xcassets */; };
 		24ED32DC1BFDC02A0098758F /* MCDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED32DB1BFDC02A0098758F /* MCDownloadOperation.m */; };
-		600361DA1C11BF420029D644 /* GamePredictionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361991C11BF420029D644 /* GamePredictionCell.m */; };
-		600361DB1C11BF420029D644 /* GamePredictionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6003619A1C11BF420029D644 /* GamePredictionCell.xib */; };
-		600361F01C11BF420029D644 /* PK10RuleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361B11C11BF420029D644 /* PK10RuleView.m */; };
-		600361F11C11BF420029D644 /* PK10RuleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600361B21C11BF420029D644 /* PK10RuleView.xib */; };
-		600361F21C11BF420029D644 /* PK10TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361B41C11BF420029D644 /* PK10TableViewCell.m */; };
-		600361F31C11BF420029D644 /* PK10TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600361B51C11BF420029D644 /* PK10TableViewCell.xib */; };
-		600361F41C11BF420029D644 /* PK10ToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361B71C11BF420029D644 /* PK10ToolBar.m */; };
 		600361F51C11BF420029D644 /* PK10DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361BA1C11BF420029D644 /* PK10DataModel.m */; };
-		600361F61C11BF420029D644 /* PK10DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361BC1C11BF420029D644 /* PK10DownloadManager.m */; };
+		600361F61C11BF420029D644 /* GameDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361BC1C11BF420029D644 /* GameDownloadManager.m */; };
 		600361F71C11BF420029D644 /* PK10GamePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361BF1C11BF420029D644 /* PK10GamePlayer.m */; };
 		600361F81C11BF420029D644 /* PK10GamePlayerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361C11C11BF420029D644 /* PK10GamePlayerItem.m */; };
 		600361F91C11BF420029D644 /* PK10GamePlayerItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600361C21C11BF420029D644 /* PK10GamePlayerItem.xib */; };
@@ -157,6 +151,8 @@
 		249FEF081C17DF95005431EF /* GameNumberItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameNumberItem.xib; sourceTree = "<group>"; };
 		249FEF0A1C17E17F005431EF /* GameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameTableViewCell.h; sourceTree = "<group>"; };
 		249FEF0B1C17E17F005431EF /* GameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameTableViewCell.m; sourceTree = "<group>"; };
+		249FEF0D1C1810F7005431EF /* GameProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameProtocol.h; sourceTree = "<group>"; };
+		249FEF0E1C181848005431EF /* PK10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PK10.plist; sourceTree = "<group>"; };
 		24AB7D9D1C02BF7E006D0881 /* UIImageView+MCDownload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MCDownload.h"; sourceTree = "<group>"; };
 		24AB7D9E1C02BF7E006D0881 /* UIImageView+MCDownload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MCDownload.m"; sourceTree = "<group>"; };
 		24AB7DA31C0304B3006D0881 /* MCDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDownloadCache.h; sourceTree = "<group>"; };
@@ -173,21 +169,10 @@
 		24ED32DB1BFDC02A0098758F /* MCDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDownloadOperation.m; sourceTree = "<group>"; };
 		5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		5E9F85BB6C993515AC12ACF5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		600361981C11BF420029D644 /* GamePredictionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePredictionCell.h; sourceTree = "<group>"; };
-		600361991C11BF420029D644 /* GamePredictionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePredictionCell.m; sourceTree = "<group>"; };
-		6003619A1C11BF420029D644 /* GamePredictionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GamePredictionCell.xib; sourceTree = "<group>"; };
-		600361B01C11BF420029D644 /* PK10RuleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10RuleView.h; sourceTree = "<group>"; };
-		600361B11C11BF420029D644 /* PK10RuleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10RuleView.m; sourceTree = "<group>"; };
-		600361B21C11BF420029D644 /* PK10RuleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PK10RuleView.xib; sourceTree = "<group>"; };
-		600361B31C11BF420029D644 /* PK10TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10TableViewCell.h; sourceTree = "<group>"; };
-		600361B41C11BF420029D644 /* PK10TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10TableViewCell.m; sourceTree = "<group>"; };
-		600361B51C11BF420029D644 /* PK10TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PK10TableViewCell.xib; sourceTree = "<group>"; };
-		600361B61C11BF420029D644 /* PK10ToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10ToolBar.h; sourceTree = "<group>"; };
-		600361B71C11BF420029D644 /* PK10ToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10ToolBar.m; sourceTree = "<group>"; };
 		600361B91C11BF420029D644 /* PK10DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10DataModel.h; sourceTree = "<group>"; };
 		600361BA1C11BF420029D644 /* PK10DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10DataModel.m; sourceTree = "<group>"; };
-		600361BB1C11BF420029D644 /* PK10DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10DownloadManager.h; sourceTree = "<group>"; };
-		600361BC1C11BF420029D644 /* PK10DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10DownloadManager.m; sourceTree = "<group>"; };
+		600361BB1C11BF420029D644 /* GameDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDownloadManager.h; sourceTree = "<group>"; };
+		600361BC1C11BF420029D644 /* GameDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameDownloadManager.m; sourceTree = "<group>"; };
 		600361BE1C11BF420029D644 /* PK10GamePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10GamePlayer.h; sourceTree = "<group>"; };
 		600361BF1C11BF420029D644 /* PK10GamePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PK10GamePlayer.m; sourceTree = "<group>"; };
 		600361C01C11BF420029D644 /* PK10GamePlayerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PK10GamePlayerItem.h; sourceTree = "<group>"; };
@@ -426,17 +411,6 @@
 		600361971C11BF420029D644 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				600361981C11BF420029D644 /* GamePredictionCell.h */,
-				600361991C11BF420029D644 /* GamePredictionCell.m */,
-				6003619A1C11BF420029D644 /* GamePredictionCell.xib */,
-				600361B01C11BF420029D644 /* PK10RuleView.h */,
-				600361B11C11BF420029D644 /* PK10RuleView.m */,
-				600361B21C11BF420029D644 /* PK10RuleView.xib */,
-				600361B31C11BF420029D644 /* PK10TableViewCell.h */,
-				600361B41C11BF420029D644 /* PK10TableViewCell.m */,
-				600361B51C11BF420029D644 /* PK10TableViewCell.xib */,
-				600361B61C11BF420029D644 /* PK10ToolBar.h */,
-				600361B71C11BF420029D644 /* PK10ToolBar.m */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -446,8 +420,10 @@
 			children = (
 				600361B91C11BF420029D644 /* PK10DataModel.h */,
 				600361BA1C11BF420029D644 /* PK10DataModel.m */,
-				600361BB1C11BF420029D644 /* PK10DownloadManager.h */,
-				600361BC1C11BF420029D644 /* PK10DownloadManager.m */,
+				600361BB1C11BF420029D644 /* GameDownloadManager.h */,
+				600361BC1C11BF420029D644 /* GameDownloadManager.m */,
+				249FEF0E1C181848005431EF /* PK10.plist */,
+				249FEF0D1C1810F7005431EF /* GameProtocol.h */,
 			);
 			path = DataDownloader;
 			sourceTree = "<group>";
@@ -756,9 +732,7 @@
 			files = (
 				600362171C11C2600029D644 /* ProfilePersonSettingView.xib in Resources */,
 				600361FB1C11BF420029D644 /* PK10GamePlayerRoad.xib in Resources */,
-				600361DB1C11BF420029D644 /* GamePredictionCell.xib in Resources */,
 				24D937F51C1193B1006AA21E /* InfoPlist.strings in Resources */,
-				600361F11C11BF420029D644 /* PK10RuleView.xib in Resources */,
 				249FEF091C17DF95005431EF /* GameNumberItem.xib in Resources */,
 				24D937FB1C119573006AA21E /* GameAssets.xcassets in Resources */,
 				24D937F61C1193B1006AA21E /* Localizable.strings in Resources */,
@@ -766,8 +740,8 @@
 				24D937CF1C119081006AA21E /* PopShowImageView.xib in Resources */,
 				24D937EF1C1191E5006AA21E /* QingGame.plist in Resources */,
 				600362121C11C0520029D644 /* ProfilePersonView.xib in Resources */,
+				249FEF0F1C181848005431EF /* PK10.plist in Resources */,
 				600361F91C11BF420029D644 /* PK10GamePlayerItem.xib in Resources */,
-				600361F31C11BF420029D644 /* PK10TableViewCell.xib in Resources */,
 				24D937D91C119081006AA21E /* Plant.xcassets in Resources */,
 				24D937DB1C119081006AA21E /* CrawlersCollectionCell.xib in Resources */,
 			);
@@ -887,14 +861,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				24D937F21C119203006AA21E /* AppDelegate.m in Sources */,
-				600361F41C11BF420029D644 /* PK10ToolBar.m in Sources */,
 				24D937911C119081006AA21E /* Qing.xcdatamodeld in Sources */,
 				24D937921C119081006AA21E /* MCDownloadUtil.m in Sources */,
 				600362071C11BF420029D644 /* MCGameIndexViewController.m in Sources */,
 				24D937931C119081006AA21E /* MCDownloadOperationManager.m in Sources */,
 				24D937941C119081006AA21E /* CrawlersViewController.m in Sources */,
 				24D937951C119081006AA21E /* ViewController.m in Sources */,
-				600361DA1C11BF420029D644 /* GamePredictionCell.m in Sources */,
 				249FEF071C17DF88005431EF /* GameNumberItem.m in Sources */,
 				249FEF0C1C17E17F005431EF /* GameTableViewCell.m in Sources */,
 				24D937961C119081006AA21E /* RootViewController.m in Sources */,
@@ -910,15 +882,13 @@
 				600361F51C11BF420029D644 /* PK10DataModel.m in Sources */,
 				608FA2E31C13597100D95933 /* WebViewController.m in Sources */,
 				249FEF021C17D70E005431EF /* MDScratchImageView.mm in Sources */,
-				600361F61C11BF420029D644 /* PK10DownloadManager.m in Sources */,
-				600361F21C11BF420029D644 /* PK10TableViewCell.m in Sources */,
+				600361F61C11BF420029D644 /* GameDownloadManager.m in Sources */,
 				24D937A31C119081006AA21E /* RootTabBarController.m in Sources */,
 				600362151C11C2550029D644 /* ProfilePersonSettingView.m in Sources */,
 				6003620D1C11BFE40029D644 /* ProfileViewController.m in Sources */,
 				24D937A81C119081006AA21E /* PopShowImageView.m in Sources */,
 				600361F81C11BF420029D644 /* PK10GamePlayerItem.m in Sources */,
 				600361FC1C11BF420029D644 /* PK10GamePlayerScence1.m in Sources */,
-				600361F01C11BF420029D644 /* PK10RuleView.m in Sources */,
 				24D937AA1C119081006AA21E /* MCDownloadOperation.m in Sources */,
 				24D937AD1C119081006AA21E /* MCDownloadCache.m in Sources */,
 				600362101C11C0440029D644 /* ProfilePersonView.m in Sources */,

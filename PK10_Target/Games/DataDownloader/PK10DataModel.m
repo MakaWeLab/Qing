@@ -10,20 +10,22 @@
 
 @implementation PK10DataModel
 
+@synthesize time,results = numbers,title = flag;
+
 -(void) encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:[NSNumber numberWithInteger:self.flag] forKey:@"flag"];
+    [aCoder encodeObject:flag forKey:@"flag"];
     [aCoder encodeObject:self.time forKey:@"time"];
-    [aCoder encodeObject:self.numbers forKey:@"numbers"];
+    [aCoder encodeObject:numbers forKey:@"numbers"];
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder
 {
     if (self=[super init])
     {
-        self.flag = [[aDecoder decodeObjectForKey:@"flag"] integerValue];
+        flag = [aDecoder decodeObjectForKey:@"flag"];
         self.time = [aDecoder decodeObjectForKey:@"time"];
-        self.numbers = [aDecoder decodeObjectForKey:@"numbers"];
+        numbers = [aDecoder decodeObjectForKey:@"numbers"];
     }
     return (self);
     
