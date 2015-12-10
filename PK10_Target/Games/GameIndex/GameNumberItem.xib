@@ -13,7 +13,31 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dh-cU-ehh">
                     <rect key="frame" x="0.0" y="0.0" width="275" height="239"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOy-Fg-GfE">
+                            <rect key="frame" x="266" y="230" width="8" height="8"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtK-o1-WlX">
+                                    <rect key="frame" x="0.0" y="0.0" width="8" height="8"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="6"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="8" id="26R-H5-49M"/>
+                                <constraint firstAttribute="height" constant="8" id="VbE-hD-cqe"/>
+                                <constraint firstItem="wtK-o1-WlX" firstAttribute="centerY" secondItem="fOy-Fg-GfE" secondAttribute="centerY" id="gKF-92-ceX"/>
+                                <constraint firstItem="wtK-o1-WlX" firstAttribute="centerX" secondItem="fOy-Fg-GfE" secondAttribute="centerX" id="zUf-PA-EPI"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="fOy-Fg-GfE" secondAttribute="trailing" constant="1" id="nCg-aa-YF0"/>
+                        <constraint firstAttribute="bottom" secondItem="fOy-Fg-GfE" secondAttribute="bottom" constant="1" id="vg9-sX-3HB"/>
+                    </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5O-qY-dR4">
                     <rect key="frame" x="132" y="108" width="10" height="24"/>
@@ -35,6 +59,7 @@
             <connections>
                 <outlet property="backView" destination="9Dh-cU-ehh" id="x3c-Gd-b8W"/>
                 <outlet property="numberLabel" destination="Z5O-qY-dR4" id="KnX-X9-Sem"/>
+                <outlet property="rankLabel" destination="wtK-o1-WlX" id="8gi-Po-RaW"/>
             </connections>
             <point key="canvasLocation" x="481.5" y="290.5"/>
         </view>

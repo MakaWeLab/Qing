@@ -59,6 +59,7 @@
         CGRect rect = CGRectMake(leftPadding + width*i, 0, height, height);
         item.center = CGPointMake(rect.origin.x + rect.size.width/2, rect.origin.y + rect.size.height/2);
         item.frame = CGRectInset(rect, 2, 2);
+        item.rankLabel.text = [NSString stringWithFormat:@"%ld",(long)i+1];
         id n = numbers[i];
         if ([n isKindOfClass:[NSString class]]) {
             item.numberLabel.text = n;
@@ -75,6 +76,10 @@
         }
     }
     self.contentScrollView.contentSize = CGSizeMake(item.frame.origin.x + item.frame.size.width + rightPadding, NUMBER_HEIGHT-1);
+    if (self.contentScrollView.contentSize.width < self.contentScrollView.frame.size.width) {
+        CGFloat inset = self.contentScrollView.frame.size.width - self.contentScrollView.contentSize.width;
+        self.contentScrollView.contentInset = UIEdgeInsetsMake(0, inset/2, 0, 0);
+    }
 }
 
 @end
