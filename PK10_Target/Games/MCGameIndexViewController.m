@@ -17,8 +17,9 @@
 #import "GameDownloadManager.h"
 #import <KxMenu.h>
 #import <objc/runtime.h>
+#import "MDScratchImageView/MDScratchImageView.h"
 
-@interface MCGameIndexViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface MCGameIndexViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,MDScratchImageViewDelegate>
 
 @property (nonatomic,strong) NSDateFormatter* dateFormatter;
 
@@ -37,6 +38,11 @@
 @property (nonatomic,strong) NSDictionary* configInfo;
 
 @property (nonatomic,assign) CGPoint scrollOffset;
+
+
+@property (nonatomic,strong) MDScratchImageView* scratchImageView;
+
+@property (nonatomic,strong) UIView* scratchView;
 
 @end
 
@@ -140,7 +146,6 @@
         [self.view addSubview:self.hud];
     }
     
-    
     {
         self.downloadManager = [GameDownloadManager shareInstanceForName:self.configName];
         NSString* path = [[NSBundle mainBundle] pathForResource:self.configName ofType:@"plist"];
@@ -155,6 +160,9 @@
                 [self.hud hide:YES];
                 [self.tableView reloadData];
                 [self.tableView.mj_header endRefreshing];
+                if (self.showMask) {
+                    [self showScratchImage];
+                }
             });
         };
         
@@ -171,7 +179,40 @@
         self.dateFormatter = [[NSDateFormatter alloc]init];
         [self.dateFormatter setDateFormat:@"HH:mm:ss"];
     }
-    
+}
+
+- (void)mdScratchImageView:(MDScratchImageView *)scratchImageView didChangeMaskingProgress:(CGFloat)maskingProgress
+{
+    if (maskingProgress >.7) {
+        [self hideScratchImage];
+    }
+}
+
+-(void)showScratchImage
+{
+    if (!self.scratchView) {
+        self.scratchView = [[UIView alloc]init];
+        self.scratchView.backgroundColor = [UIColor clearColor];
+        [self.view addSubview:self.scratchView];
+        [self.scratchView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.left.right.mas_equalTo(0);
+            make.height.mas_equalTo(160);
+        }];
+        self.scratchView.hidden = YES;
+    }
+    self.scratchView.hidden = NO;
+    if (!self.scratchImageView) {
+        CGRect rect = CGRectMake(0, self.navigationController.navigationBar.frame.origin.y+self.navigationController.navigationBar.frame.size.height, self.view.bounds.size.width, 90);
+        self.scratchImageView = [[MDScratchImageView alloc]initWithFrame:rect];
+        self.scratchImageView.delegate = self;
+        [self.scratchView addSubview:self.scratchImageView];
+    }
+    [self.scratchImageView setImage:[UIImage imageNamed:@"icon_nano"]  radius:2];
+}
+
+-(void)hideScratchImage
+{
+    self.scratchView.hidden = YES;
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context

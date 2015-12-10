@@ -16,4 +16,6 @@
 
 @property (nonatomic,assign) BOOL cellScrollLock;
 
+@property (nonatomic,assign) BOOL showMask;
+
 @end
