@@ -16,20 +16,20 @@
 
 @property (nonatomic,assign) NSInteger current;
 
-@property (nonatomic,strong) NSString* XPathString;
-
-@property (nonatomic,assign) NSInteger page;
-
-@property (nonatomic,strong) NSString* beginString;
-
-@property (nonatomic,strong) NSString* endString;
-
-@property (nonatomic,strong) NSString* cacheFileName;
+//@property (nonatomic,strong) NSString* XPathString;
+//
+//@property (nonatomic,assign) NSInteger page;
+//
+//@property (nonatomic,strong) NSString* beginString;
+//
+//@property (nonatomic,strong) NSString* endString;
+//
+//@property (nonatomic,strong) NSString* cacheFileName;
 
 @property (nonatomic,assign) BOOL isDownloading;
 
-@property (nonatomic,strong) dispatch_queue_t serialQueue;
+@property (nonatomic,strong) NSDictionary* configInfo;
 
-@property (nonatomic,strong)
+@property (nonatomic,strong) NSThread* downloadThread;
 
 @end

@@ -10,13 +10,14 @@
 
 @implementation PK10DataModel
 
-@synthesize time,results = numbers,title = flag;
+@synthesize time,results = numbers,title = flag,index;
 
 -(void) encodeWithCoder:(NSCoder *)aCoder
 {
     [aCoder encodeObject:flag forKey:@"flag"];
-    [aCoder encodeObject:self.time forKey:@"time"];
+    [aCoder encodeObject:time forKey:@"time"];
     [aCoder encodeObject:numbers forKey:@"numbers"];
+    [aCoder encodeObject:[NSNumber numberWithInteger:index] forKey:@"index"];
 }
 
 -(id) initWithCoder:(NSCoder *)aDecoder
@@ -24,8 +25,9 @@
     if (self=[super init])
     {
         flag = [aDecoder decodeObjectForKey:@"flag"];
-        self.time = [aDecoder decodeObjectForKey:@"time"];
+        time = [aDecoder decodeObjectForKey:@"time"];
         numbers = [aDecoder decodeObjectForKey:@"numbers"];
+        index = [[aDecoder decodeObjectForKey:@"index"] integerValue];
     }
     return (self);
     

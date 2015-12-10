@@ -14,5 +14,7 @@
 	<string></string>
 	<key>page</key>
 	<integer>1</integer>
+	<key>cacheFileName</key>
+	<string>PK10</string>
 </dict>
 </plist>

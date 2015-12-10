@@ -14,13 +14,13 @@
 #import "WebViewController.h"
 #import <Masonry.h>
 #import <MBProgressHUD.h>
+#import "GameDownloadManager.h"
 
 @interface MCGameIndexViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic,strong) NSDateFormatter* dateFormatter;
 
-@property (nonatomic,strong) PK10DownloadManager* shareManager;
-
+@property (nonatomic,strong) GameDownloadManager* downloadManager;
 
 @property (nonatomic,strong) UITableView* tableView;
 
@@ -49,7 +49,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.clipsToBounds = YES;
-    self.navigationItem.title = @"PK10";
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidResign) name:UIApplicationDidBecomeActiveNotification object:nil];
     
@@ -68,7 +67,7 @@
         }];
         self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             @strongify(self);
-            [self.shareManager refreshLaterestDatabase];
+            [self.downloadManager refreshLaterestDatabase];
         }];
         
         self.hud = [[MBProgressHUD alloc] initWithView:self.view];
@@ -80,8 +79,10 @@
     
     
     {
-        self.shareManager = [PK10DownloadManager shareInstance];
-        self.shareManager.complete = ^(BOOL isSuccess){
+        self.downloadManager = [GameDownloadManager shareInstance];
+        NSString* path = [[NSBundle mainBundle] pathForResource:@"PK10" ofType:@"plist"];
+        self.downloadManager.configInfo = [NSDictionary dictionaryWithContentsOfFile:path];
+        self.downloadManager.complete = ^(BOOL isSuccess){
             @strongify(self);
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (!self.timer) {
@@ -94,7 +95,7 @@
             });
         };
         
-        self.shareManager.progress = ^(CGFloat progress){
+        self.downloadManager.progress = ^(CGFloat progress){
             @strongify(self);
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.hud.labelText = [NSString stringWithFormat:@"加载历史记录..."];
@@ -127,8 +128,8 @@
 
 -(void)applicationDidResign
 {
-    if (self.shareManager.dataList.count == 0) {
-        [self.shareManager refreshLaterestDatabase];
+    if (self.downloadManager.dataList.count == 0) {
+        [self.downloadManager refreshLaterestDatabase];
     }else {
         if (_timer) {
             dispatch_source_cancel(_timer);
@@ -228,7 +229,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.shareManager.dataList.count;
+    return self.downloadManager.dataList.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -240,10 +241,10 @@
 {
     GameTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"GameTableViewCell" forIndexPath:indexPath];
     
-    PK10DataModel* model = self.shareManager.dataList[indexPath.row];
+    id<GameDataModelProtocol> model = self.downloadManager.dataList[indexPath.row];
     cell.diffIndexs = @[@0,@1,@2,@3];
     
-    cell.numbers = [model.numbers subarrayWithRange:NSMakeRange(0, 8)];
+    cell.numbers = [model results];
     
     
     return cell;

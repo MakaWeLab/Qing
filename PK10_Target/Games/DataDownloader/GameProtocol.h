@@ -31,6 +31,8 @@ typedef void(^GameDownloadManagerComplete)(BOOL isSuccess);
 
 @protocol GameDataModelProtocol <NSObject,NSCoding>
 
+@property (nonatomic,assign) NSInteger index;
+
 @property (nonatomic,strong) NSString* title;
 
 @property (nonatomic,strong) NSString* time;
