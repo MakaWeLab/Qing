@@ -60,6 +60,12 @@
         item.center = CGPointMake(rect.origin.x + rect.size.width/2, rect.origin.y + rect.size.height/2);
         item.frame = CGRectInset(rect, 2, 2);
         item.rankLabel.text = [NSString stringWithFormat:@"%ld",(long)i+1];
+        if (i+1<5||i+1>numbers.count-3||(i+1)%2==0) {
+            item.rankLabel.superview.hidden = YES;
+        }else {
+            item.rankLabel.superview.hidden = NO;
+        }
+
         id n = numbers[i];
         if ([n isKindOfClass:[NSString class]]) {
             item.numberLabel.text = n;

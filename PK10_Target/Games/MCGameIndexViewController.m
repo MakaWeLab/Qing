@@ -283,8 +283,13 @@
         NSString* endTime = [self.configInfo objectForKey:@"endTime"];
         NSDate* endDate = [formatter dateFromString:endTime];
         
-        if (currentDate.timeIntervalSince1970 < beginDate.timeIntervalSince1970 || currentDate.timeIntervalSince1970 > endDate.timeIntervalSince1970) {
-            NSTimeInterval time = beginDate.timeIntervalSince1970 + 24*60*60 - currentDate.timeIntervalSince1970;
+        if (currentDate.timeIntervalSince1970 < beginDate.timeIntervalSince1970 || currentDate.timeIntervalSince1970 > endDate.timeIntervalSince1970+60) {
+            NSTimeInterval time = beginDate.timeIntervalSince1970  - currentDate.timeIntervalSince1970+60;
+            
+            if (beginDate.timeIntervalSince1970 < currentDate.timeIntervalSince1970) {
+                time += 24*60*60;
+            }
+            
             return time;
         }
     }
@@ -313,7 +318,7 @@
     CGFloat m = 0;
     
     if (minite == 0) {
-        m = timeInset;
+        m = 0.1;
     }else {
         m = timeInset - minite;
     }
