@@ -71,6 +71,12 @@ typedef void(^getLaterestCallback)(NSArray* array);
     @weakify(self);
     [self getLaterestDataWithCallback:^(NSArray *array) {
         @strongify(self);
+        if (!array) {
+            if (self.complete) {
+                self.complete(NO);
+            }
+            return;
+        }
         [self insertArrayAtTop:array];
         self.downloadThread = [NSThread currentThread];
         self.current = 1;
@@ -230,9 +236,13 @@ typedef void(^getLaterestCallback)(NSArray* array);
         TFHpple *xpathparser = [[TFHpple alloc]initWithHTMLData:htmlData];
         NSArray *array = [xpathparser searchWithXPathQuery:self.XPathString];
         NSMutableArray* mArray = [array mutableCopy];
-        [mArray removeObjectAtIndex:0];
-        array = mArray;
-        callback(array);
+        if (mArray.count == 0) {
+            callback(nil);
+        }else {
+            [mArray removeObjectAtIndex:0];
+            array = mArray;
+            callback(array);
+        }
     });
 }
 

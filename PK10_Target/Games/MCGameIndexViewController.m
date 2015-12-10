@@ -15,6 +15,8 @@
 #import <Masonry.h>
 #import <MBProgressHUD.h>
 #import "GameDownloadManager.h"
+#import <KxMenu.h>
+#import <objc/runtime.h>
 
 @interface MCGameIndexViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -46,12 +48,53 @@
     return shareController;
 }
 
+-(void)rightItemAction
+{
+    for(UIView* view in self.view.subviews) {
+        NSString* str = [NSString stringWithCString:object_getClassName(view) encoding:NSUTF8StringEncoding];
+        if ([str isEqualToString:@"KxMenuOverlay"]) {
+            [KxMenu dismissMenu];
+            return;
+        }
+    }
+    CGRect rect = self.navigationController.navigationBar.frame;
+    rect.origin.x = rect.size.width - 50;
+    rect.size.width = 50;
+    [KxMenu showMenuInView:self.view
+                  fromRect:rect
+                 menuItems:@[
+                             [KxMenuItem menuItem:@"PK10"
+                                            image:nil
+                                           target:self
+                                           action:@selector(itemChooseAction:)],
+                             [KxMenuItem menuItem:@"PK10冠军"
+                                            image:nil
+                                           target:self
+                                           action:@selector(itemChooseAction:)],
+                             [KxMenuItem menuItem:@"PK10冠亚军"
+                                            image:nil
+                                           target:self
+                                           action:@selector(itemChooseAction:)],
+                             [KxMenuItem menuItem:@"PK10冠亚季军"
+                                            image:nil
+                                           target:self
+                                           action:@selector(itemChooseAction:)],
+                             ]];
+}
+
+-(void)itemChooseAction:(KxMenuItem*)item
+{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.clipsToBounds = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidResign) name:UIApplicationDidBecomeActiveNotification object:nil];
     
+    UIBarButtonItem* rightItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_dropdown"] style:UIBarButtonItemStyleBordered target:self action:@selector(rightItemAction)];
+    self.navigationItem.rightBarButtonItem = rightItem;
     
     @weakify(self);
     
@@ -242,7 +285,7 @@
     GameTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"GameTableViewCell" forIndexPath:indexPath];
     
     id<GameDataModelProtocol> model = self.downloadManager.dataList[indexPath.row];
-    cell.diffIndexs = @[@0,@1,@2,@3];
+    cell.diffIndexs = @[@0,@1];
     
     cell.numbers = [model results];
     

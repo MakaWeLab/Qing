@@ -32,9 +32,9 @@
 {
     _numbers = numbers;
     
-    CGFloat leftPadding = 20;
+    CGFloat leftPadding = 10;
     
-    CGFloat rightPadding = 20;
+    CGFloat rightPadding = 10;
     
     CGFloat width = ([UIScreen mainScreen].bounds.size.width - leftPadding - rightPadding)/numbers.count;
     
