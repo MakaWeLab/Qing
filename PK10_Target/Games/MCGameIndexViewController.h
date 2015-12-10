@@ -14,4 +14,6 @@
 
 +(instancetype)shareInstanceWithConfigName:(NSString*)name;
 
+@property (nonatomic,assign) BOOL cellScrollLock;
+
 @end

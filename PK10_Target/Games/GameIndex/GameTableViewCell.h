@@ -14,6 +14,8 @@
 
 @interface GameTableViewCell : UITableViewCell
 
+@property (nonatomic,strong) UIScrollView* contentScrollView;
+
 @property (nonatomic,strong) NSArray* numbers;
 
 @property (nonatomic,strong) NSArray* diffIndexs;

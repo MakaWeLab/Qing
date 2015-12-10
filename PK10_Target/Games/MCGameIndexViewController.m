@@ -18,7 +18,7 @@
 #import <KxMenu.h>
 #import <objc/runtime.h>
 
-@interface MCGameIndexViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface MCGameIndexViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic,strong) NSDateFormatter* dateFormatter;
 
@@ -35,6 +35,8 @@
 @property (nonatomic,strong) dispatch_queue_t queue;
 
 @property (nonatomic,strong) NSDictionary* configInfo;
+
+@property (nonatomic,assign) CGPoint scrollOffset;
 
 @end
 
@@ -106,6 +108,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.cellScrollLock = YES;
     self.view.clipsToBounds = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidResign) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -341,13 +344,29 @@
 {
     GameTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"GameTableViewCell" forIndexPath:indexPath];
     
+    cell.contentScrollView.contentOffset = self.scrollOffset;
+    
     id<GameDataModelProtocol> model = self.downloadManager.dataList[indexPath.row];
     cell.diffIndexs = @[@0,@1];
     
+    if (self.cellScrollLock) {
+        cell.contentScrollView.delegate = self;
+    }
     cell.numbers = [model results];
     
     
     return cell;
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (![scrollView isKindOfClass:[UITableView class]] && self.cellScrollLock) {
+        CGPoint offset =scrollView.contentOffset;
+        for (GameTableViewCell* cell in self.tableView.visibleCells) {
+            cell.contentScrollView.contentOffset = offset;
+            self.scrollOffset = offset;
+        }
+    }
 }
 
 @end

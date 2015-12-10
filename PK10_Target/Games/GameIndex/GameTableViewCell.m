@@ -12,8 +12,6 @@
 
 @interface GameTableViewCell()
 
-@property (nonatomic,strong) UIScrollView* contentScrollView;
-
 @property (nonatomic,strong) NSMutableArray* numberItems;
 
 @end
@@ -40,8 +38,6 @@
 -(void)setNumbers:(NSArray *)numbers
 {
     _numbers = numbers;
-    
-    [self.contentScrollView setContentOffset:CGPointZero];
     
     CGFloat leftPadding = 10;
     
