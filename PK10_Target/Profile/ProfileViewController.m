@@ -59,7 +59,9 @@
     [self.view addSubview:self.tableView];
     {
         self.dataSource = [[NSMutableArray alloc]init];
-        [self.dataSource addObject:@"实时数据"];
+        [self.dataSource addObject:@"PK10"];
+        [self.dataSource addObject:@"快乐8"];
+        [self.dataSource addObject:@"快3"];
 //        [self.dataSource addObject:@"实时开奖"];
 //        [self.dataSource addObject:@"历史统计"];
 //        [self.dataSource addObject:@"杀号预测"];
@@ -120,7 +122,13 @@
         self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[LearnListViewController shareInstance]];
         
     }else if ([string isEqualToString:@"实时数据"]) {
-        self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[MCGameIndexViewController shareInstance]];
+        self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[MCGameIndexViewController shareInstanceWithConfigName:@"quick3"]];
+    }else if ([string isEqualToString:@"PK10"]) {
+        self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[MCGameIndexViewController shareInstanceWithConfigName:@"PK10"]];
+    }else if ([string isEqualToString:@"快3"]) {
+        self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[MCGameIndexViewController shareInstanceWithConfigName:@"quick3"]];
+    }else if ([string isEqualToString:@"快乐8"]) {
+        self.sideMenuViewController.contentViewController = [[UINavigationController alloc]initWithRootViewController:[MCGameIndexViewController shareInstanceWithConfigName:@"happy8"]];
     }
     [self.sideMenuViewController hideMenuViewController];
 }

@@ -10,6 +10,8 @@
 
 @interface MCGameIndexViewController : RootViewController
 
-+(instancetype)shareInstance;
+@property (nonatomic,strong) NSString* configName;
+
++(instancetype)shareInstanceWithConfigName:(NSString*)name;
 
 @end

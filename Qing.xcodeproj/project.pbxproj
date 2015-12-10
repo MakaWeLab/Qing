@@ -60,6 +60,8 @@
 		24D937F81C11940F006AA21E /* GameLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24D937F71C11940F006AA21E /* GameLaunchScreen.storyboard */; };
 		24D937F91C119490006AA21E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605D51BF1BF3A53E0071BC75 /* LaunchScreen.storyboard */; };
 		24D937FB1C119573006AA21E /* GameAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D937FA1C119573006AA21E /* GameAssets.xcassets */; };
+		24E82E341C195480005AAD20 /* happy8.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24E82E331C195480005AAD20 /* happy8.plist */; };
+		24E82E361C195AA7005AAD20 /* quick3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24E82E351C195AA7005AAD20 /* quick3.plist */; };
 		24ED32DC1BFDC02A0098758F /* MCDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED32DB1BFDC02A0098758F /* MCDownloadOperation.m */; };
 		600361F51C11BF420029D644 /* PK10DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361BA1C11BF420029D644 /* PK10DataModel.m */; };
 		600361F61C11BF420029D644 /* GameDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361BC1C11BF420029D644 /* GameDownloadManager.m */; };
@@ -165,6 +167,8 @@
 		24D937F41C1193B1006AA21E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		24D937F71C11940F006AA21E /* GameLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameLaunchScreen.storyboard; sourceTree = "<group>"; };
 		24D937FA1C119573006AA21E /* GameAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GameAssets.xcassets; sourceTree = "<group>"; };
+		24E82E331C195480005AAD20 /* happy8.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = happy8.plist; sourceTree = "<group>"; };
+		24E82E351C195AA7005AAD20 /* quick3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = quick3.plist; sourceTree = "<group>"; };
 		24ED32DA1BFDC02A0098758F /* MCDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCDownloadOperation.h; sourceTree = "<group>"; };
 		24ED32DB1BFDC02A0098758F /* MCDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCDownloadOperation.m; sourceTree = "<group>"; };
 		5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -422,7 +426,9 @@
 				600361BA1C11BF420029D644 /* PK10DataModel.m */,
 				600361BB1C11BF420029D644 /* GameDownloadManager.h */,
 				600361BC1C11BF420029D644 /* GameDownloadManager.m */,
+				24E82E331C195480005AAD20 /* happy8.plist */,
 				249FEF0E1C181848005431EF /* PK10.plist */,
+				24E82E351C195AA7005AAD20 /* quick3.plist */,
 				249FEF0D1C1810F7005431EF /* GameProtocol.h */,
 			);
 			path = DataDownloader;
@@ -732,8 +738,10 @@
 				600362171C11C2600029D644 /* ProfilePersonSettingView.xib in Resources */,
 				600361FB1C11BF420029D644 /* PK10GamePlayerRoad.xib in Resources */,
 				24D937F51C1193B1006AA21E /* InfoPlist.strings in Resources */,
+				24E82E341C195480005AAD20 /* happy8.plist in Resources */,
 				249FEF091C17DF95005431EF /* GameNumberItem.xib in Resources */,
 				24D937FB1C119573006AA21E /* GameAssets.xcassets in Resources */,
+				24E82E361C195AA7005AAD20 /* quick3.plist in Resources */,
 				24D937F61C1193B1006AA21E /* Localizable.strings in Resources */,
 				24D937F81C11940F006AA21E /* GameLaunchScreen.storyboard in Resources */,
 				24D937CF1C119081006AA21E /* PopShowImageView.xib in Resources */,

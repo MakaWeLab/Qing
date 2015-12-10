@@ -8,9 +8,11 @@
 
 #import "GameNumberItem.h"
 #import "GameTableViewCell.h"
-
+#import <Masonry.h>
 
 @interface GameTableViewCell()
+
+@property (nonatomic,strong) UIScrollView* contentScrollView;
 
 @property (nonatomic,strong) NSMutableArray* numberItems;
 
@@ -24,6 +26,13 @@
         self.numberItems = [NSMutableArray array];
         self.diffColor = [UIColor blackColor];
         self.normalColor = [UIColor orangeColor];
+        self.contentScrollView = [[UIScrollView alloc]init];
+        self.contentScrollView.alwaysBounceVertical = NO;
+        self.contentScrollView.showsVerticalScrollIndicator = NO;
+        [self.contentView addSubview:self.contentScrollView];
+        [self.contentScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.contentView);
+        }];
     }
     return self;
 }
@@ -32,22 +41,24 @@
 {
     _numbers = numbers;
     
+    [self.contentScrollView setContentOffset:CGPointZero];
+    
     CGFloat leftPadding = 10;
     
     CGFloat rightPadding = 10;
     
-    CGFloat width = ([UIScreen mainScreen].bounds.size.width - leftPadding - rightPadding)/numbers.count;
+    CGFloat width = NUMBER_HEIGHT + 5;
     
-    CGFloat height = width > NUMBER_HEIGHT?NUMBER_HEIGHT:width;
+    CGFloat height = NUMBER_HEIGHT;
     
+    GameNumberItem* item = nil;
     for (NSInteger i = 0; i<numbers.count; i++) {
-        GameNumberItem* item = nil;
         if (self.numberItems.count > i) {
             item = self.numberItems[i];
         }else {
             item = [GameNumberItem instanceFromNib];
             [self.numberItems addObject:item];
-            [self.contentView addSubview:item];
+            [self.contentScrollView addSubview:item];
         }
         CGRect rect = CGRectMake(leftPadding + width*i, 0, height, height);
         item.center = CGPointMake(rect.origin.x + rect.size.width/2, rect.origin.y + rect.size.height/2);
@@ -67,6 +78,7 @@
             }
         }
     }
+    self.contentScrollView.contentSize = CGSizeMake(item.frame.origin.x + item.frame.size.width + rightPadding, NUMBER_HEIGHT-1);
 }
 
 @end

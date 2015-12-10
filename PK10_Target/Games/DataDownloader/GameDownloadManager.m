@@ -28,13 +28,25 @@ typedef void(^getLaterestCallback)(NSArray* array);
     return [string stringByAppendingString:[self cacheFileName]];
 }
 
-+(instancetype)shareInstance
++(instancetype)shareInstanceForName:(NSString*)fileName
 {
-    static GameDownloadManager* manager;
+    static NSMutableDictionary* shareDownloaderContainer;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [[GameDownloadManager alloc]init];
+        shareDownloaderContainer = [NSMutableDictionary dictionary];
     });
+    
+    static GameDownloadManager* manager;
+    manager = nil;
+    @synchronized(shareDownloaderContainer) {
+        if (!manager) {
+            manager = [shareDownloaderContainer objectForKey:fileName];
+            if (!manager) {
+                manager = [[GameDownloadManager alloc]init];
+                [shareDownloaderContainer setObject:manager forKey:fileName];
+            }
+        }
+    }
     return manager;
 }
 
@@ -55,6 +67,9 @@ typedef void(^getLaterestCallback)(NSArray* array);
 -(void)refreshLaterestDatabase
 {
     if (self.isDownloading) {
+        if (self.complete) {
+            self.complete(YES);
+        }
         return;
     }
     self.isDownloading = YES;
@@ -72,6 +87,7 @@ typedef void(^getLaterestCallback)(NSArray* array);
     [self getLaterestDataWithCallback:^(NSArray *array) {
         @strongify(self);
         if (!array) {
+            self.isDownloading = NO;
             if (self.complete) {
                 self.complete(NO);
             }
@@ -194,6 +210,7 @@ typedef void(^getLaterestCallback)(NSArray* array);
     }else {
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.dataList];
         [data writeToFile:[self saveFilePath] atomically:YES];
+        self.isDownloading = NO;
         if (self.complete) {
             self.complete(YES);
         }

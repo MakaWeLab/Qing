@@ -34,17 +34,34 @@
 
 @property (nonatomic,strong) dispatch_queue_t queue;
 
+@property (nonatomic,strong) NSDictionary* configInfo;
+
 @end
 
 @implementation MCGameIndexViewController
 
-+(instancetype)shareInstance
++(instancetype)shareInstanceWithConfigName:(NSString *)name
 {
-    static MCGameIndexViewController* shareController;
+    static NSMutableDictionary* shareControllerContainer;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        shareController = [[self alloc]init];
+        shareControllerContainer = [NSMutableDictionary dictionary];
     });
+    
+    MCGameIndexViewController* shareController;
+    shareController = nil;
+    @synchronized(shareControllerContainer) {
+        if (!shareController) {
+            shareController = [shareControllerContainer objectForKey:name];
+            if (!shareController) {
+                shareController = [[MCGameIndexViewController alloc]init];
+                shareController.configName = name;
+                NSString* path = [[NSBundle mainBundle] pathForResource:name ofType:@"plist"];
+                shareController.configInfo = [NSDictionary dictionaryWithContentsOfFile:path];
+                [shareControllerContainer setObject:shareController forKey:name];
+            }
+        }
+    }
     return shareController;
 }
 
@@ -122,8 +139,8 @@
     
     
     {
-        self.downloadManager = [GameDownloadManager shareInstance];
-        NSString* path = [[NSBundle mainBundle] pathForResource:@"PK10" ofType:@"plist"];
+        self.downloadManager = [GameDownloadManager shareInstanceForName:self.configName];
+        NSString* path = [[NSBundle mainBundle] pathForResource:self.configName ofType:@"plist"];
         self.downloadManager.configInfo = [NSDictionary dictionaryWithContentsOfFile:path];
         self.downloadManager.complete = ^(BOOL isSuccess){
             @strongify(self);
@@ -149,7 +166,7 @@
         };
         
         self.dateFormatter = [[NSDateFormatter alloc]init];
-        [self.dateFormatter setDateFormat:@"mm:ss"];
+        [self.dateFormatter setDateFormat:@"HH:mm:ss"];
     }
     
 }
@@ -224,10 +241,16 @@
     
 }
 
--(NSInteger)miniteForDateString:(NSString*)dateString
+-(NSInteger)hourForDateString:(NSString*)dateString
 {
     NSArray* array = [dateString componentsSeparatedByString:@":"];
     return [array.firstObject integerValue];
+}
+
+-(NSInteger)miniteForDateString:(NSString*)dateString
+{
+    NSArray* array = [dateString componentsSeparatedByString:@":"];
+    return [array[1] integerValue];
 }
 
 -(NSInteger)secondForDateString:(NSString*)dateString
@@ -240,24 +263,58 @@
 {
     NSTimeInterval time = 0;
     
+    static NSDateFormatter* formatter = nil;
+    {
+        if (!formatter) {
+            formatter = [[NSDateFormatter alloc]init];
+            [formatter setTimeZone:[NSTimeZone systemTimeZone]];
+            [formatter setDateFormat:@"HH:mm"];
+        }
+        
+        NSString* currentTime = [formatter stringFromDate:date];
+        NSDate* currentDate = [formatter dateFromString:currentTime];
+        
+        NSString* beginTime = [self.configInfo objectForKey:@"beginTime"];
+        NSDate* beginDate = [formatter dateFromString:beginTime];
+        
+        NSString* endTime = [self.configInfo objectForKey:@"endTime"];
+        NSDate* endDate = [formatter dateFromString:endTime];
+        
+        if (currentDate.timeIntervalSince1970 < beginDate.timeIntervalSince1970 || currentDate.timeIntervalSince1970 > endDate.timeIntervalSince1970) {
+            NSTimeInterval time = beginDate.timeIntervalSince1970 + 24*60*60 - currentDate.timeIntervalSince1970;
+            return time;
+        }
+    }
+    
+    
+    NSInteger timeInset = [[self.configInfo objectForKey:@"timeInset"] integerValue];
+    
+    
     NSString* dateString = [self.dateFormatter stringFromDate:date];
     
-    NSInteger minite = [self miniteForDateString:dateString];
+    NSString* beginDateString = nil;
+    {
+        NSString* beginTime = [self.configInfo objectForKey:@"beginTime"];
+        NSDate* beginDate = [formatter dateFromString:beginTime];
+        beginDateString = [self.dateFormatter stringFromDate:beginDate];
+    }
     
-    minite = minite%10;
+    NSInteger hour = [self hourForDateString:dateString] - [self hourForDateString:beginDateString];
+    
+    NSInteger minite = [self miniteForDateString:dateString] - [self miniteForDateString:beginDateString];
+    
+    minite += hour*60;
+    
+    minite = minite%timeInset;
     
     CGFloat m = 0;
     
-    if (minite>8) {
-        m = 12 - minite;
-    }else if (minite <3){
-        m = 2 - minite;
-    }else if (minite == 3 || minite == 8){
-        m = 4;
+    if (minite == 0) {
+        m = timeInset;
     }else {
-        m = 7 - minite;
+        m = timeInset - minite;
     }
-    
+
     time = m*60 + 60 - [self secondForDateString:dateString];
     
     return time;

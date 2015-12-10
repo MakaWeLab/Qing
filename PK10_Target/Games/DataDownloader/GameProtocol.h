@@ -23,7 +23,7 @@ typedef void(^GameDownloadManagerComplete)(BOOL isSuccess);
 
 @property (nonatomic,copy) GameDownloadManagerComplete complete;
 
-+(instancetype)shareInstance;
++(instancetype)shareInstanceForName:(NSString*)fileName;
 
 -(void)refreshLaterestDatabase;
 
