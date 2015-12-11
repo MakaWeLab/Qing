@@ -13,6 +13,71 @@
 		2403DDB31BFC7770002E7B0E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2403DDB21BFC7770002E7B0E /* libxml2.tbd */; };
 		2443522B1C1A9889007B8292 /* CommonDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2443522A1C1A9889007B8292 /* CommonDateUtil.m */; };
 		2443522C1C1A9889007B8292 /* CommonDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2443522A1C1A9889007B8292 /* CommonDateUtil.m */; };
+		244352851C1AB1E5007B8292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D937F11C119203006AA21E /* AppDelegate.m */; };
+		244352861C1AB1E5007B8292 /* Qing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 605D51BA1BF3A53E0071BC75 /* Qing.xcdatamodeld */; };
+		244352871C1AB1E5007B8292 /* MCDownloadUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6031EED71C01F79B00CF1F36 /* MCDownloadUtil.m */; };
+		244352881C1AB1E5007B8292 /* MCGameIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361D51C11BF420029D644 /* MCGameIndexViewController.m */; };
+		244352891C1AB1E5007B8292 /* MCDownloadOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E60551C08543B00117E1F /* MCDownloadOperationManager.m */; };
+		2443528A1C1AB1E5007B8292 /* CrawlersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */; };
+		2443528B1C1AB1E5007B8292 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51B51BF3A53E0071BC75 /* ViewController.m */; };
+		2443528C1C1AB1E5007B8292 /* GameNumberItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 249FEF061C17DF88005431EF /* GameNumberItem.m */; };
+		2443528D1C1AB1E5007B8292 /* GameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 249FEF0B1C17E17F005431EF /* GameTableViewCell.m */; };
+		2443528E1C1AB1E5007B8292 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51F01BF3A60D0071BC75 /* RootViewController.m */; };
+		2443528F1C1AB1E5007B8292 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDAC1BFC769A002E7B0E /* XPathQuery.m */; };
+		244352901C1AB1E5007B8292 /* MDMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 249FEEFE1C17D70E005431EF /* MDMatrix.m */; };
+		244352911C1AB1E5007B8292 /* PK10GamePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361BF1C11BF420029D644 /* PK10GamePlayer.m */; };
+		244352921C1AB1E5007B8292 /* CrawlersCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA361BFC85C400F9DB2A /* CrawlersCollectionCell.m */; };
+		244352931C1AB1E5007B8292 /* PK10GamePlayerRoad.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361C41C11BF420029D644 /* PK10GamePlayerRoad.m */; };
+		244352941C1AB1E5007B8292 /* UIImageView+MCDownload.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB7D9E1C02BF7E006D0881 /* UIImageView+MCDownload.m */; };
+		244352951C1AB1E5007B8292 /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDAA1BFC769A002E7B0E /* TFHppleElement.m */; };
+		244352961C1AB1E5007B8292 /* LearnListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003621A1C12A2D10029D644 /* LearnListViewController.m */; };
+		244352971C1AB1E5007B8292 /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDA81BFC769A002E7B0E /* TFHpple.m */; };
+		244352981C1AB1E5007B8292 /* PK10DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361BA1C11BF420029D644 /* PK10DataModel.m */; };
+		244352991C1AB1E5007B8292 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 608FA2E21C13597100D95933 /* WebViewController.m */; };
+		2443529A1C1AB1E5007B8292 /* MDScratchImageView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 249FEF001C17D70E005431EF /* MDScratchImageView.mm */; };
+		2443529B1C1AB1E5007B8292 /* GameDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361BC1C11BF420029D644 /* GameDownloadManager.m */; };
+		2443529C1C1AB1E5007B8292 /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51EC1BF3A60D0071BC75 /* RootTabBarController.m */; };
+		2443529D1C1AB1E5007B8292 /* ProfilePersonSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600362141C11C2550029D644 /* ProfilePersonSettingView.m */; };
+		2443529E1C1AB1E5007B8292 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003620C1C11BFE40029D644 /* ProfileViewController.m */; };
+		2443529F1C1AB1E5007B8292 /* PopShowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D52071BFCBFE10071BC75 /* PopShowImageView.m */; };
+		244352A01C1AB1E5007B8292 /* PK10GamePlayerItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361C11C11BF420029D644 /* PK10GamePlayerItem.m */; };
+		244352A11C1AB1E5007B8292 /* PK10GamePlayerScence1.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361C71C11BF420029D644 /* PK10GamePlayerScence1.m */; };
+		244352A21C1AB1E5007B8292 /* MCDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 24ED32DB1BFDC02A0098758F /* MCDownloadOperation.m */; };
+		244352A31C1AB1E5007B8292 /* MCDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AB7DA41C0304B3006D0881 /* MCDownloadCache.m */; };
+		244352A41C1AB1E5007B8292 /* ProfilePersonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003620F1C11C0440029D644 /* ProfilePersonView.m */; };
+		244352A51C1AB1E5007B8292 /* CommonDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2443522A1C1A9889007B8292 /* CommonDateUtil.m */; };
+		244352A61C1AB1E5007B8292 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51EA1BF3A60D0071BC75 /* RootNavigationController.m */; };
+		244352A71C1AB1E5007B8292 /* GamePredictionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 600361D01C11BF420029D644 /* GamePredictionViewController.m */; };
+		244352A81C1AB1E5007B8292 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51EE1BF3A60D0071BC75 /* RootTableViewController.m */; };
+		244352A91C1AB1E5007B8292 /* RootCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA3B1BFC86CD00F9DB2A /* RootCollectionViewCell.m */; };
+		244352AA1C1AB1E5007B8292 /* MCDownloadCallBackManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 247E60521C08453600117E1F /* MCDownloadCallBackManager.m */; };
+		244352AB1C1AB1E5007B8292 /* MCGamePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 608FA2DF1C13520700D95933 /* MCGamePlayerViewController.m */; };
+		244352AC1C1AB1E5007B8292 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 605D51AF1BF3A53E0071BC75 /* main.m */; };
+		244352AE1C1AB1E5007B8292 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247B6F301C16C45C00D9A1C2 /* StoreKit.framework */; };
+		244352AF1C1AB1E5007B8292 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2403DDB21BFC7770002E7B0E /* libxml2.tbd */; };
+		244352B01C1AB1E5007B8292 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 193E36F75E576152E59DAE78 /* libPods.a */; };
+		244352B21C1AB1E5007B8292 /* ProfilePersonSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600362161C11C2600029D644 /* ProfilePersonSettingView.xib */; };
+		244352B31C1AB1E5007B8292 /* PK10GamePlayerRoad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600361C51C11BF420029D644 /* PK10GamePlayerRoad.xib */; };
+		244352B41C1AB1E5007B8292 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24D937F31C1193B1006AA21E /* InfoPlist.strings */; };
+		244352B51C1AB1E5007B8292 /* happy8.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24E82E331C195480005AAD20 /* happy8.plist */; };
+		244352B61C1AB1E5007B8292 /* GameNumberItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 249FEF081C17DF95005431EF /* GameNumberItem.xib */; };
+		244352B71C1AB1E5007B8292 /* GameAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24D937FA1C119573006AA21E /* GameAssets.xcassets */; };
+		244352B81C1AB1E5007B8292 /* quick3.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24E82E351C195AA7005AAD20 /* quick3.plist */; };
+		244352B91C1AB1E5007B8292 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24D937F41C1193B1006AA21E /* Localizable.strings */; };
+		244352BA1C1AB1E5007B8292 /* GameLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24D937F71C11940F006AA21E /* GameLaunchScreen.storyboard */; };
+		244352BB1C1AB1E5007B8292 /* PopShowImageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 605D52091BFCC0A20071BC75 /* PopShowImageView.xib */; };
+		244352BC1C1AB1E5007B8292 /* QingGame.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24D937EE1C1191E5006AA21E /* QingGame.plist */; };
+		244352BD1C1AB1E5007B8292 /* ProfilePersonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600362111C11C0520029D644 /* ProfilePersonView.xib */; };
+		244352BE1C1AB1E5007B8292 /* PK10.plist in Resources */ = {isa = PBXBuildFile; fileRef = 249FEF0E1C181848005431EF /* PK10.plist */; };
+		244352BF1C1AB1E5007B8292 /* PK10GamePlayerItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 600361C21C11BF420029D644 /* PK10GamePlayerItem.xib */; };
+		244352C01C1AB1E5007B8292 /* Plant.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605D51E61BF3A5820071BC75 /* Plant.xcassets */; };
+		244352C11C1AB1E5007B8292 /* CrawlersCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 247CDA371BFC85C400F9DB2A /* CrawlersCollectionCell.xib */; };
+		244352CA1C1AB223007B8292 /* QingGamePK10.plist in Resources */ = {isa = PBXBuildFile; fileRef = 244352C91C1AB223007B8292 /* QingGamePK10.plist */; };
+		244352D11C1AB32D007B8292 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 244352CC1C1AB32D007B8292 /* AppDelegate.m */; };
+		244352D21C1AB32D007B8292 /* GamePK10Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 244352CD1C1AB32D007B8292 /* GamePK10Assets.xcassets */; };
+		244352D31C1AB32D007B8292 /* GamePK10LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244352CE1C1AB32D007B8292 /* GamePK10LaunchScreen.storyboard */; };
+		244352D41C1AB32D007B8292 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 244352CF1C1AB32D007B8292 /* InfoPlist.strings */; };
+		244352D51C1AB32D007B8292 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 244352D01C1AB32D007B8292 /* Localizable.strings */; };
 		247B6F311C16C45C00D9A1C2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247B6F301C16C45C00D9A1C2 /* StoreKit.framework */; };
 		247CDA2D1BFC7D7600F9DB2A /* CrawlersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */; };
 		247CDA311BFC810A00F9DB2A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA301BFC810A00F9DB2A /* ProfileViewController.m */; };
@@ -132,6 +197,14 @@
 		2403DDB21BFC7770002E7B0E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		244352291C1A9889007B8292 /* CommonDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDateUtil.h; sourceTree = "<group>"; };
 		2443522A1C1A9889007B8292 /* CommonDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonDateUtil.m; sourceTree = "<group>"; };
+		244352C61C1AB1E5007B8292 /* PK10.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PK10.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		244352C91C1AB223007B8292 /* QingGamePK10.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QingGamePK10.plist; sourceTree = "<group>"; };
+		244352CB1C1AB32D007B8292 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		244352CC1C1AB32D007B8292 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		244352CD1C1AB32D007B8292 /* GamePK10Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GamePK10Assets.xcassets; sourceTree = "<group>"; };
+		244352CE1C1AB32D007B8292 /* GamePK10LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GamePK10LaunchScreen.storyboard; sourceTree = "<group>"; };
+		244352CF1C1AB32D007B8292 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		244352D01C1AB32D007B8292 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		247B6F301C16C45C00D9A1C2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		247CDA2B1BFC7D7600F9DB2A /* CrawlersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrawlersViewController.h; sourceTree = "<group>"; };
 		247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrawlersViewController.m; sourceTree = "<group>"; };
@@ -249,6 +322,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		244352AD1C1AB1E5007B8292 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				244352AE1C1AB1E5007B8292 /* StoreKit.framework in Frameworks */,
+				244352AF1C1AB1E5007B8292 /* libxml2.tbd in Frameworks */,
+				244352B01C1AB1E5007B8292 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24D937B61C119081006AA21E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +408,20 @@
 				2443522A1C1A9889007B8292 /* CommonDateUtil.m */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		244352C81C1AB206007B8292 /* PK10 */ = {
+			isa = PBXGroup;
+			children = (
+				244352CB1C1AB32D007B8292 /* AppDelegate.h */,
+				244352CC1C1AB32D007B8292 /* AppDelegate.m */,
+				244352CD1C1AB32D007B8292 /* GamePK10Assets.xcassets */,
+				244352CE1C1AB32D007B8292 /* GamePK10LaunchScreen.storyboard */,
+				244352CF1C1AB32D007B8292 /* InfoPlist.strings */,
+				244352D01C1AB32D007B8292 /* Localizable.strings */,
+				244352C91C1AB223007B8292 /* QingGamePK10.plist */,
+			);
+			path = PK10;
 			sourceTree = "<group>";
 		};
 		247CDA2E1BFC80FE00F9DB2A /* Profile */ = {
@@ -500,6 +597,7 @@
 				59E793A65ECC442D50403E76 /* Pods */,
 				B795E80B2ABA3272B32EF99C /* Frameworks */,
 				24D937E81C1190C6006AA21E /* QingGame */,
+				244352C81C1AB206007B8292 /* PK10 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -510,6 +608,7 @@
 				605D51C71BF3A53E0071BC75 /* QingTests.xctest */,
 				605D51D21BF3A53E0071BC75 /* QingUITests.xctest */,
 				24D937E61C119081006AA21E /* QingGame.app */,
+				244352C61C1AB1E5007B8292 /* PK10.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -607,6 +706,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		244352821C1AB1E5007B8292 /* PK10 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 244352C31C1AB1E5007B8292 /* Build configuration list for PBXNativeTarget "PK10" */;
+			buildPhases = (
+				244352831C1AB1E5007B8292 /* Check Pods Manifest.lock */,
+				244352841C1AB1E5007B8292 /* Sources */,
+				244352AD1C1AB1E5007B8292 /* Frameworks */,
+				244352B11C1AB1E5007B8292 /* Resources */,
+				244352C21C1AB1E5007B8292 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PK10;
+			productName = Qing;
+			productReference = 244352C61C1AB1E5007B8292 /* PK10.app */;
+			productType = "com.apple.product-type.application";
+		};
 		24D9378E1C119081006AA21E /* QingGame */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24D937E31C119081006AA21E /* Build configuration list for PBXNativeTarget "QingGame" */;
@@ -690,6 +808,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = maka;
 				TargetAttributes = {
+					244352821C1AB1E5007B8292 = {
+						DevelopmentTeam = 4995ZXHHYP;
+					};
 					24D9378E1C119081006AA21E = {
 						DevelopmentTeam = 4995ZXHHYP;
 						SystemCapabilities = {
@@ -732,11 +853,40 @@
 				605D51C61BF3A53E0071BC75 /* QingTests */,
 				605D51D11BF3A53E0071BC75 /* QingUITests */,
 				24D9378E1C119081006AA21E /* QingGame */,
+				244352821C1AB1E5007B8292 /* PK10 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		244352B11C1AB1E5007B8292 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				244352B21C1AB1E5007B8292 /* ProfilePersonSettingView.xib in Resources */,
+				244352D51C1AB32D007B8292 /* Localizable.strings in Resources */,
+				244352B31C1AB1E5007B8292 /* PK10GamePlayerRoad.xib in Resources */,
+				244352B41C1AB1E5007B8292 /* InfoPlist.strings in Resources */,
+				244352B51C1AB1E5007B8292 /* happy8.plist in Resources */,
+				244352B61C1AB1E5007B8292 /* GameNumberItem.xib in Resources */,
+				244352B71C1AB1E5007B8292 /* GameAssets.xcassets in Resources */,
+				244352D41C1AB32D007B8292 /* InfoPlist.strings in Resources */,
+				244352B81C1AB1E5007B8292 /* quick3.plist in Resources */,
+				244352B91C1AB1E5007B8292 /* Localizable.strings in Resources */,
+				244352BA1C1AB1E5007B8292 /* GameLaunchScreen.storyboard in Resources */,
+				244352BB1C1AB1E5007B8292 /* PopShowImageView.xib in Resources */,
+				244352BC1C1AB1E5007B8292 /* QingGame.plist in Resources */,
+				244352BD1C1AB1E5007B8292 /* ProfilePersonView.xib in Resources */,
+				244352BE1C1AB1E5007B8292 /* PK10.plist in Resources */,
+				244352BF1C1AB1E5007B8292 /* PK10GamePlayerItem.xib in Resources */,
+				244352C01C1AB1E5007B8292 /* Plant.xcassets in Resources */,
+				244352D21C1AB32D007B8292 /* GamePK10Assets.xcassets in Resources */,
+				244352D31C1AB32D007B8292 /* GamePK10LaunchScreen.storyboard in Resources */,
+				244352CA1C1AB223007B8292 /* QingGamePK10.plist in Resources */,
+				244352C11C1AB1E5007B8292 /* CrawlersCollectionCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24D937B91C119081006AA21E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -791,6 +941,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		244352831C1AB1E5007B8292 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		244352C21C1AB1E5007B8292 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		24D9378F1C119081006AA21E /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -854,6 +1034,54 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		244352841C1AB1E5007B8292 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				244352851C1AB1E5007B8292 /* AppDelegate.m in Sources */,
+				244352861C1AB1E5007B8292 /* Qing.xcdatamodeld in Sources */,
+				244352871C1AB1E5007B8292 /* MCDownloadUtil.m in Sources */,
+				244352881C1AB1E5007B8292 /* MCGameIndexViewController.m in Sources */,
+				244352891C1AB1E5007B8292 /* MCDownloadOperationManager.m in Sources */,
+				2443528A1C1AB1E5007B8292 /* CrawlersViewController.m in Sources */,
+				2443528B1C1AB1E5007B8292 /* ViewController.m in Sources */,
+				2443528C1C1AB1E5007B8292 /* GameNumberItem.m in Sources */,
+				2443528D1C1AB1E5007B8292 /* GameTableViewCell.m in Sources */,
+				2443528E1C1AB1E5007B8292 /* RootViewController.m in Sources */,
+				2443528F1C1AB1E5007B8292 /* XPathQuery.m in Sources */,
+				244352901C1AB1E5007B8292 /* MDMatrix.m in Sources */,
+				244352911C1AB1E5007B8292 /* PK10GamePlayer.m in Sources */,
+				244352921C1AB1E5007B8292 /* CrawlersCollectionCell.m in Sources */,
+				244352931C1AB1E5007B8292 /* PK10GamePlayerRoad.m in Sources */,
+				244352941C1AB1E5007B8292 /* UIImageView+MCDownload.m in Sources */,
+				244352951C1AB1E5007B8292 /* TFHppleElement.m in Sources */,
+				244352961C1AB1E5007B8292 /* LearnListViewController.m in Sources */,
+				244352971C1AB1E5007B8292 /* TFHpple.m in Sources */,
+				244352981C1AB1E5007B8292 /* PK10DataModel.m in Sources */,
+				244352991C1AB1E5007B8292 /* WebViewController.m in Sources */,
+				2443529A1C1AB1E5007B8292 /* MDScratchImageView.mm in Sources */,
+				2443529B1C1AB1E5007B8292 /* GameDownloadManager.m in Sources */,
+				2443529C1C1AB1E5007B8292 /* RootTabBarController.m in Sources */,
+				2443529D1C1AB1E5007B8292 /* ProfilePersonSettingView.m in Sources */,
+				2443529E1C1AB1E5007B8292 /* ProfileViewController.m in Sources */,
+				2443529F1C1AB1E5007B8292 /* PopShowImageView.m in Sources */,
+				244352A01C1AB1E5007B8292 /* PK10GamePlayerItem.m in Sources */,
+				244352A11C1AB1E5007B8292 /* PK10GamePlayerScence1.m in Sources */,
+				244352A21C1AB1E5007B8292 /* MCDownloadOperation.m in Sources */,
+				244352A31C1AB1E5007B8292 /* MCDownloadCache.m in Sources */,
+				244352A41C1AB1E5007B8292 /* ProfilePersonView.m in Sources */,
+				244352A51C1AB1E5007B8292 /* CommonDateUtil.m in Sources */,
+				244352A61C1AB1E5007B8292 /* RootNavigationController.m in Sources */,
+				244352A71C1AB1E5007B8292 /* GamePredictionViewController.m in Sources */,
+				244352A81C1AB1E5007B8292 /* RootTableViewController.m in Sources */,
+				244352A91C1AB1E5007B8292 /* RootCollectionViewCell.m in Sources */,
+				244352D11C1AB32D007B8292 /* AppDelegate.m in Sources */,
+				244352AA1C1AB1E5007B8292 /* MCDownloadCallBackManager.m in Sources */,
+				244352AB1C1AB1E5007B8292 /* MCGamePlayerViewController.m in Sources */,
+				244352AC1C1AB1E5007B8292 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		24D937901C119081006AA21E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -996,6 +1224,69 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		244352C41C1AB1E5007B8292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = GameAppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AsyncDisplayKit\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Shimmer\"",
+					"\"${PODS_ROOT}/Headers/Public/iCarousel\"",
+					/usr/include/libxml2,
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/PK10/QingGamePK10.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = maka.Qing.Game;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		244352C51C1AB1E5007B8292 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E9F85BB6C993515AC12ACF5 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = GameAppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AsyncDisplayKit\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Shimmer\"",
+					"\"${PODS_ROOT}/Headers/Public/iCarousel\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/AsyncDisplayKit\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/Shimmer\"",
+					"\"${PODS_ROOT}/Headers/Public/iCarousel\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/PK10/QingGamePK10.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = maka.Qing.Game;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		24D937E41C119081006AA21E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5C44E54B6141E3E7B81AA727 /* Pods.debug.xcconfig */;
@@ -1257,6 +1548,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		244352C31C1AB1E5007B8292 /* Build configuration list for PBXNativeTarget "PK10" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				244352C41C1AB1E5007B8292 /* Debug */,
+				244352C51C1AB1E5007B8292 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		24D937E31C119081006AA21E /* Build configuration list for PBXNativeTarget "QingGame" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
