@@ -118,7 +118,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.cellScrollLock = YES;
-    self.showMask = YES;
     self.view.clipsToBounds = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidResign) name:UIApplicationDidBecomeActiveNotification object:nil];
