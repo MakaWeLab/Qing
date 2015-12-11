@@ -58,9 +58,14 @@
 {
     NSInteger count =( [UIScreen mainScreen].bounds.size.width - 2 - 2) /  NUMBER_HEIGHT;
     NSInteger c = number;
+    
+    if (number <= count) {
+        return 1;
+    }
+    
     count -= 1;
     c -= 1;
-    NSInteger line = c%count==0?c/count+1:c/count+1;
+    NSInteger line = c%count==0?c/count:c/count+1;
     
     return line*NUMBER_HEIGHT + TITLE_HEIGHT;
 }
