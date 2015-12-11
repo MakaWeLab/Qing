@@ -10,7 +10,9 @@
 
 #define TIME_HEIGHT 20
 
-#define NUMBER_HEIGHT 40
+#define NUMBER_HEIGHT 35
+
+#define TITLE_HEIGHT 20
 
 @interface GameTableViewCell : UITableViewCell
 
@@ -23,5 +25,13 @@
 @property (nonatomic,strong) UIColor* diffColor;
 
 @property (nonatomic,strong) UIColor* normalColor;
+
+@property (nonatomic,strong) UILabel* titleLabel;
+
+@property (nonatomic,strong) UILabel* timeLabel;
+
+@property (nonatomic,assign) BOOL mutableLine;
+
++(CGFloat)heightForMutableLine:(NSInteger)number;
 
 @end

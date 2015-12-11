@@ -11,6 +11,8 @@
 		2403DDAE1BFC769A002E7B0E /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDAA1BFC769A002E7B0E /* TFHppleElement.m */; };
 		2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 2403DDAC1BFC769A002E7B0E /* XPathQuery.m */; };
 		2403DDB31BFC7770002E7B0E /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2403DDB21BFC7770002E7B0E /* libxml2.tbd */; };
+		2443522B1C1A9889007B8292 /* CommonDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2443522A1C1A9889007B8292 /* CommonDateUtil.m */; };
+		2443522C1C1A9889007B8292 /* CommonDateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2443522A1C1A9889007B8292 /* CommonDateUtil.m */; };
 		247B6F311C16C45C00D9A1C2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247B6F301C16C45C00D9A1C2 /* StoreKit.framework */; };
 		247CDA2D1BFC7D7600F9DB2A /* CrawlersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */; };
 		247CDA311BFC810A00F9DB2A /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CDA301BFC810A00F9DB2A /* ProfileViewController.m */; };
@@ -128,6 +130,8 @@
 		2403DDAC1BFC769A002E7B0E /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		2403DDB01BFC76DB002E7B0E /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		2403DDB21BFC7770002E7B0E /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		244352291C1A9889007B8292 /* CommonDateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDateUtil.h; sourceTree = "<group>"; };
+		2443522A1C1A9889007B8292 /* CommonDateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonDateUtil.m; sourceTree = "<group>"; };
 		247B6F301C16C45C00D9A1C2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		247CDA2B1BFC7D7600F9DB2A /* CrawlersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrawlersViewController.h; sourceTree = "<group>"; };
 		247CDA2C1BFC7D7600F9DB2A /* CrawlersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrawlersViewController.m; sourceTree = "<group>"; };
@@ -314,6 +318,15 @@
 			path = TFhpple;
 			sourceTree = "<group>";
 		};
+		244352281C1A987A007B8292 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				244352291C1A9889007B8292 /* CommonDateUtil.h */,
+				2443522A1C1A9889007B8292 /* CommonDateUtil.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		247CDA2E1BFC80FE00F9DB2A /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -477,13 +490,6 @@
 			path = Learn;
 			sourceTree = "<group>";
 		};
-		6031EED51C00295F00CF1F36 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		605D51A21BF3A53E0071BC75 = {
 			isa = PBXGroup;
 			children = (
@@ -512,7 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				605D51E61BF3A5820071BC75 /* Plant.xcassets */,
-				6031EED51C00295F00CF1F36 /* Utils */,
+				244352281C1A987A007B8292 /* Util */,
 				24ED32D31BFDAAAF0098758F /* Operation */,
 				605D52051BFCBFCB0071BC75 /* CustomView */,
 				247CDA2E1BFC80FE00F9DB2A /* Profile */,
@@ -884,6 +890,7 @@
 				24D937AA1C119081006AA21E /* MCDownloadOperation.m in Sources */,
 				24D937AD1C119081006AA21E /* MCDownloadCache.m in Sources */,
 				600362101C11C0440029D644 /* ProfilePersonView.m in Sources */,
+				2443522C1C1A9889007B8292 /* CommonDateUtil.m in Sources */,
 				24D937AE1C119081006AA21E /* RootNavigationController.m in Sources */,
 				600362041C11BF420029D644 /* GamePredictionViewController.m in Sources */,
 				24D937B11C119081006AA21E /* RootTableViewController.m in Sources */,
@@ -906,6 +913,7 @@
 				249FEEFB1C17D1EA005431EF /* MCGameCountViewController.m in Sources */,
 				605D51F41BF3A60D0071BC75 /* RootViewController.m in Sources */,
 				605D51B31BF3A53E0071BC75 /* AppDelegate.m in Sources */,
+				2443522B1C1A9889007B8292 /* CommonDateUtil.m in Sources */,
 				2403DDAF1BFC769A002E7B0E /* XPathQuery.m in Sources */,
 				247CDA381BFC85C400F9DB2A /* CrawlersCollectionCell.m in Sources */,
 				24AB7D9F1C02BF7E006D0881 /* UIImageView+MCDownload.m in Sources */,

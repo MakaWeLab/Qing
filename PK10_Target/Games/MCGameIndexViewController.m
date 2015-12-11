@@ -16,6 +16,7 @@
 #import <MBProgressHUD.h>
 #import "GameDownloadManager.h"
 #import <KxMenu.h>
+#import "CommonDateUtil.h"
 #import <objc/runtime.h>
 #import "MDScratchImageView/MDScratchImageView.h"
 
@@ -121,6 +122,8 @@
     
     UIBarButtonItem* rightItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"icon_dropdown"] style:UIBarButtonItemStyleBordered target:self action:@selector(rightItemAction)];
     self.navigationItem.rightBarButtonItem = rightItem;
+    
+    self.mutableLine = [[self.configInfo objectForKey:@"mutableLine"] boolValue];
     
     @weakify(self);
     
@@ -383,7 +386,12 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return NUMBER_HEIGHT;
+    if (self.mutableLine) {
+        id<GameDataModelProtocol> model = self.downloadManager.dataList[indexPath.row];
+        NSInteger count = [[model results] count];
+        return [GameTableViewCell heightForMutableLine:count];
+    }
+    return NUMBER_HEIGHT + TITLE_HEIGHT;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -398,6 +406,12 @@
     if (self.cellScrollLock) {
         cell.contentScrollView.delegate = self;
     }
+    
+    cell.timeLabel.text = [[model time] substringWithRange:NSMakeRange([model.time length] - 5, 5)];
+    if (self.mutableLine) {
+        cell.mutableLine = YES;
+    }
+    
     cell.numbers = [model results];
     
     

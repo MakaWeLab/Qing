@@ -18,4 +18,6 @@
 
 @property (nonatomic,assign) BOOL showMask;
 
+@property (nonatomic,assign) BOOL mutableLine;
+
 @end
