@@ -48,7 +48,7 @@
         [self.contentView addSubview:self.titleLabel];
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(2);
-            make.left.equalTo(self.timeLabel.mas_right).with.offset(5);
+            make.right.mas_equalTo(2);
         }];
     }
     return self;
@@ -60,7 +60,7 @@
     NSInteger c = number;
     
     if (number <= count) {
-        return 1;
+        return NUMBER_HEIGHT + TITLE_HEIGHT;
     }
     
     count -= 1;

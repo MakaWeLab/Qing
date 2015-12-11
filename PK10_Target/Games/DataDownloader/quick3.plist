@@ -22,5 +22,7 @@
 	<string>23:50</string>
 	<key>timeInset</key>
 	<string>10</string>
+	<key>mutableLine</key>
+	<true/>
 </dict>
 </plist>

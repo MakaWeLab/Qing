@@ -45,6 +45,8 @@
 
 @property (nonatomic,strong) UIView* scratchView;
 
+@property (nonatomic,strong) NSArray* diffIndexs;
+
 @end
 
 @implementation MCGameIndexViewController
@@ -116,6 +118,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.cellScrollLock = YES;
+    self.showMask = YES;
     self.view.clipsToBounds = YES;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidResign) name:UIApplicationDidBecomeActiveNotification object:nil];
@@ -193,19 +196,25 @@
 
 -(void)showScratchImage
 {
+    if (self.downloadManager.dataList.count == 0) {
+        return;
+    }
     if (!self.scratchView) {
         self.scratchView = [[UIView alloc]init];
         self.scratchView.backgroundColor = [UIColor clearColor];
         [self.view addSubview:self.scratchView];
+        CGFloat height = [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        
         [self.scratchView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.left.right.mas_equalTo(0);
-            make.height.mas_equalTo(160);
+            make.height.mas_equalTo(height + 70);
         }];
         self.scratchView.hidden = YES;
     }
     self.scratchView.hidden = NO;
     if (!self.scratchImageView) {
-        CGRect rect = CGRectMake(0, self.navigationController.navigationBar.frame.origin.y+self.navigationController.navigationBar.frame.size.height, self.view.bounds.size.width, 90);
+        CGFloat height = [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        CGRect rect = CGRectMake(0, self.navigationController.navigationBar.frame.origin.y+self.navigationController.navigationBar.frame.size.height, self.view.bounds.size.width, height);
         self.scratchImageView = [[MDScratchImageView alloc]initWithFrame:rect];
         self.scratchImageView.delegate = self;
         [self.scratchView addSubview:self.scratchImageView];
@@ -401,16 +410,15 @@
     cell.contentScrollView.contentOffset = self.scrollOffset;
     
     id<GameDataModelProtocol> model = self.downloadManager.dataList[indexPath.row];
-    cell.diffIndexs = @[@0,@1];
+    cell.diffIndexs = self.diffIndexs;
     
     if (self.cellScrollLock) {
         cell.contentScrollView.delegate = self;
     }
     
     cell.timeLabel.text = [[model time] substringWithRange:NSMakeRange([model.time length] - 5, 5)];
-    if (self.mutableLine) {
-        cell.mutableLine = YES;
-    }
+    
+    cell.mutableLine = self.mutableLine;
     
     cell.numbers = [model results];
     
